@@ -1,0 +1,3 @@
+[submodule ".themes/oct2"]
+	path = .themes/oct2
+	url = git@github.com:bijumon/oct2.git
