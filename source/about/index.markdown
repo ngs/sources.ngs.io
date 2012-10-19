@@ -8,9 +8,12 @@ footer: false
 
 {% img http://www.gravatar.com/avatar/e10997c59685f5c742a63b3e3049d4fb.png?size=500 250 250 %}
 
-Atsushi Nagase is a Japanese software engineer, UI/X designer.
+Atsushi Nagase / 長瀨 敦史 is a Japanese software engineer, UI/X designer.
+
+Borned in 1983 at [Shimamoto, Osaka](http://bit.ly/Q9gFNz).
 
 Founded [LittleApps Inc.](http://littleapps.jp/) in 2009.
+
 
 ## Code
 * [GitHub](https://github.com/ngs)
@@ -29,3 +32,20 @@ Founded [LittleApps Inc.](http://littleapps.jp/) in 2009.
 * [Quora](http://www.quora.com/Atsushi-Nagase)
 * [Strava](http://strava.com/athletes/ngs)
 * [TripIt](https://www.tripit.com/people/ngs)
+* [Flickr](http://www.flickr.com/photos/atsnngs)
+* [Pinterest](http://pinterest.com/ngs)
+
+## PGP
+<dl>
+<dt>ID</dt><dd><p><code>22691D00</code></p></dd>
+<dt>Fingerprint</dt><dd><p><code>D99D BBD2 AB06 B1BF 8D44  2CF7 4721 171B 2269 1D00</code></p></dd>
+</dl>
+
+## Contact
+<dl>
+<dt>Email</dt>
+<dd><a href="mailto:a@ngs.io">a@ngs.io</a></dd>
+<dt>Skype</dt>
+<dd><a href="skype:atsn_ngs?call">atsn_ngs</a></dd>
+</dl>
+
