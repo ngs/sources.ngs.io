@@ -8,7 +8,7 @@ categories: [iOS, iPhone, iPad, Gist, GitHub, iGist]
 
 [{% img http://igistapp.com/images/ipad-screen2.png iGist 640 484 %}](http://bit.ly/igistapp)
 
-**[iGist - The Gist Client](http://bit.ly/igistapp)** is a Gist client for iOS Devices.
+**[iGist - The Gist Client](http://igistapp.com/)** is a Gist client for iOS Devices.
 
 This allows you to browse, create, edit, fork, (un)star Gists.
 

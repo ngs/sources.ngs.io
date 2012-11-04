@@ -8,7 +8,7 @@ categories: [iOS, iPhone, iPad, Gist, GitHub, iGist]
 
 {% img /images/posts/2012-10-03-igist-1.2.jpg 640 250 'iGist v1.2' %}
 
-I just released new version of **[iGist - The Gist Client](http://bit.ly/igistapp)**
+I just released new version of **[iGist - The Gist Client](http://igistapp.com/)**
 
 I rebuilt the app for iOS 6, optimized for iPhone 5&apos;s 4 inch screen and supported *Share on Facebook*.
 
