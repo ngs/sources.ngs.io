@@ -1,18 +1,15 @@
 // This File is imported last, and will override other styles in the cascade
 // Add styles here to make changes without digging in too much
 
-@font-face {
-	  font-family: "League";
-	    src: url('/font/LeagueGothic.otf');
-    }
-
     a:visited, #content .blog-index article h1 a:hover { color: #a4d313; }
 
 
     /* ----- main layout ----- */
 
 
-    html { background: #262C33 url("../images/background.jpg"); }
+    html {
+      background: #262C33 url("../images/background.jpg") repeat 0 0 fixed;
+    }
 
     body { font-size: 1em; }
 

@@ -17,7 +17,7 @@ description: Stocking snippets and tips.
 date_format: "ordinal"
 
 # RSS / Email (optional) subscription links (change if using something like Feedburner)
-subscribe_rss: /atom.xml
+subscribe_rss: http://feeds.feedburner.com/ngsio
 subscribe_email:
 # RSS feeds can list your email address if you like
 email: "a@ngs.io"

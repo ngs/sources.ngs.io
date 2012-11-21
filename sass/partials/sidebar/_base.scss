@@ -1,10 +1,10 @@
 .side-shadow-border {
-  @include box-shadow(lighten($sidebar-bg, 5) 0 1px);
+  @include box-shadow(rgba(200, 200, 200, 0.1) 0 1px);
 }
 aside.sidebar {
   overflow: hidden;
   color: $sidebar-color;
-  text-shadow: lighten($sidebar-bg, 8) 0 1px;
+  @include single-text-shadow(0, 0, 5px, false, #000);
   a { @extend .force-wrap; }
   section {
     @extend .sans;
@@ -40,13 +40,35 @@ aside.sidebar {
       margin-bottom: 0;
     }
   }
+  #sitenav {
+    @include clearfix;
+    font-weight: 700;
+    font-size: 2em;
+    li {
+      &:first-child {
+        &:after {
+          content: "•";
+          margin: 0 0.5em;
+        }
+      }
+      border: none;
+      @include box-shadow(none);
+      padding-bottom: 0.5em;
+      float: left;
+    }
+  }
+  
   a {
     color: inherit;
     @include transition(color .5s);
   }
-  &:hover a {
-    color: $sidebar-link-color;
-    &:hover { color: $sidebar-link-color-hover; }
+  &:hover {
+    background-color: $sidebar-hover-bg;
+    @include transition(background-color .5s);
+     a {
+      color: $sidebar-link-color;
+      &:hover { color: $sidebar-link-color-hover; }
+    }
   }
 }
 .aside-alt-link {

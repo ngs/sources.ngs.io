@@ -17,4 +17,4 @@ This plug-in allows you to clip snippets and rendered HTML from Markdown to [Eve
 
 <!--more-->
 
-<iframe width="640" height="360" src="http://www.youtube.com/embed/b8RqCNBHNvI" frameborder="0" allowfullscreen></iframe>
+{% youtube b8RqCNBHNvI %}

@@ -35,11 +35,13 @@ $nav-border-left: darken($nav-bg, 11) !default;
 $nav-border-right: lighten($nav-bg, 7) !default;
 
 /* Sidebar colors */
-$sidebar-bg: #f2f2f2 !default;
-$sidebar-link-color: $link-color !default;
+$sidebar-text-color: #ccc !default;
+$sidebar-bg: rgba(33, 33, 33, 0.6) !default;
+$sidebar-hover-bg: rgba(33, 33, 3, 0.8) !default;
+$sidebar-link-color: desaturate(darken($link-color, 15), 90) !default;
 $sidebar-link-color-hover: $link-color-hover !default;
 $sidebar-link-color-active: $link-color-active !default;
-$sidebar-color: change-color(mix($text-color, $sidebar-bg, 80), $hue: hue($sidebar-bg), $saturation: saturation($sidebar-bg)/2) !default;
+$sidebar-color: change-color(mix($sidebar-text-color, $sidebar-bg, 80), $hue: hue($sidebar-bg), $saturation: saturation($sidebar-bg)/2) !default;
 $sidebar-border: desaturate(darken($sidebar-bg, 7), 10) !default;
 $sidebar-border-hover: darken($sidebar-bg, 7) !default;
 $sidebar-link-color-subdued: lighten($sidebar-color, 20) !default;
