@@ -19,6 +19,7 @@ Founded [LittleApps Inc.](http://littleapps.jp/) in 2009.
 * [GitHub](https://github.com/ngs)
 * [Google Code](http://code.google.com/u/atsnngs/)
 * [CPAN](http://search.cpan.org/~ngs)
+* [RubyGems](https://rubygems.org/profiles/ngs)
 
 ## Profile
 * [AngelList](http://angel.co/ngs)
