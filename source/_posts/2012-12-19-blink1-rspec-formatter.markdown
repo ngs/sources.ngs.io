@@ -3,7 +3,7 @@ layout: post
 title: "Using blink(1) as RSpec formatter"
 date: 2012-12-19 06:00
 comments: true
-categories: [Ruby, RSpec, blink(1), Formatter, Gadget]
+categories: [Ruby, RSpec, blink(1), Formatter, Gadget, RubyGems]
 ---
 
 {% youtube j_S_f7qvHTs %}
