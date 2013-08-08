@@ -12,7 +12,11 @@ Atsushi Nagase / 長瀨 敦史 is a Japanese software engineer, UI/X designer.
 
 Borned in 1983 at [Shimamoto, Osaka](http://bit.ly/Q9gFNz).
 
-Founded [LittleApps Inc.](http://littleapps.jp/) in 2009.
+Founded [LittleApps Inc.](http://littleapps.jp/) in 2009 as CEO.
+
+Founded [AppSocially Inc.](http://appsocial.ly/) in 2013 as CTO.
+
+Joined [KAIZEN platform Inc.](http://kaizenplatform.in/) in 2013 as UX Designer.
 
 
 ## Code
@@ -20,11 +24,13 @@ Founded [LittleApps Inc.](http://littleapps.jp/) in 2009.
 * [Google Code](http://code.google.com/u/atsnngs/)
 * [CPAN](http://search.cpan.org/~ngs)
 * [RubyGems](https://rubygems.org/profiles/ngs)
+* [npm](https://npmjs.org/~ngs)
 
 ## Profile
 * [AngelList](http://angel.co/ngs)
 * [CrunchBase](http://www.crunchbase.com/person/atsushi-nagase)
 * [LinkedIn](http://www.linkedin.com/in/ngsdev)
+* [hat.io](https://hat.io/users/ngs)
 
 ## Social
 * [Twitter](https://twitter.com/ngs)
