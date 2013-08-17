@@ -12,7 +12,7 @@ categories: [JavaScript, Selector, jQuery, Plugin, npm]
 $('element').getSelector()
 ```
 
-Set `options.invalidClasses` to ignore class name:
+Set `options.ignore` to ignore classes, ids, names:
 
 ```javascript
 $('element').getSelector({ ignore: { classes: ['ui-droppable'] } })
