@@ -1,3 +1,6 @@
+notifications:
+  email:
+    - "atsn.ngs+travisci@gmail.com"
 language: ruby
 rvm:
 - 1.9.3
