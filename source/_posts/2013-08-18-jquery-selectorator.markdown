@@ -6,7 +6,7 @@ comments: true
 categories: [JavaScript, Selector, jQuery, Plugin, npm]
 ---
 
-[jQuery Selectorator Plugin](https://github.com/ngs/jquery-selectorator) is a plugin to get unique selector from jQuery object.
+[jQuery Selectorator Plugin](https://github.com/ngs/jquery-selectorator) is a plugin to generate unique selector from jQuery object.
 
 ```javascript
 $('element').getSelector()
