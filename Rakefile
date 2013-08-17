@@ -299,7 +299,7 @@ task :setup_github_pages, :repo do |t, args|
   if args.repo
     repo_url = args.repo
   else
-    puts "Enter the read/write url for your repository" 
+    puts "Enter the read/write url for your repository"
     puts "(For example, 'git@github.com:your_username/your_username.github.com)"
     repo_url = get_stdin("Repository url: ")
   end
@@ -377,3 +377,5 @@ task :list do
   puts "Tasks: #{(Rake::Task.tasks - [Rake::Task[:list]]).join(', ')}"
   puts "(type rake -T for more detail)\n\n"
 end
+
+task :default => [:gen_deploy]

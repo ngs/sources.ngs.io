@@ -1,0 +1,24 @@
+---
+language: ruby
+rvm:
+- 1.9.3
+test:
+  override:
+    - echo OK
+before_script:
+- git config --global user.name "ngs"
+- git config --global user.email "a@ngs.io"
+- git remote set-url origin $REPO.git
+- if [ -z "$id_rsa_{1..32}" ]; then echo 'No $id_rsa_{1..32} found !' ; exit 1; fi
+- echo -n $id_rsa_{1..32} >> ~/.ssh/travis_rsa_64
+- base64 --decode --ignore-garbage ~/.ssh/travis_rsa_64 > ~/.ssh/id_rsa
+- chmod 600 ~/.ssh/id_rsa
+- echo -e "Host github.com\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
+- rake setup_github_pages[$REPO]
+script:
+- rake generate
+after_script:
+- rake deploy
+env:
+  global:
+  - REPO="git@github.com:ngsio/ngsio.github.com.git"
