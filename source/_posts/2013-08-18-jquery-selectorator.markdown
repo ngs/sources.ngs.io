@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Getting unique selector with jQuery Selectorator"
+title: "Generating unique selector with jQuery Selectorator"
 date: 2013-08-18 12:00
 comments: true
 categories: [JavaScript, Selector, jQuery, Plugin, npm]
