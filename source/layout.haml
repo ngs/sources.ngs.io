@@ -23,7 +23,7 @@
         %aside.col-md-3
           %h2 最近の記事
           %ol.nav
-            - blog.articles[0...10].each do |article|
+            - blog.articles.select {|a| a.data[:public] }.sort { |x,y| y.date <=> x.date }[0...10].each do |article|
               %li
                 = link_to article do
                   %span.title= article.title
@@ -37,7 +37,7 @@
                   %span.badge.pull-right= articles.size
           %h2 年別
           %ol.nav
-            - blog.articles.group_by {|a| a.date.year }.each do |year, articles|
+            - blog.articles.select {|a| a.data[:public] }.sort { |x,y| y.date <=> x.date }.group_by {|a| a.date.year }.each do |year, articles|
               %li
                 = link_to blog_year_path(year) do
                   = year
