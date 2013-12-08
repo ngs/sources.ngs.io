@@ -18,7 +18,7 @@ READMORE
 
 ### 1. travis にリポジトリを登録する。
 
-未登録の場合、2 で、
+未登録の場合、3 で、
 `repository not known to https://api.travis-ci.org/: ngsio/ja.ngs.io` などと怒られた。     
 [https://travis-ci.org/profile](https://travis-ci.org/profile)、もしくは [https://travis-ci.org/profile/$YOUR_ORGANIZATION$](https://travis-ci.org/profile/$YOUR_ORGANIZATION$) でスイッチを ON にする。
 
