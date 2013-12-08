@@ -1,12 +1,12 @@
 ---
-title: Middleman Blog を Travis-CI で継続デプロイ
+title: Middleman Blog を Travis-CI で GitHub Pages に継続デプロイ
 description: Middleman で作った Blog を Travis-CI で継続デプロイします。
 date: 2013-12-09 01:00
 public: true
 tags: middleman, travis, ci
 ---
 
-Octopress Blog では既に設定していた travis-ci での自動デプロイですが、こちらのブログにも設定します。
+Octopress Blog では既に設定していた Travis-CI での自動デプロイですが、こちらのブログにも設定します。
 
 `middleman build && middleman deploy` とか毎回コマンドうつの面倒ですもんね。
 
