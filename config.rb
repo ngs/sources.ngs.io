@@ -88,6 +88,13 @@ set :css_dir, 'stylesheets'
 set :js_dir, 'javascripts'
 set :images_dir, 'images'
 
+
+configure :development do
+  activate :google_analytics do |ga|
+    ga.tracking_id = false
+  end
+end
+
 # Build-specific configuration
 configure :build do
   # For example, change the Compass output style for deployment
@@ -107,10 +114,19 @@ configure :build do
 
   ignore '.DS_Store'
   ignore '.*.swp'
+
+  activate :google_analytics do |ga|
+    ga.tracking_id = 'UA-200187-34'
+  end
+
 end
 
+activate :disqus do |d|
+  d.shortname = "jangsio"
+end
 
 activate :deploy do |deploy|
   deploy.method = :git
   deploy.branch = 'gh-pages'
 end
+

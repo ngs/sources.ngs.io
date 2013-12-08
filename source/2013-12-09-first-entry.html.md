@@ -5,7 +5,7 @@ date: 2013-12-09
 tags: blog, ruby, middleman
 ---
 
-以前構築していたブログが、Posterous 終了と共になくなってしまったので、やる気をなくしてしばらくブログを書いていませんでしたが、仕事で Middleman と出会い、シンプルさと拡張性が魅力的だったので、GitHub Pages でホスティングしてもらう様、再構築しました。
+以前構築していたブログが、[Posterous](http://www.posterous.com/) 終了と共になくなってしまったので、やる気をなくしてしばらくブログを書いていませんでしたが、仕事で Middleman と出会い、シンプルさと拡張性が魅力的だったので、[GitHub Pages](http://pages.github.com) でホスティングしてもらう様、再構築しました。
 
 とりあえず、ザクっとおなじみ [Bootstrap](http://getbootstrap.com) で。Bootstrap の無料テーマを配布している [Bootswatch](http://bootswatch.com) さんから、最新の [Yeti](http://bootswatch.com/yeti/) というテンプレートを拝借しました。
 
@@ -18,7 +18,7 @@ READMORE
 
 2012/04 から、OSS で殴り書いたり、tech-tips ものは、世界の人と共有したいので、英語でブログを書いています。 [ngs.io](http://ngs.io)
 
-こちらは [Octopress](http://octopress.org) を使っていますが、テンプレートが [liquid](http://liquidmarkup.org) 縛りだったり (今は haml も使える風？調べるのめんどくさい。)、使ってる [jekyll](http://jekyllrb.com) バージョンが古かったりで、こちらも卒業したく、日本語ブログのカスタマイズが終わったら、こちらも移行しようと思います。
+こちらは [Octopress](http://octopress.org) + [GitHub Pages](http://pages.github.com) を使っていますが、テンプレートが [liquid](http://liquidmarkup.org) 縛りだったり (今は haml も使える風？調べるのめんどくさい。)、使ってる [jekyll](http://jekyllrb.com) バージョンが古かったりで、こちらも卒業したく、日本語ブログのカスタマイズが終わったら、こちらも移行しようと思います。
 
 エントリーは共通して Markdown なので、コピペして `git push origin master --force` などしてやれば、移行完了なので、いい時代ですね。
 
