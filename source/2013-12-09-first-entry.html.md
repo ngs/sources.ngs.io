@@ -32,6 +32,6 @@ Tech ネタもあると思いますが、あまり考えず、プログラミン
 
 ### 近況
 
-現在は [LittleApps Inc.](http://littleapp.jp/) での受注開発は行っておらず、 [KAIZEN platform Inc.](http://kaizenplatform.in) というベンチャー企業のメンバーとしてエンジニアをやっています。
+現在は [LittleApps Inc.](http://littleapps.jp/) での受注開発は行っておらず、 [KAIZEN platform Inc.](http://kaizenplatform.in) というベンチャー企業のメンバーとしてエンジニアをやっています。
 
 しばらくバタバタしていますが、LittleApps Inc. 名義での、趣味で作ったソフトウェアたちは、落ち着いたらメンテ再開します。Issue とか上げてもらってますが、放ったらかしでごめんなさい。
