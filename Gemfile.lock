@@ -92,5 +92,8 @@ PLATFORMS
 
 DEPENDENCIES
   builder (~> 3.0)
+  coffee-script
+  haml
   middleman (~> 3.2.0)
   middleman-blog (~> 3.5.0)
+  sass

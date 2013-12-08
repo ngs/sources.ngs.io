@@ -10,16 +10,16 @@ activate :blog do |blog|
   # This will add a prefix to all links, template references and source paths
   # blog.prefix = "blog"
 
-  blog.permalink = "{year}/{month}/{day}/{title}/"
+  blog.permalink = "{year}/{month}/{day}/{title}/index.html"
   # Matcher for blog source files
-  # blog.sources = "{year}-{month}-{day}-{title}.html"
-  blog.taglink = "tags/{tag}/"
+  blog.sources = "{year}-{month}-{day}-{title}.html"
+  blog.taglink = "tags/{tag}/index.html"
   # blog.layout = "layout"
   # blog.summary_separator = /(READMORE)/
   # blog.summary_length = 250
-  blog.year_link = "{year}/"
-  blog.month_link = "{year}/{month}/"
-  blog.day_link = "{year}/{month}/{day}/"
+  blog.year_link = "{year}/index.html"
+  blog.month_link = "{year}/{month}/index.html"
+  blog.day_link = "{year}/{month}/{day}/index.html"
   blog.default_extension = ".md"
 
   blog.tag_template = "tag.html"
@@ -79,6 +79,10 @@ end
 #     "Helping"
 #   end
 # end
+
+require 'haml'
+require 'sass'
+require 'coffee-script'
 
 set :css_dir, 'stylesheets'
 
