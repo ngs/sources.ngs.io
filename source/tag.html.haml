@@ -2,8 +2,10 @@
 pageable: true
 per_page: 12
 ---
+%p.home-link= link_to 'ホーム', '/'
 %h1
-  Articles tagged '#{tagname}'
+  タグ:
+  %q= tagname
 - if paginate && num_pages > 1
   %p
     Page #{page_number} of #{num_pages}

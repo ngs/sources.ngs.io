@@ -2,7 +2,7 @@
 # Blog settings
 ###
 
-# Time.zone = "UTC"
+Time.zone = "Tokyo"
 
 activate :directory_indexes
 
@@ -14,9 +14,9 @@ activate :blog do |blog|
   # Matcher for blog source files
   blog.sources = "{year}-{month}-{day}-{title}.html"
   blog.taglink = "tags/{tag}/index.html"
-  # blog.layout = "layout"
-  # blog.summary_separator = /(READMORE)/
-  # blog.summary_length = 250
+  blog.layout = "article"
+  blog.summary_separator = /(READMORE)/
+  blog.summary_length = 250
   blog.year_link = "{year}/index.html"
   blog.month_link = "{year}/{month}/index.html"
   blog.day_link = "{year}/{month}/{day}/index.html"
@@ -85,9 +85,7 @@ require 'sass'
 require 'coffee-script'
 
 set :css_dir, 'stylesheets'
-
 set :js_dir, 'javascripts'
-
 set :images_dir, 'images'
 
 # Build-specific configuration
@@ -106,4 +104,13 @@ configure :build do
 
   # Or use a different image path
   # set :http_prefix, "/Content/images/"
+
+  ignore '.DS_Store'
+  ignore '.*.swp'
+end
+
+
+activate :deploy do |deploy|
+  deploy.method = :git
+  deploy.branch = 'gh-pages'
 end

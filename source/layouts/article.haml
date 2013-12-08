@@ -1,0 +1,7 @@
+- wrap_layout :layout do
+  %p.home-link= link_to 'ホーム', '/'
+  %article
+    %h1= current_article.title
+    %p.meta
+      %time= current_article.date.strftime('%Y/%m/%d')
+    = yield

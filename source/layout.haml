@@ -5,6 +5,7 @@
     %meta{ http_equiv: 'X-UA-Compatible', content: 'IE=edge;chrome=1' }
     %title= "#{ current_article.title + ' - '  unless current_article.nil? }ja.ngs.io"
     = stylesheet_link_tag 'bootstrap'
+    = stylesheet_link_tag 'application'
     - if data.page.description
       %meta{ content: data.page.description, name: "description" }
     - else
@@ -14,24 +15,33 @@
     %meta{ content: "長瀬 敦史", name: "author" }
     = feed_tag :atom, "#{blog.options.prefix.to_s}/feed.xml", title: "Atom Feed"
   %body
-    %main{ role: 'main' }
-      = yield
-    %aside
-      %h2 最近の記事
-      %ol
-        - blog.articles[0...10].each do |article|
-          %li
-            = link_to article.title, article
-            %span= article.date.strftime('%b %e')
-      %h2 タグ
-      %ol
-        - blog.tags.each do |tag, articles|
-          %li
-            = link_to tag, tag_path(tag)
-            = "(#{articles.size})"
-      %h2 年別
-      %ol
-        - blog.articles.group_by {|a| a.date.year }.each do |year, articles|
-          %li
-            = link_to year, blog_year_path(year)
-            = "#{articles.size}"
+    .container
+      .row
+        %main.col-md-9{ role: 'main' }
+          = yield
+        %aside.col-md-3
+          %h2 最近の記事
+          %ol.nav
+            - blog.articles[0...10].each do |article|
+              %li
+                = link_to article do
+                  %span.title= article.title
+                  %span.date= article.date.strftime('%b %e')
+          %h2 タグ
+          %ol.nav
+            - blog.tags.each do |tag, articles|
+              %li
+                = link_to tag_path(tag) do
+                  = tag
+                  %span.badge.pull-right= articles.size
+          %h2 年別
+          %ol.nav
+            - blog.articles.group_by {|a| a.date.year }.each do |year, articles|
+              %li
+                = link_to blog_year_path(year) do
+                  = year
+                  %span.badge.pull-right= articles.size
+      %footer.row
+        %address.col-md-12
+          Copyright &copy; #{ Time.now.year }
+          = link_to 'Atsushi Nagase', 'http://ngs.io/'
