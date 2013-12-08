@@ -1,7 +1,7 @@
 ---
 title: ブログ構築しました。
 description: middleman+GitHub Pages で再構築しました。
-date: 2013-12-09
+date: 2013-12-09 00:00
 tags: blog, ruby, middleman
 ---
 
