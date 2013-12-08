@@ -1,9 +1,6 @@
 ---
 language: ruby
-install: bundle install --without development --deployment
-cache:
-  directories:
-  - vendor/bundle
+cache: bundler
 script: bundle exec middleman build
 env:
   global:
