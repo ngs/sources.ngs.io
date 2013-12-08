@@ -4,5 +4,6 @@
     %h1= current_article.title
     %p.meta
       %time= current_article.date.strftime('%Y/%m/%d')
-    = yield
+    = preserve do
+      = yield
     .disqus= disqus

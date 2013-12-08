@@ -6,6 +6,7 @@
     %title= "#{ current_article.title + ' - '  unless current_article.nil? }ja.ngs.io"
     = stylesheet_link_tag 'bootstrap'
     = stylesheet_link_tag 'application'
+    = stylesheet_link_tag 'syntax'
     - if data.page.description
       %meta{ content: data.page.description, name: "description" }
     - else
@@ -26,7 +27,7 @@
               %li
                 = link_to article do
                   %span.title= article.title
-                  %span.date= article.date.strftime('%b %e')
+                  %time= article.date.strftime('%Y/%m/%d')
           %h2 タグ
           %ol.nav
             - blog.tags.each do |tag, articles|
@@ -42,7 +43,7 @@
                   = year
                   %span.badge.pull-right= articles.size
       %footer.row
-        %address.col-md-12
+        %address.col-md-12<
           Copyright &copy; #{ Time.now.year }
           = link_to 'Atsushi Nagase', 'http://ngs.io/'
           \.

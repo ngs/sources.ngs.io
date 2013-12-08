@@ -1,0 +1,15 @@
+- page_articles.each_with_index do |article, i|
+  %section.entry
+    %h2
+      = link_to article.title, article
+      %time= article.date.strftime('%Y/%m/%d')
+    = article.summary(250)
+    %p.read-more
+      = link_to article.url, class: 'btn btn-default btn-sm' do
+        もっと読む &raquo;
+- if paginate && (next_page || num_pages > 1)
+  %ul.pager
+    - if num_pages > 1
+      %li.prev= link_to '前', prev_page
+    - if next_page
+      %li.next= link_to '次', next_page

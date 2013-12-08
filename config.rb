@@ -5,6 +5,10 @@
 Time.zone = "Tokyo"
 
 activate :directory_indexes
+activate :syntax, :line_numbers => true
+
+set :markdown_engine, :redcarpet
+set :markdown, :fenced_code_blocks => true, :smartypants => true
 
 activate :blog do |blog|
   # This will add a prefix to all links, template references and source paths
@@ -128,5 +132,6 @@ end
 activate :deploy do |deploy|
   deploy.method = :git
   deploy.branch = 'gh-pages'
+  deploy.remote = "https://#{ENV['GH_TOKEN']}@github.com/ngsio/ja.ngs.io.git"
 end
 

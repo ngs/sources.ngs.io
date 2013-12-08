@@ -3,27 +3,13 @@ pageable: true
 ---
 %p.home-link= link_to 'ホーム', '/'
 %h1
-  アーカイブ:
   %time
     - case page_type
     - when 'day'
-      = Date.new(year, month, day).strftime('%Y/%m/%d')
+      = Date.new(year, month, day).strftime('%Y年%m月%d日')
     - when 'month'
-      = Date.new(year, month, 1).strftime('%Y/%m')
+      = Date.new(year, month, 1).strftime('%Y年%m月')
     - when 'year'
-      = year
-
-- if paginate && num_pages > 1
-  %p= "Page #{page_number} of #{num_pages}"
-  - if prev_page
-    %p= link_to 'Previous page', prev_page
-
-%ul
-  - page_articles.each_with_index do |article, i|
-    %li
-      = link_to article.title, article
-      %time= article.date.strftime('%Y/%m/%d')
-
-- if paginate
-  - if next_page
-    %p= link_to '次', next_page
+      = "#{year}年"
+  のエントリー
+= partial "entries"

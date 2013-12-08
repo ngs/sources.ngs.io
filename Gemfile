@@ -7,6 +7,8 @@ gem 'middleman-blog', '~> 3.5.0'
 gem 'middleman-deploy'
 gem 'middleman-disqus'
 gem 'middleman-google-analytics'
+gem 'middleman-syntax'
+gem 'redcarpet'
 
 gem 'nokogiri'
 
