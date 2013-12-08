@@ -5,10 +5,11 @@ date: 2013-12-09
 tags: blog, ruby, middleman
 ---
 
-以前構築していたブログが、Posterous 終了と共になくなってしまったので、やる気をなくしてしばらくブログを書いてi
-ませんでしたが、仕事で Middleman と出会い、シンプルさと拡張性が魅力的だったので、GitHub Pages でホスティングしてもらう様、再構築しました。
+以前構築していたブログが、Posterous 終了と共になくなってしまったので、やる気をなくしてしばらくブログを書いていませんでしたが、仕事で Middleman と出会い、シンプルさと拡張性が魅力的だったので、GitHub Pages でホスティングしてもらう様、再構築しました。
 
 とりあえず、ザクっとおなじみ [Bootstrap](http://getbootstrap.com) で。Bootstrap の無料テーマを配布している [Bootswatch](http://bootswatch.com) さんから、最新の [Yeti](http://bootswatch.com/yeti/) というテンプレートを拝借しました。
+
+READMORE
 
 
 ### 移行計画
