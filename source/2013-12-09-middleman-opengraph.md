@@ -7,6 +7,8 @@ tags: middleman, opengraph
 
 Middleman に OpenGraph 用のプラグインがないので、[nanoc](http://nanoc.ws) で作ったヘルパー [lib/nanoc/helpers/og_tags.rb](https://github.com/ngs/nanoc-heroku-template/blob/master/lib/nanoc/helpers/og_tags.rb) を移植する。
 
+-> 近いものがあった [MiddlemanでOGPデータをyamlを使って極力少ない労力で書く - Qiita](http://qiita.com/katapad/items/979d8152ed5b7e9eceba)。マージする。
+
 READMORE
 
 #### Post 側	
