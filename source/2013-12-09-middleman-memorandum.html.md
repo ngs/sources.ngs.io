@@ -1,7 +1,7 @@
 ---
 title: Middleman 雑感
 description: Middleman でブログを構築して思ったこと。
-date: 2013-12-09 00:01
+date: 2013-12-09
 tags: middleman
 ---
 

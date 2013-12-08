@@ -1,7 +1,7 @@
 ---
 title: Middleman OpenGraph Plugin がほしい。
 description: Middleman OpenGraph Plugin がないので、その設計。
-date: 2013-12-09 00:02
+date: 2013-12-09
 tags: middleman, opengraph
 ---
 

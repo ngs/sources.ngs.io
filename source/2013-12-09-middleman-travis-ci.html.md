@@ -1,7 +1,7 @@
 ---
 title: Middleman Blog を Travis-CI で継続デプロイ
 description: Middleman で作った Blog を Travis-CI で継続デプロイします。
-date: 2013-12-09 00:03
+date: 2013-12-09
 tags: middleman, travis, ci
 ---
 
