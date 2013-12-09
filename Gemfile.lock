@@ -1,5 +1,5 @@
 GIT
-  remote: git@github.com:middleman/middleman-syntax.git
+  remote: git://github.com/middleman/middleman-syntax.git
   revision: dbe60bf10437427009b54f5d5508547ccdb396c5
   specs:
     middleman-syntax (1.3.0)

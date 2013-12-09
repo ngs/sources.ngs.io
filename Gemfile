@@ -7,7 +7,7 @@ gem 'middleman-blog', '~> 3.5.0'
 gem 'middleman-deploy'
 gem 'middleman-disqus'
 gem 'middleman-google-analytics'
-gem 'middleman-syntax', :git => 'git@github.com:middleman/middleman-syntax.git'
+gem 'middleman-syntax', :git => 'git://github.com/middleman/middleman-syntax.git'
 gem 'redcarpet'
 
 gem 'nokogiri'
