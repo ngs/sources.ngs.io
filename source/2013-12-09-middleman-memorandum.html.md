@@ -13,7 +13,7 @@ tags: middleman
 	* [middleman-deploy](https://github.com/tvaughan/middleman-deploy)
 	* [middleman-syntax](https://github.com/middleman/middleman-syntax)
 * OpenGraph プラグインがない。[自分で作る](http://ja.ngs.io/2013/12/09/middleman-opengraph/)。
-* [travis でデプロイするようにした。](http://ja.ngs.io/2013/12/09/middleman-memorandum/)
+* [travis でデプロイするようにした。](http://ja.ngs.io/2013/12/09/middleman-travis-ci/)
 * templates と post sources の場所を分けたい。  
   -> Octopress のときは _posts にまとめられた。
 
