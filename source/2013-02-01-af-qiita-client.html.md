@@ -18,6 +18,8 @@ https://github.com/ngs/AFQiitaClient
 pod 'AFQiitaClient'
 ```
 
+READMORE
+
 ## 使い方
 
 ### 初期化
