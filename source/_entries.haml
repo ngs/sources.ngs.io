@@ -4,7 +4,7 @@
       = link_to article.title, article
       %time= article.date.strftime('%Y/%m/%d')
     = preserve do
-      = article.summary(250)
+      = article.summary
     %p.read-more
       = link_to article.url, class: 'btn btn-default btn-sm' do
         もっと読む &raquo;
