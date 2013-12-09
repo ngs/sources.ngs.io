@@ -9,8 +9,14 @@
       = link_to article.url, class: 'btn btn-default btn-sm' do
         もっと読む &raquo;
 - if paginate && (next_page || num_pages > 1)
+
   %ul.pager
     - if num_pages > 1
-      %li.prev= link_to '前', prev_page
+      %li.previous
+        = link_to prev_page do
+          &laquo; 前ページ
     - if next_page
-      %li.next= link_to '次', next_page
+      %li.next
+        = link_to next_page do
+          次ページ
+          &raquo;

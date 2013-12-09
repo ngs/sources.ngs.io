@@ -35,13 +35,14 @@
                 = link_to tag_path(tag) do
                   = tag
                   %span.badge.pull-right= articles.size
-          %h2 年別
+          %h2 月別
           %ol.nav
-            - blog.articles.select {|a| a.data[:public] }.sort { |x,y| y.date <=> x.date }.group_by {|a| a.date.year }.each do |year, articles|
-              %li
-                = link_to blog_year_path(year) do
-                  = year
-                  %span.badge.pull-right= articles.size
+            - blog.articles.select {|a| a.data[:public] }.group_by {|a| a.date.year }.each do |year, year_articles|
+              - year_articles.group_by {|a| a.date.month }.each do |month, month_articles|
+                %li
+                  = link_to blog_month_path(year, month) do
+                    = sprintf '%04d年%02d月', year, month
+                    %span.badge.pull-right= month_articles.size
       %footer.row
         %address.col-md-12<
           Copyright &copy; #{ Time.now.year }
