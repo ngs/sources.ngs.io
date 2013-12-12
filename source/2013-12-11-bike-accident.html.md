@@ -1,5 +1,5 @@
 ---
-title: Garmin 500 とマウントが事故って壊れた
+title: Garmin Edge 500 とマウントが事故って壊れた
 description: 打ち合わせに向かっている途中、目黒通りで事故りました。
 date: 2013-12-11 23:00
 public: true
