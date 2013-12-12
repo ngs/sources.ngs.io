@@ -9,14 +9,29 @@
       = link_to article.url, class: 'btn btn-default btn-sm' do
         もっと読む &raquo;
 - if paginate && (next_page || num_pages > 1)
-
-  %ul.pager
-    - if num_pages > 1
-      %li.previous
-        = link_to prev_page do
-          &laquo; 前ページ
-    - if next_page
-      %li.next
-        = link_to next_page do
-          次ページ
-          &raquo;
+  .text-center
+    %ul.pagination.pagination-lg
+      - if prev_page
+        %li
+          = link_to prev_page do
+            &laquo;
+      - else
+        %li.disabled
+          %span &laquo;
+      - (page_number - 2 .. page_number + 2).select{|i| i > 0 && i <= num_pages}.each do |i|
+        - if i == page_number
+          %li.active
+            %span= i
+        - else
+          %li
+            - p = nil
+            - (i ... page_number).each do p = p ? p.metadata[:locals]['prev_page'] : prev_page; end
+            - (page_number ... i).each do p = p ? p.metadata[:locals]['next_page'] : next_page; end
+            =link_to "#{i}", p && p.url
+      - if next_page
+        %li
+          = link_to next_page do
+            &raquo;
+      - else
+        %li.disabled
+          %span &raquo;
