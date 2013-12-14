@@ -37,6 +37,7 @@ end
 
 page "/feed.xml",    layout: false
 page "/sitemap.xml", layout: false
+page "/404.html",    directory_index: false
 
 ###
 # Compass
