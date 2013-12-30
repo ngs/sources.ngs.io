@@ -7,17 +7,18 @@
       = article.summary
     %p.read-more
       = link_to article.url, class: 'btn btn-default btn-sm' do
-        もっと読む &raquo;
+        もっと読む
+        %span.glyphicon.glyphicon-play-circle &nbsp;
 - if paginate && (next_page || num_pages > 1)
   .text-center
     %ul.pagination.pagination-lg
       - if prev_page
         %li
           = link_to prev_page do
-            &laquo;
+            %span.fa.fa-chevron-left
       - else
         %li.disabled
-          %span &laquo;
+          %span.fa.fa-chevron-left
       - (page_number - 2 .. page_number + 2).select{|i| i > 0 && i <= num_pages}.each do |i|
         - if i == page_number
           %li.active
@@ -31,7 +32,7 @@
       - if next_page
         %li
           = link_to next_page do
-            &raquo;
+            %span.fa.fa-chevron-right
       - else
         %li.disabled
-          %span &raquo;
+          %span.fa.fa-chevron-right

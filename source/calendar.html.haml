@@ -1,7 +1,10 @@
 ---
 pageable: true
 ---
-%p.home-link= link_to 'ホーム', '/'
+%p.home-link
+  = link_to '/' do
+    %span.glyphicon.glyphicon-home
+    &nbsp;ホーム
 %h1
   %time
     - case page_type

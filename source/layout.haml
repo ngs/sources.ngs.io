@@ -7,9 +7,8 @@
     %meta{ content: "Middleman #{Middleman::VERSION}", name: 'generator' }
     %link{ rel: 'author', href: 'https://plus.google.com/+AtsushiNAGASE' }
     %title= "#{ current_article.title + ' - '  unless current_article.nil? }ja.ngs.io"
-    = stylesheet_link_tag 'bootstrap'
-    = stylesheet_link_tag 'application'
-    = stylesheet_link_tag 'syntax'
+    - %w{ bootstrap application syntax font-awesome }.each do|css|
+      = stylesheet_link_tag css
     - if data.page.description
       %meta{ content: data.page.description, name: "description" }
     - else
@@ -36,6 +35,7 @@
             - blog.tags.each do |tag, articles|
               %li
                 = link_to tag_path(tag) do
+                  %span.glyphicon.glyphicon-tag &nbsp;
                   = tag
                   %span.badge.pull-right= articles.size
           %h2 月別

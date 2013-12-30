@@ -1,5 +1,8 @@
 - wrap_layout :layout do
-  %p.home-link= link_to 'ホーム', '/'
+  %p.home-link
+    = link_to '/' do
+      %span.glyphicon.glyphicon-home
+      &nbsp;ホーム
   %article.entry
     %h1= current_article.title
     %p.meta
@@ -8,5 +11,6 @@
       = yield
     %p.meta
       %span.pull-right
-        = link_to 'View on GitHub', current_article.source_file.gsub(/^.+\/([^\/]+)$/, 'https://github.com/ngsio/ja.ngs.io/blob/master/source/\1')
+        = link_to( current_article.source_file.gsub(/^.+\/([^\/]+)$/, 'https://github.com/ngsio/ja.ngs.io/blob/master/source/\1'), title: 'View on GitHub' ) do
+          %span.fa.fa-github-alt &nbsp;
     .disqus= disqus
