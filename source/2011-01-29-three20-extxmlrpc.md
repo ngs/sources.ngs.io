@@ -10,10 +10,12 @@ tags: github, hatena, ios, objective-c, three20, xmlrpc
 
 <s>[extXMLRPC | Extensions | Three20](http://three20.info/extension/extXMLRPC)</s>
 
+READMORE
+
 使い方は、上記のページの _Breakdown_ に記載されていますが、去年の 10月に、Facebook の Jeff 氏に言われて、 ( YAPC Asia に参加中に片手間で )&nbsp;作ったサンプルも公開しているので、参考になればと思います。
 
 [ngs / Samples/tree/master/XMLRPCSample](https://github.com/ngs/Samples/tree/master/XMLRPCSample)
 
 このサンプルは " [はてなキーワード連想語API](http://developer.hatena.ne.jp/ja/documents/keyword/apis/association)&nbsp;" を使って、延々と関連ワードを辿ってゆくものです。
 
-![Capture](2011-01-29-three20-extxmlrpc/capture.jpg)
+![iphone capture](2011-01-29-three20-extxmlrpc/capture.jpg)

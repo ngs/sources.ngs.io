@@ -10,11 +10,11 @@ tags: gist, github, ruby, scrippets, snippets
 
 まだ、第一章しか読んでいないので、感想は書けません。
 
-&nbsp;
-
 このエントリーで、[Snippets](http://www.snippetsapp.com/) というソフトウェアに触れられていたので、ダウンロードして、試用しています。
 
 今まで、同じ様な用途に、Evernote を使っていたのですが、こちらは、テキストデータに特化しているので、検索が早く、シンタックスハイライトも付いているので、気に入りました。
+
+READMORE
 
 メニューバーから、[Scrippets](http://www.snippetsapp.com/extras/) という、拡張機能が選択でき、そこから、各種スニペット共有サイトにポストできたり、Placeholder (テンプレートタグみたいなもの) を置換したりできます。画像のものは、バンドルされているものです。
 

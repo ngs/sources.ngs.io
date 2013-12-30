@@ -8,17 +8,23 @@ tags: ruby, rdoc, bootstrap
 
 Twitter Bootstrap に互換性のある RDoc テンプレートを [Hanna Nouveau](https://github.com/rdoc/hanna-nouveau) という Generator を Fork して書きました。
 
-http://ngs.github.io/hanna-bootstrap/
+[http://ngs.github.io/hanna-bootstrap/](http://ngs.github.io/hanna-bootstrap/)
+
+READMORE
 
 ## インストール
 
 RubyGems から
 
-    gem install hanna-bootstrap
+```bash
+gem install hanna-bootstrap
+```
 
 または git-clone
 
-    git clone git://github.com/ngs/hanna-bootstrap.git
+```bash
+git clone git://github.com/ngs/hanna-bootstrap.git
+```
 
 ## 使い方
 

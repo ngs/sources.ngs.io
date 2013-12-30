@@ -15,15 +15,49 @@ tags: cycling, LiveCycling, sqlite, ruby, しまなみ海道, 尾道
 
 Strava にアップしている情報 ( 速度、位置、ケイデンス、心拍数 )は iPhone アプリの [LiveCycling](http://goo.gl/is1CY) を使用しており、途中で電池が切れてスペアの iPhone に交換したので、記録が2つに分かれています。
 
-<iframe scrolling="no" src="http://app.strava.com/runs/2968996/embed/13d42a6ddc4e3161a9060a85af0cc8a8c458398c" frameborder="0" height="405" width="500"></iframe> <iframe scrolling="no" src="http://app.strava.com/runs/2969000/embed/52b7b944474a468a161bf268f1367f886509064a" frameborder="0" height="405" width="500"></iframe>
+* [往路](http://app.strava.com/activities/%E5%B0%BE%E9%81%93%E5%B8%82-%E5%BA%83%E5%B3%B6%E7%9C%8C-japan-2968996)
+* [復路](http://app.strava.com/activities/%E4%BB%8A%E6%B2%BB%E5%B8%82-%E6%84%9B%E5%AA%9B%E7%9C%8C-japan-2969000)
+
 
 後でメインの iPhone にスペア分をコピーするために、スクリプトを書いたので Gist に手順を残しておきました
  [Gist:1540055](https://gist.github.com/1540055)
 
 // LiveCycling に .tcx を読み込む機能があれば、こんなことする手間をかけなくて良かったのになー、と思います。
 
-<script src="https://gist.github.com/1540055.js?file=README.mkdn"></script>
-<script src="https://gist.github.com/1540055.js?file=import.rb"></script>
+[LiveCycling](http://goo.gl/is1CY) を使った長距離サイクリングの途中で iPhone の電池が切れてスペアで記録をとったので、そのデータをメインにコピーするために書きました。
+
+sqlite3-ruby 依存です。`gem install sqlite3` などしてインストールして下さい。
+
+1. スペア iPhone をコンピュータに接続し、log.sqlite をディスクトップなどに保存。log1.sqlite にリネームする。 ( [参考](http://www.soneru.com/apps/LiveCycling/jp/) )
+2. メイン iPhone からも上記と同じ方法で log.sqlite を取り出し、log2.sqlite にリネームする。
+3. このスクリプトを2つのファイルと同じディレクトリに設置。cli で実行する
+
+```ruby
+#!/usr/bin/env ruby
+
+require 'sqlite3'
+
+db1 = SQLite3::Database.new('log1.sqlite')
+db2 = SQLite3::Database.new('log2.sqlite')
+db2.transaction
+
+work = db1.get_first_row( "select * from SUMFIL order by workid desc limit 1" )
+workid1 = work[0]
+work[0] = nil
+
+db2.execute( "insert into SUMFIL values (#{ ["?"] * work.size * "," })", work )
+workid2 = db2.last_insert_row_id
+
+db1.execute( "select * from LOGFIL where workid = ?", workid1 ) do |row|
+  row[0] = nil
+  row[row.size - 1] = workid2
+  db2.execute( "insert into LOGFIL values (#{ ["?"] * row.size * "," })", row )
+end
+
+db1.close
+db2.commit
+db2.close
+```
 
 とりあえず普段使いは引き続き [LiveCycling](http://goo.gl/is1CY) ですが、長距離用に [Garmin edge 500](http://amzn.to/ukFTKs) をポチりました。東京に帰る頃には手に入ると思います。wktk
 

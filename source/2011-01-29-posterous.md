@@ -8,6 +8,8 @@ tags: blog, dreamhost, facebook, github, hosting, infrastructure, littleapps, po
 
 ブログや Wiki 、Subversion リポジトリ、友達のサイトなど、相乗りで 使えるネット の VPS に構築していましたが、バージョン管理を Git に移行したり、同じ Apache に、モジュールを共存させすぎたのが原因で、負荷が高かったので、メンテナンスが億劫になり、それぞれウェブサービスに移行しました。
 
+READMORE
+
 #### 個人/会社サイトホーム
 
 [GitHub Pages](http://pages.github.com/)

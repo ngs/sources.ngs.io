@@ -8,6 +8,8 @@ tags: github, markdown, posterous, scrippets, snippets
 
 2つの scrippet を GitHub で公開しました。
 
+READMORE
+
 1つめは、_[Posterous](https://github.com/ngs/snippets-posterous-scrippet)_ です。 Snippets から Posterous にエントリーを投稿出来ます。
 
 下書きを Snippets で書いて、そのまま公開できます。

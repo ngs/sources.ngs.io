@@ -8,6 +8,8 @@ tags: charset, mysql, node.js
 
 [Sequelize](http://sequelizejs.com/) を使ってアプリを作っているのですが、どうしても、日本語がうまく入りません。
 
+READMORE
+
 Sequelize は、[mysql-native](https://github.com/sidorares/nodejs-mysql-native) をドライバとして採用しており、こちらをそのまま、以下の様にシンプルに叩いてみても、やはり文字化けします。
 
 ```js
