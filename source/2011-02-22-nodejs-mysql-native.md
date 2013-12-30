@@ -10,17 +10,43 @@ tags: charset, mysql, node.js
 
 Sequelize は、[mysql-native](https://github.com/sidorares/nodejs-mysql-native) をドライバとして採用しており、こちらをそのまま、以下の様にシンプルに叩いてみても、やはり文字化けします。
 
-<p>[https://gist.github.com/839181.js?file=test-mysql-native](https://gist.github.com/839181.js?file=test-mysql-native)
-</p>
+```js
+#!/usr/bin/env node
+ 
+var db = require("mysql-native").createTCPClient();
+db.auto_prepare = true;
+db.auth("test", "root", null);
+db.query("INSERT INTO test (title, text, createdAt, updatedAt) VALUES ('あああ','本日は晴天なり','2011-02-23 02:04:59','2011-02-23 02:04:59')");
+db.close();
+```
 
 別のモジュールで、[node-mysql](https://github.com/felixge/node-mysql) を使うとうまくいきます。
 
-<p>[https://gist.github.com/839181.js?file=test-mysql](https://gist.github.com/839181.js?file=test-mysql)
-</p>
+```js
+#!/usr/bin/env node
+ 
+var Client = require('mysql').Client,
+    client = new Client();
+ 
+client.user = 'root';
+client.connect();
+client.query("USE test");
+client.query("INSERT INTO test (title, text, createdAt, updatedAt) VALUES ('あああ','本日は晴天なり','2011-02-23 02:04:59','2011-02-23 02:04:59')");
+client.end();
+```
 
 参考までに DDL です。
 
-<script src="https://gist.github.com/839181.js?file=schema.sql"></script>
+```sql
+CREATE TABLE `test` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `title` varchar(256),
+  `text` text,
+  `createdAt` datetime,
+  `updatedAt` datetime,
+  PRIMARY KEY (`id`)
+) DEFAULT CHARSET=utf8;
+```
 
 Sequelize のコードに手を入れるべきか、mysql-native のコードに手を入れるべきか、もし、正しい解決方法をご存知の方がいらっしゃいましたらご教示ください。
 
