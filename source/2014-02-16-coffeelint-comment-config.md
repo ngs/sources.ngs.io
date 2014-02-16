@@ -1,6 +1,6 @@
 ---
-title: インラインのコメントから coffeelint の設定を有効/無効化する
-description: インラインのコメントから coffeelint の設定を有効/無効化する機能について
+title: インラインのコメントから CoffeeLint の設定を有効/無効化する
+description: インラインのコメントから CoffeeLint の設定を有効/無効化する機能について
 date: 2014-02-16 22:30
 public: true
 tags: CoffeeScript, CoffeeLint
