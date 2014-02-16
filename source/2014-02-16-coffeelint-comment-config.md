@@ -1,12 +1,12 @@
 ---
-title: CoffeeLint で該当行だけ設定を有効/無効化する
-description: CoffeeLint で、コメントアウトで該当行だけ設定を有効/無効化する機能について
+title: インラインのコメントから coffeelint の設定を有効/無効化する
+description: インラインのコメントから coffeelint の設定を有効/無効化する機能について
 date: 2014-02-16 22:30
 public: true
 tags: CoffeeScript, CoffeeLint
 ---
 
-他言語の lint だったらある機能なので、無いはずないだろうと思っても、ドキュメントではどこにも見当たらず、テストコードを見たら、実装されていました。
+インラインのコメントから設定を有効/無効化する機能は、他言語の lint だったら、当たり前の様にあるので、無いはずないだろうと思っても、ドキュメントではどこにも見当たらず、テストコードを見たら、実装されていました。
 
 [test/test_comment_config.coffee on master](https://github.com/clutchski/coffeelint/blob/master/test/test_comment_config.coffee)
 
