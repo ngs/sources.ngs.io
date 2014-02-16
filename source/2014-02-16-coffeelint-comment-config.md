@@ -10,6 +10,8 @@ tags: CoffeeScript, CoffeeLint
 
 [test/test_comment_config.coffee on master](https://github.com/clutchski/coffeelint/blob/master/test/test_comment_config.coffee)
 
+READMORE
+
 ```coffeescript
 # coffeelint: disable=no_trailing_semicolons
 a 'you get a semi-colon';
