@@ -8,7 +8,7 @@ GIT
 
 GIT
   remote: git://github.com/ngs/middleman-ogp.git
-  revision: 39ae297661324f30329f829cad69e6c8d2ae809b
+  revision: 824b2fe9b7124e01c8309c4c649b5aff74e95b99
   branch: blog-support
   specs:
     middleman-ogp (1.0.2)
