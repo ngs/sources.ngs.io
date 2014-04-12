@@ -7,14 +7,16 @@
     %meta{ content: "Middleman #{Middleman::VERSION}", name: 'generator' }
     %link{ rel: 'author', href: 'https://plus.google.com/+AtsushiNAGASE' }
     %title= "#{ current_article.title + ' - '  unless current_article.nil? }ja.ngs.io"
+    - ogp_tags do|name, value|
+      %meta{  property: name, content: value }
     - %w{ bootstrap application syntax font-awesome }.each do|css|
       = stylesheet_link_tag css
-    - if data.page.description
-      %meta{ content: data.page.description, name: "description" }
+    - if current_page.data.description
+      %meta{ content: current_page.data.description, name: "description" }
     - else
       %meta{ content: "プログラミング、ガジェット、電子工作、ロードバイク、ランニング、旅行など", name: "description" }
-    - if data.page.keywords
-      %meta{ content: data.page.keywords, name: "keywords" }
+    - if current_page.data.keywords
+      %meta{ content: current_page.data.page.keywords, name: "keywords" }
     %meta{ content: "長瀬 敦史", name: "author" }
     = feed_tag :atom, "#{blog.options.prefix.to_s}/feed.xml", title: "Atom Feed"
   %body

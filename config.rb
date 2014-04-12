@@ -97,8 +97,16 @@ set :images_dir, 'images'
 
 configure :development do
   activate :google_analytics do |ga|
-    ga.tracking_id = false
+    ga.tracking_id = 'UA-XXXXXX-YY'
   end
+end
+
+activate :ogp do |ogp|
+  ogp.namespaces = {
+    fb: data.ogp.fb,
+    og: data.ogp.og
+  }
+  ogp.blog = true
 end
 
 # Build-specific configuration

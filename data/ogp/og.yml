@@ -1,0 +1,9 @@
+title: ja.ngs.io
+site_name: ja.ngs.io
+locale: ja_JP
+type: website
+description: 'プログラミング、ガジェット、電子工作、ロードバイク、ランニング、旅行など'
+image:
+  '': 'http://www.gravatar.com/avatar/e10997c59685f5c742a63b3e3049d4fb.png?s=500'
+  width: 500
+  height: 500

@@ -8,6 +8,7 @@ gem 'middleman-deploy'
 gem 'middleman-disqus'
 gem 'middleman-google-analytics'
 gem 'middleman-syntax', :git => 'git://github.com/middleman/middleman-syntax.git'
+gem 'middleman-ogp', :git => 'git://github.com/ngs/middleman-ogp.git', :branch => 'blog-support'
 gem 'redcarpet'
 
 gem 'nokogiri'
