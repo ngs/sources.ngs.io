@@ -6,7 +6,12 @@
     %meta{ content: 'width=device-width, initial-scale=1, maximum-scale=1', name: 'viewport' }
     %meta{ content: "Middleman #{Middleman::VERSION}", name: 'generator' }
     %link{ rel: 'author', href: 'https://plus.google.com/+AtsushiNAGASE' }
-    %title= "#{ current_article.title + ' - '  unless current_article.nil? }ja.ngs.io"
+    %title
+      - if current_article
+        = "#{current_article.title} - "
+      - elsif content_for?(:title)
+        = "#{yield_content(:title)} - "
+      = "ja.ngs.io"
     - ogp_tags do|name, value|
       %meta{  property: name, content: value }
     - %w{ bootstrap application syntax font-awesome }.each do|css|
@@ -58,3 +63,7 @@
           \.
 
     = google_analytics_tag
+
+
+- content_for :title do
+  = "ja.ngs.io"

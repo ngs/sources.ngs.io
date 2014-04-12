@@ -1,18 +1,24 @@
 ---
 pageable: true
 ---
+:ruby
+  calendar_title = case page_type
+    when 'day'
+      Date.new(year, month, day).strftime('%Y年%m月%d日')
+    when 'month'
+      Date.new(year, month, 1).strftime('%Y年%m月')
+    when 'year'
+      "#{year}年"
+    end
 %p.home-link
   = link_to '/' do
     %span.glyphicon.glyphicon-home
     &nbsp;ホーム
 %h1
-  %time
-    - case page_type
-    - when 'day'
-      = Date.new(year, month, day).strftime('%Y年%m月%d日')
-    - when 'month'
-      = Date.new(year, month, 1).strftime('%Y年%m月')
-    - when 'year'
-      = "#{year}年"
+  %time= calendar_title
   のエントリー
+
 = partial "entries", locals: locals
+
+- content_for :title do
+  = "#{calendar_title}のエントリー"

@@ -107,6 +107,7 @@ activate :ogp do |ogp|
     og: data.ogp.og
   }
   ogp.blog = true
+  ogp.base_url = 'http://ja.ngs.io/'
 end
 
 # Build-specific configuration

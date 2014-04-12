@@ -10,3 +10,6 @@ per_page: 12
   タグ:
   %q= tagname
 = partial "entries", locals: locals
+
+- content_for :title do
+  = %Q{タグ: &quot;#{tagname}&quot;}
