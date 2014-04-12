@@ -15,4 +15,29 @@
             = link_to tag_path(tag) do
               %span.glyphicon.glyphicon-tag
               = tag
+
+    #fb-root
+    :javascript
+      (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) {return;}
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/ja_JP/all.js#appId=250606621791116&xfbml=1";
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
+    :javascript
+      (function() {
+        var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+        script.src = 'https://apis.google.com/js/plusone.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+      })();
+    :javascript
+      (function(){
+        var twitterWidgets = document.createElement('script');
+        twitterWidgets.type = 'text/javascript';
+        twitterWidgets.async = true;
+        twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+        document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+      })();
+
     .disqus= disqus
