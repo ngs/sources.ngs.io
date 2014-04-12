@@ -1,7 +1,7 @@
 ---
 title: middleman-ogp を作りました。
 description: Middleman で OpenGraph Protocol タグを書き込む機能拡張を作りました
-date: 2014-04-13 05:00
+date: 2014-04-13 02:20
 public: true
 tags: Middleman, OpenGraph
 ---
