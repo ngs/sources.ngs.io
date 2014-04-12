@@ -8,7 +8,6 @@ xml.urlset 'xmlns' => "http://www.sitemaps.org/schemas/sitemap/0.9" do
     xml.priority "1.0"
   end
   blog.articles.each do |article|
-    p article.date
     xml.url do
       xml.loc URI.join(site_url, article.url)
       xml.lastmod article.date.to_time.iso8601
