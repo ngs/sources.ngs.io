@@ -30,6 +30,20 @@
         %main.col-md-9{ role: 'main' }
           = yield
         %aside.col-md-3
+          %h2 ナビゲーション
+          %ol.nav
+            %li
+              = link_to '/' do
+                %span.glyphicon.glyphicon-home
+                &nbsp;ホーム
+              = link_to '/about' do
+                %span.glyphicon.glyphicon-user
+                &nbsp;自己紹介
+              = link_to 'http://ngs.io/' do
+                %span.glyphicon.glyphicon-pencil
+                &nbsp;Blog (English)
+
+        %aside.col-md-3
           %h2 最近の記事
           %ol.nav
             - blog.articles.select {|a| a.data[:public] }.sort { |x,y| y.date <=> x.date }[0...10].each do |article|
