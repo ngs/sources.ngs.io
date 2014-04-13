@@ -1,7 +1,11 @@
 ---
 language: ruby
 cache: bundler
-script: bundle exec middleman build
+script: >
+  cd $TRAVIS_BUILD_DIR/sites/ja.ngs.io &&
+  bundle exec middleman build &&
+  cd $TRAVIS_BUILD_DIR/sites/ngs.io &&
+  bundle exec middleman build
 env:
   global:
     - GIT_COMMITTER_NAME='ngs@travis-ci'
