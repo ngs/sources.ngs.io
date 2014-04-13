@@ -20,5 +20,5 @@ tags: api, iphone, recruit, じゃらん, じゃらんウェブサービス
 来年こそ、Android の波がやってき(そう|てほしい)なので、
 [宿ろいど]のバージョンアップにも着手したいな、と思っています。
 
-[宿ろいど]: https://play.google.com/store/apps/details?id=org.ngsdev.yadoroid
+[宿ろいど]: /2009/07/02/yadoroid/
 [AppStore]: http://littleapps.jp/yadosearch/
