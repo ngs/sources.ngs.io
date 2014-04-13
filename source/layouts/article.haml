@@ -17,7 +17,7 @@
               = tag
       %ul.nav.nav-pills.pull-right
         %li
-          = link_to( current_article.source_file.gsub(/^.+\/([^\/]+)$/, "https://github.com/ngs/source.ngs.io/blob/master/source/#{ I18n.locale.to_s }/\\1"), title: 'View on GitHub', rel: 'nofollow' ) do
+          = link_to( current_article.source_file.gsub(/^.+\/([^\/]+)$/, "https://github.com/ngs/source.ngs.io/blob/master/source/#{ I18n.locale.to_s }/\\1"), title: 'View on GitHub', rel: 'nofollow', 'data-toggle' => 'tooltip', 'data-container' => 'footer.meta', 'data-placement' => 'left' ) do
             %span.fa.fa-github-alt &nbsp;
       .social-buttons.clearfix
         - url = URI.join(t('blog.url'), URI.escape(current_article.url))

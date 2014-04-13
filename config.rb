@@ -42,10 +42,6 @@ page "/feed.xml",    layout: false
 page "/sitemap.xml", layout: false
 page "/404.html",    directory_index: false
 
-compass_config do |config|
-  config.output_style = :compact
-end
-
 require 'haml'
 require 'sass'
 require 'coffee-script'
@@ -53,6 +49,15 @@ require 'coffee-script'
 set :css_dir, 'stylesheets'
 set :js_dir, 'javascripts'
 set :images_dir, 'images'
+
+compass_config do |config|
+  config.output_style = :compact
+end
+
+ready do
+  sprockets.append_path '/lib/javascripts/'
+  sprockets.append_path '/lib/stylesheets/'
+end
 
 configure :development do
   activate :google_analytics do |ga|

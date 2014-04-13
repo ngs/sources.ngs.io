@@ -14,8 +14,8 @@
       = t 'blog.title'
     - ogp_tags do|name, value|
       %meta{  property: name, content: value }
-    - %w{ bootstrap application syntax font-awesome }.each do|css|
-      = stylesheet_link_tag css
+    = stylesheet_link_tag 'application'
+    = javascript_include_tag 'application'
     - if current_page.data.description
       %meta{ content: current_page.data.description, name: "description" }
     - else
