@@ -14,6 +14,6 @@ env:
     - GIT_AUTHOR_EMAIL='a+travis@ngs.io'
     - secure: "UcV3qTN87+aWcpEZL61QGXH5stFj2WUbHQwZZiXqxCv0+YNZv4S6bZzPi6oponGbe+DSGLCZmFhIuP2Ckmc2eRC2X3DRPCb0wBXcQ1TnUWb/IHqloHpUXdyZUWY563i8LuoRZ9hdUUjvIwa5X6JbcdyB3e9vWW2/kgqZXjLOK34="
 after_success:
-  - '[ "$TRAVIS_BRANCH" == "master" ] && [ $GH_TOKEN ] && MM_LANG=en; bundle exec middleman deploy >/dev/null 2>&1'
-  - '[ "$TRAVIS_BRANCH" == "master" ] && [ $GH_TOKEN ] && MM_LANG=ja; bundle exec middleman deploy >/dev/null 2>&1'
+  - 'MM_LANG=en; [ "$TRAVIS_BRANCH" == "master" ] && [ $GH_TOKEN ] && bundle exec middleman deploy >/dev/null 2>&1'
+  - 'MM_LANG=ja; [ "$TRAVIS_BRANCH" == "master" ] && [ $GH_TOKEN ] && bundle exec middleman deploy >/dev/null 2>&1'
 
