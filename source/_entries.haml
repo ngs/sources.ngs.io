@@ -8,7 +8,7 @@
         = article.summary
     %p.read-more
       = link_to article.url, class: 'btn btn-default btn-sm' do
-        もっと読む
+        = t :read_more
         %span.glyphicon.glyphicon-play-circle &nbsp;
 - if paginate && (next_page || num_pages > 1)
   .text-center

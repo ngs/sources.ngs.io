@@ -7,6 +7,12 @@ xml.urlset 'xmlns' => "http://www.sitemaps.org/schemas/sitemap/0.9" do
     xml.changefreq "daily"
     xml.priority "1.0"
   end
+  xml.url do
+    xml.loc URI.join(site_url, '/about/')
+    xml.lastmod blog.articles.first.date.to_time.iso8601
+    xml.changefreq "daily"
+    xml.priority "0.8"
+  end
   blog.articles.each do |article|
     xml.url do
       xml.loc URI.join(site_url, article.url)

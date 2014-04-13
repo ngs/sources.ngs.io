@@ -1,0 +1,23 @@
+---
+ja:
+  read_more: もっと読む
+  file_not_found: ファイルが見つかりません。
+  navigation: ナビゲーション
+  tags: タグ
+  monthly: 月別
+  home: ホーム
+  aboutme: 自己紹介
+  recent_entries: 最近の記事
+  calendar_title:
+    text: "%{title}のエントリー"
+    html: "<time>%{title}</time>のエントリー"
+    format:
+      day: "%Y年%m月%d日"
+      month: "%Y年%m月"
+      year: "%Y年"
+  blog:
+    url: http://ja.ngs.io/
+    title: ja.ngs.io
+    description: プログラミング、ガジェット、電子工作、ロードバイク、ランニング、旅行など、趣味や仕事のことを書き綴るブログ。
+  author:
+    name: 長瀬 敦史

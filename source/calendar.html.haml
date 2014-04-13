@@ -4,17 +4,16 @@ pageable: true
 :ruby
   calendar_title = case page_type
     when 'day'
-      Date.new(year, month, day).strftime('%Y年%m月%d日')
+      Date.new(year, month, day).strftime(t 'calendar_title.format.day')
     when 'month'
-      Date.new(year, month, 1).strftime('%Y年%m月')
+      Date.new(year, month, 1).strftime(t 'calendar_title.format.month')
     when 'year'
-      "#{year}年"
+      Date.new(year, 1, 1).strftime(t 'calendar_title.format.year')
     end
 %h1
-  %time= calendar_title
-  のエントリー
+  = t 'calendar_title.html', title: calendar_title
 
 = partial "entries", locals: locals
 
 - content_for :title do
-  = "#{calendar_title}のエントリー"
+  = t 'calendar_title.text', title: calendar_title

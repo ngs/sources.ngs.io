@@ -11,7 +11,7 @@
         = "#{current_article.title} - "
       - elsif content_for?(:title)
         = "#{yield_content(:title)} - "
-      = "ja.ngs.io"
+      = t 'blog.title'
     - ogp_tags do|name, value|
       %meta{  property: name, content: value }
     - %w{ bootstrap application syntax font-awesome }.each do|css|
@@ -19,10 +19,10 @@
     - if current_page.data.description
       %meta{ content: current_page.data.description, name: "description" }
     - else
-      %meta{ content: "プログラミング、ガジェット、電子工作、ロードバイク、ランニング、旅行など", name: "description" }
+      %meta{ content: t('blog.description'), name: "description" }
     - if current_page.data.keywords
       %meta{ content: current_page.data.page.keywords, name: "keywords" }
-    %meta{ content: "長瀬 敦史", name: "author" }
+    %meta{ content: t('author.name'), name: "author" }
     = feed_tag :atom, "#{blog.options.prefix.to_s}/feed.xml", title: "Atom Feed"
   %body
     .container
@@ -33,29 +33,35 @@
           %main.col-md-9{ role: 'main' }
             = yield
         %aside.col-md-3
-          %h2 ナビゲーション
+          %h2= t :navigation
           %ol.nav{ itemscope: "itemscope", itemtype: "http://www.schema.org/SiteNavigationElement" }
             %li
               = link_to '/', itemprop: 'url' do
                 %span.glyphicon.glyphicon-home
                 &nbsp;
-                %span{ itemprop: 'name' } ホーム
+                %span{ itemprop: 'name' }= t :home
               = link_to '/about', itemprop: 'url' do
                 %span.glyphicon.glyphicon-user
                 &nbsp;
-                %span{ itemprop: 'name' } 自己紹介
-              = link_to 'http://ngs.io/', itemprop: 'url' do
-                %span.glyphicon.glyphicon-pencil
-                &nbsp;
-                %span{ itemprop: 'name' } Blog (English)
-          %h2 最近の記事
+                %span{ itemprop: 'name' }= t :aboutme
+              - if I18n.locale.to_s == 'ja'
+                = link_to 'http://ngs.io/', itemprop: 'url' do
+                  %span.glyphicon.glyphicon-pencil
+                  &nbsp;
+                  %span{ itemprop: 'name' } Blog (English)
+              - else
+                = link_to 'http://ja.ngs.io/', itemprop: 'url' do
+                  %span.glyphicon.glyphicon-pencil
+                  &nbsp;
+                  %span{ itemprop: 'name' } ブログ (日本語)
+            %h2= t :recent_entries
           %ol.nav
             - blog.articles.select {|a| a.data[:public] }.sort { |x,y| y.date <=> x.date }[0...10].each do |article|
               %li
                 = link_to article do
                   %span.title= article.title
                   %time= article.date.strftime('%Y/%m/%d')
-          %h2 タグ
+          %h2= t :tags
           %ol.nav
             - blog.tags.sort.each do |tag, articles|
               %li
@@ -63,13 +69,13 @@
                   %span.glyphicon.glyphicon-tag
                   = tag
                   %span.badge.pull-right= articles.size
-          %h2 月別
+          %h2= t :monthly
           %ol.nav
             - blog.articles.select {|a| a.data[:public] }.group_by {|a| a.date.year }.each do |year, year_articles|
               - year_articles.group_by {|a| a.date.month }.each do |month, month_articles|
                 %li
                   = link_to blog_month_path(year, month) do
-                    = sprintf '%04d年%02d月', year, month
+                    = Date.new(year, month, 1).strftime(t 'calendar_title.format.month')
                     %span.badge.pull-right= month_articles.size
       %footer.row
         %address.col-md-12<
@@ -87,6 +93,5 @@
 
     = google_analytics_tag
 
-
 - content_for :title do
-  = "ja.ngs.io"
+  = t 'blog.title'
