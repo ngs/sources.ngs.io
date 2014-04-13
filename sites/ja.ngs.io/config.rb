@@ -61,7 +61,6 @@ activate :ogp do |ogp|
 end
 
 configure :build do
-  IO.write "source/CNAME", "ja.ngs.io"
   activate :minify_css
   activate :minify_javascript
   activate :asset_hash
@@ -78,6 +77,7 @@ activate :disqus do |d|
 end
 
 activate :deploy do |deploy|
+  IO.write "source/CNAME", "ja.ngs.io"
   deploy.method = :git
   deploy.branch = 'gh-pages'
   deploy.remote = "https://#{ENV['GH_TOKEN']}@github.com/ngs/ja.ngs.io.git"
