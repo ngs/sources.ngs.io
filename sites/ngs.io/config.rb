@@ -64,7 +64,7 @@ configure :build do
   IO.write "source/CNAME", "ngs.io"
   activate :minify_css
   activate :minify_javascript
-  activate :asset_hash
+  activate :asset_hash, ignore: 'images'
   ignore '.DS_Store'
   ignore '.*.swp'
   ignore '/about/index.ja.html'

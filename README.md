@@ -1,6 +1,12 @@
-ja.ngs.io
-=========
+sources.ngs.io
+==============
 
-プログラミング、ガジェット、電子工作、ロードバイク、ランニング、旅行など、趣味や仕事のことを書き綴るブログ。
+Blog Sources
 
-[![Build Status](https://travis-ci.org/ngsio/ja.ngs.io.png?branch=master)](https://travis-ci.org/ngsio/ja.ngs.io)
+[日本語] / [English]
+
+[![Build Status](https://travis-ci.org/ngs/sources.ngs.io.png?branch=master)](https://travis-ci.org/ngs/sources.ngs.io)
+
+
+[日本語]: http://ja.ngs.io/
+[English]: http://ngs.io/

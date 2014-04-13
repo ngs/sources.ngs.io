@@ -3,9 +3,8 @@ pageable: true
 per_page: 12
 ---
 %h1
-  タグ:
-  %q= tagname
+  = t 'tag_title.html', tag: tagname
 = partial "entries", locals: locals
 
 - content_for :title do
-  = %Q{タグ: &quot;#{tagname}&quot;}
+  = t 'tag_title.text', tag: tagname

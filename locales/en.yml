@@ -23,3 +23,6 @@ en:
     description: Hacking recipes in my life.
   author:
     name: Atsushi Nagase
+  tag_title:
+    text: "Entries tagged with &quot;%{tag}&quot;"
+    html: "Entries tagged with <q>%{tag}</q>"

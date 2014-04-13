@@ -23,3 +23,6 @@ ja:
     description: プログラミング、ガジェット、電子工作、ロードバイク、ランニング、旅行など、趣味や仕事のことを書き綴るブログ。
   author:
     name: 長瀬 敦史
+  tag_title:
+    text: "タグ: &quot;%{tag}&quot;"
+    html: "タグ: <q>%{tag}</q>"
