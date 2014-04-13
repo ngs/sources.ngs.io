@@ -19,7 +19,7 @@
       .social-buttons.clearfix
         = link_to 'つぶやく', 'http://twitter.com/share', class: 'twitter-share-button', 'data-url' => "http://ja.ngs.io#{current_article.url}", 'data-via' => 'ngs', 'data-counturl' => "http://ja.ngs.io#{current_article.url}"
         .g-plusone{ 'data-size' => 'medium' }
-        .fb-like{ 'data-send' => true, 'data-width' => 450, 'data-show-faces' => false }
+        .fb-like{ 'data-send' => 'true', 'data-width' => '450', 'data-show-faces' => 'false' }
 
     .disqus= disqus
 
