@@ -2,7 +2,7 @@
   %article.entry
     %h1= current_article.title
     %p.meta
-      %time= current_article.date.strftime('%Y/%m/%d')
+      %time{ itemprop: "startDate", datetime: current_article.date.to_time.to_s }= current_article.date.strftime('%Y/%m/%d %H:%M')
     = preserve do
       = yield
     .meta

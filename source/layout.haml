@@ -31,17 +31,20 @@
           = yield
         %aside.col-md-3
           %h2 ナビゲーション
-          %ol.nav
+          %ol.nav{ itemscope: "itemscope", itemtype: "http://www.schema.org/SiteNavigationElement" }
             %li
-              = link_to '/' do
+              = link_to '/', itemprop: 'url' do
                 %span.glyphicon.glyphicon-home
-                &nbsp;ホーム
-              = link_to '/about' do
+                &nbsp;
+                %span{ itemprop: 'name' } ホーム
+              = link_to '/about', itemprop: 'url' do
                 %span.glyphicon.glyphicon-user
-                &nbsp;自己紹介
-              = link_to 'http://ngs.io/' do
+                &nbsp;
+                %span{ itemprop: 'name' } 自己紹介
+              = link_to 'http://ngs.io/', itemprop: 'url' do
                 %span.glyphicon.glyphicon-pencil
-                &nbsp;Blog (English)
+                &nbsp;
+                %span{ itemprop: 'name' } Blog (English)
           %h2 最近の記事
           %ol.nav
             - blog.articles.select {|a| a.data[:public] }.sort { |x,y| y.date <=> x.date }[0...10].each do |article|

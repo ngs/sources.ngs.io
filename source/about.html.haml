@@ -12,17 +12,17 @@ ogp:
 
 ---
 
-.row
+.row{ itemscope: true, itemtype: "http://data-vocabulary.org/Person" }
   .col-md-12
-    %h1 長瀬 敦史
-    %p Atsushi Nagase
-.row
+    %h1{ itemprop: "name" } 長瀬 敦史
+    %p{ itemprop: "name" } Atsushi Nagase
+.row{ itemscope: true, itemtype: "http://data-vocabulary.org/Person" }
   .col-md-3
     %p
-      %img.img-thumbnail{ src: 'http://www.gravatar.com/avatar/e10997c59685f5c742a63b3e3049d4fb.png?size=500' }
+      %img.img-thumbnail{ itemprop:"photo", src: 'http://www.gravatar.com/avatar/e10997c59685f5c742a63b3e3049d4fb.png?size=500' }
   .col-md-9
     :markdown
-      東京を拠点に活動している、ソフトウェアエンジニアです。
+      <span itemprop="address" itemscope itemtype="http://data-vocabulary.org/Address"><span itemprop="locality">東京</span>を拠点</span>に活動している、<span itemprop="title">ソフトウェアエンジニア</span>です。
 
       ## 略歴
 
@@ -36,7 +36,7 @@ ogp:
       * 2012年3月 [AppSocially](https://appsocial.ly/) というモバイル向けのネイティブアプリケーション用 SDK の開発を開始。
       * 2012年11月 「[Mashup Awards 8](http://ma8.mashupaward.jp/)」で [EverDesktop](http://everdesktop.com/) が Evernote Corporation 賞 受賞。
       * 2013年4月 AppSocially Inc. 米国デラウェア州で法人設立。間もなく[5月に退社](/2013/12/30/shokan2013/)。
-      * 2013年6月 [KAIZEN platform Inc.](http://kaizenplatform.in/) に参画し、現在に至ります。
+      * 2013年6月 <span itemprop="affiliation">[KAIZEN platform Inc.](http://kaizenplatform.in/)</span> に参画し、現在に至ります。
 
       ## ソフトウェアなど
 
