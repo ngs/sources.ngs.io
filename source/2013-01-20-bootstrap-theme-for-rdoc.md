@@ -30,10 +30,9 @@ git clone git://github.com/ngs/hanna-bootstrap.git
 
 RDoc::Task の `generator` オプションに `bootstrap` を指定する
 
-```ruby:Rakefile
+```ruby
 RDoc::Task.new do |rdoc|
   version = File.exist?('VERSION') ? File.read('VERSION') : ""
-
   rdoc.generator = 'bootstrap'
   rdoc.main = 'README.rdoc'
   rdoc.rdoc_dir = 'rdoc'
@@ -45,7 +44,6 @@ end
 
 または、コマンドラインオプションで指定します
 
-```sh:sample.sh
-$ rdoc -o doc -f bootstrap lib  .rb
+```sh
+rdoc -o doc -f bootstrap lib  .rb
 ```
-
