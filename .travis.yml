@@ -1,5 +1,7 @@
 ---
 language: ruby
+rvm:
+  - 2.0.0
 cache: bundler
 script: >
   cd $TRAVIS_BUILD_DIR/sites/ja.ngs.io &&
