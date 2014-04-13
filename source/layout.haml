@@ -27,8 +27,11 @@
   %body
     .container
       .row
-        %main.col-md-9{ role: 'main' }
-          = yield
+        - if content_for? :main
+          = yield_content :main
+        - else
+          %main.col-md-9{ role: 'main' }
+            = yield
         %aside.col-md-3
           %h2 ナビゲーション
           %ol.nav{ itemscope: "itemscope", itemtype: "http://www.schema.org/SiteNavigationElement" }
