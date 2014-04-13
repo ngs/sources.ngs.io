@@ -1,3 +1,5 @@
+Dotenv.load
+
 ###
 # Blog settings
 ###
