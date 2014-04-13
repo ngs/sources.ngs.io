@@ -69,11 +69,16 @@
                     %span.badge.pull-right= month_articles.size
       %footer.row
         %address.col-md-12<
-          Copyright &copy; #{ Time.now.year }
-          = link_to 'Atsushi Nagase', 'http://ngs.io/'
-          \.
           Proudly hosted by
           = link_to 'GitHub Pages', 'http://pages.github.com'
+          \.&nbsp;
+          Theme by
+          = link_to 'Lumen', 'http://bootswatch.com/lumen/'
+          from
+          = link_to 'Bootswatch', 'http://bootswatch.com/'
+          \.&nbsp;
+          Copyright &copy; #{ Time.now.year }&nbsp;
+          = link_to 'Atsushi Nagase', 'http://ngs.io/'
           \.
 
     = google_analytics_tag
