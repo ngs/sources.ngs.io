@@ -4,10 +4,8 @@ rvm:
   - 2.0.0
 cache: bundler
 script: >
-  cd $TRAVIS_BUILD_DIR/sites/ja.ngs.io &&
-  bundle exec middleman build &&
-  cd $TRAVIS_BUILD_DIR/sites/ngs.io &&
-  bundle exec middleman build
+  MM_LANG=ja bundle exec middleman build &&
+  MM_LANG=en bundle exec middleman build
 env:
   global:
     - GIT_COMMITTER_NAME='ngs@travis-ci'
@@ -16,6 +14,6 @@ env:
     - GIT_AUTHOR_EMAIL='a+travis@ngs.io'
     - secure: "aGawIkbR5/ZbUrwpMaba2cqtBSnJ1/PlFsNnv0sD58KX5vJ5qDt1XVJMPv0591lgzhi9swHC5TSMWFt0E+yU12gFPd64sgE0bhTGRiDWIWW0Gu0MpPXv5EcyGXPX7QEIpXRhm9NmYrqTFqldduhBTOHccWkwKbycKAwATp7dotA="
 after_success:
-  - '[ "$TRAVIS_BRANCH" == "master" ] && [ $GH_TOKEN ] && cd $TRAVIS_BUILD_DIR/sites/ja.ngs.io && bundle exec middleman deploy'
-  - '[ "$TRAVIS_BRANCH" == "master" ] && [ $GH_TOKEN ] && cd $TRAVIS_BUILD_DIR/sites/ngs.io && bundle exec middleman deploy'
+  - '[ "$TRAVIS_BRANCH" == "master" ] && [ $GH_TOKEN ] && MM_LANG=en && bundle exec middleman deploy'
+  - '[ "$TRAVIS_BRANCH" == "master" ] && [ $GH_TOKEN ] && MM_LANG=ja && bundle exec middleman deploy'
 

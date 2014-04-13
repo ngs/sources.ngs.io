@@ -2,18 +2,25 @@
 # Blog settings
 ###
 
+lang = (ENV['MM_LANG'] || 'ja').to_sym
+cname = ({
+  en: 'ngs.io',
+  ja: 'ja.ngs.io'
+})[lang]
+
 Time.zone = "Tokyo"
 
 activate :directory_indexes
 activate :syntax
-activate :i18n, langs: [:ja]
+activate :i18n, langs: [lang]
 
 set :markdown_engine, :redcarpet
 set :markdown, :fenced_code_blocks => true, :smartypants => true, :autolink => true
+set :build_dir,    "build-#{lang}"
 
 activate :blog do |blog|
   blog.permalink = "{year}/{month}/{day}/{title}/index.html"
-  blog.sources = "ja/{year}-{month}-{day}-{title}.html"
+  blog.sources = "#{lang}/{year}-{month}-{day}-{title}.html"
   blog.taglink = "t/{tag}/index.html"
   blog.layout = "article"
   blog.summary_separator = /(READMORE)/
@@ -53,32 +60,41 @@ end
 
 activate :ogp do |ogp|
   ogp.namespaces = {
-    fb: data.ja.ogp.fb,
-    og: data.ja.ogp.og
+    fb: data.send(lang).ogp.fb,
+    og: data.send(lang).ogp.og
   }
   ogp.blog = true
-  ogp.base_url = 'http://ja.ngs.io/'
+  ogp.base_url = "http://#{cname}/"
 end
 
 configure :build do
   activate :minify_css
   activate :minify_javascript
-  activate :asset_hash
+  activate :asset_hash, ignore: 'images'
   ignore '.DS_Store'
   ignore '.*.swp'
-  ignore '/about/index.en.html'
-  activate :google_analytics do |ga|
-    ga.tracking_id = 'UA-200187-34'
+  if lang == :en
+    ignore '/about/index.ja.html'
+    ignore '/ja/*'
+    activate :google_analytics do |ga|
+      ga.tracking_id = 'UA-200187-32'
+    end
+  else
+    ignore '/about/index.en.html'
+    ignore '/en/*'
+    activate :google_analytics do |ga|
+      ga.tracking_id = 'UA-200187-34'
+    end
   end
 end
 
 activate :disqus do |d|
-  d.shortname = "jangsio"
+  d.shortname = lang == :en ? "ngsio" : "jangsio"
 end
 
 activate :deploy do |deploy|
-  IO.write "source/CNAME", "ja.ngs.io"
+  IO.write "source/CNAME", cname
   deploy.method = :git
   deploy.branch = 'gh-pages'
-  deploy.remote = "https://#{ENV['GH_TOKEN']}@github.com/ngs/ja.ngs.io.git"
+  deploy.remote = "https://#{ENV['GH_TOKEN']}@github.com/ngs/#{cname}.git"
 end
