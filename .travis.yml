@@ -14,7 +14,7 @@ env:
     - GIT_COMMITTER_EMAIL='a+travis@ngs.io'
     - GIT_AUTHOR_NAME='ngs@travis-ci'
     - GIT_AUTHOR_EMAIL='a+travis@ngs.io'
-    - secure: "edQutmTwVQx14lVl8e6XmiAiZHASVzvrIb+X9/IBYl6muawTj7ZdvVQd9R9V0l9MVwxU7EWiFXXbw9f1RNBFFavKZm4A193K18+rsYAFCn4wfR+qY5XkQHfokcMIo2SU5aElJiSjegxYGdqakm91EQinl3yUCEeDlS5UNN8AZQk="
+    - secure: "aGawIkbR5/ZbUrwpMaba2cqtBSnJ1/PlFsNnv0sD58KX5vJ5qDt1XVJMPv0591lgzhi9swHC5TSMWFt0E+yU12gFPd64sgE0bhTGRiDWIWW0Gu0MpPXv5EcyGXPX7QEIpXRhm9NmYrqTFqldduhBTOHccWkwKbycKAwATp7dotA="
 after_success:
   - '[ "$TRAVIS_BRANCH" == "master" ] && [ $GH_TOKEN ] && cd $TRAVIS_BUILD_DIR/sites/ja.ngs.io && bundle exec middleman deploy'
   - '[ "$TRAVIS_BRANCH" == "master" ] && [ $GH_TOKEN ] && cd $TRAVIS_BUILD_DIR/sites/ngs.io && bundle exec middleman deploy'
