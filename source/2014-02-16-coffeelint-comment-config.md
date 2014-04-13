@@ -3,7 +3,7 @@ title: インラインのコメントから CoffeeLint の設定を有効/無効
 description: インラインのコメントから CoffeeLint の設定を有効/無効化する機能について
 date: 2014-02-16 20:30
 public: true
-tags: CoffeeScript, CoffeeLint
+tags: coffeescript, coffeelint
 ---
 
 インラインのコメントから設定を有効/無効化する機能は、他言語の lint だったら、当たり前の様にあるので、無いはずないだろうと思っても、ドキュメントではどこにも見当たらず、テストコードを見たら、実装されていました。
