@@ -1,10 +1,11 @@
 - page_articles.select {|a| a.data[:public] }.sort { |x,y| y.date <=> x.date }.each_with_index do |article, i|
-  %section.entry
-    %h2
-      = link_to article.title, article
-      %time= article.date.strftime('%Y/%m/%d')
-    = preserve do
-      = article.summary
+  %section.entry{ itemscope: true, itemtype: "http://schema.org/BlogPosting" }
+    %h2{ itemprop: "name" }
+      = link_to article.title, article, itemprop: "url"
+      %time{ itemprop: "datePublished", datetime: article.date.to_time.to_s }= article.date.strftime('%Y/%m/%d %H:%M')
+    .article-body{ itemprop: "articleBody" }
+      = preserve do
+        = article.summary
     %p.read-more
       = link_to article.url, class: 'btn btn-default btn-sm' do
         もっと読む
