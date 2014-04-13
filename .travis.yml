@@ -4,8 +4,10 @@ rvm:
   - 2.0.0
 cache: bundler
 script: >
-  MM_LANG=ja bundle exec middleman build &&
-  MM_LANG=en bundle exec middleman build
+  echo "MM_LANG=en" > .env &&
+  bundle exec middleman build &&
+  echo "MM_LANG=ja" > .env &&
+  bundle exec middleman build
 env:
   global:
     - GIT_COMMITTER_NAME='ngs@travis-ci'
