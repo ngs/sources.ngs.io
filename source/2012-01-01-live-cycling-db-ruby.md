@@ -3,7 +3,7 @@ title: しまなみ海道 と LiveCycling の SQLite
 description: 2011/12/30 向島 - 今治 - 瀬戸田 というコースでしまなみ海道を渡ってきました。
 date: 2012-01-01 00:00
 public: true
-tags: cycling, LiveCycling, sqlite, ruby, しまなみ海道, 尾道
+tags: cycling, livecycling, sqlite, ruby, しまなみ海道, 尾道
 ---
 あけましておめでとうございます。今年もよろしくお願いいたします。
 

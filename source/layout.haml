@@ -53,7 +53,7 @@
                   %time= article.date.strftime('%Y/%m/%d')
           %h2 タグ
           %ol.nav
-            - blog.tags.each do |tag, articles|
+            - blog.tags.sort.each do |tag, articles|
               %li
                 = link_to tag_path(tag) do
                   %span.glyphicon.glyphicon-tag

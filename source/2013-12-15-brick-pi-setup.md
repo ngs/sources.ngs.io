@@ -3,7 +3,7 @@ title: BrickPi セットアップ
 description: BrickPi をサクッとセットアップした手順。
 date: 2013-12-15 02:00
 public: true
-tags: mindstorms, raspberry pi, robot, Setup
+tags: mindstorms, raspberry pi, robot, setup
 ---
 
 ![](2013-12-15-brick-pi-setup/brick-pi-tribot.jpg)
@@ -69,10 +69,9 @@ MacBook Pro Retina 2012 を使いました。
    $ cd Project_Examples/simplebot
    $ python simplebot_simple.py
    ```
-   
+
    `w + enter` で前進、`a + enter` で左折、`d + enter` で右折、`s + enter` で後進、`x + enter` で停止します。
-   
+
    [実装箇所: Project_Examples/simplebot/simplebot_simple.py](https://github.com/DexterInd/BrickPi_Python/blob/master/Project_Examples/simplebot/simplebot_simple.py#L58)
 
 とても簡単に扱えたので、もっと色々試してみたいです。今度こそ、来年！
-
