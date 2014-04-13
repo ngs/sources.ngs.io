@@ -17,10 +17,11 @@
               = tag
       %ul.nav.nav-pills.pull-right
         %li
-          = link_to( current_article.source_file.gsub(/^.+\/([^\/]+)$/, 'https://github.com/ngsio/ja.ngs.io/blob/master/source/\1'), title: 'View on GitHub', rel: 'nofollow' ) do
+          = link_to( current_article.source_file.gsub(/^.+\/([^\/]+)$/, "https://github.com/ngs/source.ngs.io/blob/master/source/#{ I18n.locale.to_s }/\\1"), title: 'View on GitHub', rel: 'nofollow' ) do
             %span.fa.fa-github-alt &nbsp;
       .social-buttons.clearfix
-        = link_to 'つぶやく', 'http://twitter.com/share', class: 'twitter-share-button', 'data-url' => "http://ja.ngs.io#{current_article.url}", 'data-via' => 'ngs', 'data-counturl' => "http://ja.ngs.io#{current_article.url}", 'rel' => 'nofollow'
+        - url = URI.join(t('blog.url'), URI.escape(current_article.url))
+        = link_to t(:tweet), 'http://twitter.com/share', class: 'twitter-share-button', 'data-url' => url, 'data-via' => 'ngs', 'data-counturl' => url, 'rel' => 'nofollow'
         .g-plusone{ 'data-size' => 'medium' }
         .fb-like{ 'data-send' => 'true', 'data-width' => '300', 'data-show-faces' => 'false' }
 
@@ -32,7 +33,7 @@
       var js, fjs = d.getElementsByTagName(s)[0];
       if (d.getElementById(id)) {return;}
       js = d.createElement(s); js.id = id;
-      js.src = "//connect.facebook.net/#{ I18n.locale.to_s == 'ja' ? 'ja_JP' : 'en_US' }/all.js#appId=250606621791116&xfbml=1";
+      js.src = "//connect.facebook.net/#{ I18n.locale.to_s == 'ja' ? 'ja_JP' : 'en_US' }/all.js#appId=#{ data[I18n.locale.to_sym].ogp.fb.app_id }&xfbml=1";
       fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));
   :javascript

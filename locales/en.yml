@@ -1,0 +1,25 @@
+---
+en:
+  read_more: Read On
+  file_not_found: File Not Found
+  navigation: Navigation
+  tags: Tags
+  monthly: Monthly
+  home: Home
+  aboutme: About me
+  tweet: Tweet
+  recent_entries: Recent Entries
+  calendar_title:
+    text: "Entries from %{title}"
+    html: "Entries from <time>%{title}</time>"
+    format:
+      day: "%d, %b, %Y"
+      month: "%b, %Y"
+      year: "%Y"
+  blog:
+    url: http://ngs.io/
+    title: ngs.io
+    cname: ngs.io
+    description: Hacking recipes in my life.
+  author:
+    name: Atsushi Nagase

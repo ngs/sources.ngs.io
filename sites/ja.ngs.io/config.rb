@@ -13,7 +13,7 @@ set :markdown, :fenced_code_blocks => true, :smartypants => true, :autolink => t
 
 activate :blog do |blog|
   blog.permalink = "{year}/{month}/{day}/{title}/index.html"
-  blog.sources = "{lang}/{year}-{month}-{day}-{title}.html"
+  blog.sources = "ja/{year}-{month}-{day}-{title}.html"
   blog.taglink = "t/{tag}/index.html"
   blog.layout = "article"
   blog.summary_separator = /(READMORE)/
@@ -53,19 +53,21 @@ end
 
 activate :ogp do |ogp|
   ogp.namespaces = {
-    fb: data.ogp.fb,
-    og: data.ogp.og
+    fb: data.ja.ogp.fb,
+    og: data.ja.ogp.og
   }
   ogp.blog = true
   ogp.base_url = 'http://ja.ngs.io/'
 end
 
 configure :build do
+  IO.write "source/CNAME", "ja.ngs.io"
   activate :minify_css
   activate :minify_javascript
   activate :asset_hash
   ignore '.DS_Store'
   ignore '.*.swp'
+  ignore '/about/index.en.html'
   activate :google_analytics do |ga|
     ga.tracking_id = 'UA-200187-34'
   end
@@ -78,5 +80,5 @@ end
 activate :deploy do |deploy|
   deploy.method = :git
   deploy.branch = 'gh-pages'
-  deploy.remote = "https://#{ENV['GH_TOKEN']}@github.com/ngsio/ja.ngs.io.git"
+  deploy.remote = "https://#{ENV['GH_TOKEN']}@github.com/ngs/ja.ngs.io.git"
 end
