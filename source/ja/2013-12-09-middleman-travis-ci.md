@@ -20,7 +20,7 @@ READMORE
 ### 1. travis にリポジトリを登録する。
 
 未登録の場合、3 で、
-`repository not known to https://api.travis-ci.org/: ngsio/ja.ngs.io` などと怒られた。     
+`repository not known to https://api.travis-ci.org/: ngsio/ja.ngs.io` などと怒られた。
 [https://travis-ci.org/profile](https://travis-ci.org/profile)、もしくは [https://travis-ci.org/profile/$YOUR_ORGANIZATION$](https://travis-ci.org/profile/$YOUR_ORGANIZATION$) でスイッチを ON にする。
 
 ### 2. GitHub の Token を取得する。
@@ -48,7 +48,7 @@ env:
     - GIT_AUTHOR_EMAIL='a+travis@ngs.io'
     - secure: "(3 で取得した secure の値)"
 after_success:
-  - '[ "$TRAVIS_BRANCH" == "master" ] && [ $GH_TOKEN ] && bundle exec middleman deploy'
+  - '[ "$TRAVIS_BRANCH" == "master" ] && [ $GH_TOKEN ] && bundle exec middleman deploy >/dev/null 2>&1'
 ```
 
 ### 5. config.rb にデプロイ設定を追記する
@@ -60,4 +60,3 @@ activate :deploy do |deploy|
   deploy.remote = "https://#{ENV['GH_TOKEN']}@github.com/ngsio/ja.ngs.io.git"
 end
 ```
-
