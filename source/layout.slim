@@ -49,11 +49,13 @@ html
                 |&nbsp;
                 span itemprop='name'
                   = t :home
+            li
               = link_to '/about', itemprop: 'url' do
                 span.glyphicon.glyphicon-user
                 |&nbsp;
                 span itemprop='name'
                   = t :aboutme
+            li
               - if I18n.locale.to_s == 'ja'
                 = link_to 'http://ngs.io/', itemprop: 'url' do
                   span.glyphicon.glyphicon-pencil
