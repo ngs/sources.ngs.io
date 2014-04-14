@@ -24,6 +24,12 @@
       %meta{ content: current_page.data.page.keywords, name: "keywords" }
     %meta{ content: t('author.name'), name: "author" }
     = feed_tag :atom, "#{blog.options.prefix.to_s}/feed.xml", title: "Atom Feed"
+    - %w{152 144 120 114 76 72 60 67}.each do |size|
+      - size = size == '0' ? '' : "#{size}x#{size}"
+      %link{ rel: "apple-touch-icon", sizes: size, href: "/apple-touch-icon-#{size}-precomposed.png" }
+    %link{ rel: "apple-touch-icon", href: "/apple-touch-icon-precomposed.png" }
+    %link{ rel: "shortcut icon", href: "/favicon.png" }
+    %link{ rel: "icon", type: "image/ico", href: "/favicon.ico" }
   %body
     .container
       .row
