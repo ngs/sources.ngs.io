@@ -15,6 +15,7 @@ Time.zone = "Tokyo"
 activate :directory_indexes
 activate :syntax
 activate :i18n, langs: [lang]
+activate :livereload
 
 set :markdown_engine, :redcarpet
 set :markdown, :fenced_code_blocks => true, :smartypants => true, :autolink => true
