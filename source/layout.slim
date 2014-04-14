@@ -27,8 +27,8 @@ html
     meta content=t('author.name') name="author"
     = feed_tag :atom, "#{blog.options.prefix.to_s}/feed.xml", title: "Atom Feed"
     - %w{152 144 120 114 76 72 60 67}.each do |size|
-      - size = size == '0' ? '' : "#{size}x#{size}"
-      link rel="apple-touch-icon" size= size href="/apple-touch-icon-#{size}-precomposed.png"
+      - size = "#{size}x#{size}"
+      link rel="apple-touch-icon" size=size href="/apple-touch-icon-#{size}-precomposed.png"
     link rel="apple-touch-icon" href="/apple-touch-icon-precomposed.png"
     link rel="shortcut icon" href="/favicon.png"
     link rel="icon" type="image/ico" href="/favicon.ico"
@@ -49,11 +49,13 @@ html
                 |&nbsp;
                 span itemprop='name'
                   = t :home
+            li
               = link_to '/about', itemprop: 'url' do
                 span.glyphicon.glyphicon-user
                 |&nbsp;
                 span itemprop='name'
                   = t :aboutme
+            li
               - if I18n.locale.to_s == 'ja'
                 = link_to 'http://ngs.io/', itemprop: 'url' do
                   span.glyphicon.glyphicon-pencil
