@@ -18,7 +18,7 @@ gem 'nokogiri'
 # For feed.xml.builder
 gem 'builder', '~> 3.0'
 
-gem 'haml'
+gem 'slim'
 gem 'sass'
 gem 'coffee-script'
 

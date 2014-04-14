@@ -1,34 +1,36 @@
 - wrap_layout :layout do
-  %article.entry{ itemscope: true, itemtype: "http://schema.org/BlogPosting" }
-    %header
-      %h1{ itemprop: "name" }= current_article.title
-      %p.meta
-        %time{ itemprop: "datePublished", datetime: current_article.date.to_time.to_s }= current_article.date.strftime('%Y/%m/%d %H:%M')
-    .article-body{ itemprop: "articleBody" }
+  article.entry itemscope=true itemtype="http://schema.org/BlogPosting"
+    header
+      h1 itemprop="name"
+        = current_article.title
+      p.meta
+        time itemprop="datePublished" datetime=current_article.date.to_time.to_s
+          = current_article.date.strftime('%Y/%m/%d %H:%M')
+    .article-body itemprop="articleBody"
       = preserve do
-        = yield
-    %footer.meta
-      %ul.pull-left.nav.nav-pills.tags{ itemprop: "keywords" }
+        == yield
+    footer.meta
+      ul.pull-left.nav.nav-pills.tags itemprop="keywords"
         - current_article.tags.each do|tag|
-          %li
+          li
             = link_to tag_path(tag) do
-              %span.glyphicon.glyphicon-tag
-              &nbsp;
+              span.glyphicon.glyphicon-tag
+              |:&nbsp;
               = tag
-      %ul.nav.nav-pills.pull-right
-        %li
+      ul.nav.nav-pills.pull-right
+        li
           = link_to( current_article.source_file.gsub(/^.+\/([^\/]+)$/, "https://github.com/ngs/source.ngs.io/blob/master/source/#{ I18n.locale.to_s }/\\1"), title: 'View on GitHub', rel: 'nofollow', 'data-toggle' => 'tooltip', 'data-container' => 'footer.meta', 'data-placement' => 'left' ) do
-            %span.fa.fa-github-alt &nbsp;
+            span.fa.fa-github-alt &nbsp;
       .social-buttons.clearfix
         - url = URI.join(t('blog.url'), URI.escape(current_article.url))
         = link_to t(:tweet), 'http://twitter.com/share', class: 'twitter-share-button', 'data-url' => url, 'data-via' => 'ngs', 'data-counturl' => url, 'rel' => 'nofollow'
-        .g-plusone{ 'data-size' => 'medium' }
-        .fb-like{ 'data-send' => 'true', 'data-width' => '300', 'data-show-faces' => 'false' }
+        .g-plusone data-size='medium'
+        .fb-like data-send='true' data-width='300' data-show-faces=false
 
     .disqus= disqus
 
   #fb-root
-  :javascript
+  javascript:
     (function(d, s, id) {
       var js, fjs = d.getElementsByTagName(s)[0];
       if (d.getElementById(id)) {return;}
@@ -36,13 +38,13 @@
       js.src = "//connect.facebook.net/#{ I18n.locale.to_s == 'ja' ? 'ja_JP' : 'en_US' }/all.js#appId=#{ data[I18n.locale.to_sym].ogp.fb.app_id }&xfbml=1";
       fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));
-  :javascript
+  javascript:
     (function() {
       var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
       script.src = 'https://apis.google.com/js/plusone.js';
       var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
     })();
-  :javascript
+  javascript:
     (function(){
       var twitterWidgets = document.createElement('script');
       twitterWidgets.type = 'text/javascript';

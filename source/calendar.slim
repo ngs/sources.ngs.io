@@ -1,7 +1,7 @@
 ---
 pageable: true
 ---
-:ruby
+ruby:
   calendar_title = case page_type
     when 'day'
       Date.new(year, month, day).strftime(t 'calendar_title.format.day')
@@ -10,7 +10,7 @@ pageable: true
     when 'year'
       Date.new(year, 1, 1).strftime(t 'calendar_title.format.year')
     end
-%h1
+h1
   = t 'calendar_title.html', title: calendar_title
 
 = partial "entries", locals: locals

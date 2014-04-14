@@ -42,7 +42,7 @@ page "/feed.xml",    layout: false
 page "/sitemap.xml", layout: false
 page "/404.html",    directory_index: false
 
-require 'haml'
+require 'slim'
 require 'sass'
 require 'coffee-script'
 

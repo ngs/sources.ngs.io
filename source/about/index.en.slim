@@ -9,22 +9,21 @@ ogp:
     last_name:  Nagase
     username:   ngs
     gender:     male
-
 ---
 
 - content_for :main do
-  %main.col-md-9{ role: 'main', itemscope: true, itemtype: "http://data-vocabulary.org/Person" }
+  main.col-md-9 role='main' itemscope=true itemtype="http://data-vocabulary.org/Person"
     .row
       .col-md-12
-        %h1{ itemprop: "name" } Atsushi Nagase
-        %p{ itemprop: "name" } 長瀬 敦史
+        h1 itemprop="name" Atsushi Nagase
+        p itemprop="name" 長瀬 敦史
     .row
       .col-md-3
-        %p
-          %img.img-thumbnail{ itemprop:"photo", src: 'http://www.gravatar.com/avatar/e10997c59685f5c742a63b3e3049d4fb.png?size=500' }
+        p
+          img.img-thumbnail itemprop="photo" src='http://www.gravatar.com/avatar/e10997c59685f5c742a63b3e3049d4fb.png?size=500'
 
       .col-md-9
-        :markdown
+        markdown:
           [&laquo; 日本語](http://ja.ngs.io/about/)
 
           Hello, I am a <span itemprop="title">software engineer</span> based in <span itemprop="address" itemscope itemtype="http://data-vocabulary.org/Address"><span itemprop="region">Tokyo</span>, <span itemprop="locality">Japan</span></span>.
@@ -70,20 +69,20 @@ ogp:
           * [Flickr](http://www.flickr.com/photos/atsnngs)
           * [Pinterest](http://pinterest.com/ngs)
 
-        %h3 PGP
-        %dl.dl-horizontal
-          %dt ID
-          %dd
-            %code 22691D00
-          %dt Fingerprint
-          %dd
-            %code D99D BBD2 AB06 B1BF 8D44  2CF7 4721 171B 2269 1D00
+        h3 PGP Public Key
+        dl.dl-horizontal
+          dt ID
+          dd
+            code 22691D00
+          dt Fingerprint
+          dd
+            code D99D BBD2 AB06 B1BF 8D44  2CF7 4721 171B 2269 1D00
 
-        %h3 Contact
-        %dl.dl-horizontal
-          %dt Email
-          %dd= link_to 'a@ngs.io', 'mailto:a@ngs.io'
-          %dt Skype
-          %dd= link_to 'atsn_ngs', 'skype:atsn_ngs?call'
-          %dt Phone
-          %dd +81-90-9808-7800
+        h3 Contact
+        dl.dl-horizontal
+          dt Email
+          dd= link_to 'a@ngs.io', 'mailto:a@ngs.io'
+          dt Skype
+          dd= link_to 'atsn_ngs', 'skype:atsn_ngs?call'
+          dt Phone
+          dd +81-90-9808-7800
