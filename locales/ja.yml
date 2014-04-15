@@ -1,5 +1,6 @@
 ---
 ja:
+  filter_tags: タグを絞り込む
   read_more: もっと読む
   file_not_found: ファイルが見つかりません。
   navigation: ナビゲーション

@@ -41,54 +41,65 @@ html
           main.col-md-9 role='main'
             == yield
         aside.col-md-3
-          h2= t :navigation
-          ol.nav itemscope="itemscope" itemtype="http://www.schema.org/SiteNavigationElement"
-            li
-              = link_to '/', itemprop: 'url' do
-                span.glyphicon.glyphicon-home
-                |&nbsp;
-                span itemprop='name'
-                  = t :home
-            li
-              = link_to '/about', rel: 'author', itemprop: 'url' do
-                span.glyphicon.glyphicon-user
-                |&nbsp;
-                span itemprop='name'
-                  = t :aboutme
-            li
-              - if I18n.locale.to_s == 'ja'
-                = link_to 'http://ngs.io/', rel: 'alternate', itemprop: 'url', hreflang: 'en' do
-                  span.glyphicon.glyphicon-pencil
-                  |&nbsp;
-                  span itemprop='name' Blog (English)
-              - else
-                = link_to 'http://ja.ngs.io/', rel: 'alternate', itemprop: 'url', hreflang: 'ja' do
-                  span.glyphicon.glyphicon-pencil
-                  |&nbsp;
-                  span itemprop='name' ブログ (日本語)
-            h2= t :recent_entries
-          ol.nav
-            - blog.articles.select {|a| a.data[:public] }.sort { |x,y| y.date <=> x.date }[0...10].each do |article|
+          section#sidebar-navigation
+            h2= t :navigation
+            ol.nav itemscope="itemscope" itemtype="http://www.schema.org/SiteNavigationElement"
               li
-                = link_to article do
-                  span.title= article.title
-                  time= article.date.strftime('%Y/%m/%d')
-          h2= t :tags
-          ol.nav
-            - blog.tags.sort.each do |tag, articles|
+                = link_to '/', itemprop: 'url' do
+                  span.glyphicon.glyphicon-home
+                  |&nbsp;
+                  span itemprop='name'
+                    = t :home
               li
-                = link_to tag_path(tag) do
-                  span.glyphicon.glyphicon-tag
-                  = tag
-                  span.badge.pull-right= articles.size
-          h2= t :monthly
-          ol.nav
-            - blog.articles.select {|a| a.data[:public] }.group_by {|a| a.date.year }.each do |year, year_articles|
-              - year_articles.group_by {|a| a.date.month }.each do |month, month_articles|
+                = link_to '/about', rel: 'author', itemprop: 'url' do
+                  span.glyphicon.glyphicon-user
+                  |&nbsp;
+                  span itemprop='name'
+                    = t :aboutme
+              li
+                - if I18n.locale.to_s == 'ja'
+                  = link_to 'http://ngs.io/', rel: 'alternate', itemprop: 'url', hreflang: 'en' do
+                    span.glyphicon.glyphicon-pencil
+                    |&nbsp;
+                    span itemprop='name' Blog (English)
+                - else
+                  = link_to 'http://ja.ngs.io/', rel: 'alternate', itemprop: 'url', hreflang: 'ja' do
+                    span.glyphicon.glyphicon-pencil
+                    |&nbsp;
+                    span itemprop='name' ブログ (日本語)
+          section#sidebar-recent
+            header
+              h2= t :recent_entries
+            ol.nav
+              - blog.articles.select {|a| a.data[:public] }.sort { |x,y| y.date <=> x.date }[0...10].each do |article|
                 li
-                  = link_to blog_month_path(year, month) do
-                    = Date.new(year, month, 1).strftime(t 'calendar_title.format.month')
-                    span.badge.pull-right= month_articles.size
+                  = link_to article do
+                    span.title= article.title
+                    time= article.date.strftime('%Y/%m/%d')
+          section#sidebar-monthly
+            header
+              h2= t :monthly
+            ol.nav
+              - blog.articles.select {|a| a.data[:public] }.group_by {|a| a.date.year }.each do |year, year_articles|
+                - year_articles.group_by {|a| a.date.month }.each do |month, month_articles|
+                  li
+                    = link_to blog_month_path(year, month) do
+                      = Date.new(year, month, 1).strftime(t 'calendar_title.format.month')
+                      span.badge.pull-right= month_articles.size
+          section#sidebar-tags
+            header
+              h2= t :tags
+              form#tag-filter-form.form-inline role="form"
+                div.form-group.has-feedback
+                  input.form-control#tag-filter-input type="search" placeholder=t(:filter_tags)
+                  span.glyphicon.glyphicon-search.form-control-feedback
+            ol.nav.collapse.in#sidebar-tags-list
+              - blog.tags.sort.each do |tag, articles|
+                li
+                  = link_to tag_path(tag) do
+                    span.glyphicon.glyphicon-tag
+                    = tag
+                    span.badge.pull-right= articles.size
       footer.row
         address.col-md-12<
           | Proudly hosted by
