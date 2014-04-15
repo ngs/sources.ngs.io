@@ -7,6 +7,14 @@ GIT
       rouge (~> 1.0)
 
 GIT
+  remote: git://github.com/ngs/middleman-google-analytics.git
+  revision: ac45709380b49e6bf43bda3264066ad4d1d822e1
+  ref: universal-code
+  specs:
+    middleman-google-analytics (0.0.3)
+      middleman-core (>= 3.0.6)
+
+GIT
   remote: git://github.com/ngs/middleman-ogp.git
   revision: 824b2fe9b7124e01c8309c4c649b5aff74e95b99
   branch: blog-support
@@ -87,8 +95,6 @@ GEM
     middleman-favicon-maker (3.5.3)
       favicon_maker (~> 1.1.2)
       middleman-core (>= 3.0.0)
-    middleman-google-analytics (0.0.3)
-      middleman-core (>= 3.0.6)
     middleman-livereload (3.3.2)
       em-websocket (~> 0.5.0)
       middleman-core (~> 3.2)
@@ -157,7 +163,7 @@ DEPENDENCIES
   middleman-deploy
   middleman-disqus
   middleman-favicon-maker (~> 3.5)
-  middleman-google-analytics
+  middleman-google-analytics!
   middleman-livereload (~> 3.3.2)
   middleman-ogp!
   middleman-syntax!
