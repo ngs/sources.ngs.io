@@ -18,6 +18,6 @@ $ ->
   $('[data-toggle=tooltip]').tooltip()
   $('form#tag-filter-form')
   .on('submit', no)
-  .find('input:text')
+  .find('input')
   .on('keyup', handleFilterTagsKeyUp)
 
