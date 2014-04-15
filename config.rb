@@ -81,6 +81,7 @@ configure :build do
   activate :asset_hash, ignore: 'images'
   ignore '.DS_Store'
   ignore '.*.swp'
+  ignore '_drafts'
   if lang == :en
     ignore '/about/index.ja.html'
     ignore '/ja/*'
