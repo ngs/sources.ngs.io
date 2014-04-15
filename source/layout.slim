@@ -50,19 +50,19 @@ html
                 span itemprop='name'
                   = t :home
             li
-              = link_to '/about', itemprop: 'url' do
+              = link_to '/about', rel: 'author', itemprop: 'url' do
                 span.glyphicon.glyphicon-user
                 |&nbsp;
                 span itemprop='name'
                   = t :aboutme
             li
               - if I18n.locale.to_s == 'ja'
-                = link_to 'http://ngs.io/', itemprop: 'url' do
+                = link_to 'http://ngs.io/', rel: 'alternate', itemprop: 'url', hreflang: 'en' do
                   span.glyphicon.glyphicon-pencil
                   |&nbsp;
                   span itemprop='name' Blog (English)
               - else
-                = link_to 'http://ja.ngs.io/', itemprop: 'url' do
+                = link_to 'http://ja.ngs.io/', rel: 'alternate', itemprop: 'url', hreflang: 'ja' do
                   span.glyphicon.glyphicon-pencil
                   |&nbsp;
                   span itemprop='name' ブログ (日本語)
