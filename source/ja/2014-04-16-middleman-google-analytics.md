@@ -32,7 +32,7 @@ READMORE
 gem 'middleman-google-analytics', :github => 'ngs/middleman-google-analytics'
 ```
 
-## 2014-04-17 04:40 追記
+## 2014-04-17 05:40 追記
 
 merge されました！
 

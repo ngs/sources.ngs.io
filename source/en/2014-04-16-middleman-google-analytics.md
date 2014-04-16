@@ -33,7 +33,7 @@ I hope that will merge happily, but if not, you can use the updates with referri
 gem 'middleman-google-analytics', :github => 'ngs/middleman-google-analytics'
 ```
 
-## Update 2014-04-17 04:40
+## Update 2014-04-17 05:40
 
 Merged!
 
