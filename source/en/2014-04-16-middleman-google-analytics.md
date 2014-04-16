@@ -23,7 +23,7 @@ This update adds `google_analytics_universal_tag` to helper methods with existin
 <%= google_analytics_universal_tag %>
 ```
 
-I also send a pull request to add [unit tests] the project does not have yet. I enjoyed [Cucumber] coding <3
+I also sent a pull request to add [unit tests] the project does not have yet. I enjoyed [Cucumber] coding <3
 
 [danielbayerlein/middleman-google-analytics#14: **Added Cucumber tests**][pr14]
 
