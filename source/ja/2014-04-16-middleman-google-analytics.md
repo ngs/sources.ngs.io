@@ -8,7 +8,7 @@ tags: middleman, google analytics, pull request
 
 先日 [Google から発表があった][ga-blog]通り、ユニバーサル アナリティクスが正式リリースされました。
 
-[このブログ][this blog] は [middleman-google-analytics] を使って Google Analytics タグを埋め込んでいるので、、ユニバーサル アナリティクス対応するには、直接コードをレイアウトに書くか、機能拡張を改修する必要がありました。
+[このブログ][this blog] は [middleman-google-analytics] を使って Google Analytics タグを埋め込んでいるので、ユニバーサル アナリティクス対応するには、直接コードをレイアウトに書くか、機能拡張を改修する必要がありました。
 
 折角、今までお世話になってきたので、改修をして Pull Request を送りました。
 
