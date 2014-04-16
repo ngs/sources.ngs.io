@@ -4,6 +4,7 @@ description: Middleman で OpenGraph Protocol タグを書き込む機能拡張�
 date: 2014-04-13 02:20
 public: true
 tags: middleman, opengraph
+alternate: true
 ---
 
 [以前欲しいと言っていた][prev-entry] Middleman で OpenGraph Protocol タグを簡単に扱えるプラグインが、待ってても出てこないので、自分で作りました。

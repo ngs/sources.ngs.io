@@ -4,6 +4,7 @@ description: Released an OpenGraph Protocol helper extension for Middleman.
 date: 2014-04-13 02:20
 public: true
 tags: middleman, opengraph
+alternate: true
 ---
 
 I released an OpenGraph Protocol helper extension for Middleman.
