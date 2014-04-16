@@ -151,7 +151,8 @@ helpers do
   end
 
   def alt_link
-    link_to "&laquo;#{alt_lang_name}", alt_href, href_lang: alt_lang, rel: "alternate"
+    link_to %Q{<span class="glyphicon glyphicon-globe"></span>&nbsp;#{alt_lang_name}},
+      alt_href, href_lang: alt_lang, rel: "alternate"
   end
 
 end
