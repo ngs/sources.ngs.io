@@ -50,7 +50,7 @@ gem 'middleman-google-analytics', '~> 0.1.0'
 [this blog]: http://ja.ngs.io/
 [pr14]: https://github.com/danielbayerlein/middleman-google-analytics/pull/14
 [pr15]: https://github.com/danielbayerlein/middleman-google-analytics/pull/15
-[test code]: https://github.com/ngs/middleman-google-analytics/blob/c82d5deeb0e8295122b1ebcfbe8193c11980f462/features/helper.feature
+[unit tests]: https://github.com/ngs/middleman-google-analytics/blob/c82d5deeb0e8295122b1ebcfbe8193c11980f462/features/helper.feature
 [Cucumber]: http://cukes.info/
 [0.1.0]: https://github.com/danielbayerlein/middleman-google-analytics/commit/c28a5fc1e0f72cd206ba5f8733c3655935501b9c
 [RubyGems]: http://rubygems.org/gems/middleman-google-analytics
