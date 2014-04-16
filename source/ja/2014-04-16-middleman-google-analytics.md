@@ -12,6 +12,8 @@ tags: middleman, google analytics, pull request
 
 折角、今までお世話になってきたので、改修をして Pull Request を送りました。
 
+READMORE
+
 [danielbayerlein/middleman-google-analytics#15: **Universal code support**][pr15]
 
 この改修で今まで使っていた `google_analytics_tag` に加えて、`google_analytics_universal_tag` ヘルパーが追加されます。
