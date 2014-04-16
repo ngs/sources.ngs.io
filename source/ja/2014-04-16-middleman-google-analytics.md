@@ -4,6 +4,7 @@ description: middleman-google-analytics の Universal Code 対応させる Pull 
 date: 2014-04-16 10:00
 public: true
 tags: middleman, google analytics, pull request
+alternate: true
 ---
 
 先日 [Google から発表があった][ga-blog]通り、ユニバーサル アナリティクスが正式リリースされました。
