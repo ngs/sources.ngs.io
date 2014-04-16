@@ -3,7 +3,7 @@
     h2 itemprop="name"
       = link_to article.title, article, itemprop: "url"
       time itemprop="datePublished" datetime=article.date.to_time.to_s
-        = article.date.strftime('%Y/%m/%d %H:%M')
+        = article.date.strftime('%Y-%m-%d %H:%M')
     .article-body itemprop="articleBody"
       = preserve do
         = article.summary

@@ -8,10 +8,9 @@ GIT
 
 GIT
   remote: git://github.com/ngs/middleman-google-analytics.git
-  revision: ac45709380b49e6bf43bda3264066ad4d1d822e1
-  ref: universal-code
+  revision: c28a5fc1e0f72cd206ba5f8733c3655935501b9c
   specs:
-    middleman-google-analytics (0.0.3)
+    middleman-google-analytics (0.1.0)
       middleman-core (>= 3.0.6)
 
 GIT

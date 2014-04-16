@@ -131,3 +131,27 @@ activate :deploy do |deploy|
   deploy.branch = 'gh-pages'
   deploy.remote = "https://#{ENV['GH_TOKEN']}@github.com/ngs/#{cname}.git"
 end
+
+helpers do
+
+  def alt_lang
+    I18n.locale.to_s == 'en' ? "ja_JP" : "en_US"
+  end
+
+  def alt_lang_name
+    I18n.locale.to_s == 'en' ? "日本語" : "English"
+  end
+
+  def alt_host
+    I18n.locale.to_s == 'en' ? "ja.ngs.io" : "ngs.io"
+  end
+
+  def alt_href
+    "http://#{alt_host}#{current_resource.url}"
+  end
+
+  def alt_link
+    link_to "&laquo;#{alt_lang_name}", alt_href, href_lang: alt_lang, rel: "alternate"
+  end
+
+end

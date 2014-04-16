@@ -9,6 +9,7 @@ ogp:
     last_name:  長瀬
     username:   ngs
     gender:     male
+alternate: true
 ---
 
 - content_for :main do
@@ -22,9 +23,8 @@ ogp:
         p
           img.img-thumbnail itemprop="photo" src='http://www.gravatar.com/avatar/e10997c59685f5c742a63b3e3049d4fb.png?size=500'
       .col-md-9
+        p= alt_link
         markdown:
-          [&laquo; English](http://ngs.io/about/)
-
           <span itemprop="address" itemscope itemtype="http://data-vocabulary.org/Address"><span itemprop="locality">東京</span>を拠点</span>に活動している、<span itemprop="title">ソフトウェアエンジニア</span>です。
 
           ## 略歴

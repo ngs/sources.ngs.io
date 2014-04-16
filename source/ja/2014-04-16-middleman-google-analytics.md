@@ -29,9 +29,20 @@ READMORE
 無事採用されると良いですが、最悪リジェクトされたとしても、Gemfile で直接僕のリポジトリを参照してもらえたら、使えます。(僕はそうしてます。)
 
 ```ruby
-gem 'middleman-google-analytics', :github => 'ngs/middleman-google-analytics', :ref => 'universal-code'
+gem 'middleman-google-analytics', :github => 'ngs/middleman-google-analytics'
 ```
 
+## 2014-04-17 04:40 追記
+
+merge されました！
+
+[![](2014-04-13-middleman-ogp/merge.png)][pr15]
+
+Version を [0.1.0] に Bump して、[RubyGems] にリリースされました。
+
+```ruby
+gem 'middleman-google-analytics', '~> 0.1.0'
+```
 
 [ga-blog]: http://analytics-ja.blogspot.jp/2014/04/universal-analytics.html
 [middleman-google-analytics]: https://github.com/danielbayerlein/middleman-google-analytics/
@@ -40,3 +51,5 @@ gem 'middleman-google-analytics', :github => 'ngs/middleman-google-analytics', :
 [pr15]: https://github.com/danielbayerlein/middleman-google-analytics/pull/15
 [テストコード]: https://github.com/ngs/middleman-google-analytics/blob/c82d5deeb0e8295122b1ebcfbe8193c11980f462/features/helper.feature
 [Cucumber]: http://cukes.info/
+[0.1.0]: https://github.com/danielbayerlein/middleman-google-analytics/commit/c28a5fc1e0f72cd206ba5f8733c3655935501b9c
+[RubyGems]: http://rubygems.org/gems/middleman-google-analytics
