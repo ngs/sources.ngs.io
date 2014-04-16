@@ -3,6 +3,7 @@ title: "Debugging Coda Plug-In with LLDB"
 date: 2012-05-25 12:00
 public: true
 tags: coda 2, xcode, lldb
+alternate: true
 ---
 
 1. Open **Edit Scheme** window (&#x2318;&lt;).

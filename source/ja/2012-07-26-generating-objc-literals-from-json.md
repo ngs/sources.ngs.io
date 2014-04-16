@@ -4,6 +4,7 @@ description: JSON から Objective-C のリテラルに変換する
 date: 2012-07-26 00:00
 public: true
 tags: objective-c, json, javascript
+alternate: true
 ---
 
 Xcode 4.4 からNSDictionary, NSArray, NSNumber が簡単にかけるようになったので、ユニットテストのデータなど、コードに直接書こうと思います。
@@ -194,7 +195,7 @@ if (!Dictionary) {
             return str('', {'': value});
         };
     }
-    
+
 }());
 
 if(process) {

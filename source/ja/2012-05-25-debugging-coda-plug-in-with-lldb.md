@@ -4,6 +4,7 @@ description: Xcode の LLDB で Coda プラグインをデバッグする方法
 date: 2012-05-25 20:00
 public: true
 tags: coda2, plug-in, xcode, lldb
+alternate: true
 ---
 
 1. **Edit Scheme** ウィンドウを開く (&#x2318;&lt;).
