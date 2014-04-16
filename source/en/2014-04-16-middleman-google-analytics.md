@@ -47,7 +47,7 @@ gem 'middleman-google-analytics', '~> 0.1.0'
 
 [ga-blog]: http://analytics.blogspot.jp/2014/04/universal-analytics-out-of-beta-into.html
 [middleman-google-analytics]: https://github.com/danielbayerlein/middleman-google-analytics/
-[this blog]: http://ja.ngs.io/
+[this blog]: http://ngs.io/
 [pr14]: https://github.com/danielbayerlein/middleman-google-analytics/pull/14
 [pr15]: https://github.com/danielbayerlein/middleman-google-analytics/pull/15
 [unit tests]: https://github.com/ngs/middleman-google-analytics/blob/c82d5deeb0e8295122b1ebcfbe8193c11980f462/features/helper.feature
