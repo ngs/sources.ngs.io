@@ -10,6 +10,8 @@ CPANのモジュールの、SQL::Abstractは、Perlのデータ構造からSQL�
 
 [sqljs on Google Code][sqljs]
 
+READMORE
+
 ```js
 var sql = new AbstractSQL("test");
 sql.createTable([
