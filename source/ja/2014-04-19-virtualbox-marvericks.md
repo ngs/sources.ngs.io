@@ -103,7 +103,7 @@ Can't bootstrap, dependencies are outdated.
 普通に `gem install` してもダメだった。
 
 ```bash
-gem install json -v '1.8.1'
+sudo gem install json -v '1.8.1'
 ```
 
 ```
