@@ -58,6 +58,22 @@ end
 ready do
   sprockets.append_path '/lib/javascripts/'
   sprockets.append_path '/lib/stylesheets/'
+
+  def redirect_to path, res
+    proxy path, 'redirect.html', locals: { url: res.url }, layout: false
+  end
+  sitemap.resources.each do|res|
+    if res.is_a? Middleman::Blog::BlogArticle
+      redirect_to "blog#{res.url.sub(%r{/$}, '.html')}", res
+      redirect_to "blog#{res.url}index.html", res
+    elsif res.url.match %r{^/p\d+/$}
+      redirect_to "blog#{res.url.sub(%r{p(\d)}, 'page/\1')}index.html", res
+    elsif res.url.match %r{^/t/(.+)/$}
+      redirect_to "blog#{res.url.sub(%r{t/(.+)}, 'categories/\1')}index.html", res
+    elsif res.url.match %r{^/20(\d{2}[\d/]+)/$}
+      redirect_to "blog#{res.url}index.html", res
+    end
+  end
 end
 
 configure :development do
@@ -82,6 +98,7 @@ configure :build do
   ignore '.DS_Store'
   ignore '.*.swp'
   ignore '_drafts'
+  ignore 'redirect.html'
   if lang == :en
     ignore '/about/index.ja.html'
     ignore '/ja/*'
