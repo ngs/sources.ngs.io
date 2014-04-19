@@ -21,7 +21,7 @@ ogp:
 
 テンプレート自体、[XSLT](http://www.w3.org/TR/xslt) で記述されており、UIも、[iWebKit](http://iwebkit.net/) というフレームワークを使って作ったので、らくちんでした。
 
-デモは[こちら][demo]。
+デモは[こちら][demo]。[GitHub プロジェクト][GitHub]、 [Spark Project Wiki][SparkWiki]。
 
 READMORE
 
@@ -73,7 +73,6 @@ XMLは、例えば、[こんな感じのものです](https://github.com/ngs/asd
 asdoc -doc-sources path/to/src \
   -templates-path templates-edited \
   -output asdoc-output
-}}}
 ```
 
 ### 5. appendixes.xsl の場合、appendixes.htmlが出力されていると思います。
