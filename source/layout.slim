@@ -101,21 +101,31 @@ html
                 li
                   = link_to tag_path(tag) do
                     span.glyphicon.glyphicon-tag
+                    | &nbsp;
                     = tag
                     span.badge.pull-right= articles.size
       footer.row
-        address.col-md-12<
-          | Proudly hosted on&nbsp;
-          = link_to 'GitHub Pages', 'http://pages.github.com', rel: 'nofollow'
-          |.&nbsp;
-          | Theme by&nbsp;
-          = link_to 'United', 'http://bootswatch.com/united/', rel: 'nofollow'
-          | &nbsp;from
-          = link_to 'Bootswatch', 'http://bootswatch.com/', rel: 'nofollow'
-          |.&nbsp;
-          Copyright &copy; #{ Time.now.year }&nbsp;
-          = link_to 'Atsushi Nagase', 'http://ngs.io/'
-          |.
+        .col-md-12.credit
+          div
+            | Proudly hosted on&nbsp;
+            = link_to 'GitHub Pages', 'http://pages.github.com', rel: 'nofollow'
+            |.&nbsp;
+          div
+            | Theme by&nbsp;
+            = link_to 'United', 'http://bootswatch.com/united/', rel: 'nofollow'
+            | &nbsp;from&nbsp;
+            = link_to 'Bootswatch', 'http://bootswatch.com/', rel: 'nofollow'
+            |.&nbsp;
+          div
+            | Built on Travis-CI&nbsp;
+            = link_to "build##{ENV['TRAVIS_BUILD_NUMBER']}", "https://travis-ci.org/ngs/sources.ngs.io/builds/#{ENV['TRAVIS_BUILD_ID']}"
+            | &nbsp;with commit
+            = link_to ENV['TRAVIS_COMMIT'], "https://github.com/ngs/sources.ngs.io/commit/#{ENV['TRAVIS_COMMIT']}"
+            |.&nbsp;
+          div
+            Copyright &copy; #{ Time.now.year }&nbsp;
+            = link_to 'Atsushi Nagase', 'http://ngs.io/'
+            |.
 
     = google_analytics_universal_tag
 
