@@ -20,4 +20,4 @@ $ ->
   .on('submit', no)
   .find('input')
   .on('keyup', handleFilterTagsKeyUp)
-
+  $('.article-body > table').addClass 'table-bordered table'

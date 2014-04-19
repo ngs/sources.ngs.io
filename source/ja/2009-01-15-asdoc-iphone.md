@@ -1,0 +1,127 @@
+---
+title: ASDoc Templates for iPhone
+description: iPhone 用の ASDoc テンプレートを作ったので、公開しました。
+date: 2009-01-15 15:20
+public: true
+tags: actionscript, template, asdoc
+ogp:
+  og:
+    image:
+      '': http://ja.ngs.io/images/2009-01-15-asdoc-iphone/iphone.jpg
+      type: image/jpeg
+      width: 770
+      height: 414
+---
+
+![](2009-01-15-asdoc-iphone/iphone.jpg)
+
+あけましておめでとうございます。
+
+久々に年末から年始にかけて、久々に ActionScript を使った案件に関わっていて、楽しくなったので、どこでもリファレンスが読みたいな、と思い、探してもないので、iPhone 用の ASDoc テンプレートを作ったので、公開しました。
+
+テンプレート自体、[XSLT](http://www.w3.org/TR/xslt) で記述されており、UIも、[iWebKit](http://iwebkit.net/) というフレームワークを使って作ったので、らくちんでした。
+
+デモは[こちら][demo]。
+
+READMORE
+
+## 使い方
+
+asdoc および aadoc コマンドの `-templates-path` オプションにチェックアウトしたディレクトリを指定します。(flex_sdk の bin にパスを通しておいてください。)
+
+```bash
+git clone git://github.com/ngs/asdoc-iphone-template.git iphone-templates
+asdoc -doc-sources path/to/src \
+  -templates-path iphone-templates \
+  -output asdoc-iphone
+```
+
+## 作り途中です
+
+まだ、AS2 や FlashLite、MXML などのソースコードではテストしていません。問題があったら、是非修正してください。
+
+また、その際に使った、asdoc が 出力する XML をコミットしていただけると助かります。
+
+## ASDocの出力するXMLの取り方
+
+ASDocの内部では、XMLが出力され、それをテンプレート内のXSLTで変換してHTMLを出力しています。
+
+XMLは、例えば、[こんな感じのものです](https://github.com/ngs/asdoc-iphone-template/blob/master/test/class.xml)。
+
+### 1. 既に存在するASDocのテンプレートの適当なものをコピーします。
+
+(flex_sdkの中にある、asdoc/templatesディレクトリに入っているソースとか）
+
+### 2. namespaceにredirectが指定されていないxslファイルを編集します。
+
+例: appendixes.xsl
+
+### 3. 内容を以下に編集します。
+
+```xml
+<?xml version="1.0"?>
+<xsl:stylesheet version="2.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+  <xsl:template match="/">
+    <xsl:copy-of select="." />
+  </xsl:template>
+</xsl:stylesheet>
+```
+
+### 4. asdocを実行します
+
+```bash
+asdoc -doc-sources path/to/src \
+  -templates-path templates-edited \
+  -output asdoc-output
+}}}
+```
+
+### 5. appendixes.xsl の場合、appendixes.htmlが出力されていると思います。
+
+そのファイルの内容が ASDoc 内部の XML となります。
+
+## 開発環境
+
+ビルドを行わずに反映結果をプレビューするため、[Apache Cocoon](http://cocoon.apache.org/) を使っています。
+
+Cocoon 環境構築方法は[こちら](http://ja.ngs.io/2008/01/22/cocoon/)に記載してます。(Mac OS X のみ、ごめんなさい、Windows はまだないです。)
+
+以下は構築例です。
+
+1.  ビルドしたcocoonのディレクトリの中にある、build/webappの中に、devというディレクトリを作ります。
+2.  その中に、sitemap.xmapというファイルを作ります。
+
+    **sitemap.xmap**:
+
+    ```xml
+    <?xml version="1.0" encoding="UTF-8"?>
+    <map:sitemap xmlns:map="http://apache.org/cocoon/sitemap/1.0">
+      <map:pipelines>
+        <map:pipeline>
+          <map:match pattern="asdoc/**">
+            <map:mount src="file:///path/to/templates-iphone/test/sitemap.xmap" uri-prefix="asdoc"/>
+          </map:match>
+        </map:pipeline>
+      </map:pipelines>
+    </map:sitemap>
+    ```
+
+3. cocoonの再起動は不要です。
+
+http://localhost:8888/dev/asdoc/all-classes.html にアクセスして、ページが表示されると成功です。
+
+namespace に redirect を指定している XSLT は、複数の HTML を出力するものです。
+
+それを Cocoon 上でテストするには、[class.xsl](https://github.com/ngs/asdoc-iphone-template/blob/master/class.xsl) の様に、単体で動くように加工が必要です。
+
+
+## リンク
+
+* [SparkWiki]
+* [Spark Project]
+* [GitHub]
+
+[SparkWiki]: http://www.libspark.org/wiki/nagase/ASDociPhone
+[Spark Project]: http://www.libspark.org/
+[GitHub]: https://github.com/ngs/asdoc-iphone-template
+[demo]: http://www.libspark.org/htdocs/asdoc/iphone/Utils/index.html
