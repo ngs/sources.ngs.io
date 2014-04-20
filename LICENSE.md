@@ -1,4 +1,4 @@
-Copyright (c) 2014 Atsushi Nagase
+# Copyright &copy; 2014 Atsushi Nagase
 
 ## Articles and pictures.
 
