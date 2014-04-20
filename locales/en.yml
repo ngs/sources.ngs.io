@@ -1,5 +1,7 @@
 ---
 en:
+  previous_article: Previous Article
+  next_article: Next Article
   filter_tags: Filter Tags
   read_more: Read On
   file_not_found: File Not Found

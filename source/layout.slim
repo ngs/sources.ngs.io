@@ -35,6 +35,16 @@ html
     link rel="apple-touch-icon" href="/apple-touch-icon-precomposed.png"
     link rel="shortcut icon" href="/favicon.png"
     link rel="icon" type="image/ico" href="/favicon.ico"
+    - if current_article
+      - if current_article.previous_article
+        link rel="prev" href=current_article.previous_article.url
+      - if current_article.next_article
+        link rel="next" href=current_article.next_article.url
+    - elsif paginate
+      - if prev_page
+        link rel="prev" href=prev_page.url
+      - if next_page
+        link rel="next" href=next_page.url
   body
     .container
       .row

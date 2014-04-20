@@ -16,7 +16,7 @@
     ul.pagination.pagination-lg
       - if prev_page
         li
-          = link_to prev_page do
+          = link_to prev_page, rel: 'prev' do
             span.fa.fa-chevron-left
       - else
         li.disabled
@@ -33,7 +33,7 @@
             =link_to "#{i}", p && p.url
       - if next_page
         li
-          = link_to next_page do
+          = link_to next_page, rel: 'next' do
             span.fa.fa-chevron-right
       - else
         li.disabled

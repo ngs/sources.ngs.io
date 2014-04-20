@@ -1,5 +1,7 @@
 ---
 ja:
+  previous_article: 前の記事
+  next_article: 次の記事
   filter_tags: タグを絞り込む
   read_more: もっと読む
   file_not_found: ファイルが見つかりません。
