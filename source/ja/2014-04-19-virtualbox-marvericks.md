@@ -27,6 +27,8 @@ VM 作成は前途 [Qiita エントリー][qiita-entry]通りに作業したら�
 
 ### Image 作成
 
+まず、[Marvericks Installer][Marvericks] を [Mac AppStore][Marvericks] からインストールし、以下のコマンドを実行し、インストールイメージを作る。
+
 ```bash
 git clone https://github.com/ntkme/InstallESD.dmg.tool
 cd InstallESD.dmg.tool
@@ -61,7 +63,7 @@ ssh-keygen && cat ~/.ssh/id_rsa.pub
 
 ## command line developer tools をインストールする
 
-`llvm` だったり `make` だったりを使えるようにする。
+[Xcode] は [Mac AppStore][Xcode] から。`llvm` だったり `make` だったりを使えるようにする。
 
 ```bash
 xcode-select --install
@@ -126,8 +128,6 @@ clang: note: this will be a hard error (cannot be downgraded to a warning) in th
 ```bash
 sudo ARCHFLAGS=-Wno-error=unused-command-line-argument-hard-error-in-future gem install json -v '1.8.1'
 ```
-
-
 
 ## Two factor authentication
 
@@ -197,3 +197,5 @@ Mac Pro で上のところまで完了して、Mac Book Pro Retina 15 で同じ�
 [SSH Keys]: https://github.com/settings/ssh
 [Boxen]: http://boxen.github.com/
 [newtoken]: https://github.com/settings/tokens/new
+[Marvericks]: https://itunes.apple.com/app/id675248567?mt=12
+[Xcode]: https://itunes.apple.com/app/id497799835?mt=12
