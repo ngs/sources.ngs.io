@@ -87,7 +87,7 @@ sudo で xcodebuild コマンドを実行。
 sudo xcodebuild -license
 ```
 
-利用規約が出てくるので、Space キーでスクロールダウン。最後に `agree` とタイプする。
+利用規約が出てくるので、CTRL+F キーでスクロールダウン。最後に `agree` とタイプする。
 
 ## our-boxen チェックアウト
 
