@@ -25,6 +25,16 @@ READMORE
 
 VM 作成は前途 [Qiita エントリー][qiita-entry]通りに作業したら、問題なく作成できました。
 
+### Image 作成
+
+```bash
+git clone https://github.com/ntkme/InstallESD.dmg.tool
+cd InstallESD.dmg.tool
+bin/iesd -t BaseSystem -i /Applications/Install\ OS\ X\ Mavericks.app/Contents/SharedSupport/InstallESD.dmg -o ~/Output.dmg
+```
+
+### Machine 設定
+
 <s>一応、自分の設定のスクリーンショットを晒しておきます。</s>
 
 母艦にスクショを残したまま、法事で帰省しているので、週明け追加します。
