@@ -25,6 +25,18 @@ READMORE
 
 VM 作成は前途 [Qiita エントリー][qiita-entry]通りに作業したら、問題なく作成できました。
 
+### Image 作成
+
+まず、[Marvericks Installer][Marvericks] を [Mac AppStore][Marvericks] からインストールし、以下のコマンドを実行し、インストールイメージを作る。
+
+```bash
+git clone https://github.com/ntkme/InstallESD.dmg.tool
+cd InstallESD.dmg.tool
+bin/iesd -t BaseSystem -i /Applications/Install\ OS\ X\ Mavericks.app/Contents/SharedSupport/InstallESD.dmg -o ~/Output.dmg
+```
+
+### Machine 設定
+
 <s>一応、自分の設定のスクリーンショットを晒しておきます。</s>
 
 母艦にスクショを残したまま、法事で帰省しているので、週明け追加します。
@@ -51,7 +63,7 @@ ssh-keygen && cat ~/.ssh/id_rsa.pub
 
 ## command line developer tools をインストールする
 
-`llvm` だったり `make` だったりを使えるようにする。
+[Xcode] は [Mac AppStore][Xcode] から。`llvm` だったり `make` だったりを使えるようにする。
 
 ```bash
 xcode-select --install
@@ -75,7 +87,7 @@ sudo で xcodebuild コマンドを実行。
 sudo xcodebuild -license
 ```
 
-利用規約が出てくるので、Space キーでスクロールダウン。最後に `agree` とタイプする。
+利用規約が出てくるので、CTRL+F キーでスクロールダウン。最後に `agree` とタイプする。
 
 ## our-boxen チェックアウト
 
@@ -116,8 +128,6 @@ clang: note: this will be a hard error (cannot be downgraded to a warning) in th
 ```bash
 sudo ARCHFLAGS=-Wno-error=unused-command-line-argument-hard-error-in-future gem install json -v '1.8.1'
 ```
-
-
 
 ## Two factor authentication
 
@@ -187,3 +197,5 @@ Mac Pro で上のところまで完了して、Mac Book Pro Retina 15 で同じ�
 [SSH Keys]: https://github.com/settings/ssh
 [Boxen]: http://boxen.github.com/
 [newtoken]: https://github.com/settings/tokens/new
+[Marvericks]: https://itunes.apple.com/app/id675248567?mt=12
+[Xcode]: https://itunes.apple.com/app/id497799835?mt=12
