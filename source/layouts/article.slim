@@ -28,7 +28,7 @@
         - url = URI.join(t('blog.url'), URI.escape(current_article.url))
         = link_to t(:tweet), 'http://twitter.com/share', class: 'twitter-share-button', 'data-url' => url, 'data-via' => 'ngs', 'data-counturl' => url, 'rel' => 'nofollow'
         .g-plusone data-size='medium'
-        .fb-like data-send='true' data-width='300' data-show-faces='false'
+        .fb-like data-send='true' data-width='300' data-show-faces='false' data-href=url
 
       ul.pager
         - if current_article.previous_article
