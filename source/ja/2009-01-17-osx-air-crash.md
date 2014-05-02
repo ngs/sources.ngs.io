@@ -1,6 +1,6 @@
 ---
-title: MacOS XでAIRアプリがクラッシュする件
-description: BUILT NY Kindle Slim Folio Cover
+title: Mac OS X で AIR アプリがクラッシュする件
+description: AdobeAIR のバージョンを 1.5 にアップデートしてから、initialWindow/content に HTML を指定してあるアプリや、HTMLLoader でウェブページを表示しているものが、MacOS X でクラッシュし、全く立ち上がらない状態でした。
 date: 2009-01-17 01:00
 public: true
 tags: macosx, adobeair, simbl
