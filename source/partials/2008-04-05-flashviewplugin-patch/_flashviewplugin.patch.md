@@ -1,15 +1,3 @@
----
-title: Trac の FlashViewPlugin に SWFObject を対応させる
-description: Trac の FlashViewPlugin に SWFObject を対応させるパッチを作りました。
-date: 2008-04-05 00:00
-public: true
-tags: flash, javascript, trac, python
----
-
-Trac の [FlashViewPlugin] に [SWFObject] を対応させるパッチを作りました。
-
-READMORE
-
 ```diff
 *** flashview/flashview.py.bk	2008-03-26 15:08:26.000000000 +0900
 --- flashview/flashview.py	2008-04-03 03:04:48.000000000 +0900
@@ -114,7 +102,3 @@ READMORE
 ! //]]></script>
           """ % dict(map(lambda i: (i[0], escapeHTML(str(i[1]))), vars.items()))
 ```
-
-
-[FlashViewPlugin]: http://trac-hacks.org/wiki/FlashViewPlugin
-[SWFObject]: http://blog.deconcept.com/swfobject/
