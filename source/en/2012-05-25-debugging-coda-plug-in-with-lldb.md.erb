@@ -15,13 +15,6 @@ alternate: true
 5. Switch to **Build Phase** tab, click **Add Build Phase** button and select **Add Run Script**
 7. Copy and paste the script bellow.
 
-```bash
-if [ $INSTALL_BUNDLE == 1 ]; then
-  DEST="$USER_LIBRARY_DIR/Application Support/Coda 2/Plug-ins/$FULL_PRODUCT_NAME"
-  ORG="$TARGET_BUILD_DIR/$FULL_PRODUCT_NAME"
-  rm -rf "$DEST"
-  mv "$ORG" "$DEST"
-fi
-```
+<%= partial '2012-05-25-debugging-coda-plug-in-with-lldb/command.sh.md' %>
 
 Now you can debug with your LLDB console, enjoy!
