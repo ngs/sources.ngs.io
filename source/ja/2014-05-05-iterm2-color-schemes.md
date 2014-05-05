@@ -1,6 +1,6 @@
 ---
 title: iTerm 2 のカラースキームをファイル書出し/読込みをする
-description: 2 のカラースキームをファイル書出し/読込みをする
+description: iTerm 2 のカラースキームをファイル書出し/読込みをする
 date: 2014-05-05 14:00
 public: true
 tags: iterm2, shell
