@@ -14,6 +14,10 @@ filterTags = (text)->
     else
       self.removeClass 'hidden'
 
+handleShowAllLink = (e)->
+  $('#sidebar-tags-list > li').removeClass 'hidden'
+  $('.show-all-tags-link').remove()
+
 $ ->
   $('[data-toggle=tooltip]').tooltip()
   $('form#tag-filter-form')
@@ -21,3 +25,4 @@ $ ->
   .find('input')
   .on('keyup', handleFilterTagsKeyUp)
   $('.article-body > table').addClass 'table-bordered table'
+  $('.show-all-tags-link').on('click', handleShowAllLink)

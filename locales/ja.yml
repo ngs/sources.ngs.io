@@ -1,5 +1,6 @@
 ---
 ja:
+  show_all: 全て表示
   previous_article: 前の記事
   next_article: 次の記事
   filter_tags: タグを絞り込む
