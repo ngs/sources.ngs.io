@@ -13,7 +13,7 @@ class ProjectFormula < Formula
   end
 
   def bundle_exec cmd, env = ''
-    rbenv_exec "#{env} bundle exec #{cmd}".strip
+    rbenv_exec "#{env} bundle exec #{cmd}"
   end
 
   def install_bundler
