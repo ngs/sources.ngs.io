@@ -64,7 +64,7 @@ class ProjectFormula < Formula
   end
 
   def src_dir
-    ENV['PBCD_SRC_DIR'] || File.join(ENV['HOME'], 'src')
+    ENV['HOMEBREW_PROJECT_SRC_DIR'] || File.join(ENV['HOME'], 'src')
   end
 
   def database_yml
