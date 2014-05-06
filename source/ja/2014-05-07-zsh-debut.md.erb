@@ -44,6 +44,14 @@ tmux プラグインは tmux コマンドを上書きしてくれるので、自
 
 <%= partial '2014-05-07-zsh-debut/01.zsh-plugins.sh.md' %>
 
+あと、rbenv プラグインはディレクトリの有無で、インストールの有無を判断しているので、Boxen が使っている、`/opt/boxen/rbenv` には対応していませんでした。
+
+<%= partial '2014-05-07-zsh-debut/02.rbenv-plugin.sh.md' %>
+
+Symlink を貼って対応しました。
+
+<%= partial '2014-05-07-zsh-debut/03.rbenv-symlink.sh.md' %>
+
 ## Theme
 
 Oh My ZSH のテーマは、どれも格好よさげなのですが、細かいニーズを満たしていなかったので、自分で作成しました。
@@ -58,11 +66,11 @@ Oh My ZSH のテーマは、どれも格好よさげなのですが、細かい�
 
 ソースからは以下の様にして、ロードを行っています。
 
-<%= partial '2014-05-07-zsh-debut/02.zsh-theme.sh.md' %>
+<%= partial '2014-05-07-zsh-debut/04.zsh-theme.sh.md' %>
 
 以下の様に追記しました。
 
-<%= partial '2014-05-07-zsh-debut/03.zsh-custom.sh.md' %>
+<%= partial '2014-05-07-zsh-debut/05.zsh-custom.sh.md' %>
 
 [Prompt] でも綺麗に表示できています。
 
