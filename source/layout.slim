@@ -89,6 +89,11 @@ html
                   = link_to article do
                     span.title= article.title
                     time= article.date.strftime('%Y/%m/%d')
+              li.show-all.text-right
+                = link_to '/archives' do
+                  = t(:show_all)
+                  | &nbsp;
+                  span.glyphicon.glyphicon-hand-right
           section#sidebar-monthly
             header
               h2= t :monthly
