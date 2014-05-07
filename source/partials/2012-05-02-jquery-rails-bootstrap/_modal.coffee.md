@@ -1,21 +1,3 @@
----
-title: jquery-rails で確認プロンプトを Bootstrap のモーダルとして表示する
-description: jquery-rails を使ったプロジェクトでの、window.confirm を Bootstrap のモーダルで表示します。
-date: 2012-05-02 00:00
-public: true
-tags: jquery, rails, coffeescript, bootstrap
----
-
-jquery-rails を使ったプロジェクトで、
-
-
-```erb
-<%= link_to "Delete", delete_post_path(post), :confirm => "Are you sure?", :method=>:delete %>
-```
-みたいにすると、デフォルトでは JavaScript の `confirm` で確認され、格好悪いので、`$.rails.fire` メソッドを上書きして Bootstrap のモーダルを出します。
-
-READMORE
-
 ```coffeescript
 rails = $.rails
 _fire = rails.fire
@@ -36,7 +18,7 @@ createModal = () ->
     </div>
   </div>')
   modal = $("#confirm-modal")
-  
+
 rails.fire = fire = (obj, name, data) ->
   if name == 'confirm'
     message = obj.data 'confirm'
