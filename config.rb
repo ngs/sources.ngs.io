@@ -17,6 +17,7 @@ activate :syntax
 activate :i18n, langs: [lang]
 activate :livereload
 activate :similar
+activate :emoji, :dir => '/images/emoji', :width => 20, :height => 20
 
 set :markdown_engine, :redcarpet
 set :markdown, :fenced_code_blocks => true, :smartypants => true, :autolink => true, :tables => true
