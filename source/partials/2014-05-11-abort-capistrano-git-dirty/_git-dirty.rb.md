@@ -1,5 +1,5 @@
 ```ruby
-before "deploy:update_code",    'git:dirty'
+before "deploy:update_code", 'git:dirty'
 
 namespace :git do
   desc "Check current directory and raise if git status is dirty"

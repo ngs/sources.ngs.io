@@ -1,4 +1,4 @@
-```bash
+```
 $ bundle exec cap deploy
     triggering start callbacks for `deploy'
   * executing `multistage:ensure'
