@@ -6,7 +6,7 @@ ol#archives
         h2
           = link_to blog_month_path(year, month) do
             = Date.new(year, month, 1).strftime(t 'calendar_title.format.month')
-        ol
+        ol.entries
           - month_articles.each do|article|
             li
               = link_to article.url do

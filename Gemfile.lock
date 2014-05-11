@@ -58,6 +58,9 @@ GEM
     i18n (0.6.9)
     json (1.8.1)
     kramdown (1.3.3)
+    levenshtein-ffi (1.0.2)
+      ffi
+      ffi
     listen (1.3.1)
       rb-fsevent (>= 0.9.3)
       rb-inotify (>= 0.9)
@@ -76,6 +79,9 @@ GEM
       addressable (~> 2.3.5)
       middleman-core (~> 3.2)
       tzinfo (>= 0.3.0)
+    middleman-blog-similar (1.0.0)
+      middleman-blog (~> 3.5)
+      middleman-core (~> 3.2)
     middleman-core (3.2.2)
       activesupport (~> 3.2.6)
       bundler (~> 1.1)
@@ -157,8 +163,10 @@ DEPENDENCIES
   builder (~> 3.0)
   coffee-script
   dotenv
+  levenshtein-ffi
   middleman (~> 3.2.0)
   middleman-blog (~> 3.5.0)
+  middleman-blog-similar
   middleman-deploy
   middleman-disqus
   middleman-favicon-maker (~> 3.5)

@@ -4,6 +4,9 @@ source 'http://rubygems.org'
 
 gem 'dotenv'
 
+gem 'middleman-blog-similar' # , :git => 'git@github.com:ngs/middleman-blog-similar.git', :ref => 'develop'
+gem 'levenshtein-ffi', :require => 'levenshtein'
+
 gem "middleman-favicon-maker", "~> 3.5"
 gem 'middleman', '~> 3.2.0'
 gem 'middleman-blog', '~> 3.5.0'

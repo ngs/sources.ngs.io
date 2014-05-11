@@ -43,6 +43,15 @@
 
     .disqus= disqus
 
+    #similar-articles
+      h2= t :similar_articles
+      ol.entries
+        - similar_articles.first(5).each do|article|
+          li
+            = link_to article.url do
+              time= article.date.strftime('%Y/%m/%d')
+              span.title= article.title
+
   #fb-root
   javascript:
     (function(d, s, id) {
