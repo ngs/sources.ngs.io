@@ -20,7 +20,7 @@ READMORE
 この改修で今まで使っていた `google_analytics_tag` に加えて、`google_analytics_universal_tag` ヘルパーが追加されます。
 
 ```erb
-<%= google_analytics_universal_tag %>
+<<%= '%=' %> google_analytics_universal_tag %>
 ```
 
 ついでに、今までこのプロジェクトは Unit Test がなかったみたいなので、[テストコード]を追加して、別途 Pull Request を送りました。[Cucumber] 楽しいですね。
@@ -37,7 +37,7 @@ gem 'middleman-google-analytics', :github => 'ngs/middleman-google-analytics'
 
 merge されました！
 
-[![](2014-04-13-middleman-ogp/merge.png)][pr15]
+[![](2014-04-16-middleman-google-analytics/merge.png)][pr15]
 
 Version を [0.1.0] に Bump して、[RubyGems] にリリースされました。
 
