@@ -1,13 +1,13 @@
 ```ruby
 # Levenshtein distance function:
-activate :similar # , :engine => :levenshtein by default.
+activate :similar # , :algorithm => :levenshtein by default.
 
 # Damerau–Levenshtein distance function:
-activate :similar, :engine => :damerau_levenshtein
+activate :similar, :algorithm => :damerau_levenshtein
 
 # Term Frequency-Inverse Document Frequency function:
-activate :similar, :engine => :tf_idf
+activate :similar, :algorithm => :tf_idf
 
 # Okapi BM25 ranking function:
-activate :similar, :engine => :bm25
+activate :similar, :algorithm => :bm25
 ```
