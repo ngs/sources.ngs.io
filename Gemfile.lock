@@ -7,6 +7,16 @@ GIT
       rouge (~> 1.0)
 
 GIT
+  remote: git://github.com/ngs/middleman-blog-similar.git
+  revision: 1ec0c5d7852cbcad82994581162955b0b837e444
+  ref: begin-rescue-tree-tagger
+  specs:
+    middleman-blog-similar (1.1.1)
+      fast-stemmer (~> 1.0.2)
+      middleman-blog (~> 3.5)
+      middleman-core (~> 3.2)
+
+GIT
   remote: git://github.com/ngs/middleman-google-analytics.git
   revision: c28a5fc1e0f72cd206ba5f8733c3655935501b9c
   specs:
@@ -19,16 +29,6 @@ GIT
   branch: blog-support
   specs:
     middleman-ogp (1.0.4)
-      middleman-core (~> 3.2)
-
-GIT
-  remote: git@github.com:ngs/middleman-blog-similar.git
-  revision: 1ec0c5d7852cbcad82994581162955b0b837e444
-  ref: begin-rescue-tree-tagger
-  specs:
-    middleman-blog-similar (1.1.1)
-      fast-stemmer (~> 1.0.2)
-      middleman-blog (~> 3.5)
       middleman-core (~> 3.2)
 
 GEM
