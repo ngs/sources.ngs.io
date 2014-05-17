@@ -119,6 +119,16 @@ KeyRemap4MacBook_cli export | grep cli >> ~/dotfiles/env.d/darwin/keyremap4macbo
 
 Mac OS X 上で `~/dotfiles/env.d/darwin/*.sh` は自動的に `source` されます。[ngs/dotfiles env.sh]
 
+## 追記
+
+このスクリプトの実行に時間がかかるので、`env.d` はやめて、設定実行用のスクリプト [setup.sh] から実行する様にしました。
+
+```bash
+# time KeyRemap4MacBook_cli  set repeat.initial_wait 200
+KeyRemap4MacBook_cli set repeat.initial_wait 200  0.03s user 0.02s system 55% cpu 0.090 total
+```
+
+
 [KeyRemap4MacBook]: https://pqrs.org/macosx/keyremap4macbook/index.html.ja
 [Boxen]: http://boxen.github.com/
 [今のところ]: /2014/05/08/homebrew-boxen/
@@ -126,3 +136,4 @@ Mac OS X 上で `~/dotfiles/env.d/darwin/*.sh` は自動的に `source` され�
 [~/dotfiles/bin]: https://github.com/ngs/dotfiles/tree/master/bin
 [dotfiles]: https://github.com/ngs/dotfiles
 [ngs/dotfiles env.sh]: https://github.com/ngs/dotfiles/blob/master/env.sh#L15
+[setup.sh]: https://github.com/ngs/dotfiles/blob/master/setup.sh
