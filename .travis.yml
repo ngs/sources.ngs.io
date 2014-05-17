@@ -7,6 +7,8 @@ env:
   - MM_LANG=ja
   - MM_LANG=en
   global:
+  - TAGGER_DIR=$TRAVIS_BUILD_DIR/.bundle/tree-tagger
+  - TREETAGGER_COMMAND=$TAGGER_DIR/cmd/tree-tagger-english
   - BUNDLE_ARCHIVE='ngs.io'
   - AWS_S3_REGION='us-east-1'
   - AWS_S3_BUCKET='bundle-ngs-io'
@@ -21,6 +23,16 @@ before_install:
 - 'echo ''gem: --no-ri --no-rdoc'' > ~/.gemrc'
 - gem install bundler fog
 - /bin/sh ./script/travis/bundle-install.sh
+# - sudo apt-get -yV install mecab
+# - sudo apt-get -yV install mecab-ipadic-utf8
+- if [ ! -d $TAGGER_DIR ]; then
+- mkdir $TAGGER_DIR
+- curl --progress-bar -o $TAGGER_DIR/tree-tagger-linux-3.2.tar.gz http://www.cis.uni-muenchen.de/~schmid/tools/TreeTagger/data/tree-tagger-linux-3.2.tar.gz
+- curl --progress-bar -o $TAGGER_DIR/tagger-scripts.tar.gz http://www.cis.uni-muenchen.de/~schmid/tools/TreeTagger/data/tagger-scripts.tar.gz
+- curl --progress-bar -o $TAGGER_DIR/install-tagger.sh http://www.cis.uni-muenchen.de/~schmid/tools/TreeTagger/data/install-tagger.sh
+- curl --progress-bar -o $TAGGER_DIR/english-par-linux-3.2.bin.gz http://www.cis.uni-muenchen.de/~schmid/tools/TreeTagger/data/english-par-linux-3.2.bin.gz
+- cd $TAGGER_DIR && sh install-tagger.sh && cd -
+- fi
 script: bundle exec middleman build
 after_script:
 - ruby script/travis/bundle-cache.rb
