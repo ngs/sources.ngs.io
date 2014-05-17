@@ -1,21 +1,28 @@
----
+bundler_args: --without development --path=~/.bundle
 language: ruby
 rvm:
-  - 2.0.0
-cache: bundler
-script: bundle exec middleman build
-env:
-  global:
-    - GIT_COMMITTER_NAME='ngs@travis-ci'
-    - GIT_COMMITTER_EMAIL='a+travis@ngs.io'
-    - GIT_AUTHOR_NAME='ngs@travis-ci'
-    - GIT_AUTHOR_EMAIL='a+travis@ngs.io'
-    - secure: "UcV3qTN87+aWcpEZL61QGXH5stFj2WUbHQwZZiXqxCv0+YNZv4S6bZzPi6oponGbe+DSGLCZmFhIuP2Ckmc2eRC2X3DRPCb0wBXcQ1TnUWb/IHqloHpUXdyZUWY563i8LuoRZ9hdUUjvIwa5X6JbcdyB3e9vWW2/kgqZXjLOK34="
+- 2.0.0
 env:
   matrix:
-    - MM_LANG=ja
-    - MM_LANG=en
+  - MM_LANG=ja
+  - MM_LANG=en
+  global:
+  - BUNDLE_ARCHIVE='ngs.io'
+  - AWS_S3_REGION='us-east-1'
+  - AWS_S3_BUCKET='bundle-ngs-io'
+  - GIT_COMMITTER_NAME='ngs@travis-ci'
+  - GIT_COMMITTER_EMAIL='a+travis@ngs.io'
+  - GIT_AUTHOR_NAME='ngs@travis-ci'
+  - GIT_AUTHOR_EMAIL='a+travis@ngs.io'
+  - secure: FdF69p8awWIP4VNVhQgqWdb8xjYPuEP9SgHKYMBDkCOyDxIQ1SABhBAHpzc4wZgrQsJpbtoMFn3bPFM8dMaQb3JE+SMEGkP/edY0HlUOcNwYr+YwgTZMCN6MpsLnHU9y2Zij0tNsWzsW1j6aviGLjaijOFVSL/x+A97GTytTo7A=
+  - secure: RHmvLa/gTxXO9rdXEskVjy2Jjh22yLtE1Oadu9XUdrEr4w/DCQngBhXLf26QNUTeZscN2uUOOWJLFkG3XyWpiLBU/ihUlWXu8w/SNm9kSty8Ws27dkOZ1pii1lfhCvP4mRWjTqFFpxicWjw0h/UgrNkxGCWis8c+dUYS4gQBCvE=
+  - secure: djUc9QM1HeR/m4njvmN0llGk6jWuXSyVALw4LRXfsf351HNSTCwkU0NKFXvUMIg1f/XXEJfuoHNyER0EMZgAdkdp64+oHK19zq7KCV0v4NQAohoWLGIzy4QLb5L40glq9mekcMqP/rPcL+5bcOGjolgx5cifehbLKzAd00mB4EE=
+before_install:
+- 'echo ''gem: --no-ri --no-rdoc'' > ~/.gemrc'
+- gem install bundler fog
+- /bin/sh ./script/travis/bundle-install.sh
+script: bundle exec middleman build
+after_script:
+- ruby script/travis/bundle-cache.rb
 after_success:
-  - '[ "$TRAVIS_BRANCH" == "master" ] && [ $GH_TOKEN ] && bundle exec middleman deploy >/dev/null 2>&1'
-  - '[ "$TRAVIS_BRANCH" == "master" ] && [ $GH_TOKEN ] && bundle exec middleman deploy >/dev/null 2>&1'
-
+- '[ "$TRAVIS_BRANCH" == "master" ] && [ $GH_TOKEN ] && bundle exec middleman deploy >/dev/null 2>&1'
