@@ -15,14 +15,8 @@ Time.zone = "Tokyo"
 activate :directory_indexes
 activate :syntax
 activate :i18n, langs: [lang]
-# activate :livereload
+activate :livereload
 activate :emoji, :dir => '/images/emoji', :width => 20, :height => 20
-
-# if lang == :en
-activate :similar, :algorithm => :'word_frequency/tree_tagger'
-# else
-#   activate :similar, :algorithm => :'word_frequency/mecab'
-# end
 
 set :markdown_engine, :redcarpet
 set :markdown, :fenced_code_blocks => true, :smartypants => true, :autolink => true, :tables => true
@@ -46,6 +40,12 @@ activate :blog do |blog|
   blog.per_page = 10
   blog.page_link = "p{num}"
 end
+# if lang == :en
+activate :similar, :algorithm => :'word_frequency/tree_tagger'
+# else
+#   activate :similar, :algorithm => :'word_frequency/mecab'
+# end
+
 
 page "/feed.xml",    layout: false
 page "/sitemap.xml", layout: false
