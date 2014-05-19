@@ -7,7 +7,7 @@ env:
   - MM_LANG=ja
   - MM_LANG=en
   global:
-  - TAGGER_DIR=$TRAVIS_BUILD_DIR/.bundle/tree-tagger
+  - TAGGER_DIR=~/.bundle/tree-tagger
   - TREETAGGER_COMMAND=$TAGGER_DIR/cmd/tree-tagger-english
   - BUNDLE_ARCHIVE='ngs.io'
   - AWS_S3_REGION='us-east-1'
