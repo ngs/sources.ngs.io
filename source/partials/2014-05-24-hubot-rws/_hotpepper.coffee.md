@@ -1,6 +1,6 @@
 ```coffee
 # Description:
-#   Searches restaurants with Hotpepper.
+#   Searches restaurants from Hotpepper.
 #
 # Commands:
 #   hubot ご飯 <query> - ご飯検索
