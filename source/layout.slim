@@ -124,6 +124,13 @@ html
                   span.glyphicon.glyphicon-plus
                   | &nbsp;
                   = t(:show_all)
+          section#sidebar-links
+            header
+              h2= t :links
+            ol.nav
+              li= link_to 'Google',  'https://plus.google.com/+AtsushiNAGASE?rel=author'
+              li= link_to 'Twitter', 'https://twitter.com/ngs'
+              li= link_to 'GitHub',  'https://github.com/ngs'
 
       footer.row
         .col-md-12.credit
