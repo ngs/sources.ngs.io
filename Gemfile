@@ -8,7 +8,7 @@ gem 'middleman-blog-similar', :github => 'ngs/middleman-blog-similar', :ref => '
 gem 'levenshtein-ffi', :require => 'levenshtein'
 
 gem "middleman-favicon-maker", "~> 3.5"
-gem 'middleman', '~> 3.2.0'
+gem 'middleman', '~> 3.2.2'
 gem 'middleman-blog', '~> 3.5.0'
 gem 'middleman-deploy'
 gem 'middleman-disqus'
