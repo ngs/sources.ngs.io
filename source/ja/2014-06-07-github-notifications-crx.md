@@ -3,7 +3,7 @@ title: GitHub Notifications Chrome 機能拡張 作りました
 description: GitHub の Notifications をチェックする Chrome 機能拡張を作りました。
 date: 2014-06-07 06:00
 public: true
-tags: google chrome, extension, github, notifications
+tags: chrome, extension, github, notifications
 alternate: true
 ogp:
   og:

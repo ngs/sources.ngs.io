@@ -3,7 +3,7 @@ title: GitHub Notifications for Google Chrome
 description: I created a chrome extension to check GitHub Notifications in toolbar icon.
 date: 2014-06-07 06:00
 public: true
-tags: google chrome, extension, github, notifications
+tags: chrome, extension, github, notifications
 alternate: true
 ogp:
   og:
