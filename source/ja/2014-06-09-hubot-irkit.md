@@ -16,7 +16,7 @@ ogp:
 
 ![](2014-06-09-hubot-irkit/picture.jpg)
 
-何か Hubot とハードウェアが連携するものを作りたかったので、既に、仕事部屋とリビングに2台所有している、オープンソース赤外線リモコンデバイス [IRKit] を操作するスクリプトを作りました。
+何か [Hubot] とハードウェアが連携するものを作りたかったので、既に、仕事部屋とリビングに2台所有している、オープンソース赤外線リモコンデバイス [IRKit] を操作するスクリプトを作りました。
 
 **[ngs/hubot-irkit]**
 
@@ -43,6 +43,10 @@ me > hubot irkit send message poweron for office-amp
 hubot > Sending poweron for office-amp..
 hubot > Successfully sent message: poweron for office-amp
 ```
+
+登録したデバイス、メッセージは [Hubot] の [brain] に保存されます。
+
+`redis-brain` を使っている場合は、Redis に `hubot:storage` というキーで JSON データが保存されます。
 
 インストール
 ----------
@@ -118,7 +122,7 @@ Content-Type: text/plain
 
 ### 3. IRKit デバイスを登録します。
 
-取得したクライアントトークンを使って Hubot brain に IRKit デバイスを登録します。
+取得したクライアントトークンを使って [Hubot brain][brain] に IRKit デバイスを登録します。
 
 ```
 hubot irkit register device XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX office-amp
@@ -137,3 +141,4 @@ hubot irkit register device XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX office-amp
 [Hubot]: https://hubot.github.com/
 [Atsushi Nagase]: http://ngs.io/
 [MIT License]: LICENSE
+[brain]: https://github.com/github/hubot/blob/master/docs/scripting.md#persistence
