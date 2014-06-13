@@ -1,0 +1,3 @@
+```coffee
+robot.server.close()
+```
