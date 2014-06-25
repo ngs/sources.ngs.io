@@ -56,16 +56,6 @@ html
           main.col-md-9 role='main'
             == yield
         aside.col-md-3
-          section#sidebar-bootswatch style="display:none"
-            h2 Theme
-            .btn-group
-              button.btn.btn-default.dropdown-toggle type="button" data-toggle="dropdown"
-                span.bootswatch-theme-name
-                | &nbsp;
-                span.caret
-              ul.dropdown-menu.bootswatch-theme-list role="menu"
-                li style="padding: 1em 0; text-align: center"
-                  i.fa.fa-refresh.fa-spin
           section#sidebar-navigation
             h2= t :navigation
             ol.nav itemscope="itemscope" itemtype="http://www.schema.org/SiteNavigationElement"
@@ -92,6 +82,16 @@ html
                     span.glyphicon.glyphicon-pencil
                     |&nbsp;
                     span itemprop='name' ブログ (日本語)
+          section#sidebar-bootswatch style="display:none"
+            h2 Theme
+            .btn-group
+              button.btn.btn-default.dropdown-toggle type="button" data-toggle="dropdown"
+                span.bootswatch-theme-name
+                | &nbsp;
+                span.caret
+              ul.dropdown-menu.bootswatch-theme-list role="menu"
+                li style="padding: 1em 0; text-align: center"
+                  i.fa.fa-refresh.fa-spin
           section#sidebar-recent
             header
               h2= t :recent_entries

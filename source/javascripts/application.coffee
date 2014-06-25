@@ -47,7 +47,7 @@ setTheme = (theme)->
   link = $ 'link#bootswatch-css'
   if link.attr('href') isnt cssCdn
     link.attr 'href', cssCdn
-  $.cookie COOKIE_KEY_THEME, theme
+  $.cookie COOKIE_KEY_THEME, theme, themeCookieOptions
 
 $ ->
   $('[data-toggle=tooltip]').tooltip()
