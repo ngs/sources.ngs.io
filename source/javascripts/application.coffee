@@ -8,10 +8,17 @@ $.cookie.json = yes
 themeCookieOptions = expires: 30, path: '/'
 themeCookieOptions.domain = '.ngs.io' if /^(?:ja\.)?ngs\.io$/.test document.location.hostname
 themes = null
-defaultTheme =
+hours = new Date().getHours()
+defaultTheme = if hours > 4 and hours < 18
   cssCdn: "http://netdna.bootstrapcdn.com/bootswatch/latest/united/bootstrap.min.css"
   name: "United"
   preview: "http://bootswatch.com/united/"
+  isDefault: yes
+else
+  cssCdn: "http://netdna.bootstrapcdn.com/bootswatch/latest/slate/bootstrap.min.css"
+  name: "Slate"
+  preview: "http://bootswatch.com/slate/"
+  isDefault: yes
 theme = $.cookie(COOKIE_KEY_THEME) || defaultTheme
 document.write """<link rel="stylesheet" type="text/css" href="#{theme.cssCdn}" id="bootswatch-css">"""
 
@@ -41,13 +48,14 @@ loadThemeDropDown = ->
       ul.append li
 
 setTheme = (theme)->
-  { name, preview, cssCdn } = theme
+  { name, preview, cssCdn, isDefault } = theme
   $('.bootswatch-theme-name').text name
   $('.bootswatch-link').text(name).attr 'href', preview
   link = $ 'link#bootswatch-css'
   if link.attr('href') isnt cssCdn
     link.attr 'href', cssCdn
-  $.cookie COOKIE_KEY_THEME, theme, themeCookieOptions
+  unless isDefault
+    $.cookie COOKIE_KEY_THEME, theme, themeCookieOptions
 
 $ ->
   $('[data-toggle=tooltip]').tooltip()
