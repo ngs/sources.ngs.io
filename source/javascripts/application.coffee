@@ -15,9 +15,9 @@ defaultTheme = if hours > 4 and hours < 18
   preview: "http://bootswatch.com/united/"
   isDefault: yes
 else
-  cssCdn: "http://netdna.bootstrapcdn.com/bootswatch/latest/slate/bootstrap.min.css"
-  name: "Slate"
-  preview: "http://bootswatch.com/slate/"
+  cssCdn: "http://netdna.bootstrapcdn.com/bootswatch/latest/cyborg/bootstrap.min.css"
+  name: "Cyborg"
+  preview: "http://bootswatch.com/cyborg/"
   isDefault: yes
 theme = $.cookie(COOKIE_KEY_THEME) || defaultTheme
 document.write """<link rel="stylesheet" type="text/css" href="#{theme.cssCdn}" id="bootswatch-css">"""
