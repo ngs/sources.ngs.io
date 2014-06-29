@@ -62,25 +62,25 @@ html
               li
                 = link_to '/', itemprop: 'url' do
                   span.glyphicon.glyphicon-home
-                  |&nbsp;
+                  | &nbsp;&nbsp;
                   span itemprop='name'
                     = t :home
               li
                 = link_to '/about', rel: 'author', itemprop: 'url' do
                   span.glyphicon.glyphicon-user
-                  |&nbsp;
+                  | &nbsp;&nbsp;
                   span itemprop='name'
                     = t :aboutme
               li
                 - if I18n.locale.to_s == 'ja'
                   = link_to 'http://ngs.io/', rel: 'alternate', itemprop: 'url', hreflang: 'en' do
                     span.glyphicon.glyphicon-pencil
-                    |&nbsp;
+                    | &nbsp;&nbsp;
                     span itemprop='name' Blog (English)
                 - else
                   = link_to 'http://ja.ngs.io/', rel: 'alternate', itemprop: 'url', hreflang: 'ja' do
                     span.glyphicon.glyphicon-pencil
-                    |&nbsp;
+                    | &nbsp;&nbsp;
                     span itemprop='name' ブログ (日本語)
           section#sidebar-bootswatch style="display:none"
             h2 Theme
@@ -104,7 +104,7 @@ html
               li.show-all.text-right
                 = link_to '/archives' do
                   = t(:show_all)
-                  | &nbsp;
+                  | &nbsp;&nbsp;
                   span.glyphicon.glyphicon-hand-right
           section#sidebar-monthly
             header
@@ -140,9 +140,18 @@ html
             header
               h2= t :links
             ol.nav
-              li= link_to 'Google',  'https://plus.google.com/+AtsushiNAGASE?rel=author'
-              li= link_to 'Twitter', 'https://twitter.com/ngs'
-              li= link_to 'GitHub',  'https://github.com/ngs'
+              li
+                = link_to 'https://plus.google.com/+AtsushiNAGASE?rel=author' do
+                  i.fa.fa-google-plus
+                  | &nbsp;&nbsp;Google
+              li
+                = link_to 'https://twitter.com/ngs' do
+                  i.fa.fa-twitter
+                  | &nbsp;&nbsp;Twitter
+              li
+                = link_to 'https://github.com/ngs' do
+                  i.fa.fa-github
+                  | &nbsp;&nbsp;GitHub
 
       footer.row
         .col-md-12.credit
