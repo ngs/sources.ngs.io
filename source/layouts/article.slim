@@ -28,8 +28,14 @@
         - url = URI.join(t('blog.url'), URI.escape(current_article.url))
         = link_to t(:tweet), 'http://twitter.com/share', class: 'twitter-share-button', 'data-url' => url, 'data-via' => 'ngs', 'data-counturl' => url, 'rel' => 'nofollow'
         .g-plusone data-size='medium'
-        .fb-like data-send='true' data-width='300' data-show-faces='false' data-href=url
-
+        - if I18n.locale.to_s == 'ja'
+          .hateb
+            a.hatena-bookmark-button href="http://b.hatena.ne.jp/entry/#{url.to_s.sub %r(^https?:\/\/), ''}" data-hatena-bookmark-title="#{ current_article.title }" data-hatena-bookmark-layout="simple-balloon" title="このエントリーをはてなブックマークに追加"
+              img src="http://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;"
+          .fb-like data-send='true' data-width='300' data-show-faces='false' data-href=url
+        - else
+          a href="https://news.ycombinator.com/submit" class="hn-button" class="hn-button" data-title=current_article.title data-url=url
+            | Vote on Hacker News
       ul.pager
         - if current_article.previous_article
           li.previous
@@ -52,15 +58,21 @@
               time= article.date.strftime('%Y/%m/%d')
               span.title= article.title
 
-  #fb-root
+  - if I18n.locale.to_s == 'ja'
+    #fb-root
+    javascript:
+      (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) {return;}
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/#{ I18n.locale.to_s == 'ja' ? 'ja_JP' : 'en_US' }/all.js#appId=#{ data[I18n.locale.to_sym].ogp.fb.app_id }&xfbml=1";
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
+    script type="text/javascript" src="http://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"
   javascript:
-    (function(d, s, id) {
-      var js, fjs = d.getElementsByTagName(s)[0];
-      if (d.getElementById(id)) {return;}
-      js = d.createElement(s); js.id = id;
-      js.src = "//connect.facebook.net/#{ I18n.locale.to_s == 'ja' ? 'ja_JP' : 'en_US' }/all.js#appId=#{ data[I18n.locale.to_sym].ogp.fb.app_id }&xfbml=1";
-      fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));
+    (function() {
+      var HN=[];HN.factory=function(e){return function(){HN.push([e].concat(Array.prototype.slice.call(arguments,0)))};},HN.on=HN.factory("on"),HN.once=HN.factory("once"),HN.off=HN.factory("off"),HN.emit=HN.factory("emit"),HN.load=function(){var e="hn-button.js";if(document.getElementById(e))return;var t=document.createElement("script");t.id=e,t.src="//hn-button.herokuapp.com/hn-button.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(t,n)},HN.load();
+    })();
   javascript:
     (function() {
       var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
