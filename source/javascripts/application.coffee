@@ -2,6 +2,7 @@
 #= require 'jquery.cookie'
 #= require 'bootstrap'
 #= require 'konami'
+#= require 'shake'
 
 COOKIE_KEY_THEME = 'ngs.io.theme'
 $.cookie.json = yes
