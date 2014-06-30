@@ -22,6 +22,11 @@ else
 theme = $.cookie(COOKIE_KEY_THEME) || defaultTheme
 document.write """<link rel="stylesheet" type="text/css" href="#{theme.cssCdn}" id="bootswatch-css">"""
 
+shakeEventDidOccur = (e)->
+  if $.cookie(COOKIE_KEY_THEME) and confirm 'Reset style?'
+    $.removeCookie COOKIE_KEY_THEME, themeCookieOptions
+    document.location.reload()
+
 handleFilterTagsKeyUp = (e)->
   input = $ e.target
   filterTags input.val()
@@ -70,6 +75,7 @@ $ ->
     setTheme $(@).data()
     no
   setTheme theme
+  window.addEventListener 'shake', shakeEventDidOccur, no
 
 new Konami () ->
   $('#sidebar-bootswatch').fadeIn()
