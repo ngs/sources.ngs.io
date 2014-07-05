@@ -48,10 +48,25 @@ loadThemeDropDown = ->
   $.get('http://api.bootswatch.com/3/')
   .done (res)->
     ul = $('.bootswatch-theme-list').empty()
-    for { cssCdn, name, preview } in res.themes
-      li = $ """<li><a href="#{preview}" target="_blank">#{name}</a></li>"""
-      li.find('a').data { cssCdn, name, preview }
-      ul.append li
+    appendItem ul, {
+      cssCdn: '//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css'
+      preview: 'http://bootswatch.com/default/'
+      name: 'Default'
+    }
+    appendItem ul, data for data in res.themes
+    appendItem ul, {
+      cssCdn: '/stylesheets/bootstrap/bootstra386.css'
+      preview: 'https://kristopolous.github.io/BOOTSTRA.386/'
+      name: 'BOOTSTRA.386'
+    }
+
+appendItem = (ul, data)->
+  { cssCdn, name, preview } = data
+  li = $ """<li><a href="#{preview}" target="_blank">#{name}</a></li>"""
+  li.find('a').data data
+  ul.append li
+  li
+
 
 setTheme = (theme)->
   { name, preview, cssCdn, isDefault } = theme
