@@ -44,6 +44,25 @@ handleShowAllLink = (e)->
   $('#sidebar-tags-list > li').removeClass 'hidden'
   $('.show-all-tags-link').remove()
 
+handleReadMoreLink = (e)->
+  link = $ @
+  link.button 'loading'
+  href = link.attr 'href'
+  $.get(href)
+  .done (res)->
+    res = $ res
+    articleBody = link.parents('.entry').find('.article-body')
+    title = res.find('title').text()
+    content = res.find('[role=main] .article-body').html()
+    articleBody.html content
+    history.pushState null, title, href
+    ga 'send', 'pageview', {
+      page: "#{href}?inline=1"
+      title: title
+    }
+    link.remove()
+  no
+
 loadThemeDropDown = ->
   $.get('http://api.bootswatch.com/3/')
   .done (res)->
@@ -67,7 +86,6 @@ appendItem = (ul, data)->
   ul.append li
   li
 
-
 setTheme = (theme)->
   { name, preview, cssCdn, isDefault } = theme
   $('.bootswatch-theme-name').text name
@@ -90,6 +108,7 @@ $ ->
   $('.bootswatch-theme-list').on 'click', 'a', ->
     setTheme $(@).data()
     no
+  $('.read-more a').on 'click', handleReadMoreLink
   setTheme theme
   window.addEventListener 'shake', shakeEventDidOccur, no
 
