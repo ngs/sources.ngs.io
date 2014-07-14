@@ -83,5 +83,5 @@ Hubot > Waking up ngsromo
 [Hubot]: https://hubot.github.com/
 [hubot-yo]: https://github.com/sakatam/hubot-yo
 [YO]: http://www.justyo.co/
-[実装コード]: https://gist.github.com/ngs/d792d02c8c7e5bf952e1
+[実装コード]: https://gist.github.com/ngs/98d49a2d17da344e615f
 [Romo×iPhoneで楽しむロボット体験]: http://gihyo.jp/dev/serial/01/romo
