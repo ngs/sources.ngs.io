@@ -16,7 +16,7 @@ ogp:
 
 ![](2014-07-14-romo-hackathon/romos.jpg)
 
-07/13 目黒の [Hub Tokyo] (めっちゃ近所) で開催された [Romo ハッカソン] に参加してきました。
+07/13 目黒の [Hub Tokyo] \(めっちゃ近所) で開催された [Romo ハッカソン] に参加してきました。
 
 READMORE
 
