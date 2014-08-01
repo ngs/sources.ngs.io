@@ -48,15 +48,15 @@
 
 
     .disqus= disqus
-
-    #similar-articles
-      h2= t :similar_articles
-      ol.entries
-        - similar_articles.first(5).each do|article|
-          li
-            = link_to article.url do
-              time= article.date.strftime('%Y/%m/%d')
-              span.title= article.title
+    - unless ENV['NO_SIMILAR']
+      #similar-articles
+        h2= t :similar_articles
+        ol.entries
+          - similar_articles.first(5).each do|article|
+            li
+              = link_to article.url do
+                time= article.date.strftime('%Y/%m/%d')
+                span.title= article.title
 
   - if I18n.locale.to_s == 'ja'
     #fb-root

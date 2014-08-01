@@ -1,0 +1,123 @@
+---
+title: Raspberry PI と Hubot で観葉植物の水やりを自動化する
+description: Raspberry PI と Hubot を使って、Slack から観葉植物の水やりを実行できる装置を作りました。
+date: 2014-08-02 07:17
+public: true
+tags: hubot, slack, diy, raspberry pi, watering
+alternate: false
+ogp:
+  og:
+    image:
+      '': http://ja.ngs.io/images/2014-08-02-watering-pi/1.jpg
+      type: image/jpeg
+      width: 992
+      height: 525
+    video:
+      '': http://vimeo.com/moogaloop.swf?clip_id=102211439
+      secure_url: https://vimeo.com/moogaloop.swf?clip_id=102211439
+      type: application/x-shockwave-flash
+      width: 640
+      height: 360
+---
+
+<iframe src="//player.vimeo.com/video/102211439?title=0&amp;byline=0&amp;badge=0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen class="vimeo"></iframe>
+
+[Raspberry PI] と [Hubot] を使って、[Slack] から観葉植物の水やりを実行できる装置を作りました。
+
+READMORE
+
+## 材料
+
+![](2014-08-02-watering-pi/1.jpg)
+
+- [Raspberry Pi Type A 256MB]
+- [GPIO 拡張ボード]
+- [ジャンパワイヤ]
+- [スピーカーケーブル]
+- [エポキシ接着剤]
+- [灯油缶]
+- [アルミ線]
+- [S8050 トランジスタ (詰合せで購入)][トランジスタ詰合せ]
+- [灯油ポンプ]
+- [チューブジョイント]
+- [シリコンチューブ] (4mm x 6mm)
+- コルク栓
+
+## 回路
+
+![](2014-08-02-watering-pi/2.jpg)
+
+[灯油ポンプ] に直接はんだ付けして、+- 極を[スピーカーケーブル]でブレッドボードに引っ張ってきて、Raspberry PI から 5V 電源を供給します。
+
+S8050 トランジスタのにはそれぞれ、
+
+- E (エミッター): Raspberry PI GND
+- B (ベース): Raspberry PI GPIO 0
+- C (コレクター): 灯油ポンプの　- 極
+
+が接続されています。
+
+![](2014-08-02-watering-pi/map.png)
+
+## パイプの分配
+
+![](2014-08-02-watering-pi/3.jpg)
+
+植物への水の供給は、[シリコンチューブ]から行います。
+
+コルク栓をカッターナイフで、[灯油ポンプ]のパイプと丁度合う様な大きさに加工し、中央に穴を開け、[チューブジョイント]を[エポキシ接着剤]で固定します。
+
+![](2014-08-02-watering-pi/4.jpg)
+
+## Hubot で Slack と連携
+
+チャット応答には [Hubot] を使います。
+
+[Raspberry PI] がプライベートネットワークにあり、Webhook が設定できないため、XMPP 経由で [Slack] と連携します。
+
+詳しいセットアップ方法は、[前のエントリー]に書いています。
+
+npm ライブラリの [pi-gpio] を使って、メッセージに応答し、GPIO の信号を操作します。
+
+<%= partial '2014-08-02-watering-pi/water.coffee.md' %>
+
+以下の様なやりとりで、水やりを指示できます。
+
+![](2014-08-02-watering-pi/chat.png)
+
+## 完全自動化など
+
+もう一匹、[Heroku] で動かしている [Hubot] を Room に常駐させ、例えば [hubot-cron] を使うことによって、定時に水やりを実行する様に設定できます。
+
+```
+cronbot new job 0 10 * * * say wpi water
+```
+
+それだけだと、世話している感がないので、[Yo] と連動して水やりを指示する様にする予定です。
+
+![](2014-08-02-watering-pi/yo.png)
+
+<iframe src="//player.vimeo.com/video/102190678?title=0&amp;byline=0&amp;badge=0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen class="vimeo"></iframe>
+
+[Raspberry Pi Type A 256MB]: http://www.amazon.co.jp/gp/product/B00CYA6UKI/ref=as_li_ss_tl?ie=UTF8&camp=247&creative=7399&creativeASIN=B00CYA6UKI&linkCode=as2&tag=atsushnagased-22
+[GPIO 拡張ボード]: http://www.amazon.co.jp/gp/product/B00FOHXC9K/ref=as_li_ss_tl?ie=UTF8&camp=247&creative=7399&creativeASIN=B00FOHXC9K&linkCode=as2&tag=atsushnagased-22
+[エポキシ接着剤]: http://www.amazon.co.jp/gp/product/B003F9VWXW/ref=as_li_ss_tl?ie=UTF8&camp=247&creative=7399&creativeASIN=B003F9VWXW&linkCode=as2&tag=atsushnagased-22
+[灯油缶]: http://www.amazon.co.jp/gp/product/B00A46C2S8/ref=as_li_ss_tl?ie=UTF8&camp=247&creative=7399&creativeASIN=B00A46C2S8&linkCode=as2&tag=atsushnagased-22
+[アルミ線]: http://www.amazon.co.jp/gp/product/B003DSCENM/ref=as_li_ss_tl?ie=UTF8&camp=247&creative=7399&creativeASIN=B003DSCENM&linkCode=as2&tag=atsushnagased-22"
+[トランジスタ詰合せ]: http://www.amazon.co.jp/gp/product/B00DEY3VKU/ref=as_li_ss_tl?ie=UTF8&camp=247&creative=7399&creativeASIN=B00DEY3VKU&linkCode=as2&tag=atsushnagased-22
+[灯油ポンプ]: http://www.amazon.co.jp/gp/product/B005VJIX3G/ref=as_li_ss_tl?ie=UTF8&camp=247&creative=7399&creativeASIN=B005VJIX3G&linkCode=as2&tag=atsushnagased-22
+[チューブジョイント]: http://www.amazon.co.jp/gp/product/B000EVL82O/ref=as_li_ss_tl?ie=UTF8&camp=247&creative=7399&creativeASIN=B000EVL82O&linkCode=as2&tag=atsushnagased-22
+[シリコンチューブ]: http://www.amazon.co.jp/gp/product/B00FGO7U94/ref=as_li_ss_tl?ie=UTF8&camp=247&creative=7399&creativeASIN=B00FGO7U94&linkCode=as2&tag=atsushnagased-22
+[ジャンパワイヤ]: http://www.amazon.co.jp/gp/product/B00F31SQPW/ref=as_li_ss_tl?ie=UTF8&camp=247&creative=7399&creativeASIN=B00F31SQPW&linkCode=as2&tag=atsushnagased-22
+[スピーカーケーブル]: http://www.amazon.co.jp/gp/product/B00288EM9C/ref=as_li_ss_tl?ie=UTF8&camp=247&creative=7399&creativeASIN=B00288EM9C&linkCode=as2&tag=atsushnagased-22
+[Hubot]: https://hubot.github.com/
+[Heroku]: https://www.heroku.com/
+[Raspberry PI]: http://www.raspberrypi.org/
+[hubot-slack]: https://github.com/tinyspeck/hubot-slack
+[hubot-gtalk]: https://github.com/atmos/hubot-gtalk/
+[hubot-xmpp]: https://github.com/markstory/hubot-xmpp
+[Slack]: https://slack.com/
+[前のエントリー]: http://ja.ngs.io/2014/08/01/slack-hubot-xmpp/
+[pi-gpio]: https://github.com/rakeshpai/pi-gpio
+[hubot-cron]: https://github.com/miyagawa/hubot-cron
+[Yo]: http://justyo.co/
