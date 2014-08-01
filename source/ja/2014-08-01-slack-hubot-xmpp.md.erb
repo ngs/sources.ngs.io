@@ -69,24 +69,27 @@ READMORE
 
 もし、新規から始める場合は Hubot プロジェクトを作成し、
 
-```bash
-npm install -g hubot
-npm install -g hubot-xmpp
-npm install -g coffee-script
-nodenv rehash
-hubot -a xmpp -c pi-hubot
-cd pi-hubot
-```
+<%= partial '2014-08-01-slack-hubot-xampp/new-hubot.sh.md' %>
 
 起動します。
 
-```bash
-hubot -a xmpp
-```
+<%= partial '2014-08-01-slack-hubot-xampp/launch-hubot.sh.md' %>
 
 しばらくすると ping に応答する様になります。
 
 ![](2014-08-01-slack-hubot-xmpp/3.png)
+
+## god の設定
+
+死活管理と自動起動に [god] を使います。
+
+<%= partial '2014-08-01-slack-hubot-xampp/install-god.sh.md' %>
+
+### /etc/init.d/god
+
+<%= partial '2014-08-01-slack-hubot-xampp/god.sh.md' %>
+
+引用元: https://gist.github.com/cwsaylor/17522
 
 [hubot-irkit]: http://ja.ngs.io/2014/06/09/hubot-irkit/
 [Hubot]: https://hubot.github.com/
@@ -100,3 +103,4 @@ hubot -a xmpp
 [XMPP]: http://ja.wikipedia.org/wiki/Extensible_Messaging_and_Presence_Protocol
 [Admin Settings]: https://my.slack.com/admin/settings#change_gateways
 [Gateway 情報画面]: https://my.slack.com/account/gateways
+[god]: http://godrb.com/
