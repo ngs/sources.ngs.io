@@ -31,3 +31,11 @@ after_script:
 - ruby script/travis/bundle-cache.rb
 after_success:
 - '[ "$TRAVIS_BRANCH" == "master" ] && [ $GH_TOKEN ] && bundle exec middleman deploy >/dev/null 2>&1'
+notifications:
+  on_success: always
+  on_failure: always
+  on_start: always
+  webhooks:
+    - 'http://ngs-hubot.herokuapp.com/travisci/hooks'
+    - 'http://requestb.in/1bag8ng1'
+
