@@ -19,3 +19,5 @@
 /source/CNAME
 
 /.env
+
+/node_modules

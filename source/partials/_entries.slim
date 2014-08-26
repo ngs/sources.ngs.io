@@ -2,7 +2,7 @@
   section.entry itemscope=true itemtype="http://schema.org/BlogPosting"
     h2 itemprop="name"
       = link_to article.title, article, itemprop: "url"
-      time itemprop="datePublished" datetime=article.date.to_time.to_s
+      time itemprop="datePublished" datetime=article.date.to_time.to_s is="relative-time"
         = article.date.strftime('%Y-%m-%d %H:%M')
     .article-body itemprop="articleBody"
       = preserve do

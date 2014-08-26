@@ -3,6 +3,7 @@
 #= require 'bootstrap'
 #= require 'konami'
 #= require 'shake'
+#= require 'time-elements'
 
 COOKIE_KEY_THEME = 'ngs.io.theme'
 $.cookie.json = yes
