@@ -1,4 +1,3 @@
-#= require 'document-register-element.max'
 #= require 'jquery'
 #= require 'jquery.cookie'
 #= require 'bootstrap'
