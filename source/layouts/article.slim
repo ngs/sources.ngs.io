@@ -4,7 +4,7 @@
       h1 itemprop="name"
         = current_article.title
       p.meta
-        time itemprop="datePublished" datetime=current_article.date.to_time.to_s is="relative-time"
+        time itemprop="datePublished" datetime=current_article.date.to_time.strftime('%Y-%m-%dT%H:%M:%S') is="relative-time"
           = current_article.date.strftime('%Y-%m-%d %H:%M')
     .article-body itemprop="articleBody"
       - if current_resource.data.alternate
