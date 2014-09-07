@@ -44,7 +44,7 @@ heroku config:set HUBOT_IRKIT_HTTP=1
 以下の様なルーティングで webhook を受け付けます。
 
 ```
-GET /irkit/message/:deviceName/:messageName
+GET /irkit/messages/:deviceName/:messageName
 ```
 
 デフォルトの HTTP メソッドは `GET` ですが、`HUBOT_IRKIT_HTTP_METHOD` 環境変数で変更できます。([参照][HUBOT_IRKIT_HTTP_METHOD])
