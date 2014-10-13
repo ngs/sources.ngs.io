@@ -98,9 +98,9 @@ Failed to query the list of test cases in the test bundle:
 
 タグ契機の CI では、Distribution 用のビルドを、それ以外は AdHoc 用のビルドを行う様に設定しました。
 
-いずれも、デバッグシンボルの ZIP アーカイブと .ipa ファイルをアップロードし、Distribution 用は iTunes Connect へ、AdHoc 用は TestFlight にアップロードする様に設定しました。
+いずれも、デバッグシンボルの ZIP アーカイブと .ipa ファイルを Amazon S3 アップロードし、続けて、Distribution 用は iTunes Connect へ、AdHoc 用は TestFlight にアップロードする様に設定しました。
 
-iTunes Connect と TestFlight へのアップロードは [nomad] シリーズの [shenzhen] \(深圳) を使うように設定しました。
+各サービスへのアップロードは [nomad] シリーズの [shenzhen] \(深圳) を使うように設定しました。
 
 [Rakefile](https://github.com/ngs/onairlog-ios/blob/dee20d15b6e643a1000830a72b357a817558c6ba/Rakefile#L316)
 
