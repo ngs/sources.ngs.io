@@ -14,6 +14,8 @@ html
       = t 'blog.title'
     - ogp_tags do|name, value|
       meta property=name content=value
+      - if name.match /^og:(image|description|title|url)$/
+        meta property=name.sub('og:', 'twitter:') content=value
     noscript
       = stylesheet_link_tag 'bootstrap'
     = javascript_include_tag 'https://cdnjs.cloudflare.com/ajax/libs/polymer/0.2.2/platform.js'

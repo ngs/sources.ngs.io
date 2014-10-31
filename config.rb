@@ -93,7 +93,8 @@ end
 activate :ogp do |ogp|
   ogp.namespaces = {
     fb: data.send(lang).ogp.fb,
-    og: data.send(lang).ogp.og
+    og: data.send(lang).ogp.og,
+    twitter: data.send(lang).ogp.twitter
   }
   ogp.blog = true
   ogp.base_url = "http://#{cname}/"
