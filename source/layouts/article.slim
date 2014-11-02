@@ -26,7 +26,7 @@
 
       .social-buttons.clearfix
         - url = URI.join(t('blog.url'), URI.escape(current_article.url))
-        = link_to t(:tweet), 'http://twitter.com/share', class: 'twitter-share-button', 'data-url' => url, 'data-via' => 'ngs', 'data-counturl' => url, 'rel' => 'nofollow'
+        = link_to t(:tweet), 'http://twitter.com/share', class: 'twitter-share-button', 'data-url' => url, 'data-via' => 'ngs', 'data-counturl' => url, 'rel' => 'nofollow', 'data-text' => current_article.title
         .g-plusone data-size='medium'
         - if I18n.locale.to_s == 'ja'
           .hateb
