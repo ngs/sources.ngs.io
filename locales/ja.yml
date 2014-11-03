@@ -16,6 +16,8 @@ ja:
   aboutme: 自己紹介
   tweet: つぶやく
   recent_entries: 最近の記事
+  calendar_description:
+    text: "%{title}に投稿したエントリー"
   calendar_title:
     text: "%{title}のエントリー"
     html: "<time>%{title}</time>のエントリー"

@@ -23,6 +23,8 @@ html
     = javascript_include_tag 'application'
     - if current_page.data.description
       meta content=current_page.data.description name="description"
+    - elsif content_for?(:description)
+      meta content=yield_content(:description) name="description"
     - else
       meta content=t('blog.description') name="description"
     - if current_page.data.keywords

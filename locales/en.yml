@@ -16,6 +16,8 @@ en:
   aboutme: About me
   tweet: Tweet
   recent_entries: Recent Entries
+  calendar_description:
+    text: "Entries posted in %{title}"
   calendar_title:
     text: "Entries from %{title}"
     html: "Entries from <time>%{title}</time>"
