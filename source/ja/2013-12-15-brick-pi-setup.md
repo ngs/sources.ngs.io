@@ -3,7 +3,7 @@ title: BrickPi セットアップ
 description: BrickPi をサクッとセットアップした手順。
 date: 2013-12-15 02:00
 public: true
-tags: mindstorms, raspberry pi, robot, setup, brick pi
+tags: mindstorms, raspberry pi, robot, setup, brick pi, make
 ---
 
 ![](2013-12-15-brick-pi-setup/brick-pi-tribot.jpg)
