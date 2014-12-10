@@ -1,6 +1,6 @@
 ---
-title: SVG からフォントを作成する際の元データ最適化
-description: SVG からフォントを作成する際、元データを svgo で最適化する意味があるか確認しました。
+title: SVG から Web フォントを作成する際の元データ最適化
+description: SVG から Web フォントを作成する際、元データを svgo で最適化する意味があるか確認しました。
 date: 2014-12-10 21:00
 public: true
 tags: icon, svg, font, webfont, gulp
@@ -14,7 +14,7 @@ ogp:
     height: 510
 ---
 
-[gulp-iconfont] を使って SVG からフォントを作成する際、元データを [svgo] で最適化する意味があるか確認しました。
+[gulp-iconfont] を使って SVG から Web フォントを作成する際、元データを [svgo] で最適化する意味があるか確認しました。
 
 100個のアイコンデータの、最適化前後のフォントを作成し、比較しました。
 
