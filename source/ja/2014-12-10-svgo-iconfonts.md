@@ -7,11 +7,11 @@ tags: icon, svg, font, webfont, gulp
 alternate: false
 ogp:
   og:
-  image:
-    '': https://raw.github.com/gulpjs/artwork/master/gulp-2x.png
-    type: image/png
-    width: 228
-    height: 510
+    image:
+      '': https://raw.github.com/gulpjs/artwork/master/gulp-2x.png
+      type: image/png
+      width: 228
+      height: 510
 ---
 
 [gulp-iconfont] を使って SVG から Web フォントを作成する際、元データを [svgo] で最適化する意味があるか確認しました。
