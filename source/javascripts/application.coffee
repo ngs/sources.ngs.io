@@ -4,25 +4,27 @@
 #= require 'konami'
 #= require 'shake'
 #= require 'time-elements'
+#= require 'suncalc'
 
 COOKIE_KEY_THEME = 'ngs.io.theme'
 $.cookie.json = yes
 themeCookieOptions = expires: 30, path: '/'
 themeCookieOptions.domain = '.ngs.io' if /^(?:ja\.)?ngs\.io$/.test document.location.hostname
 themes = null
-hours = new Date().getHours()
-defaultTheme = if hours > 4 and hours < 18
-  cssCdn: "http://netdna.bootstrapcdn.com/bootswatch/latest/united/bootstrap.min.css"
-  name: "United"
-  preview: "http://bootswatch.com/united/"
-  isDefault: yes
-else
-  cssCdn: "http://netdna.bootstrapcdn.com/bootswatch/latest/darkly/bootstrap.min.css"
-  name: "Darkly"
-  preview: "http://bootswatch.com/darkly/"
-  isDefault: yes
-theme = $.cookie(COOKIE_KEY_THEME) || defaultTheme
-document.write """<link rel="stylesheet" type="text/css" href="#{theme.cssCdn}" id="bootswatch-css">"""
+
+getDefaultTheme = ->
+  date = new Date()
+  {sunset, sunrise} = SunCalc.getTimes date, 35.6216798, 139.6993775
+  defaultTheme = if date > sunrise and date < sunset
+    cssCdn: "http://netdna.bootstrapcdn.com/bootswatch/latest/united/bootstrap.min.css"
+    name: "United"
+    preview: "http://bootswatch.com/united/"
+    isDefault: yes
+  else
+    cssCdn: "http://netdna.bootstrapcdn.com/bootswatch/latest/darkly/bootstrap.min.css"
+    name: "Darkly"
+    preview: "http://bootswatch.com/darkly/"
+    isDefault: yes
 
 shakeEventDidOccur = (e)->
   if $.cookie(COOKIE_KEY_THEME) and confirm 'Reset style?'
@@ -115,3 +117,6 @@ $ ->
 
 new Konami () ->
   $('#sidebar-bootswatch').fadeIn()
+
+theme = $.cookie(COOKIE_KEY_THEME) || getDefaultTheme()
+document.write """<link rel="stylesheet" type="text/css" href="#{theme.cssCdn}" id="bootswatch-css">"""
