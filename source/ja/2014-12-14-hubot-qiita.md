@@ -132,6 +132,10 @@ me > hubot alias 日報=qiita new item with template 43
 
 [ngs/sources.ngs.io]
 
+が、`docs` 配下しかサポートしてないので、使えませんでした。
+
+よかったら対象ディレクトリと拡張子 (このブログは `.md.erb` を使っています) を設定できる様にしていただけると嬉しいです。
+
 [Qiita API v2 Hackathon]: http://peatix.com/event/55420
 [README]: https://github.com/ngs/hubot-qiita#readme
 [hubot-qiita]: https://github.com/ngs/hubot-qiita
