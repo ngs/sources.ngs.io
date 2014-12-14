@@ -18,9 +18,11 @@ ogp:
 
 [Hubot Advent Calendar 2014] 14日目の記事です。
 
-2014/12/13、リクルート本社で行われた [Qiita API v2 Hackathon] で、[Hubot] スクリプト [hubot-qiita] を開発し、**Chat 日報** なるワークフローを発表しました。
+2014/12/13、リクルート本社で行われた [Qiita API v2 Hackathon] で、**Chat 日報** なるワークフローを発表しました。
 
 ありがたいことに、優秀賞をいただき、[Kindle Voyage] がいただける様です。
+
+READMORE
 
 ## Hackathon のテーマ
 
@@ -28,11 +30,13 @@ ogp:
 
 **開発は、ほっておいても楽しい** ので、開発に当てる時間をより多く取れる様に、日報の作成を楽にする、という目的で開発しました。
 
-READMORE
-
 ## 作ったもの
 
-[Qiita:Team] に登録されているテンプレートの、タイトル、タグ、本文から、`%{}` で囲われた変数名を取り出し、その内容を Hubot が質問する、という拡張を行いました。
+Qiita API v2 が発表されてすぐ、[Hubot] スクリプト [hubot-qiita] 開発に着手したのですが、業務内では別業務、業務外では [CI2Go] を作成していたので、未完成のまま塩漬けになっていました。
+
+今回、前半は、これをリリースまで作りきり、その後、本題の機能追加を行いました。
+
+[Qiita:Team] に登録されているテンプレートの、タイトル、タグ、本文から、`%{}` で囲われた変数名を取り出し、その内容を Hubot が質問する、というものです。
 
 ## 実際のやりとり
 
@@ -122,6 +126,12 @@ me > hubot alias 日報=qiita new item with template 43
 
 これで、`hubot 日報` と発言するだけで、日報の作成を開始できます。
 
+## QiitaButton
+
+今回の Hackathon で発表され、同じく、優秀賞を獲得された、[QiitaButton] をブログのソースにも追加しました。
+
+[ngs/sources.ngs.io]
+
 [Qiita API v2 Hackathon]: http://peatix.com/event/55420
 [README]: https://github.com/ngs/hubot-qiita#readme
 [hubot-qiita]: https://github.com/ngs/hubot-qiita
@@ -131,3 +141,6 @@ me > hubot alias 日報=qiita new item with template 43
 [hubot-alias]: https://github.com/dtaniwaki/hubot-alias
 [Kindle Voyage]: http://www.amazon.co.jp/gp/product/B00M0EVYCC/ref=as_li_ss_tl?ie=UTF8&camp=247&creative=7399&creativeASIN=B00M0EVYCC&linkCode=as2&tag=atsushnagased-22
 [Hubot]: https://hubot.github.com
+[QiitaButton]: http://qiita.com/fmy/items/57088e1d1bd412557123
+[CI2Go]: http://ja.ngs.io/2014/11/26/ci2go/
+[ngs/sources.ngs.io]: https://github.com/ngs/sources.ngs.io#readme
