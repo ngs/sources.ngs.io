@@ -98,6 +98,11 @@ setTheme = (theme)->
     link.attr 'href', cssCdn
   unless isDefault
     $.cookie COOKIE_KEY_THEME, theme, themeCookieOptions
+  bgColor = $('body').css 'background-color'
+  if m = bgColor.match /rgb\((\d+),\s*(\d+),\s*(\d+)\s*\)/
+    [str, r, g, b] = m
+    bgColor = "rgba(#{r}, #{g}, #{b}, 0.9)"
+  $('#sidebar-navigation').css 'background-color', bgColor
 
 $ ->
   $('[data-toggle=tooltip]').tooltip()
