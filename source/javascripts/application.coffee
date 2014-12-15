@@ -112,9 +112,11 @@ handleWindowScroll = ->
   nav = $ '#sidebar-navigation'
   cls = 'fixed'
   top = win.scrollTop()
-  if lastScrollTop - top > 0 or top < nav.height()
+  navh = nav.height()
+  diff = lastScrollTop - top
+  if diff > 1 or top < navh
     nav.addClass cls
-  else
+  else if diff < -1
     nav.removeClass cls
   lastScrollTop = top
   return
