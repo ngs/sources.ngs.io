@@ -1,5 +1,6 @@
 @import 'syntax'
 @import 'font-awesome'
+@import "compass"
 
 .home-link
   padding: 10px 0 0 0
@@ -132,8 +133,13 @@ ol.entries
     padding: 0
     position: fixed
     left: 0
-    top: 0
     border: 0
+    top: -3.5em
+    +transition-property(top)
+    +transition-duration(0.2s)
+    +transition-timing-function(ease-in)
+    &.fixed
+      top: 0
     h2
       display: none
     .nav

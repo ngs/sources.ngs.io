@@ -103,6 +103,21 @@ setTheme = (theme)->
     [str, r, g, b] = m
     bgColor = "rgba(#{r}, #{g}, #{b}, 0.9)"
   $('#sidebar-navigation').css 'background-color', bgColor
+  do handleWindowScroll
+
+lastScrollTop = -9999
+
+handleWindowScroll = ->
+  win = $ window
+  nav = $ '#sidebar-navigation'
+  cls = 'fixed'
+  top = win.scrollTop()
+  if lastScrollTop - top > 0 or top < nav.height()
+    nav.addClass cls
+  else
+    nav.removeClass cls
+  lastScrollTop = top
+  return
 
 $ ->
   $('[data-toggle=tooltip]').tooltip()
@@ -119,6 +134,7 @@ $ ->
   $('.read-more a').on 'click', handleReadMoreLink
   setTheme theme
   window.addEventListener 'shake', shakeEventDidOccur, no
+  $(window).on 'scroll', handleWindowScroll
 
 new Konami () ->
   $('#sidebar-bootswatch').fadeIn()
