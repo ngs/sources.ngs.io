@@ -128,13 +128,13 @@ ol.entries
     margin-top: 50px
   #sidebar-navigation
     z-index: 10000
-    font-size: 0.8em
     width: 100%
     padding: 0
     position: fixed
     left: 0
     border: 0
     top: -3.5em
+    font-size: 0.9em
     +transition-property(top)
     +transition-duration(0.2s)
     +transition-timing-function(ease-in)
@@ -145,3 +145,7 @@ ol.entries
     .nav
       li
         float: left
+
+@media (max-width:720px)
+  #sidebar-navigation
+    font-size: 0.8em
