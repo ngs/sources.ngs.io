@@ -9,6 +9,8 @@ html
     title
       - if current_article
         = "#{current_article.title} - "
+      - elsif current_page && current_page.data.title
+        = "#{current_page.data.title} - "
       - elsif content_for?(:title)
         = "#{yield_content(:title)} - "
       = t 'blog.title'

@@ -27,7 +27,7 @@ ja:
       year: "%Y年"
   blog:
     url: http://ja.ngs.io/
-    title: ja.ngs.io
+    title: Atsushi Nagase
     cname: ja.ngs.io
     description: プログラミング、ガジェット、電子工作、ロードバイク、ランニング、旅行など、趣味や仕事のことを書き綴るブログ。
   author:
