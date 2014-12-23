@@ -121,7 +121,13 @@ handleWindowScroll = ->
   lastScrollTop = top
   return
 
+handleYAuctionLink = (e) ->
+  anchor = $ e.target
+  href = anchor.attr 'href'
+  anchor.attr 'href', "http://ck.jp.ap.valuecommerce.com/servlet/referral?sid=2462325&pid=883185139&vc_url=#{encodeURIComponent href}"
+
 $ ->
+  $('body').on 'click', '[href*="auction"][href*="yahoo.co.jp"]', handleYAuctionLink
   $('[data-toggle=tooltip]').tooltip()
   $('form#tag-filter-form')
   .on('submit', no)
