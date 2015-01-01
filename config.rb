@@ -22,6 +22,7 @@ set :markdown_engine, :redcarpet
 set :markdown, :fenced_code_blocks => true, :smartypants => true, :autolink => true, :tables => true
 set :build_dir,    "build-#{lang}"
 set :partials_dir, 'partials'
+set :site_url, "http://#{cname}"
 
 activate :blog do |blog|
   blog.permalink = "{year}/{month}/{day}/{title}/index.html"
