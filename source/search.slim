@@ -31,4 +31,4 @@ coffee:
     div = $ '#search-results'
     div.html render { items, q }
     document.title = div.find('h1').text() + ' - ' + document.title
-    $('form[action="/search"] input[name=q]').val q
+    $('form[action="/search/"] input[name=q]').val q
