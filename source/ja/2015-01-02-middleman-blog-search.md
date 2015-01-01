@@ -75,7 +75,7 @@ items = _.map res?.items, ({name}) ->
 
 今回はウェブ検索に引っかかる必要がないので、対策していませんが、[GitHub API v3] は robots.txt の制約により、クローラーのアクセスを許可していません。
 
-(上は、[Google ウェブマスターツール]で確認した画面です。)
+(上は、Google ウェブマスターツールの [Fetch as Google] で確認した画面です。)
 
 https://api.github.com/robots.txt
 
@@ -91,4 +91,4 @@ https://api.github.com/robots.txt
 [ngs/sources.ngs.io]: https://github.com/ngs/sources.ngs.io/
 [Searching code on GitHub Help]: https://help.github.com/articles/searching-code/
 [Heroku]: https://www.heroku.com/
-[Google ウェブマスターツール]: https://support.google.com/webmasters/answer/6066467?hl=ja
+[Fetch as Google]: https://support.google.com/webmasters/answer/6066467?hl=ja
