@@ -133,13 +133,11 @@ ol.entries
     position: fixed
     left: 0
     border: 0
-    top: -3.5em
+    top: 0
     font-size: 0.9em
-    +transition-property(top)
-    +transition-duration(0.2s)
-    +transition-timing-function(ease-in)
-    &.fixed
-      top: 0
+    +transition(all 150ms cubic-bezier(0.165, 0.840, 0.440, 1.000))
+    &.nav-hidden
+      top: -3.5em
     h2
       display: none
     .nav

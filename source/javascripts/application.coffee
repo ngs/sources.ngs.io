@@ -1,5 +1,6 @@
 #= require 'jquery'
 #= require 'jquery.cookie'
+#= require 'jquery.hidescroll'
 #= require 'bootstrap'
 #= require 'konami'
 #= require 'shake'
@@ -103,23 +104,6 @@ setTheme = (theme)->
     [str, r, g, b] = m
     bgColor = "rgba(#{r}, #{g}, #{b}, 0.9)"
   $('#sidebar-navigation').css 'background-color', bgColor
-  do handleWindowScroll
-
-lastScrollTop = -9999
-
-handleWindowScroll = ->
-  win = $ window
-  nav = $ '#sidebar-navigation'
-  cls = 'fixed'
-  top = win.scrollTop()
-  navh = nav.height()
-  diff = lastScrollTop - top
-  if diff > 1 or top < navh
-    nav.addClass cls
-  else if diff < -1
-    nav.removeClass cls
-  lastScrollTop = top
-  return
 
 handleYAuctionLink = (e) ->
   anchor = $ e.target
@@ -142,7 +126,7 @@ $ ->
   $('.read-more a').on 'click', handleReadMoreLink
   setTheme theme
   window.addEventListener 'shake', shakeEventDidOccur, no
-  $(window).on 'scroll', handleWindowScroll
+  $('#sidebar-navigation').hidescroll hiddenClass: 'nav-hidden'
 
 new Konami () ->
   $('#sidebar-bootswatch').fadeIn()
