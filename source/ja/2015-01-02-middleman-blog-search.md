@@ -14,7 +14,7 @@ ogp:
       height: 525
 ---
 
-このブログは [Middleman] と　[GitHub Pages] で構築しています。
+このブログは [Middleman] と [GitHub Pages] で構築しています。
 
 [GitHub Pages] は静的な資材をホスティングする機能しかないため、Movable Type でいうところの、`mt-search.cgi` みたいな、動的な検索画面は作れない制約があります。
 
