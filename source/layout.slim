@@ -94,17 +94,18 @@ html lang=I18n.locale.to_s itemscope="itemscope" itemtype="http://schema.org/Web
             form#site-search-form.form-inline {
               role="form"
               method="get"
-              action="/search"
+              action="/search/"
               itemprop="potentialAction"
               itemscope="itemscope"
               itemtype="http://schema.org/SearchAction"
             }
               div.form-group.has-feedback
                 input.form-control#site-search-input {
-                  type="search" placeholder=t(:search_site) name="q" accesskey="s"
+                  type="search" placeholder=t(:search_site)
+                  name="q" accesskey="s" required="required"
                 }
                 span.glyphicon.glyphicon-search.form-control-feedback
-                meta itemprop="target" content="#{config.site_url}/search?q={q}"
+                meta itemprop="target" content="#{config.site_url}/search/?q={q}"
 
           section#sidebar-bootswatch style="display:none"
             h2 Theme
