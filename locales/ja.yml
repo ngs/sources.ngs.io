@@ -1,5 +1,7 @@
 ---
 ja:
+  search_site: '記事を検索'
+  search_result: "検索結果:"
   links: リンク
   similar_articles: 類似記事
   archives: アーカイブ

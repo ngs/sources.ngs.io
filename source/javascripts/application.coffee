@@ -6,6 +6,7 @@
 #= require 'shake'
 #= require 'time-elements'
 #= require 'suncalc'
+#= require 'underscore'
 
 COOKIE_KEY_THEME = 'ngs.io.theme'
 $.cookie.json = yes

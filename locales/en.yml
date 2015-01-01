@@ -1,5 +1,7 @@
 ---
 en:
+  search_site: 'Search article'
+  search_result: "Search Result:"
   links: Links
   similar_articles: Similar Articles
   archives: Archives
