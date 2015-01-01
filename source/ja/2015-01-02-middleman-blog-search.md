@@ -26,9 +26,7 @@ READMORE
 
 ## 実装コード
 
-たったこれだけです。テンプレートの処理は [underscore.js] の `_.template` を利用しています。
-
-**[search.slim]** on [ngs/sources.ngs.io]
+たった 34 行です。 **[search.slim]** on [ngs/sources.ngs.io]
 
 個人ブログで、規模が小さいので、多少富豪的な実装になっています。
 
