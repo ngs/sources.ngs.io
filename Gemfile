@@ -21,8 +21,9 @@ gem 'middleman-syntax', :git => 'git://github.com/middleman/middleman-syntax.git
 gem 'redcarpet'
 gem 'nokogiri'
 
-# For feed.xml.builder
 gem 'builder', '~> 3.0'
+gem 'jbuilder'
+gem 'tilt-jbuilder'
 
 gem 'slim'
 gem 'sass'
