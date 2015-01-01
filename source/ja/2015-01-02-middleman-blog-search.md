@@ -16,9 +16,9 @@ ogp:
 
 このブログは [Middleman] と　[GitHub Pages] で構築しています。
 
-[GitHub Pages] は静的な資材をホスティングする機能しかないため、Movable Type でいうところの、`mt-search.cgi` みたいな、動的な検索画面は作れません。
+[GitHub Pages] は静的な資材をホスティングする機能しかないため、Movable Type でいうところの、`mt-search.cgi` みたいな、動的な検索画面は作れない制約があります。
 
-そこで、[GitHub API v3] を使って　JavaScript で実装することにしました。
+そこで、[GitHub API v3] を使って JavaScript で実装することにしました。
 
 実際の動作は、サイドバー (モバイル画面では下部) にある、検索窓から、適当な文字列で検索してみて下さい。(例: [Hubot](/search/?q=Hubot))
 
