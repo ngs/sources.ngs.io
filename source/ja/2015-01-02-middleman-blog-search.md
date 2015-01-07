@@ -9,7 +9,7 @@ ogp:
   og:
     image:
       '': http://ja.ngs.io/images/2015-01-02-middleman-blog-search/screen1.png
-      type: image/jpeg
+      type: image/png
       width: 992
       height: 525
 ---
