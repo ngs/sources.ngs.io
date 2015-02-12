@@ -7,10 +7,11 @@
     .article-body itemprop="articleBody"
       = preserve do
         = article.summary
-    p.read-more
-      = link_to article.url, class: 'btn btn-default btn-sm' do
-        = t :read_more
-        span.glyphicon.glyphicon-play-circle &nbsp;
+    - if article.render(keep_separator: true, layout: false).match(article.blog_options.summary_separator)
+      p.read-more
+        = link_to article.url, class: 'btn btn-default btn-sm' do
+          = t :read_more
+          span.glyphicon.glyphicon-play-circle &nbsp;
 - if paginate && (next_page || num_pages > 1)
   .text-center
     ul.pagination.pagination-lg
