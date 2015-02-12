@@ -45,6 +45,14 @@ filterTags = (text)->
     else
       self.removeClass 'hidden'
 
+setUpMixCloud = ->
+  $('.mixcloud[data-embed-uuid]').each ->
+    ele = $ @
+    { embedUuid, feed } = ele.data()
+    light = $('body').css('background-color') is 'rgb(255, 255, 255)'
+    src = "https://www.mixcloud.com/widget/iframe/?feed=#{ encodeURIComponent feed }&amp;embed_uuid=#{ embedUuid }&amp;replace=0&amp;light=#{light}&amp;hide_cover=1&amp;embed_type=widget_standard"
+    ele.replaceWith $('<iframe width="100%" height="360" frameborder="0" />').attr {src}
+
 handleShowAllLink = (e)->
   $('#sidebar-tags-list > li').removeClass 'hidden'
   $('.show-all-tags-link').remove()
@@ -66,6 +74,7 @@ handleReadMoreLink = (e)->
       title: title
     }
     link.remove()
+    setUpMixCloud()
   no
 
 loadThemeDropDown = ->
@@ -128,6 +137,7 @@ $ ->
   setTheme theme
   window.addEventListener 'shake', shakeEventDidOccur, no
   $('#sidebar-navigation').hidescroll hiddenClass: 'nav-hidden'
+  setUpMixCloud()
 
 new Konami () ->
   $('#sidebar-bootswatch').fadeIn()
