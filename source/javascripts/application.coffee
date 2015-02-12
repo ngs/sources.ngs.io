@@ -50,8 +50,8 @@ setUpMixCloud = ->
     ele = $ @
     { embedUuid, feed } = ele.data()
     light = $('body').css('background-color') is 'rgb(255, 255, 255)'
-    src = "https://www.mixcloud.com/widget/iframe/?feed=#{ encodeURIComponent feed }&amp;embed_uuid=#{ embedUuid }&amp;replace=0&amp;light=#{light}&amp;hide_cover=1&amp;embed_type=widget_standard"
-    ele.replaceWith $('<iframe width="100%" height="360" frameborder="0" />').attr {src}
+    src = "https://www.mixcloud.com/widget/iframe/?feed=#{ encodeURIComponent feed }&amp;embed_uuid=#{ embedUuid }&amp;replace=0&amp;light=#{light}&amp;hide_cover=1&amp;embed_type=widget_standard&amp;hide_tracklist=1"
+    ele.replaceWith $('<iframe width="100%" height="180" frameborder="0" />').attr {src}
 
 handleShowAllLink = (e)->
   $('#sidebar-tags-list > li').removeClass 'hidden'
