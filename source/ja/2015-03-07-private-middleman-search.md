@@ -118,7 +118,7 @@ end
 
 ### 2. `TOKEN_SECRET` を設定する
 
-前途の `POST /rebuild` エンドポイントに送信する `token` を生成すための Secret です。
+前途の `POST /rebuild` エンドポイントに送信する `token` を生成するための秘密の文字列です。
 
 ## 検索ページ例
 
