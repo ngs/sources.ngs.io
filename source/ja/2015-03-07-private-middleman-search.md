@@ -3,7 +3,7 @@ title: "静的サイトジェネレーターで作ったサイトの検索 API"
 description: "Middleman などの静的サイトジェネレーターを使って作ったサイトの検索 API を作りました"
 date: 2015-03-07 22:00
 public: true
-tags: middleman, github, api, json, kaizenplatform
+tags: middleman, github, api, json, kaizenplatform, heroku
 alternate: false
 ogp:
   og:
