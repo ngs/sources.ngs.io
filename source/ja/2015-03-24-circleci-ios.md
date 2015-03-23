@@ -219,9 +219,9 @@ bundle exec ipa build \
 
 ## iTunes Connect へデプロイ (WIP)
 
-最後に、`master` ブランチへのマージを契機に、iTunes Connect への配布を行おうとしました。
+最後に、`master` ブランチへのマージを契機に、[iTunes Connect] への配布を行おうとしました。
 
-しかし、日本時間 2015-03-24 02:50 まで iTunes Connect の障害でメールが届かなかったので、CI 用のアカウントを作成できず、断念していました。
+しかし、日本時間 2015-03-24 02:50 まで [iTunes Connect の障害でメールが届かなかった](https://devforums.apple.com/message/1116750)ので、CI 用のアカウントを作成できず、断念していました。
 
 ローカルで [shenzhen] の `ipa distribute:itunesconnect` コマンドで通信できることを確認しました。
 
@@ -291,7 +291,7 @@ OSS なので、Travis CI でも、`.org` で無料で問題なく使わせて�
 
 ## TODOs
 
-- [ ] iTunes Connect デプロイ何とかする
+- [ ] [iTunes Connect] デプロイ何とかする
 - [ ] DL ページと一緒に Ad Hoc 版を S3 デプロイする
 - [ ] DL ページができたら Slack 通知する
 
