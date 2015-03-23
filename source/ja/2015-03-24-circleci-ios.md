@@ -319,7 +319,7 @@ OSS なので、Travis CI でも、`.org` で無料で問題なく使わせて�
 
 ## TODOs
 
-- [ ] [iTunes Connect] デプロイ何とかする
+- [ ] iTunes Connect デプロイ何とかする
 - [ ] DL ページと一緒に Ad Hoc 版を S3 デプロイする
 - [ ] DL ページができたら Slack 通知する
 
