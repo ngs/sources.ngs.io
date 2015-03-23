@@ -136,6 +136,32 @@ done
 ls -lsa "$BASE"
 ```
 
+## 環境変数のエクスポート
+
+[Bitly] のアクセストークンなど、アプリ固有の、バージョン管理に追加したくない変数は、環境変数から `Environment.swift` ファイルに書き出します。
+
+```rb
+# Rakefile
+namespace :env do
+  desc 'Generate Environment.swift'
+  task :export => :dotenv do
+    prefix = "#{APP_NAME.upcase}_"
+    code = ''
+    ENV.each{|k, v|
+      if k.start_with?(prefix)
+        code += %Q{let #{k.sub prefix, ''} = "#{v}"\n}
+      end
+    }
+    file = File.join __dir__, APP_NAME, 'Environment.swift'
+    File.write file, code
+  end
+end
+```
+
+```bash
+bundle exec rake env:export
+```
+
 ## テスト実行
 
 `XCODE_WORKSPACE` , `XCODE_SCHEME` だけを環境変数に設定して、[Circle CI] 既定のテストコマンドを実行しています。
