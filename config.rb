@@ -1,4 +1,6 @@
 Dotenv.load
+Bundler.require
+require './lib/middleman/renderers/custom'
 
 ###
 # Blog settings
@@ -18,8 +20,9 @@ activate :i18n, langs: [lang]
 activate :livereload
 activate :emoji, :dir => '/images/emoji', :width => 20, :height => 20
 
-set :markdown_engine, :redcarpet
-set :markdown, :fenced_code_blocks => true, :smartypants => true, :autolink => true, :tables => true
+set :markdown_engine, :custom
+set :markdown_engine_prefix, ::Middleman::Renderers
+set :markdown, :fenced_code_blocks => true, :smartypants => true, :autolink => true, :tables => true, :with_toc_data => true
 set :build_dir,    "build-#{lang}"
 set :partials_dir, 'partials'
 set :site_url, "http://#{cname}"
@@ -65,6 +68,7 @@ compass_config do |config|
 end
 
 ready do
+  ::Middleman::Renderers::MiddlemanRedcarpetHTML.middleman_app = self
   sprockets.append_path '/lib/javascripts/'
   sprockets.append_path '/lib/stylesheets/'
 
