@@ -249,6 +249,8 @@ Package Summary:
 Build 番号が同じである、`There already exists a binary upload with build '157' for version '2.1.0'` というエラーについては、
 [Circle CI] のビルド番号 `$CIRCLE_BUILD_NUM` を使う様にタスクを追加する予定です。
 
+解決案として、新バージョンリリース後、すぐに次バージョンの準備を [iTunes Connect] 側で行い、Info.plist のバージョンも上げる運用にしようかと思います。
+
 ## Xcode 6.2
 
 [OnAirLog] は [Apple Watch] 対応の準備をしました。
