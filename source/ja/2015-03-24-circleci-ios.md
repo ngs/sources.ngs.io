@@ -27,6 +27,8 @@ https://circleci.com/mobile
 
 READMORE
 
+## TOC
+
 - 前準備
   - [依存ライブラリのインストール](#依存ライブラリのインストール)
   - [鍵と証明書の読み込み](#鍵と証明書の読み込み)
@@ -34,7 +36,7 @@ READMORE
 	- [環境変数のエクスポート](#環境変数のエクスポート)
 - [テスト実行](#テスト実行)
 - デプロイ
-	- [AdHoc ビルド作成](#adhoc-ビルド作成)
+	- [AdHoc ビルド](#adhoc-ビルド)
 	- [DeployGate へデプロイ](#deploygate-へデプロイ)
 	- [Release ビルド作成](#release-ビルド作成)
 	- [iTunes Connect へデプロイ (WIP)](#itunes-connect-へデプロイ-(wip))
