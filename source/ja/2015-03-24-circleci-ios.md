@@ -307,7 +307,7 @@ OSS なので、Travis CI でも、`.org` で無料で問題なく使わせて�
 [Apple Worldwide Developer Relations Certification Authority]: https://developer.apple.com/jp/documentation/Xcode/Conceptual/ios_development_workflow/190-iOS_Development_Troubleshooting_Guide/ios_development_troubleshooting.html#//apple_ref/doc/uid/TP40007959-CH25-SW7
 [Deploy Gate]: https://deploygate.com/
 [iTunes Connect]: https://itunesconnect.apple.com/
-[Bitly]: /2014/10/13/xcode6/
+[Bitly]: http://dev.bitly.com/
 [dgacct]: https://deploygate.com/settings
 [nomad]: http://nomad-cli.com/
 [cupertino]: https://github.com/nomad/cupertino
