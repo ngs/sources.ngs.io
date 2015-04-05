@@ -1,6 +1,6 @@
 ---
-title: "CircleCI で Amazon S3 に iOS アプリを配布し、ビルドごとにダウンロードページを作成する"
-description: "Middleman などの静的サイトジェネレーターを使って作ったサイトの検索 API を作りました"
+title: "CircleCI で Amazon S3 に AdHoc ビルドのバイナリとダウンロードページを作成し、Slack で通知する"
+description: "先日、CircleCI に CI サービスを変更した 続きで、TODO に残っていた、ビルド番号の同期と Amazon S3 への配信の自動化を設定しました。"
 date: 2015-04-05 11:30
 public: true
 tags: circleci, ios, ci, xcode, apple, aws, ci2go, itunesconnect
