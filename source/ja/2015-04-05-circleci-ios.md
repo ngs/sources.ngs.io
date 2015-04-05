@@ -3,7 +3,7 @@ title: "CircleCI で Amazon S3 に AdHoc ビルドのバイナリとダウンロ
 description: "先日、CircleCI に CI サービスを変更した 続きで、TODO に残っていた、ビルド番号の同期と Amazon S3 への配信の自動化を設定しました。"
 date: 2015-04-05 11:30
 public: true
-tags: circleci, ios, ci, xcode, apple, aws, ci2go, itunesconnect
+tags: circleci, ios, ci, xcode, apple, aws, ci2go, slack
 alternate: false
 ogp:
   og:
