@@ -1,6 +1,6 @@
 ---
-title: "iOS アプリの継続ビルドを Circle CI に変更した"
-description: "今まで Travis CI で設定していた iOS アプリのビルドを Circle CI に変更しました。"
+title: "iOS アプリの継続ビルドを CircleCI に変更した"
+description: "今まで Travis CI で設定していた iOS アプリのビルドを CircleCI に変更しました。"
 date: 2015-03-24 06:40
 public: true
 tags: circleci, ios, ci, xcode, apple, onairlog
@@ -16,7 +16,7 @@ ogp:
 
 ![](2015-03-24-circleci-ios/main.jpg)
 
-今まで [Travis CI で設定していた](/2014/10/13/xcode6/) iOS アプリのビルドを [Circle CI] に変更しました。
+今まで [Travis CI で設定していた](/2014/10/13/xcode6/) iOS アプリのビルドを [CircleCI] に変更しました。
 
 - [ngs/onairlog-ios on CircleCI](https://circleci.com/gh/ngs/onairlog-ios)
 - [ngs/onairlog-ios on GitHub](https://github.com/ngs/onairlog-ios)
@@ -71,7 +71,7 @@ READMORE
 
 ## 依存ライブラリのインストール
 
-`bundle install` と `pod install`　は [Circle CI] が検知して、設定せずとも実行してくれます。
+`bundle install` と `pod install`　は [CircleCI] が検知して、設定せずとも実行してくれます。
 
 ![](2015-03-24-circleci-ios/dependencies.png)
 
@@ -83,7 +83,7 @@ READMORE
 
 ![](2015-03-24-circleci-ios/keychain-access.png)
 
-以下のコマンドで Base64 エンコードしたコンテンツをクリップボードにコピーし、[Circle CI] の _Project Settings_ に追加します。
+以下のコマンドで Base64 エンコードしたコンテンツをクリップボードにコピーし、[CircleCI] の _Project Settings_ に追加します。
 
 ```bash
 cat ~/Desktop/Certificates.cer|base64|pbcopy
@@ -164,7 +164,7 @@ bundle exec rake env:export
 
 ## テスト実行
 
-`XCODE_WORKSPACE` , `XCODE_SCHEME` だけを環境変数に設定して、[Circle CI] 既定のテストコマンドを実行しています。
+`XCODE_WORKSPACE` , `XCODE_SCHEME` だけを環境変数に設定して、[CircleCI] 既定のテストコマンドを実行しています。
 
 ```yaml
 # circle.yml 抜粋
@@ -273,7 +273,7 @@ Package Summary:
 ```
 
 Build 番号が同じである、`There already exists a binary upload with build '157' for version '2.1.0'` というエラーについては、
-[Circle CI] のビルド番号 `$CIRCLE_BUILD_NUM` を使う様にタスクを追加する予定です。
+[CircleCI] のビルド番号 `$CIRCLE_BUILD_NUM` を使う様にタスクを追加する予定です。
 
 解決案として、新バージョンリリース後、すぐに次バージョンの準備を [iTunes Connect] 側で行い、Info.plist のバージョンも上げる運用にしようかと思います。
 
@@ -285,7 +285,7 @@ Build 番号が同じである、`There already exists a binary upload with buil
 
 [ watch #15 on ngs/onairlog-ios][pr15]
 
-しかし、[Circle CI] の [Xcode は、まだ 6.1](https://circleci.com/docs/ios#software-versions) の様です。
+しかし、[CircleCI] の [Xcode は、まだ 6.1](https://circleci.com/docs/ios#software-versions) の様です。
 
 ![](2015-03-24-circleci-ios/swversions.png)
 
@@ -307,7 +307,7 @@ https://circleci.com/gh/ngs/onairlog-ios/30
 
 OSS なので、Travis CI でも、`.org` で無料で問題なく使わせて頂いていました。
 
-ただ、[Circle CI] に移行したことで、以下の様な点で、メリットがありました。
+ただ、[CircleCI] に移行したことで、以下の様な点で、メリットがありました。
 
 - 会社で使っているので知見が生かせる
 - キューが回ってくるのを待つ必要があったのが無くなった
@@ -326,7 +326,7 @@ OSS なので、Travis CI でも、`.org` で無料で問題なく使わせて�
 ## 参考にしたページ
 
 - [Test iOS applications on CircleCI Documentations](https://circleci.com/docs/ios)
-- [Circle CIでiOSアプリのリリース作業を自動化](http://blog.ishkawa.org/2015/01/07/1420556760/)
+- [CircleCIでiOSアプリのリリース作業を自動化](http://blog.ishkawa.org/2015/01/07/1420556760/)
 - [大晦日〜正月にiOSでCircleCIを試したので振り返ってみた](http://qiita.com/saku/items/9c093535967e4452a8d0)
 - [DeployGateに移行しよう！ (煽りタイトル省略)](http://qiita.com/appwatcher/items/632460e15fbdb81b7a71)
 
@@ -338,7 +338,7 @@ OSS なので、Travis CI でも、`.org` で無料で問題なく使わせて�
 [nomad]: http://nomad-cli.com/
 [cupertino]: https://github.com/nomad/cupertino
 [shenzhen]: https://github.com/nomad/shenzhen
-[Circle CI]: https://circleci.com/
+[CircleCI]: https://circleci.com/
 [commander]: https://github.com/tj/commander
 [pr193]: https://github.com/nomad/cupertino/pull/193
 [pr15]: https://github.com/ngs/onairlog-ios/pull/15
