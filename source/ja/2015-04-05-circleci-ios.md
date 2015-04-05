@@ -32,7 +32,7 @@ READMORE
 #!/bin/bash
 set -eu
 
-v=`/usr/libexec/PlistBuddy -c "Print :CFBundleShortVersionString $CIRCLE_BUILD_NUM" "${APPNAME}/Info.plist"`
+v=`/usr/libexec/PlistBuddy -c "Print :CFBundleShortVersionString" "${APPNAME}/Info.plist"`
 
 for f in `ls **/Info.plist`; do
   echo $f
