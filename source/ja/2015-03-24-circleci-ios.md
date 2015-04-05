@@ -277,6 +277,10 @@ Build 番号が同じである、`There already exists a binary upload with buil
 
 解決案として、新バージョンリリース後、すぐに次バージョンの準備を [iTunes Connect] 側で行い、Info.plist のバージョンも上げる運用にしようかと思います。
 
+### 2015/04/05 追記
+
+上記のとおり、設定すると iTunes Connect に配布できました。
+
 ## Xcode 6.2
 
 [OnAirLog] は [Apple Watch] 対応の準備をしました。
@@ -319,9 +323,9 @@ OSS なので、Travis CI でも、`.org` で無料で問題なく使わせて�
 
 ## TODOs
 
-- [ ] iTunes Connect デプロイ何とかする
-- [ ] DL ページと一緒に Ad Hoc 版を S3 デプロイする
-- [ ] DL ページができたら Slack 通知する
+- [x] iTunes Connect デプロイ何とかする
+- [x] [DL ページと一緒に Ad Hoc 版を S3 デプロイする](/2015/04/05/circleci-ios/)
+- [x] [DL ページができたら Slack 通知する](/2015/04/05/circleci-ios/)
 
 ## 参考にしたページ
 

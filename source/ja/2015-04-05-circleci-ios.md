@@ -247,6 +247,6 @@ curl -X POST --silent --data-urlencode "payload=${PAYLOAD}" $SLACK_WEBHOOK_URL
 ```
 
 [Amazon S3]: http://aws.amazon.com/jp/s3/
-[prev]: (/2015/03/24/circleci-ios/)
+[prev]: /2015/03/24/circleci-ios/
 [shenzhen]: https://github.com/nomad/shenzhen
 [Slack]: https://slack.com/
