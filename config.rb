@@ -18,7 +18,7 @@ activate :directory_indexes
 activate :syntax
 activate :i18n, langs: [lang]
 activate :livereload
-activate :emoji, :dir => '/images/emoji', :width => 20, :height => 20
+activate :gemoji
 
 set :markdown_engine, :custom
 set :markdown_engine_prefix, ::Middleman::Renderers
@@ -108,7 +108,7 @@ end
 configure :build do
   activate :minify_css
   activate :minify_javascript
-  activate :asset_hash, ignore: 'images'
+  activate :asset_hash, ignore: ['images',]
   ignore '.DS_Store'
   ignore '.*.swp'
   ignore '_drafts'
