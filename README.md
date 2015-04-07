@@ -3,12 +3,10 @@ sources.ngs.io
 
 Blog Sources: [日本語] / [English]
 
-[![Qiita Button](https://github2qiita.herokuapp.com/assets/img/post_qiita.png)](https://github2qiita.herokuapp.com/)
-
 Build & Dependency Status
 -------------------------
 
-[![Build Status](https://travis-ci.org/ngs/sources.ngs.io.png?branch=master)](https://travis-ci.org/ngs/sources.ngs.io)
+[![Circle CI](https://circleci.com/gh/ngs/sources.ngs.io/tree/master.svg?style=svg&circle-token=9e64722a06c4c42c0d0205e170215a63ef7b59b7)](https://circleci.com/gh/ngs/sources.ngs.io/tree/master) 
 [![Dependency Status](https://gemnasium.com/ngs/sources.ngs.io.svg)](https://gemnasium.com/ngs/sources.ngs.io)
 
 Build
