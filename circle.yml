@@ -35,10 +35,10 @@ deployment:
   main:
     branch: 'master'
     commands:
-      - bundle exec middleman deploy:
+      - bundle exec middleman deploy >/dev/null 2>&1:
           environment:
             MM_LANG: ja
-      - bundle exec middleman deploy:
+      - bundle exec middleman deploy >/dev/null 2>&1:
           environment:
             MM_LANG: en
 
