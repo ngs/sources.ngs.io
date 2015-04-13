@@ -9,30 +9,30 @@ html lang=I18n.locale.to_s itemscope="itemscope" itemtype="http://schema.org/Web
     link rel='author' href='https://plus.google.com/+AtsushiNAGASE'
     title
       - if current_article
-        = "#{current_article.title} - "
+        = "#{emojify current_article.title, :raw} - "
       - elsif current_page && current_page.data.title
-        = "#{current_page.data.title} - "
+        = "#{emojify current_page.data.title} - "
       - elsif content_for?(:title)
-        = "#{yield_content(:title)} - "
+        = "#{emojify yield_content(:title)} - "
       = t 'blog.title'
     - ogp_tags do|name, value|
-      meta property=name content=value
+      meta property=name content=emojify(value, :raw)
       - if name.match /^og:(image|description|title|url)$/
-        meta property=name.sub('og:', 'twitter:') content=value
+        meta property=name.sub('og:', 'twitter:') content=emojify(value, :raw)
     noscript
       = stylesheet_link_tag 'bootstrap'
     = stylesheet_link_tag 'application'
     = javascript_include_tag 'application'
     - if current_page.data.description
-      meta content=current_page.data.description name="description"
+      meta content=emojify(current_page.data.description, :raw) name="description"
     - elsif content_for?(:description)
-      meta content=yield_content(:description) name="description"
+      meta content=emojify(yield_content(:description), :raw) name="description"
     - else
-      meta content=t('blog.description') name="description"
+      meta content=emojify(t('blog.description'), :raw) name="description"
     - if current_page.data.keywords
-      meta content=current_page.data.page.keywords name="keywords"
+      meta content=emojify(current_page.data.page.keywords, :raw) name="keywords"
     - elsif current_article && current_article.tags
-      meta content=current_article.tags.join(',') name="keywords"
+      meta content=emojify(current_article.tags.join(','), :raw) name="keywords"
     - if current_resource.data.alternate
       meta content=alt_lang property="og:locale:alternate"
       link rel="alternate" hreflang=alt_lang herf="http://#{alt_host}#{ current_resource.url }"
@@ -125,7 +125,7 @@ html lang=I18n.locale.to_s itemscope="itemscope" itemtype="http://schema.org/Web
               - blog.articles.select {|a| a.data[:public] }.sort { |x,y| y.date <=> x.date }[0...10].each do |article|
                 li
                   = link_to article do
-                    span.title= article.title
+                    span.title= emojify article.title
                     time= article.date.strftime('%Y/%m/%d')
               li.show-all.text-right
                 = link_to '/archives' do

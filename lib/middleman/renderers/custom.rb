@@ -19,6 +19,7 @@ module Middleman
     end
     module CustomRenderer
       include ::Redcarpet::Render::SmartyPants
+      include ::EmojiHelper
       def table(header, body)
         res = '<table class="table table-bordered">'
         res += "<thead>#{header}</thead>" if header.present?
@@ -35,17 +36,11 @@ module Middleman
         content.sub!(/^\s*\[\s*x\s*\]/, '<input type="checkbox" checked disabled>')
         "<#{node_name}>#{content}</#{node_name}>"
       end
-      def postprocess(full_document)
-        full_document.gsub(/:([\w+-]+):/) do |match|
-          if emoji = Emoji.find_by_alias($1)
-            %(<img alt="#$1" src="https://assets-cdn.github.com/images/icons/emoji/#{emoji.image_filename}?v5" style="vertical-align:middle" width="20" height="20" class="gemoji">)
-          else
-            match
-          end
-        end
+      def preprocess(full_document)
+        emojify full_document
       end
     end
   end
 end
 
-Middleman::Renderers::MiddlemanRedcarpetHTML.send :include, ::Middleman::Renderers::CustomRenderer
+::Middleman::Renderers::MiddlemanRedcarpetHTML.send :include, ::Middleman::Renderers::CustomRenderer

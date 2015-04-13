@@ -1,5 +1,6 @@
 Dotenv.load
 Bundler.require
+require './lib/middleman/emoji_helper'
 require './lib/middleman/renderers/custom'
 
 ###
@@ -163,6 +164,7 @@ activate :deploy do |deploy|
 end
 
 helpers do
+  include EmojiHelper
 
   def alt_lang
     I18n.locale.to_s == 'en' ? "ja_JP" : "en_US"
