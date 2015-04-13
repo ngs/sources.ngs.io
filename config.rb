@@ -18,7 +18,6 @@ activate :directory_indexes
 activate :syntax
 activate :i18n, langs: [lang]
 activate :livereload
-activate :emoji, :dir => '/images/emoji', :width => 20, :height => 20
 
 set :markdown_engine, :custom
 set :markdown_engine_prefix, ::Middleman::Renderers
