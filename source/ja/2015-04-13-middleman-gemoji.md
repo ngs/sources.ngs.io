@@ -71,7 +71,7 @@ module Middleman
     module CustomRenderer
       include ::Redcarpet::Render::SmartyPants
       include ::EmojiHelper
-      def postprocess(full_document)
+      def preprocess(full_document)
         emojify full_document
       end
     end
