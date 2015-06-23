@@ -3,7 +3,7 @@ title: "San Francisco 2015.06"
 description: "2015/06/08-16 WWDC 期間に便乗して、San Francisco に滞在していました。"
 date: 2015-06-23 00:00
 public: true
-tags: wwdc, san francisco, hackathon, apple watch
+tags: wwdc, san francisco, hackathon, apple watch, travel
 alternate: false
 ogp:
   og:
