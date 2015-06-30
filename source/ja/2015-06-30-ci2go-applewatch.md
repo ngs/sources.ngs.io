@@ -16,7 +16,7 @@ ogp:
 
 ![](images/2015-06-30-ci2go-applewatch/01.jpg)
 
-[今月頭に San Francisco 滞在中][sf] に参加した [Apple Watch Hackathon] の成果物である、[CircleCI] クライアント [CI2Go] の Apple Watch 拡張を含む、バージョン 1.1.0 をリリースしました
+[今月頭の San Francisco 滞在中][sf] に参加した [Apple Watch Hackathon] の成果物である、[CircleCI] クライアント [CI2Go] の Apple Watch 拡張を含む、バージョン 1.1.0 をリリースしました
 
 [![](images/appstore.svg)][AppStore]
 
