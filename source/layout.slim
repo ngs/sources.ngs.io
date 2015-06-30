@@ -36,6 +36,8 @@ html lang=I18n.locale.to_s itemscope="itemscope" itemtype="http://schema.org/Web
     - if current_resource.data.alternate
       meta content=alt_lang property="og:locale:alternate"
       link rel="alternate" hreflang=alt_lang herf="http://#{alt_host}#{ current_resource.url }"
+    - if current_resource.data.app_id
+      meta name='apple-itunes-app' content="app-id=#{current_resource.data.app_id}, affiliate-data='at=10l87J'"
     meta content=t('author.name') name="author"
     = feed_tag :atom, "#{blog.options.prefix.to_s}/feed.xml", title: "Atom Feed"
     - %w{152 144 120 114 76 72 60 67}.each do |size|

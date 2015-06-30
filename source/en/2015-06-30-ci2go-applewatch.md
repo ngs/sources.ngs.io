@@ -5,6 +5,7 @@ date: 2015-06-30 13:40
 public: true
 tags: apple watch, circleci, ci2go, ios
 alternate: true
+app_id: 940028427
 ogp:
   og:
     image:
