@@ -118,6 +118,27 @@ html lang=I18n.locale.to_s itemscope="itemscope" itemtype="http://schema.org/Web
                 li style="padding: 1em 0; text-align: center"
                   i.fa.fa-refresh.fa-spin
 
+          section#sidebar-links
+            header
+              h2= t :links
+            ol.nav
+              li
+                = link_to 'https://plus.google.com/+AtsushiNAGASE?rel=author', rel: 'publisher' do
+                  i.fa.fa-google-plus
+                  | &nbsp;&nbsp;Google
+              li
+                = link_to 'https://twitter.com/ngs' do
+                  i.fa.fa-twitter
+                  | &nbsp;&nbsp;Twitter
+              li
+                = link_to 'https://github.com/ngs' do
+                  i.fa.fa-github
+                  | &nbsp;&nbsp;GitHub
+              li
+                = link_to 'https://dribbble.com/ngs' do
+                  i.fa.fa-dribbble
+                  | &nbsp;&nbsp;Dribbble
+
           section#sidebar-recent
             header
               h2= t :recent_entries
@@ -162,26 +183,6 @@ html lang=I18n.locale.to_s itemscope="itemscope" itemtype="http://schema.org/Web
                   span.glyphicon.glyphicon-plus
                   | &nbsp;
                   = t(:show_all)
-          section#sidebar-links
-            header
-              h2= t :links
-            ol.nav
-              li
-                = link_to 'https://plus.google.com/+AtsushiNAGASE?rel=author', rel: 'publisher' do
-                  i.fa.fa-google-plus
-                  | &nbsp;&nbsp;Google
-              li
-                = link_to 'https://twitter.com/ngs' do
-                  i.fa.fa-twitter
-                  | &nbsp;&nbsp;Twitter
-              li
-                = link_to 'https://github.com/ngs' do
-                  i.fa.fa-github
-                  | &nbsp;&nbsp;GitHub
-              li
-                = link_to 'https://dribbble.com/ngs' do
-                  i.fa.fa-dribbble
-                  | &nbsp;&nbsp;Dribbble
 
       footer.row
         .col-md-12.credit
