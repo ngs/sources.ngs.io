@@ -36,6 +36,10 @@ WWDC Week 終了後の土曜日に行われた [AppleWatch Hackathon] に参加�
 
 AppStore 申請済で 2015/06/23 現時点で、Waiting For Review ステータスです。
 
+![](2015-06-23-san-francisco/10-s.jpg)
+
+発表中の様子 (Photo by [Keita Ito])
+
 ![](2015-06-23-san-francisco/04-s.jpg)
 
 滞在最終日は、特に予定が無かったので、観光をしていました。
@@ -64,3 +68,4 @@ SF に来たら必ずくる [Exploratorium]。
 [Pull request #10]: https://github.com/ngs/ci2go/pull/10
 [WWDC 2015]: https://developer.apple.com/wwdc/
 [Exploratorium]: http://www.exploratorium.edu/
+[Keita Ito]: http://keitaito.com/
