@@ -25,7 +25,7 @@ Oneteam Inc. について
 
 [Oneteam] は、_手のひらにチームを持ち歩く_ というコンセプトの元、協働による生産性をサポートする製品を提供するべく、2015年の2月に設立された会社です。
 
-参照: [The Bridge](http://thebridge.jp/2015/05/oneteam-raised-60m-yen-from-cav), [Tech Crunch](http://jp.techcrunch.com/2015/05/15/jp150514_oneteam/), [Tech in Asia](https://www.techinasia.com/japan-oneteam-seed-funding/), [Wantedly](https://www.wantedly.com/companies/oneteam)
+参照: [The Bridge](http://thebridge.jp/2015/05/oneteam-raised-60m-yen-from-cav), [Tech Crunch](http://jp.techcrunch.com/2015/05/15/jp150514_oneteam/), [Tech in Asia](https://www.techinasia.com/japan-oneteam-seed-funding/), [Wantedly](https://www.wantedly.com/companies/oneteam), [エンジニア type](http://engineer.typemag.jp/article/oneteam_neo)
 
 現在は、一部のお客様にクローズドβで製品を試用していただいており、順次公開していく予定です。
 
