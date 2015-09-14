@@ -51,15 +51,14 @@ READMORE
   - CI ビルド毎の Docker Image をレジストリーに Push
     - `${DOCKER_REPO}:web-b${CIRCLE_BUILD_NUM}`
     - `${DOCKER_REPO}:job-b${CIRCLE_BUILD_NUM}`
-- `deployment`
-  - `master` ブランチ: ビルド番号なしの Docker Image をレジストリーに Push
+- `master` ブランチ: ビルド番号なしの Docker Image をレジストリーに Push
     - `${DOCKER_REPO}:web`
     - `${DOCKER_REPO}:job`
-  - `deployment/$ENV_NAME` ブランチ
-    - ビルド番号付きの Docker Image をソースに、Task Definition を作成
-    - `db:migrate` 用のタスクを作成
-    - Service を更新する
-    - 既存タスクを終了させる (無停止デプロイは未設定)
+- `deployment/$ENV_NAME` ブランチ
+  - ビルド番号付きの Docker Image をソースに、Task Definition を作成
+  - `db:migrate` 用のタスクを作成
+  - Service を更新する
+  - 既存タスクを終了させる (無停止デプロイは未設定)
 
 ## Roles
 
