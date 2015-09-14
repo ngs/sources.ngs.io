@@ -52,8 +52,8 @@ READMORE
     - `${DOCKER_REPO}:web-b${CIRCLE_BUILD_NUM}`
     - `${DOCKER_REPO}:job-b${CIRCLE_BUILD_NUM}`
 - `master` ブランチ: ビルド番号なしの Docker Image をレジストリーに Push
-    - `${DOCKER_REPO}:web`
-    - `${DOCKER_REPO}:job`
+  - `${DOCKER_REPO}:web`
+  - `${DOCKER_REPO}:job`
 - `deployment/$ENV_NAME` ブランチ
   - ビルド番号付きの Docker Image をソースに、Task Definition を作成
   - `db:migrate` 用のタスクを作成
