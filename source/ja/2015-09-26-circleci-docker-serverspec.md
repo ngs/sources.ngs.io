@@ -116,7 +116,10 @@ test:
 
 ### Specinfra のバージョンを古いもので固定する
 
-参照: [CircleCIでDockerコンテナをテストしようとしたらエラーになるとき](http://qiita.com/honeniq/items/00504fecc708f9026bc5)
+参照:
+
+- [CircleCIでDockerコンテナをテストしようとしたらエラーになるとき](http://qiita.com/honeniq/items/00504fecc708f9026bc5)
+- [Test Docker Images with circleci](https://workshop.avatarnewyork.com/post/test-docker-images-with-circleci/)
 
 以下のエラーでコケました。
 
