@@ -3,7 +3,7 @@ title: "Rails アプリの Docker Image ビルドと Amazon EC2 Container Servic
 description: "現在構築中のサービスの Rails アプリケーションのインフラとして、Amazon EC2 Container Service (ECS) を採用し、自動化を頑張ってみた内容を公開します。"
 date: 2015-09-14 07:45
 public: true
-tags: aws, ecs, rails, docker, infrastructure, circleci
+tags: aws, ecs, rails, docker, infrastructure, circleci, serverspec
 alternate: false
 ogp:
   og:
