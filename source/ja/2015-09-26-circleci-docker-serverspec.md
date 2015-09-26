@@ -1,6 +1,6 @@
 ---
 title: "CircleCI で Docker Container を Serverspec でテストする"
-description: "現在構築中のサービスの Rails アプリケーションのインフラとして、Amazon EC2 Container Service (ECS) を採用し、自動化を頑張ってみた内容を公開します。"
+description: "Serverspec の Docker Backend を使った Docker コンテナのテストを CircleCI 上で実行する際、多少手こずったので、その試行錯誤によってできた、サンプルプロジェクトを公開しました。"
 date: 2015-09-26 09:30
 public: true
 tags: docker, infrastructure, circleci, go, serverspec
