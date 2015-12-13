@@ -3,7 +3,7 @@ title: "Copy UIColor / NSColor initializer code from Sketch app"
 description: "I've published a Sketch app plugin for generating UIColor and NSColor initializer Swift code from fill color of selected layers."
 date: 2015-12-11 00:30
 public: true
-tags: sketch, swift, coccoa
+tags: color, sketch, swift, coccoa, ios
 alternate: true
 ogp:
   og:
