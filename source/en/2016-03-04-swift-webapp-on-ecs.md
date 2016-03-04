@@ -68,7 +68,7 @@ serve { router.respond($0) }
 
 Swifton has an example Todo app project: [necolt/Swifton-TodoApp]
 
-This has already has a Dockerfile and Heroku configurations (`app.json` and `Procfile`).
+This already has a Dockerfile and Heroku configurations (`app.json` and `Procfile`).
 
 This works, so we can get started with this. But I don't want to use Heroku for production and tried to use Amazon EC2 Container Service (ECS) instead.
 
