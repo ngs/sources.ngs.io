@@ -4,7 +4,7 @@ description: "How to run web applications built with #swiftlang on Amazon EC2 Co
 date: 2016-03-04 22:50
 public: true
 tags: circleci, swift, swifton, amazon, aws, ecs
-alternate: false
+alternate: true
 ogp:
   og:
     image:
@@ -228,11 +228,13 @@ This script runs the following operations with [AWS Command Line Interface].
 - Updates or creates task definition and retrieves new revision number like `swifton-example-production:123`
 - Updates or creates with new task definition
 
-After deploy it, you can browse the Todo Example App.
+After deploying it, you can browse the Todo Example App.
 
 ![](2016-03-04-swift-webapp-on-ecs/todos.png)
 
 Have fun! Give me feedbacks if you found any.
+
+https://github.com/ngs/Swifton-TodoApp
 
 [Swifton]: https://github.com/necolt/Swifton
 [open source]: https://github.com/apple/swift
