@@ -101,7 +101,7 @@ http://blog.circleci.com/trusty-image-public-beta/
 
 ![](2016-03-04-swift-webapp-on-ecs/circle-ci-trusty-container.png)
 
-## Required softwares on continuously build
+## Required softwares for continuously building
 
 First of all, we need to install the following softwares to run `swift build`
 
