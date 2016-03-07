@@ -93,6 +93,8 @@ So I tried to build binaries outside of Docker build process and put it on the i
 
 I use the Development Snapshot Swift tarball built on Trusty Ubuntu (14.04).
 
+https://swift.org/download/#latest-development-snapshots
+
 ![](2016-03-04-swift-webapp-on-ecs/tarball.png)
 
 So I choose CircleCI's Trusty Container that is provided as public beta.
