@@ -93,6 +93,8 @@ REPOSITORY  TAG     IMAGE ID      CREATED         VIRTUAL SIZE
 
 Swift ランタイムは、Trusty Ubuntu (14.04) でビルドされた、開発スナップショットを使います。
 
+https://swift.org/download/#latest-development-snapshots
+
 ![](2016-03-04-swift-webapp-on-ecs/tarball.png)
 
 それに合わせて、パブリックベータとして提供されている、CircleCI の Trusty コンテナを採用しました。
