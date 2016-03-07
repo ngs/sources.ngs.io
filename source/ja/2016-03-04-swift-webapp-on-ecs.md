@@ -125,15 +125,10 @@ sudo update-alternatives --install /usr/bin/clang++ clang++ /usr/bin/clang++-3.6
 上記が必要なので、不要なファイルは `.dockerignore` ファイルで無視し、Docker イメージのビルド時間を節約します。
 
 ```
-MIT-LICENSE
-*.swift
-README.md
-app.json
-.*
-swift
+*
+!Views
 !swift/usr/lib/swift/linux/*.so
 !.build/release/Swifton-TodoApp
-serverspec
 ```
 
 ## Dockerfile

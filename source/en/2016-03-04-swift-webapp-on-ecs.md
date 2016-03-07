@@ -125,15 +125,10 @@ sudo update-alternatives --install /usr/bin/clang++ clang++ /usr/bin/clang++-3.6
 So, I ignored unneeded assets with `.dockerignore` file. This can reduce Docker Image build time.
 
 ```
-MIT-LICENSE
-*.swift
-README.md
-app.json
-.*
-swift
+*
+!Views
 !swift/usr/lib/swift/linux/*.so
 !.build/release/Swifton-TodoApp
-serverspec
 ```
 
 ## The Dockerfile
