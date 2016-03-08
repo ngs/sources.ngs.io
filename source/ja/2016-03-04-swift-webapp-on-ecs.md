@@ -28,6 +28,8 @@ Swift で Web アプリケーションを開発するのは、とても楽しい
 
 また、こちらの内容を、弊社 Oneteam のミーティングスペースで行った [Tokyo Server-Side Swift Meetup] で発表しました。
 
+参照: https://one-team.com/blog/ja/2016-03-07-swift-meetup/
+
 以下は、その資料です。
 
 <script async class="speakerdeck-embed" data-id="4b85bc7092b342318e4fcf76f62170e6" data-ratio="1.33333333333333" src="//speakerdeck.com/assets/embed.js"></script>
