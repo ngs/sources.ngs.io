@@ -26,6 +26,12 @@ Swift で Web アプリケーションを開発するのは、とても楽しい
 - https://hub.docker.com/r/atsnngs/docker-swifton-example/
 - https://circleci.com/gh/ngs/Swifton-TodoApp
 
+また、こちらの内容を、弊社 Oneteam のミーティングスペースで行った [Tokyo Server-Side Swift Meetup] で発表しました。
+
+以下は、その資料です。
+
+<script async class="speakerdeck-embed" data-id="4b85bc7092b342318e4fcf76f62170e6" data-ratio="1.33333333333333" src="//speakerdeck.com/assets/embed.js"></script>
+
 READMORE
 
 ## Swift の Web フレームワーク
@@ -244,3 +250,4 @@ https://github.com/ngs/Swifton-TodoApp
 [ERB テンプレート]: https://github.com/ngs/Swifton-TodoApp/blob/master/script/ecs-deploy-services.sh
 [AWS ECS ドキュメンテーション]: http://docs.aws.amazon.com/ja_jp/AmazonECS/latest/developerguide/ECS_GetStarted.html
 [AWS コマンドライン インターフェイス]: https://aws.amazon.com/cli/
+[Tokyo Server-Side Swift Meetup]: http://connpass.com/event/27667/
