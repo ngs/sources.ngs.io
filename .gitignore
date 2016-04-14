@@ -21,3 +21,5 @@
 /.env
 
 /node_modules
+
+.envrc
