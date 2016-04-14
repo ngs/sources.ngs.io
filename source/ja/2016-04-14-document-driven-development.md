@@ -44,7 +44,7 @@ READMORE
 
 その問題を解決するため、元々、我々の製品 [Oneteam] 上に任意で書いていた Design Doc という設計書を、プロジェクト毎に作成することを必須化し、タスク管理をその中で行う運用に変更しました。
 
-元々とっていた Daily Standup の議事録は廃止し、事前に _Product Development Daily Summary_ なる Topic を Oneteam 上に作成し、そこに書く Design Doc へのリンクをステータスに分けて貼り付けます。
+元々とっていた Daily Standup の議事録は廃止し、事前に _Product Development Daily Summary_ なる Topic を Oneteam 上に作成し、そこに各プロジェクトの Design Doc へのリンクをステータスに分けて貼り付けます。
 
 ステータスは、以下の様に定義しています。
 
