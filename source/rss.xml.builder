@@ -17,7 +17,7 @@ xml.rss(
     xml.link URI.join(site_url, blog.options.prefix.to_s)
     xml.lastBuildDate(blog.articles.first.date.to_time.rfc822) unless blog.articles.empty?
 
-    blog.articles[0..5].each do |article|
+    blog.articles[0..9].each do |article|
       xml.item do
         xml.title article.title
         xml.link URI.join(site_url, article.url)
