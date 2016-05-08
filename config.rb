@@ -52,6 +52,7 @@ activate :similar, :algorithm => :'word_frequency/tree_tagger'
 
 
 page "/feed.xml",    layout: false
+page "/rss.xml",     layout: false
 page "/sitemap.xml", layout: false
 page "/404.html",    directory_index: false
 

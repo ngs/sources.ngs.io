@@ -40,6 +40,7 @@ html lang=I18n.locale.to_s itemscope="itemscope" itemtype="http://schema.org/Web
       meta name='apple-itunes-app' content="app-id=#{current_resource.data.app_id}, affiliate-data='at=10l87J'"
     meta content=t('author.name') name="author"
     = feed_tag :atom, "#{blog.options.prefix.to_s}/feed.xml", title: "Atom Feed"
+    = feed_tag :rss, "#{blog.options.prefix.to_s}/rss.xml", title: "RSS 2.0 Feed"
     - %w{152 144 120 114 76 72 60 67}.each do |size|
       - size = "#{size}x#{size}"
       link rel="apple-touch-icon" size=size href="/apple-touch-icon-#{size}-precomposed.png"
