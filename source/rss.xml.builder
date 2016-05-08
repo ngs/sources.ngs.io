@@ -25,7 +25,7 @@ xml.rss(
         xml.pubDate article.date.to_time.rfc822
         xml.author "a@ngs.io (#{t('author.name')})"
         # xml.summary article.summary, "type" => "html"
-        xml.description Sanitize.clean(article.body, :elements => %w{p strong ul li h1 h2})
+        xml.description Sanitize.clean(article.body, :elements => %w{p strong ul li h1 h2}).gsub(/\n*<p><\/p>\n*/, '')
       end
     end
   end
