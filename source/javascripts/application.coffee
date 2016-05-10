@@ -78,7 +78,7 @@ handleReadMoreLink = (e)->
   no
 
 loadThemeDropDown = ->
-  $.get('http://api.bootswatch.com/3/')
+  $.get('http://bootswatch.com/api/3.json')
   .done (res)->
     ul = $('.bootswatch-theme-list').empty()
     appendItem ul, {
