@@ -34,7 +34,7 @@
               img src="http://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;"
           .fb-like data-send='true' data-width='300' data-show-faces='false' data-href=url
         - else
-          a href="https://news.ycombinator.com/submit" class="hn-button" class="hn-button" data-title=current_article.title data-url=url
+          a href="https://news.ycombinator.com/submit" class="hn-button" data-count="horizontal" data-title=current_article.title data-url=url
             | Vote on Hacker News
       ul.pager
         - if current_article.previous_article
