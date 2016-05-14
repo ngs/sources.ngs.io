@@ -58,7 +58,7 @@ npm install --save hubot-keybase
 
 ## Feedbacks
 
-If you find some bugs or request, feel free to drop me a issue on GitHub repository or PRs are welcome :)
+If you find some bugs or request, feel free to drop me an issue on GitHub repository or PRs are welcome :)
 
 https://github.com/ngs/hubot-keybase/issues
 
