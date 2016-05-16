@@ -190,6 +190,11 @@ html lang=I18n.locale.to_s itemscope="itemscope" itemtype="http://schema.org/Web
                   span.glyphicon.glyphicon-plus
                   | &nbsp;
                   = t(:show_all)
+          section
+            header
+              h2 Memos
+            ol.nav
+              li = link_to 'Subscrptions', '/subscriptions/'
 
       footer.row
         .col-md-12.credit
