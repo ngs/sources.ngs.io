@@ -3,7 +3,7 @@ title: "PGP encrypted messages for Keybase users in our chat rooms"
 description: "I've released hubot-keybase, a Hubot script to encrypt messages for Keybase users."
 date: 2016-05-14 07:45
 public: true
-tags: hubot, keybase, php, encryption
+tags: hubot, keybase, pgp, encryption
 alternate: true
 ogp:
   og:
@@ -26,7 +26,7 @@ READMORE
 
 When you type message in your chat room like:
 
-```
+```sh
 hubot keybase encrypt:ngs Hi there!
 #                     ^ Keybase username!
 ```

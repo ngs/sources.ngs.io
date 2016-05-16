@@ -3,7 +3,7 @@ title: "Keybase ユーザーに対して PGP 暗号化したメッセージを�
 description: "チャットで Keybase ユーザーに対して暗号化したメッセージを作成する、hubot-keybase を公開しました。"
 date: 2016-05-14 07:45
 public: true
-tags: hubot, keybase, php, encryption
+tags: hubot, keybase, pgp, encryption
 alternate: true
 ogp:
   og:
@@ -26,7 +26,7 @@ READMORE
 
 こんな感じでチャットでメッセージを送ると
 
-```
+```sh
 hubot keybase encrypt:ngs Hi there!
 #                     ^ Keybase username!
 ```
