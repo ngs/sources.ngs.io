@@ -155,8 +155,6 @@ window.setupAmazonWidget = (title, asin...) ->
   fg = rgb2hex body.css 'color'
   link = rgb2hex $('a[href*="amazon.co.jp"]').css 'color'
 
-  console.info bg, fg, link
-
   window.amzn_wdgt = {
     widget: 'MyFavorites'
     tag: 'ngsio-22'
