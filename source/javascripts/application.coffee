@@ -139,6 +139,48 @@ $ ->
   $('#sidebar-navigation').hidescroll hiddenClass: 'nav-hidden'
   setUpMixCloud()
 
+hexDigits = _.map [0..15], (n) -> n.toString 0x10
+hex = (x) -> if isNaN(x) then '00' else hexDigits[(x - x % 16) / 16] + hexDigits[x % 16]
+rgb2hex = (rgb) ->
+  if m = rgb.match /^rgb\((\d+),\s*(\d+),\s*(\d+)\)$/
+    "##{hex m[1]}#{hex m[2]}#{hex m[3]}"
+  else
+    ''
+
+window.setupAmazonWidget = (title, asin...) ->
+  unless asin?.length > 0
+    asin = $.unique($('a[href*="amazon.co.jp"]').map(-> $(@).attr('href').match(/\/gp\/product\/(\w+)\//)?[1])).get()
+  body = $ 'body'
+  bg = rgb2hex body.css 'background-color'
+  fg = rgb2hex body.css 'color'
+  link = rgb2hex $('a[href*="amazon.co.jp"]').css 'color'
+
+  console.info bg, fg, link
+
+  window.amzn_wdgt = {
+    widget: 'MyFavorites'
+    tag: 'ngsio-22'
+    columns: '1'
+    rows: '100'
+    title: title
+    width: '290'
+    ASIN: asin.join(',')
+    showImage: 'True'
+    showPrice: 'True'
+    showRating: 'False'
+    shuffleProducts: 'False'
+    design: '2'
+    colorTheme: 'White'
+    headerTextColor: '#666'
+    marketPlace: 'JP'
+    outerBackgroundColor: bg
+    backgroundColor: bg
+    borderColor: bg
+    headerTextColor: fg
+    linkedTextColor: link
+    bodyTextColor: fg
+  }
+
 new Konami () ->
   $('#sidebar-bootswatch').fadeIn()
 
