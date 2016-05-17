@@ -3,7 +3,7 @@ title: Subscriptions
 ---
 # Subscriptions
 
-ref: [Instant store](http://astore.amazon.co.jp/atsushnagased-22)
+ref: [Life Stack](http://astore.amazon.co.jp/ngsio-22)
 
 ## Accessory
 

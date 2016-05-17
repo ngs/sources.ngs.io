@@ -126,10 +126,6 @@ html lang=I18n.locale.to_s itemscope="itemscope" itemtype="http://schema.org/Web
               h2= t :links
             ol.nav
               li
-                = link_to 'https://plus.google.com/+AtsushiNAGASE?rel=author', rel: 'publisher' do
-                  i.fa.fa-google-plus
-                  | &nbsp;&nbsp;Google
-              li
                 = link_to 'https://twitter.com/ngs' do
                   i.fa.fa-twitter
                   | &nbsp;&nbsp;Twitter
@@ -145,6 +141,14 @@ html lang=I18n.locale.to_s itemscope="itemscope" itemtype="http://schema.org/Web
                 = link_to 'https://keybase.io/ngs' do
                   i.fa.fa-key
                   | &nbsp;&nbsp;Keybase
+              li
+                = link_to 'https://plus.google.com/+AtsushiNAGASE?rel=author', rel: 'publisher' do
+                  i.fa.fa-google-plus
+                  | &nbsp;&nbsp;Google
+              li
+                = link_to 'http://astore.amazon.co.jp/ngsio-22' do
+                  i.fa.fa-amazon
+                  | &nbsp;&nbsp;Amazon JP
 
           section#sidebar-recent
             header
