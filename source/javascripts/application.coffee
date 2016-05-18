@@ -142,7 +142,7 @@ $ ->
 hexDigits = _.map [0..15], (n) -> n.toString 0x10
 hex = (x) -> if isNaN(x) then '00' else hexDigits[(x - x % 16) / 16] + hexDigits[x % 16]
 rgb2hex = (rgb) ->
-  if m = rgb.match /^rgb\((\d+),\s*(\d+),\s*(\d+)\)$/
+  if m = rgb?.match /^rgb\((\d+),\s*(\d+),\s*(\d+)\)$/
     "##{hex m[1]}#{hex m[2]}#{hex m[3]}"
   else
     ''
