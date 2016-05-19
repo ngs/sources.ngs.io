@@ -153,7 +153,7 @@ window.setupAmazonWidget = (title, asin...) ->
   body = $ 'body'
   bg = rgb2hex body.css 'background-color'
   fg = rgb2hex body.css 'color'
-  link = rgb2hex $('a[href*="amazon.co.jp"]').css 'color'
+  link = rgb2hex $('a[href]').css 'color'
 
   window.amzn_wdgt = {
     widget: 'MyFavorites'
