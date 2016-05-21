@@ -25,7 +25,7 @@ set :markdown_engine_prefix, ::Middleman::Renderers
 set :markdown, :fenced_code_blocks => true, :smartypants => true, :autolink => true, :tables => true, :with_toc_data => true
 set :build_dir,    "build-#{lang}"
 set :partials_dir, 'partials'
-set :site_url, "http://#{cname}"
+set :site_url, "https://#{cname}"
 
 activate :blog do |blog|
   blog.permalink = "{year}/{month}/{day}/{title}/index.html"
@@ -103,7 +103,7 @@ activate :ogp do |ogp|
     twitter: data.send(lang).ogp.twitter
   }
   ogp.blog = true
-  ogp.base_url = "http://#{cname}/"
+  ogp.base_url = "https://#{cname}/"
 end
 
 configure :build do
@@ -180,7 +180,7 @@ helpers do
   end
 
   def alt_href
-    "http://#{alt_host}#{current_resource.url}"
+    "https://#{alt_host}#{current_resource.url}"
   end
 
   def alt_link
