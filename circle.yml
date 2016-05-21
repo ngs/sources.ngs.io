@@ -41,4 +41,5 @@ deployment:
       - bundle exec middleman deploy >/dev/null 2>&1:
           environment:
             MM_LANG: en
-
+      - /bin/bash script/purge-cloudflare-cache.sh
+      - ZONE=$CLOUDFLARE_ZONE_EN /bin/bash script/purge-cloudflare-cache.sh
