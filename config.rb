@@ -109,7 +109,7 @@ end
 configure :build do
   activate :minify_css
   activate :minify_javascript
-  activate :asset_hash, ignore: 'images'
+  activate :asset_hash, ignore: 'images', exts: %w(.woff2 .eot .svg .ttf .woff .otf .css .js .jpg .png .gif)
   ignore '.DS_Store'
   ignore '.*.swp'
   ignore '_drafts'
