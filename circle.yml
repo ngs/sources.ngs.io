@@ -42,4 +42,3 @@ deployment:
           environment:
             MM_LANG: en
       - /bin/bash script/purge-cloudflare-cache.sh
-      - ZONE=$CLOUDFLARE_ZONE_EN /bin/bash script/purge-cloudflare-cache.sh
