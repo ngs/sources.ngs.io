@@ -35,7 +35,7 @@ html lang=I18n.locale.to_s itemscope="itemscope" itemtype="http://schema.org/Web
       meta content=emojify(current_article.tags.join(','), :raw) name="keywords"
     - if current_resource.data.alternate
       meta content=alt_lang property="og:locale:alternate"
-      link rel="alternate" hreflang=alt_lang herf="http://#{alt_host}#{ current_resource.url }"
+      link rel="alternate" hreflang=alt_lang herf="https://#{alt_host}#{ current_resource.url }"
     - if current_resource.data.app_id
       meta name='apple-itunes-app' content="app-id=#{current_resource.data.app_id}, affiliate-data='at=10l87J'"
     meta content=t('author.name') name="author"
@@ -83,12 +83,12 @@ html lang=I18n.locale.to_s itemscope="itemscope" itemtype="http://schema.org/Web
                     = t :aboutme
               li
                 - if I18n.locale.to_s == 'ja'
-                  = link_to 'http://ngs.io/', rel: 'alternate', itemprop: 'url', hreflang: 'en' do
+                  = link_to 'https://ngs.io/', rel: 'alternate', itemprop: 'url', hreflang: 'en' do
                     span.glyphicon.glyphicon-pencil
                     | &nbsp;&nbsp;
                     span itemprop='name' Blog (English)
                 - else
-                  = link_to 'http://ja.ngs.io/', rel: 'alternate', itemprop: 'url', hreflang: 'ja' do
+                  = link_to 'https://ja.ngs.io/', rel: 'alternate', itemprop: 'url', hreflang: 'ja' do
                     span.glyphicon.glyphicon-pencil
                     | &nbsp;&nbsp;
                     span itemprop='name' ブログ (日本語)
@@ -206,7 +206,7 @@ html lang=I18n.locale.to_s itemscope="itemscope" itemtype="http://schema.org/Web
             | Proudly hosted on #{ link_to 'GitHub Pages', 'http://pages.github.com', rel: 'nofollow' }.&nbsp;
             | Theme by #{ link_to 'United', 'http://bootswatch.com/united/', rel: 'nofollow', class: 'bootswatch-link' } from #{ link_to 'Bootswatch', 'http://bootswatch.com/', rel: 'nofollow' }.&nbsp;
             | Built on CircleCI #{ link_to "build##{ENV['CIRCLE_BUILD_NUM']}", "https://circleci.com/gh/ngs/sources.ngs.io/#{ENV['CIRCLE_BUILD_NUM']}", rel: 'nofollow' } with commit #{ link_to (ENV['CIRCLE_SHA1']||'123456789abcdef')[0, 7], ENV['CIRCLE_COMPARE_URL'], rel: 'nofollow' }.
-          p Copyright &copy; #{ Time.now.year } #{ link_to 'Atsushi Nagase', 'http://ngs.io/', rel: 'copyright' } all rights reserved with all articles and pictures. Everything else in #{ link_to 'the repository', 'https://github.com/ngs/source.ngs.io/' } is #{ link_to 'MIT licensed', 'https://github.com/ngs/sources.ngs.io/blob/master/LICENSE.md' }.
+          p Copyright &copy; #{ Time.now.year } #{ link_to 'Atsushi Nagase', 'https://ngs.io/', rel: 'copyright' } all rights reserved with all articles and pictures. Everything else in #{ link_to 'the repository', 'https://github.com/ngs/source.ngs.io/' } is #{ link_to 'MIT licensed', 'https://github.com/ngs/sources.ngs.io/blob/master/LICENSE.md' }.
 
 
     = google_analytics_universal_tag

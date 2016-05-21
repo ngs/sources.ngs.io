@@ -18,12 +18,12 @@ getDefaultTheme = ->
   date = new Date()
   {sunset, sunrise} = SunCalc.getTimes date, 35.6216798, 139.6993775
   defaultTheme = if date > sunrise and date < sunset
-    cssCdn: "http://netdna.bootstrapcdn.com/bootswatch/latest/united/bootstrap.min.css"
+    cssCdn: "https://netdna.bootstrapcdn.com/bootswatch/latest/united/bootstrap.min.css"
     name: "United"
     preview: "http://bootswatch.com/united/"
     isDefault: yes
   else
-    cssCdn: "http://netdna.bootstrapcdn.com/bootswatch/latest/darkly/bootstrap.min.css"
+    cssCdn: "https://netdna.bootstrapcdn.com/bootswatch/latest/darkly/bootstrap.min.css"
     name: "Darkly"
     preview: "http://bootswatch.com/darkly/"
     isDefault: yes
@@ -78,7 +78,7 @@ handleReadMoreLink = (e)->
   no
 
 loadThemeDropDown = ->
-  $.get('http://bootswatch.com/api/3.json')
+  $.get('https://bootswatch.com/api/3.json')
   .done (res)->
     ul = $('.bootswatch-theme-list').empty()
     appendItem ul, {
