@@ -18,7 +18,7 @@ Time.zone = "Tokyo"
 activate :directory_indexes
 activate :syntax
 activate :i18n, langs: [lang]
-activate :livereload
+# activate :livereload
 
 set :markdown_engine, :custom
 set :markdown_engine_prefix, ::Middleman::Renderers
@@ -44,6 +44,7 @@ activate :blog do |blog|
   blog.per_page = 10
   blog.page_link = "p{num}"
 end
+
 # if lang == :en
 activate :similar, :algorithm => :'word_frequency/tree_tagger'
 # else
@@ -80,6 +81,7 @@ ready do
     if res.is_a? Middleman::Blog::BlogArticle
       redirect_to "blog#{res.url.sub(%r{/$}, '.html')}", res
       redirect_to "blog#{res.url}index.html", res
+      proxy "#{res.url}amp.html", 'amp.html', locals: { current_article: res }, layout: false, directory_index: false
     elsif res.url.match %r{^/p\d+/$}
       redirect_to "blog#{res.url.sub(%r{p(\d)}, 'page/\1')}index.html", res
     elsif res.url.match %r{^/t/(.+)/$}
