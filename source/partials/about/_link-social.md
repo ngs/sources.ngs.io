@@ -1,5 +1,6 @@
 * [Twitter](https://twitter.com/ngs)
 * [Facebook](https://www.facebook.com/atsnngs)
+* [Instagram](https://www.instagram.com/ngs/)
 * [Google+](http://gplus.to/ngs)
 * [Quora](http://www.quora.com/Atsushi-Nagase)
 * [Strava](http://strava.com/athletes/ngs)
