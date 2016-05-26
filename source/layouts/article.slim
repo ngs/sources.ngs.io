@@ -36,6 +36,9 @@
         - else
           a href="https://news.ycombinator.com/submit" class="hn-button" data-count="horizontal" data-title=current_article.title data-url=url
             | Vote on Hacker News
+        script src="//platform.linkedin.com/in.js" type="text/javascript"
+          | lang: #{I18n.locale.to_s == 'ja' ? 'ja_JP' : 'en_US' }
+        script type="IN/Share" data-url=url data-counter="right"
       ul.pager
         - if current_article.previous_article
           li.previous
