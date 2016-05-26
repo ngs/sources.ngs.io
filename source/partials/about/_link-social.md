@@ -6,3 +6,4 @@
 * [TripIt](https://www.tripit.com/people/ngs)
 * [Flickr](http://www.flickr.com/photos/atsnngs)
 * [Pinterest](http://pinterest.com/ngs)
+* [Amazon Japan](http://astore.amazon.co.jp/ngsio-22)
