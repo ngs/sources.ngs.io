@@ -116,6 +116,7 @@ configure :build do
   ignore '.*.swp'
   ignore '_drafts'
   ignore 'redirect.html'
+  ignore 'amp.html'
   if lang == :en
     ignore '/about/index.ja.html'
     ignore '/ja/*'
