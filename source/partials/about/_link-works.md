@@ -1,0 +1,7 @@
+* [GitHub](https://github.com/ngs)
+* [CPAN](http://search.cpan.org/~ngs)
+* [RubyGems](https://rubygems.org/profiles/ngs)
+* [npm](https://npmjs.org/~ngs)
+* [Qiita](http://qiita.com/ngs)
+* [Dribbble](https://dribbble.com/ngs)
+* [Speaker Deck](https://speakerdeck.com/ngs)

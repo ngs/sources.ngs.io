@@ -25,91 +25,22 @@ alternate: true
 
       .col-md-9
         p= alt_link
-        markdown:
-          Hello, I am a <span itemprop="title">software engineer</span> based in <span itemprop="address" itemscope itemtype="http://data-vocabulary.org/Address"><span itemprop="region">Tokyo</span>, <span itemprop="locality">Japan</span></span>.
+        = partial 'about/biography.en.md'
 
-          ## Biography
-
-          * 3rd, October 1983 Born in [Shimamoto, Osaka](http://en.wikipedia.org/wiki/Shimamoto,_Osaka).
-          * In March, 2002, Moved to Tokyo (actually, lived in Kohoku, Yokohama). Started to learn graphic design in design school in Tokyo.
-          * From June, 2003, Started working for a graphic design studio: [Lotus Image Laboratory Inc.](http://lotus-lab.com/), located in Ebisu as a graphic designer. At same time I worked for some clients as a sole proprietor RIA developer using Flash and JavaScript.
-          * In September, 2006, I quitted the studio and started to focus on works as a sole proprietor. I worked for client projects for mobile: iOS, Android, Windows phone, S! widget etc., desktop: Mac OS X, Windows and  server side application.
-          * 12th, March, 2009, founded [LittleApps Inc.](http://littleapps.jp/) to continue working for those client works.
-          * In December, 2009, TenkiMeter awarded  [Softbank Mobile Prise in "天気予報API活用アプリコンテスト" (App Awards for Forecast API)](http://www.value-press.com/pressrelease/49464).
-          * In October, 2011, joined tattva Inc. Developed a [Pinterest clone called i.ntere.st](http://jp.techcrunch.com/2012/02/27/jp20120227interest-renewal/). Left the company in April, 2012.
-          * In March, 2012, started developing a SDK for mobile applications called [AppSocially](https://appsocial.ly/).
-          * In November, 2012, [EverDesktop](http://everdesktop.com/) awarded Evernote Corporation Prise in "[Mashup Awards 8](http://ma8.mashupaward.jp/)".
-          * In April, 2013, founded AppSocially Inc. in Delaware, United States. In May, I [left the company](http://ja.ngs.io/2013/12/30/shokan2013/).
-          * In June, 2013, joined [KAIZEN platform Inc.](http://kaizenplatform.in/).
-          * In July, 2015, left [KAIZEN platform Inc.](http://kaizenplatform.in/).
-          * In August, 2015, joined <span itemprop="affiliation">[Oneteam Inc.](https://one-team.com/)</span>.
-
-          ## Works
-
-          * [GitHub](https://github.com/ngs)
-          * [CPAN](http://search.cpan.org/~ngs)
-          * [RubyGems](https://rubygems.org/profiles/ngs)
-          * [npm](https://npmjs.org/~ngs)
-          * [Qiita](http://qiita.com/ngs)
-          * [Dribbble](https://dribbble.com/ngs)
-          * [Speaker Deck](https://speakerdeck.com/ngs)
-
-          ## Profile
-
-          * [AngelList](http://angel.co/ngs)
-          * [CrunchBase](http://www.crunchbase.com/person/atsushi-nagase)
-          * [LinkedIn](http://www.linkedin.com/in/ngsdev)
-          * [Keybase](https://keybase.io/ngs)
-
-          ## Social
-
-          * [Twitter](https://twitter.com/ngs)
-          * [Facebook](https://www.facebook.com/atsnngs)
-          * [Google+](http://gplus.to/ngs)
-          * [Quora](http://www.quora.com/Atsushi-Nagase)
-          * [Strava](http://strava.com/athletes/ngs)
-          * [TripIt](https://www.tripit.com/people/ngs)
-          * [Flickr](http://www.flickr.com/photos/atsnngs)
-          * [Pinterest](http://pinterest.com/ngs)
-
-          ## Media
-
-          * 2016-05-24 CAREER HACK
-            [長瀬敦史が「シード期の5社」で見てきた熱狂。エンジニアがスタートアップにコミットすべき理由。](http://careerhack.en-japan.com/report/detail/665)
-
-          * 2015-08-06 エンジニアtype
-            [アジア視点で考える『Oneteam』のスケールするエンジニアリングチームのあり方【連載：NEOジェネ！】](http://type.jp/et/log/article/oneteam_neo)
-
-          * 2012-10-15 BBC News
-            [Japan: Entrepreneurs spur out-of-the-box thinking](http://www.bbc.co.uk/news/business-19893561)
-
-          * 2011-11-09 Tech総研
-            [ソーシャルアプリ開発現場のジェットでマッハな爽快感](http://next.rikunabi.com/tech/docs/ct_s03600.jsp?p=001998)
-
-          * 2010-05-25 andronavi
-            [アプリ開発秘話：003　宿ろいど](http://andronavi.com/2010/05/22600)
-
-          * 2008-09-29 マイコミムック
-            [別冊Mac Fan 01 スグ使えるフリーソフトでおもてなし](http://www.amazon.co.jp/gp/product/4839929718/ref=as_li_ss_tl?ie=UTF8&camp=247&creative=7399&creativeASIN=4839929718&linkCode=as2&tag=atsushnagased-22)
-
+        h2 Works
+        = partial 'about/link-works.md'
+        
+        h2 Profile
+        = partial 'about/link-profiles.md'
+  
+        h2 Social
+        = partial 'about/link-social.md'
+  
+        h2 Media
+        = partial 'about/media.md'
+  
         h2 PGP Public Key
-        dl.dl-horizontal
-          dt ID
-          dd
-            code 4721171B22691D00
-          dt Fingerprint
-          dd
-            code D99D BBD2 AB06 B1BF 8D44  2CF7 4721 171B 2269 1D00
-
+        = partial 'about/pgp.slim'
+  
         h2 Contact
-        p
-          strong Recruiters are NOT welcome.
-        dl.dl-horizontal
-          dt Email
-          dd= link_to 'a@ngs.io', 'mailto:a@ngs.io'
-          dt Skype
-          dd= link_to 'atsn_ngs', 'skype:atsn_ngs?call'
-          dt Phone
-          dd +81-90-9808-7800
-          dt Bitcoin
-          dd: code 1LvgyZUG2gfR3VqPxKndPZhX7F4nozTsap
+        = partial 'about/contacts.slim'
