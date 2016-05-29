@@ -50,6 +50,7 @@
         }
         .gsub(%r{<script[^>]*>.*</script>}, '')
         .gsub(%r{<iframe[^>]*>.*</iframe>}, '')
+        .gsub(%r{<input[^>]*>}, '')
         .gsub('<p></p>', '')
       %>
     </article>
