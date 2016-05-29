@@ -48,7 +48,7 @@
             %Q{<amp-img src="#{src}" layout="#{l}" width="#{size[0]}" height="#{size[1]}"></amp-img>}
           end
         }
-        .gsub(%r{<script[^>]*></script>}, '')
+        .gsub(%r{<script[^>]*>.*</script>}, '')
         .gsub('<p></p>', '')
       %>
     </article>
