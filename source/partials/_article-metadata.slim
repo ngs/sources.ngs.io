@@ -1,9 +1,10 @@
+- og_image = current_article.data.try(:og).try(:ogp).try(:image) || data[I18n.locale.to_s].ogp.og.image
 div class='hidden article-metadata'
   meta itemprop='headline' content=emojify(current_article.data.description, :raw)
   div itemprop='image' itemscope=true itemtype='http://schema.org/ImageObject'
-    meta itemprop='url' content=current_article.data.ogp.og.image['']
-    meta itemprop='width' content=current_article.data.ogp.og.image['width']
-    meta itemprop='height' content=current_article.data.ogp.og.image['height']
+    meta itemprop='url' content=og_image['']
+    meta itemprop='width' content=og_image['width']
+    meta itemprop='height' content=og_image['height']
   div itemprop='publisher' itemscope=true itemtype='http://schema.org/Organization'
     meta itemprop='name' content=t('blog.title')
     div itemprop='logo' itemscope=true itemtype='http://schema.org/ImageObject'
