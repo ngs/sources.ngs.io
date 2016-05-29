@@ -49,6 +49,7 @@
           end
         }
         .gsub(%r{<script[^>]*>.*</script>}, '')
+        .gsub(%r{<iframe[^>]*>.*</iframe>}, '')
         .gsub('<p></p>', '')
       %>
     </article>
