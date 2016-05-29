@@ -1,0 +1,14 @@
+div class='hidden article-metadata'
+  meta itemprop='headline' content=emojify(current_article.data.description, :raw)
+  div itemprop='image' itemscope=true itemtype='http://schema.org/ImageObject'
+    meta itemprop='url' content=current_article.data.ogp.og.image['']
+    meta itemprop='width' content=current_article.data.ogp.og.image['width']
+    meta itemprop='height' content=current_article.data.ogp.og.image['height']
+  div itemprop='publisher' itemscope=true itemtype='http://schema.org/Organization'
+    meta itemprop='name' content=t('blog.title')
+    div itemprop='logo' itemscope=true itemtype='http://schema.org/ImageObject'
+      meta itemprop='url' content=URI.join(t('blog.url'), '/images/amp-logo.png')
+      meta itemprop='width' content=600
+      meta itemprop='height' content=60
+      / https://developers.google.com/search/docs/data-types/articles#amp-logo-guidelines
+  meta itemprop='dateModified' content=(current_article.data['date_modified'] || current_article.date).to_time.strftime('%Y-%m-%dT%H:%M:%S')

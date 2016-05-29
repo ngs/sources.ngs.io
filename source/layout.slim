@@ -107,6 +107,7 @@ html lang=I18n.locale.to_s itemscope="itemscope" itemtype="http://schema.org/Web
                 input.form-control#site-search-input {
                   type="search" placeholder=t(:search_site)
                   name="q" accesskey="s" required="required"
+                  itemprop="query-input"
                 }
                 span.glyphicon.glyphicon-search.form-control-feedback
                 meta itemprop="target" content="#{config.site_url}/search/?q={q}"

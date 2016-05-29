@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ⚡>
+<html ⚡ itemscope itemtype="http://schema.org/Article">
   <head>
     <meta charset="utf-8">
     <title><%= current_article.title %></title>
@@ -38,6 +38,7 @@
       </h2>
       <time itemprop="datePublished" datetime="<%= current_article.date.to_time.strftime('%Y-%m-%dT%H:%M:%S') %>"><%= current_article.date.strftime('%Y-%m-%d %H:%M') %></time>
       <meta itemprop="description" content="<%= current_article.data.description %>"></meta>
+      <%= partial 'article-metadata', locals: { current_article: current_article } %>
       <%= current_article.body
         .gsub(/\s*style="[^"]+"/, '')
         .gsub(%r{<img([^>]+)>}) {|m|

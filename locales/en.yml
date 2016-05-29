@@ -28,7 +28,7 @@ en:
       month: "%b, %Y"
       year: "%Y"
   blog:
-    url: http://ngs.io/
+    url: https://ngs.io/
     title: Atsushi Nagase
     cname: ngs.io
     description: Hacking recipes in my life.

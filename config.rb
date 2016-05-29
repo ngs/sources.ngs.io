@@ -96,6 +96,7 @@ configure :development do
   activate :google_analytics do |ga|
     ga.tracking_id = 'UA-XXXXXX-YY'
   end
+  set :asset_host, 'http://127.0.0.1:4567'
 end
 
 activate :ogp do |ogp|
@@ -117,6 +118,7 @@ configure :build do
   ignore '_drafts'
   ignore 'redirect.html'
   ignore 'amp.html'
+  set :asset_host, "https://#{cname}"
   if lang == :en
     ignore '/about/index.ja.html'
     ignore '/ja/*'

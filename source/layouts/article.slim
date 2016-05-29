@@ -3,6 +3,7 @@
     header
       h1 itemprop="name"
         = emojify current_article.title
+      = partial 'article-metadata'
       p.meta
         time itemprop="datePublished" datetime=current_article.date.to_time.strftime('%Y-%m-%dT%H:%M:%S') is="relative-time"
           = current_article.date.strftime('%Y-%m-%d %H:%M')
@@ -20,9 +21,15 @@
               |&nbsp;
               = tag
       ul.nav.nav-pills.pull-right
+        li.author.pull-right
+          = link_to '/about', 'itemprop' => 'author', 'itemtype' => 'http://schema.org/Person', 'itemscope' => true do
+            span itemprop='name' = t('author.name')
         li
           = link_to( current_article.source_file.gsub(/^.+\/([^\/]+)$/, "https://github.com/ngs/sources.ngs.io/blob/master/source/#{ I18n.locale.to_s }/\\1"), title: 'View on GitHub', rel: 'nofollow', 'data-toggle' => 'tooltip', 'data-container' => 'footer.meta', 'data-placement' => 'left' ) do
             span.fa.fa-github-alt &nbsp;
+        li
+          = link_to( current_article.url, title: 'Permalink', 'data-toggle' => 'tooltip', 'data-container' => 'footer.meta', 'data-placement' => 'left', 'itemprop' => 'mainEntityOfPage' ) do
+            span.fa.fa-link &nbsp;
 
       .social-buttons.clearfix
         - url = URI.join(t('blog.url'), URI.escape(current_article.url))
