@@ -129,19 +129,21 @@ button.onChange { button in
 while(true) {}
 ```
 
-以上の様に、簡単に GPIO の機能が Swift であつかえます。
-
-OSS Swift なので、まだ活用できるライブラリは多くありませんが、これから盛り上がることを期待しています。
-
 ## Slimane と連携
-
-ここまで実践すると、Internet of Things な、例えば WebSocket のイベントを受け取ると水やりをする、みたいな活用を行いたいと思い始めます。
 
 ![](2014-08-02-watering-pi/1.jpg)
 
+以上の様に、簡単に GPIO の機能が Swift であつかえます。Raspberry Pi 単体で完結する仕組みを作るには、実用に足るライブラリだと思います。
+
+ここまで実践すると、Internet of Things な、例えば WebSocket のイベントを受け取ると水やりをする、みたいな活用を行いたいと思い始めます。
+
 参考: [Raspberry Pi と Hubot で観葉植物の水やりを自動化する](/2014/08/02/watering-pi/)
 
-OSS Swift に対応した WebSocket クライアントが見つけられなかったので、手始めに、[Tokyo Server-Side Swift Meetup] の共同主催者、[@noppoman] 氏作の Web フレームワーク、[Slimane] を使って `PUT` リクエストがあれば、LED と On / Off するサンプルを書いて、ビルドしてみました。
+OSS Swift に対応した WebSocket クライアントが見つけられなかったので、手始めに、[Tokyo Server-Side Swift Meetup] の共同主催者、[@noppoman] 氏作の Web フレームワーク、[Slimane] を使って、以下の様に HTTP で `PUT` リクエストがあれば、LED と On / Off するサンプルを書いて、ビルドしてみました。
+
+```
+$ curl -XPUT my-raspberry-pi.local:3000/toggle
+```
 
 Package.swift
 
