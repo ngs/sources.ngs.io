@@ -183,4 +183,4 @@ new Konami () ->
   $('#sidebar-bootswatch').fadeIn()
 
 theme = $.cookie(COOKIE_KEY_THEME) || getDefaultTheme()
-document.write """<link rel="stylesheet" type="text/css" href="#{theme.cssCdn}" id="bootswatch-css">"""
+document.write """<link rel="stylesheet" type="text/css" href="#{theme.cssCdn}" media="screen" id="bootswatch-css">"""
