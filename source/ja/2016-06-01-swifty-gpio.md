@@ -141,7 +141,7 @@ OSS Swift なので、まだ活用できるライブラリは多くありませ�
 
 参考: [Raspberry Pi と Hubot で観葉植物の水やりを自動化する](/2014/08/02/watering-pi/)
 
-OSS Swift に対応した WebSocket　クライアントが見つけられなかったので、手始めに、[Tokyo Server-Side Swift Meetup] の共同主催者、タケイさん a.k.a [@noppoman] 氏作の Web フレームワーク、[Slimane] を使って `PUT` リクエストがあれば、LED と On / Off するサンプルを書いて、ビルドしてみました。
+OSS Swift に対応した WebSocket クライアントが見つけられなかったので、手始めに、[Tokyo Server-Side Swift Meetup] の共同主催者、タケイさん a.k.a [@noppoman] 氏作の Web フレームワーク、[Slimane] を使って `PUT` リクエストがあれば、LED と On / Off するサンプルを書いて、ビルドしてみました。
 
 Package.swift
 
@@ -221,3 +221,4 @@ Swift on ARM について、深く研究を行われている、[@iachievedit] �
 [swift-arm]: https://swift-arm.slack.com
 [@iachievedit]: http://dev.iachieved.it/iachievedit/
 [Jenkins]: http://swift-arm.ddns.net/
+[Tokyo Server-Side Swift Meetup]: http://tokyo-ss-swift.connpass.com/
