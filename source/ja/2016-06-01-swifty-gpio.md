@@ -8,17 +8,22 @@ alternate: true
 ogp:
   og:
     image:
-      '': http://ja.ngs.io/images/2016-05-14-hubot-keybase/screen.png
-      type: image/png
-      width: 1358
-      height: 737
+      '': http://ja.ngs.io/images/2016-06-01-swifty-gpio/main.jpg
+      type: image/jpeg
+      width: 992
+      height: 525
 ---
 
-![](2016-06-01-swifty-gpio/button-s.gif)
+![](2016-06-01-swifty-gpio/main.jpg)
+
+TBD
+
 
 READMORE
 
 ## 簡単なLチカ
+
+![](2016-06-01-swifty-gpio/blink.gif)
 
 ```swift
 import Glibc
@@ -35,6 +40,8 @@ repeat{
 ```
 
 ## 入力値に応じて出力値を変更
+
+![](2016-06-01-swifty-gpio/button.gif)
 
 ```swift
 import Glibc
