@@ -195,7 +195,7 @@ Swift on ARM について、深く研究を行われている、[@iachievedit] �
 
 - [Latest Artifacts of Swift-3.0-ARM-Incremental](http://swift-arm.ddns.net/job/Swift-3.0-ARM-Incremental/lastSuccessfulBuild/artifact/)
 - [Swift for ARM Systems](http://dev.iachieved.it/iachievedit/swift-for-arm-systems/)
-- []
+- [Swift ARM on Slack](https://swift-arm.slack.com/)
 
 ## TODOs
 
