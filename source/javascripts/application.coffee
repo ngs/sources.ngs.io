@@ -147,7 +147,7 @@ rgb2hex = (rgb) ->
   else
     ''
 
-window.setupAmazonWidget = (title, asin...) ->
+window.setupAmazonWidget = (title = '　', asin...) ->
   unless asin?.length > 0
     asin = $.unique($('a[href*="amazon.co.jp"]').map(-> $(@).attr('href').match(/\/gp\/product\/(\w+)\//)?[1])).get()
   body = $ 'body'

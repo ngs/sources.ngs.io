@@ -1,6 +1,6 @@
 ---
-title: "Raspberry Pi で Swift を動かすために試していること"
-description: "Raspberry Pi で Swift を動かすために行っている試行錯誤について"
+title: "Raspberry Pi で Swift を動かす"
+description: "Raspberry Pi で Swift を動かして、GPIO を操る実験について"
 date: 2016-06-01 23:40
 public: true
 tags: raspberry pi, swift
@@ -141,7 +141,7 @@ OSS Swift なので、まだ活用できるライブラリは多くありませ�
 
 参考: [Raspberry Pi と Hubot で観葉植物の水やりを自動化する](/2014/08/02/watering-pi/)
 
-OSS Swift に対応した WebSocket クライアントが見つけられなかったので、手始めに、[Tokyo Server-Side Swift Meetup] の共同主催者、タケイさん a.k.a [@noppoman] 氏作の Web フレームワーク、[Slimane] を使って `PUT` リクエストがあれば、LED と On / Off するサンプルを書いて、ビルドしてみました。
+OSS Swift に対応した WebSocket クライアントが見つけられなかったので、手始めに、[Tokyo Server-Side Swift Meetup] の共同主催者、[@noppoman] 氏作の Web フレームワーク、[Slimane] を使って `PUT` リクエストがあれば、LED と On / Off するサンプルを書いて、ビルドしてみました。
 
 Package.swift
 
@@ -180,7 +180,7 @@ app.put("/toggle") { req, responder in
 try! app.listen()
 ```
 
-ビルドに失敗しました
+こちらを `swift build` コマンドでビルドしようとしましたが、`build` サブコマンドが存在しないので、失敗しました。
 
 ```sh
 $ swift build
@@ -205,6 +205,9 @@ Swift on ARM について、深く研究を行われている、[@iachievedit] �
 - クロスコンパイルがうまくできないか OS X 環境でもためしてみる
 
 あたり、試してみたいと思っています。どうぞよろしくお願いいたします。
+
+<script> window.setupAmazonWidget() </script>
+<script src='https://wms-fe.amazon-adsystem.com/20070822/JP/js/AmazonWidgets.js'></script>
 
 [SwiftyGPIO]: https://github.com/uraimo/SwiftyGPIO
 [Swift.org]: https://swift.org/
