@@ -37,7 +37,7 @@
         .g-plusone data-size='medium'
         - if I18n.locale.to_s == 'ja'
           .hateb
-            a.hatena-bookmark-button href="http://b.hatena.ne.jp/entry/#{url.to_s.sub %r(^https?:\/\/), ''}" data-hatena-bookmark-title="#{ current_article.title }" data-hatena-bookmark-layout="simple-balloon" title="このエントリーをはてなブックマークに追加"
+            a.hatena-bookmark-button href="http://b.hatena.ne.jp/entry/s/#{url.to_s.sub %r(^https?:\/\/), ''}" data-hatena-bookmark-title="#{ current_article.title }" data-hatena-bookmark-layout="simple-balloon" title="このエントリーをはてなブックマークに追加"
               img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;"
           .fb-like data-send='true' data-width='300' data-show-faces='false' data-href=url
         - else
