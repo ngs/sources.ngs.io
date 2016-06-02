@@ -171,7 +171,8 @@ window.setupAmazonWidget = (title = '　', asin...) ->
     colorTheme: 'White'
     headerTextColor: '#666'
     marketPlace: 'JP'
-    outerBackgroundColor: bg
+    outerBackgroundColor: bg,
+    innerBackgroundColor: bg,
     backgroundColor: bg
     borderColor: bg
     headerTextColor: fg
