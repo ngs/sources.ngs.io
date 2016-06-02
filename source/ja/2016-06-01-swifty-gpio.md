@@ -28,7 +28,7 @@ READMORE
 
 使用機材は [Raspberry Pi Type B]、OS は [Raspbian Jessie 2016-05-27] です。
 
-`clang` をインストールし、バイナリーをダウンロードし、解答します。前途のブログ記事からのコピペです。
+`clang` をインストールし、バイナリーをダウンロードし、解答します。前述のブログ記事からのコピペです。
 
 ```sh
 $ sudo apt-get update
