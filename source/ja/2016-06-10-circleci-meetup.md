@@ -9,7 +9,7 @@ ogp:
   og:
     image:
       '': https://ja.ngs.io/images/2016-06-10-circleci-meetup/main.png
-      type: image/jpeg
+      type: image/png
       width: 992
       height: 525
 ---
