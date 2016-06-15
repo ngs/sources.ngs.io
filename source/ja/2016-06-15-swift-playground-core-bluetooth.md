@@ -19,7 +19,7 @@ ogp:
 
 [先の投稿]で所感を述べた通り、[Swift Playground for iPad] の発表に感銘を受けたので、早速遊び始めています。
 
-まず最初に作ったのは、[Core Bluetooth] の API を使用して、周辺の Bluetooth 機器の一覧を UITableView で表示するサンプルを Playground Book の形式で GitHub に公開しました。
+まず最初に作ったのは、[Core Bluetooth] の API を使用して、周辺の Bluetooth 機器の一覧を UITableView で表示するサンプルです。Playground Book の形式で GitHub に公開しました。
 
 **[ngs/Playground-Bluetooth-Book][repo]**
 
@@ -50,6 +50,9 @@ READMORE
 - Finder で <kbd>&#x2318; + &#x21E7; + R</kbd> を入力して AirDrop のウィンドウを開きます。
 - `Bluetooth.playgroundbook` を iPad のアイコンにドロップします。
 - iPad 上で開くアプリケーションの選択を尋ねられるので、_Playground_ を選択します。
+
+<script> window.setupAmazonWidget('　', '4873117135', 'B018VOYJDU', 'B017YV1P6U', '4883379736') </script>
+<script src='https://wms-fe.amazon-adsystem.com/20070822/JP/js/AmazonWidgets.js'></script>
 
 [先の投稿]: /2016/06/14/wwdc-2016-keynote/
 [Swift Playground for iPad]: https://developer.apple.com/swift/playgrounds/
