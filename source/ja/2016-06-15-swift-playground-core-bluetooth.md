@@ -1,5 +1,5 @@
 ---
-title: "Swift Playground for iPad で Core Bluetooth と接続する"
+title: "Swift Playground for iPad で Bluetooth 機器の一覧を取得する"
 description: "WWDC 2016 で発表された Swift Playground for iPad で Core Bluetooth の API を使って、周辺の Bluetooth 機器の一覧を取得するサンプルです"
 date: 2016-06-15 23:45
 public: true
