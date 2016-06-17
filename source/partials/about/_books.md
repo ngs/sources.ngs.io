@@ -3,4 +3,4 @@
   [![](slack-book/126x170.jpg)][slack-book]
 
 
-[slack-book]: http://www.amazon.co.jp/gp/product/4774182389/ref=as_li_ss_tl?ie=UTF8&camp=247&creative=7399&creativeASIN=4774182389&linkCode=as2&tag=ngsio-22
+[slack-book]: /2016/06/22/slack-book/
