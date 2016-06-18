@@ -12,7 +12,6 @@ ogp:
       type: image/jpeg
       width: 992
       height: 525
-
 ---
 
 ![](2016-06-15-swift-playground-core-bluetooth/main.jpg)
@@ -50,6 +49,11 @@ READMORE
 - Finder で <kbd>&#x2318; + &#x21E7; + R</kbd> を入力して AirDrop のウィンドウを開きます。
 - `Bluetooth.playgroundbook` を iPad のアイコンにドロップします。
 - iPad 上で開くアプリケーションの選択を尋ねられるので、_Playground_ を選択します。
+
+## 参考
+
+- [WWDC 2016 Videos / Introducing Swift Playgrounds](https://developer.apple.com/videos/play/wwdc2016/408/)
+- [Playground Book Package Format](https://developer.apple.com/library/prerelease/content/documentation/Xcode/Conceptual/swift_playgrounds_doc_format/index.html)
 
 <script> window.setupAmazonWidget('　', '4873117135', 'B018VOYJDU', 'B017YV1P6U', '4883379736') </script>
 <script src='https://wms-fe.amazon-adsystem.com/20070822/JP/js/AmazonWidgets.js'></script>
