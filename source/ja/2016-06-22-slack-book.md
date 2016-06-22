@@ -1,5 +1,5 @@
 ---
-title: "著書 『Slack 入門 [ChatOps によるチーム開発の効率化]』 が発売されます"
+title: "著書: Slack 入門 [ChatOps によるチーム開発の効率化]"
 description: "2016-06-28、共著で参加させていただいた『Slack 入門 [ChatOps によるチーム開発の効率化]』 が技術評論社より発売されます。"
 date: 2016-06-22 09:00
 public: true
@@ -17,7 +17,7 @@ ogp:
 
 ![](2016-06-22-slack-book/main.jpg)
 
-2016-06-28、共著で参加させていただいた『[Slack 入門 [ChatOps によるチーム開発の効率化]][amazon]』が技術評論社より発売されます。
+2016-06-28、共著で参加させていただいた _[Slack 入門 [ChatOps によるチーム開発の効率化]][amazon]_ が技術評論社より発売されます。
 
 <div class="book clearboth">
 <div class="book-left">
