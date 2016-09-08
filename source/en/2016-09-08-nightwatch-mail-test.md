@@ -24,6 +24,35 @@ This example project tests subscribing and unsubscribing [Hacker News Letter] us
 
 READMORE
 
+The test code is like this:
+
+```js
+page.navigate()
+//
+// Create Mandrill Email Route
+.createEmailRoute(email)
+//
+// Fill in form
+.waitForElementVisible('@form')
+.clearValue('@email')
+.setValue('@email', email)
+.click('@submit')
+//
+// Navigate to completion screen
+.waitForElementNotPresent('@form')
+.assert.urlEquals(page.url + 'almostfinished.html')
+//
+// Check Email with specified subject
+.assert.receivedEmailSubjectEquals(email,
+  'Hacker Newsletter: Please Confirm Subscription')
+//
+// Check Email contains specified string in HTML body
+.assert.receivedEmailHTMLBodyContains(email,
+  '<a class="button" href="https://hackernewsletter.us1.list-manage.com/subscribe/confirm?u=')
+```
+
+[See full code](https://github.com/ngs/nightwatch-mail-example/blob/master/tests/hackernewsletter.js).
+
 ## Motivation
 
 We recently introduced [Nightwatch.js] for End to End testing our product.
