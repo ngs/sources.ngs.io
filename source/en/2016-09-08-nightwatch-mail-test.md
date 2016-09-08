@@ -8,7 +8,7 @@ alternate: false
 ogp:
   og:
     image:
-      '': http://ngs.io/images/2016-07-17-hyperterm-tomorrow-themes/screen.png
+      '': https://ngs.io/images/2016-09-08-nightwatch-mail-test/og.png
       type: image/png
       width: 992
       height: 525
