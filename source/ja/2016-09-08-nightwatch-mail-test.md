@@ -1,10 +1,10 @@
 ---
 title: "Nightwatch.js の E2E テストでメールの配信をテストする"
-description: "I've published an example Nightwatch.js E2E testing project that contains Email delivery testing using Mandrill and RequestBin."
+description: "Nightwatch.js で書いた E2E テストプロジェクトで、Mandrill と RequestBin を使ってメールの配信もテストするサンプルプロジェクトを公開しました。"
 date: 2016-09-08 17:00
 public: true
 tags: nightwatch, javascript, e2e, test, requestbin, email, mandrill
-alternate: false
+alternate: true
 ogp:
   og:
     image:

@@ -4,7 +4,7 @@ description: "I've published an example Nightwatch.js E2E testing project that c
 date: 2016-09-08 17:00
 public: true
 tags: nightwatch, javascript, e2e, test, requestbin, email, mandrill
-alternate: false
+alternate: true
 ogp:
   og:
     image:
