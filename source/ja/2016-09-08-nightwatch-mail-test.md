@@ -81,7 +81,7 @@ ref: [Extending Nightwatch - Nightwatch Developer Guide](http://nightwatchjs.org
 
 ![API Key](2016-09-08-nightwatch-mail-test/api-key.png)
 
-間違えて実際にメールを誰かに送ってしまわないために、_Test Key_ チェックボックスはオフにすることをお勧めします。
+間違えて実際にメールを誰かに送ってしまわないために、_Test Key_ チェックボックスはオンにすることをお勧めします。
 
 ### 3. (任意) 自身の RequestBin を使う
 
