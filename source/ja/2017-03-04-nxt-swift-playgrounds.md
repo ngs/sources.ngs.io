@@ -1,6 +1,6 @@
 ---
 title: 'Mindstorms NXT Swift Playground Book for iPad #tryswifthack'
-description: 
+description: try! Swift Tokyo 2017 の最終日に行われたハッカソンで Lego Mindstorms NXT を操作するコードを Swift Playgrounds iPad を使って学習できる、Book を開発しました。
 date: 2017-03-04 23:59
 public: true
 tags: swift, hackathon, mindstorms, lego
@@ -15,7 +15,7 @@ ogp:
 
 ![](2017-03-04-nxt-swift-playgrounds/main.jpg)
 
-2017-03-02, 03, 04 と行われていた [try! Swift Tokyo] の最終日に行われた[ハッカソン]で、一人チームを結成し (?)、[Lego Mindstorms NXT] を操作するプログラムを [Swift Playgrounds iPad] を使ってできる、[Book] を開発しました。
+2017-03-02, 03, 04 と行われていた [try! Swift Tokyo] の最終日に行われた[ハッカソン]で、一人チームを結成し (?)、[Lego Mindstorms NXT] を操作するコードを [Swift Playgrounds iPad] を使って学習できる、[Book] を開発しました。
 
 - GitHub Repo: [ngs/mindstorms-nxt-playground-book][repo]
 - Devpost Page: [Mindstorms NXT Playground Book for iPad](https://devpost.com/software/mindstorms-nxt-playground-book)
