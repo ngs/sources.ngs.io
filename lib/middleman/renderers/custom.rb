@@ -31,7 +31,7 @@ module Middleman
         Middleman::Syntax::Highlighter.highlight(code, language)
       end
       def list_item(content, list_type)
-        node_name = { ordered: 'ol', unordered: 'li' }[list_type]
+        node_name = { unordered: 'li', ordered: 'li' }[list_type]
         content.sub!(/^\s*\[\s+\]/, '<input type="checkbox" disabled>')
         content.sub!(/^\s*\[\s*x\s*\]/, '<input type="checkbox" checked disabled>')
         "<#{node_name}>#{content}</#{node_name}>"
