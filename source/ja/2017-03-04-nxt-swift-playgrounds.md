@@ -161,6 +161,13 @@ iPad で Swift Playgrounds を開くと、NXT というブックが追加され�
 <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">balto(Goodpatch)賞<br>Mindstorms NXT Playground Book for iPad | Devpost<a href="https://t.co/50KxmeHZ6X">https://t.co/50KxmeHZ6X</a><br> <a href="https://twitter.com/hashtag/tryswiftconf?src=hash">#tryswiftconf</a> <a href="https://twitter.com/hashtag/tryswifthack?src=hash">#tryswifthack</a> <a href="https://t.co/FbGvQDpnoG">pic.twitter.com/FbGvQDpnoG</a></p>&mdash; にわタコ (@niwatako) <a href="https://twitter.com/niwatako/status/837997687035191298">March 4, 2017</a></blockquote>
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
+<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Swift meets Mindstorms by .<a href="https://twitter.com/ngs">@ngs</a> <a href="https://twitter.com/hashtag/tryswiftconf?src=hash">#tryswiftconf</a> <a href="https://twitter.com/hashtag/tryswifthack?src=hash">#tryswifthack</a> <a href="https://t.co/KZNbZG7iOk">pic.twitter.com/KZNbZG7iOk</a></p>&mdash; Yasuhiro Inami (@inamiy) <a href="https://twitter.com/inamiy/status/837982283105624064">March 4, 2017</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+## 発表資料
+
+<script async class="speakerdeck-embed" data-id="1560827ae5cf47ef8f20afc8a2c2508f" data-ratio="1.33333333333333" src="//speakerdeck.com/assets/embed.js"></script>
+
 [try! Swift Tokyo]: https://www.tryswift.co/tokyo/jp
 [ハッカソン]: https://tryswift.devpost.com/
 [Lego Mindstorms NXT]: https://ja.wikipedia.org/wiki/Lego_Mindstorms_NXT
