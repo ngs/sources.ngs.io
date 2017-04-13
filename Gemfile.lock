@@ -7,16 +7,6 @@ GIT
       rouge (~> 1.0)
 
 GIT
-  remote: git://github.com/ngs/middleman-blog-similar.git
-  revision: 1ec0c5d7852cbcad82994581162955b0b837e444
-  ref: begin-rescue-tree-tagger
-  specs:
-    middleman-blog-similar (1.1.1)
-      fast-stemmer (~> 1.0.2)
-      middleman-blog (~> 3.5)
-      middleman-core (~> 3.2)
-
-GIT
   remote: git://github.com/ngs/middleman-google-analytics.git
   revision: ef624fa12bbcca9fab1ef8331b73bc9f4bf93f0d
   specs:
@@ -103,6 +93,10 @@ GEM
       addressable (~> 2.3.5)
       middleman-core (~> 3.2)
       tzinfo (>= 0.3.0)
+    middleman-blog-similar (1.1.1)
+      fast-stemmer (~> 1.0.2)
+      middleman-blog (~> 3.5)
+      middleman-core (~> 3.2)
     middleman-core (3.2.2)
       activesupport (~> 3.2.6)
       bundler (~> 1.1)
@@ -196,7 +190,7 @@ DEPENDENCIES
   levenshtein-ffi
   middleman (~> 3.2.2)
   middleman-blog (~> 3.5.0)
-  middleman-blog-similar!
+  middleman-blog-similar (~> 1.1)
   middleman-deploy
   middleman-disqus (~> 0.0.3)
   middleman-favicon-maker (~> 3.5)
@@ -212,4 +206,4 @@ DEPENDENCIES
   tilt-jbuilder
 
 BUNDLED WITH
-   1.10.6
+   1.14.6
