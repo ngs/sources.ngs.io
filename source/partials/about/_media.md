@@ -1,3 +1,6 @@
+* 2017-04-17 SELECK<br>
+  [営業報告の「二度手間」を防ぐ！現場と経営者のニーズを満たす、顧客管理ツールの使い方](https://seleck.cc/982)
+
 * 2016-05-24 CAREER HACK<br>
   [長瀬敦史が「シード期の5社」で見てきた熱狂。エンジニアがスタートアップにコミットすべき理由。](http://careerhack.en-japan.com/report/detail/665)
 
