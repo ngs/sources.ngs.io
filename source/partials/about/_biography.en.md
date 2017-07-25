@@ -2,7 +2,7 @@ Hello, I am a <span itemprop="title">software engineer</span> based in <span ite
 
 I'm focusing on developing softwares for Desktop, Mobile and Web.
 
-Currently working for [Oneteam Inc.] that provides business collaboration software as Lead Engineer. Originally started my career as graphic designer, founded a small software house [LittleApps Inc.], experienced some startup companies from founding phase.
+Currently working for [CAMPFIRE, Inc.] as Chief Technology Officer. [CAMPFIRE, Inc.] democratizes fincanicing by providing Crowdfunding and Microfinancing web services. Originally started my career as graphic designer, founded a small software house [LittleApps Inc.], experienced some startup companies from founding phase.
 
 I love Gadgets, Road cycling, Running, Fishing, Driving, Music, 3 kids and 1 wife.
 
@@ -21,6 +21,7 @@ I love Gadgets, Road cycling, Running, Fishing, Driving, Music, 3 kids and 1 wif
 * In June, 2013, joined [Kaizen Platform, Inc.].
 * In July, 2015, left [Kaizen Platform, Inc.].
 * In August, 2015, joined <span itemprop="affiliation">[Oneteam Inc.]</span>.
+* In Sepetember, 2017, joined <span itemprop="affiliation">[CAMPFIRE, Inc.]</span>, inducted as Chief Technology Officer.
 
 [Oneteam Inc.]: https://one-team.com/ja/
 [LittleApps Inc.]: https://littleapps.jp/
@@ -33,3 +34,4 @@ I love Gadgets, Road cycling, Running, Fishing, Driving, Music, 3 kids and 1 wif
 [Mashup Awards 8]: http://ma8.mashupaward.jp/
 [EverDesktop]: http://everdesktop.com/
 [Kaizen Platform, Inc.]: https://kaizenplatform.com/
+[CAMPFIRE, Inc.]: https://campfire.co.jp

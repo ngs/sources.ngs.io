@@ -1,6 +1,8 @@
 <span itemprop="address" itemscope itemtype="http://data-vocabulary.org/Address"><span itemprop="locality">東京</span>を拠点</span>に活動している、<span itemprop="title">ソフトウェアエンジニア</span>です。
 
-都内のデザイン事務所で紙媒体のデザイナーとして働く傍ら、副業にしていたプログラミングが本業になり独立。個人でソフトウェア開発会社 [LittleApps Inc.] を立ち上げた後、幾つかのスタートアップの立上げに携わり、現在は、コラボレーションのためのソフトウェアを提供する [Oneteam Inc.] で開発チームのリードとして従事しています。
+都内のデザイン事務所で紙媒体のデザイナーとして働く傍ら、副業にしていたプログラミングが本業になり独立。個人でソフトウェア開発会社 [LittleApps Inc.] を立ち上げた後、幾つかのスタートアップの立上げに携わりました。
+
+現在は、インターネットで "お金をなめらかにする" プラットフォームを提供する、[CAMPFIRE, Inc.] にて 最高技術責任者/CTO として従事しています。
 
 趣味はガジェット、ロードバイク、ランニング、釣り、ドライブ、音楽フェスなど。3人の子供と1人の妻と暮らしています。
 
@@ -18,7 +20,8 @@
 * 2013年4月 AppSocially Inc. 米国デラウェア州で法人設立。間もなく[5月に退社](/2013/12/30/shokan2013/)。
 * 2013年6月 [Kaizen Platform, Inc.]に参画。
 * 2015年7月 [Kaizen Platform, Inc.]を退職。
-* 2015年8月 <span itemprop="affiliation">[Oneteam Inc.]</span> に参画し、現在に至ります。
+* 2015年8月 <span itemprop="affiliation">[Oneteam Inc.]</span> に参画。
+* 2017年9月 <span itemprop="affiliation">[CAMPFIRE, Inc.]</span> に参画、CTO 就任。[Oneteam Inc.] アドバイザー就任。
 
 [Oneteam Inc.]: https://one-team.com/ja/
 [LittleApps Inc.]: https://littleapps.jp/
@@ -31,3 +34,4 @@
 [Mashup Awards 8]: http://ma8.mashupaward.jp/
 [EverDesktop]: http://everdesktop.com/
 [Kaizen Platform, Inc.]: https://kaizenplatform.com/
+[CAMPFIRE, Inc.]: https://campfire.co.jp

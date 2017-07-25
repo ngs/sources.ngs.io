@@ -3,7 +3,7 @@ title: "Hello, Oneteam"
 description: "2年間勤めてきた、Kaizen Platform, Inc. を7月末付けで退職し、本日 8/1 から、Oneteam Inc. に参画します。"
 date: 2015-08-01 00:00
 public: true
-tags: oneteam, kaizenplatform
+tags: oneteam, kaizenplatform, career
 alternate: false
 ogp:
   og:
