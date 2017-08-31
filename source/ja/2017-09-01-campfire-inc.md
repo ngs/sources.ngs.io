@@ -1,7 +1,7 @@
 ---
 title: 'CAMPFIRE, Inc. の CTO に就任しました🔥'
 description: '2017-09-01 付けで CAMPFIRE, Inc. に正社員として入社し、最高技術責任者/CTO に就任いたしました。'
-date: 2017-09-01 07:00
+date: 2017-09-01 12:00
 public: true
 tags: campfire, career
 ogp:
@@ -13,9 +13,9 @@ ogp:
       height: 525
 ---
 
-![](https://via.placeholder.com/992x525)
+![](2017-09-01-campfire-inc/main.jpg)
 
-2017-09-01 付けで [CAMPFIRE, Inc.] に正社員として入社し、最高技術責任者/CTO に就任いたしました。
+2017-09-01 付けで [CAMPFIRE, Inc.] に正社員として入社し、執行役員 最高技術責任者/CTO に就任いたしました。
 
 READMORE
 
@@ -37,9 +37,10 @@ READMORE
 
 - 中長期的なマイルストーンに対しての技術的なアプローチの策定
 - プロダクトファーストな組織の構築・運営
-- 採用方針の策定・実行
+- 採用方針の策定・実施
+- インフラとしての事業を守るためのセキュリティー施策の策定・実施
 
-みたいなことを、推し進めてまいります。
+を、推し進めてまいります。
 
 ## どのように働くか
 
@@ -56,7 +57,7 @@ READMORE
 
 ___怠惰・傲慢・短気 / Laziness, Impatience, Hubris - Larry Wall___
 
-この[プログラマの三大美徳]を尊重し、開発生産性を常に向上し続けるべく仲間と技術基盤を育てていきます。
+この[プログラマの三大美徳]を尊重し、開発生産性を常に向上し続けるべく、組織と技術基盤を育てていきます。
 
 ## Oneteam について
 
@@ -66,13 +67,15 @@ ___怠惰・傲慢・短気 / Laziness, Impatience, Hubris - Larry Wall___
 
 ## 採用してます
 
-CAMPFIRE では、技術の力で "お金をなめらかにする" サービスを一緒に開発していただける、Ruby や Python, インフラなどのエンジニアを絶賛募集しています。
+CAMPFIRE では、技術の力で "お金をなめらかにする" サービスを一緒に開発していただける、iOS, Android, Ruby や Python, インフラなどのエンジニアを絶賛募集しています。
 
 参照: [CAMPFIRE の採用/求人一覧 - Wantedly](https://www.wantedly.com/companies/campfirejp/projects)
 
 興味があるかたは、Wantedly からでも構いませんし、直接長瀬まで[連絡]をいただいても構いません。
 
 [CAMPFIRE, Inc.]: https://campfire.co.jp/
+[CAMPFIRE]: https://camp-fire.jp/
+[polca]: https://polca.jp/
 [家入 一真 氏]: http://ieiri.net/
 [2015年8月]: /2015/08/01/hello-oneteam/
 [Oneteam Inc.]: https://one-team.com/ja/
