@@ -1,7 +1,7 @@
 ---
 title: 'CAMPFIRE, Inc. の CTO に就任しました🔥'
 description: '2017-09-01 付けで CAMPFIRE, Inc. に正社員として入社し、執行役員 最高技術責任者/CTO に就任いたしました。'
-date: 2017-09-01 12:00
+date: 2017-09-01 14:30
 public: true
 tags: campfire, career
 ogp:
