@@ -18,12 +18,12 @@ getDefaultTheme = ->
   date = new Date()
   {sunset, sunrise} = SunCalc.getTimes date, 35.6216798, 139.6993775
   defaultTheme = if date > sunrise and date < sunset
-    cssCdn: "https://netdna.bootstrapcdn.com/bootswatch/latest/united/bootstrap.min.css"
+    cssCdn: "https://netdna.bootstrapcdn.com/bootswatch/3.3.7/united/bootstrap.min.css"
     name: "United"
     preview: "http://bootswatch.com/united/"
     isDefault: yes
   else
-    cssCdn: "https://netdna.bootstrapcdn.com/bootswatch/latest/darkly/bootstrap.min.css"
+    cssCdn: "https://netdna.bootstrapcdn.com/bootswatch/3.3.7/darkly/bootstrap.min.css"
     name: "Darkly"
     preview: "http://bootswatch.com/darkly/"
     isDefault: yes
