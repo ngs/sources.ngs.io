@@ -8,7 +8,7 @@ alternate: true
 ogp:
   og:
     image:
-      '': http://ja.ngs.io/images/2015-12-13-color-hash-swift/og.png
+      '': https://ja.ngs.io/images/2015-12-13-color-hash-swift/og.png
       type: image/png
       width: 992
       height: 525

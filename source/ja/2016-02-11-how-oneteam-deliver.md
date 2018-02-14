@@ -8,7 +8,7 @@ alternate: false
 ogp:
   og:
     image:
-      '': http://ja.ngs.io/images/2016-02-11-how-oneteam-deliver/oneteam.jpg
+      '': https://ja.ngs.io/images/2016-02-11-how-oneteam-deliver/oneteam.jpg
       type: image/jpeg
       width: 1200
       height: 630
@@ -432,7 +432,7 @@ https://one-team.com/ja/recruit/
 [jest]: https://facebook.github.io/jest/
 [Serverspec]: http://serverspec.org/
 [Darwin コンテナ]: https://circleci.com/docs/ios
-[iOS のビルドで行っていた]: http://ja.ngs.io/2015/03/24/circleci-ios/#鍵と証明書の読み込み
+[iOS のビルドで行っていた]: https://ja.ngs.io/2015/03/24/circleci-ios/#鍵と証明書の読み込み
 [XQuartz]: http://www.xquartz.org/
 [Node.js]: https://nodejs.org/
 [Wine]: https://www.winehq.org/

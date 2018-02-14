@@ -17,7 +17,7 @@ I love Gadgets, Road cycling, Running, Fishing, Driving, Music, 3 kids and 1 wif
 * In October, 2011, joined tattva Inc. Developed a [Pinterest clone called i.ntere.st]. Left the company in April, 2012.
 * In March, 2012, started developing a SDK for mobile applications called [AppSocially].
 * In November, 2012, [EverDesktop] awarded Evernote Corporation Prise in "[Mashup Awards 8]".
-* In April, 2013, founded AppSocially Inc. in Delaware, United States. In May, I [left the company](http://ja.ngs.io/2013/12/30/shokan2013/).
+* In April, 2013, founded AppSocially Inc. in Delaware, United States. In May, I [left the company](https://ja.ngs.io/2013/12/30/shokan2013/).
 * In June, 2013, joined [Kaizen Platform, Inc.].
 * In July, 2015, left [Kaizen Platform, Inc.].
 * In August, 2015, joined <span itemprop="affiliation">[Oneteam Inc.]</span>.

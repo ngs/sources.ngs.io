@@ -8,7 +8,7 @@ alternate: false
 ogp:
   og:
     image:
-      '': http://ja.ngs.io/images/2016-03-27-odake-camp/main.jpg
+      '': https://ja.ngs.io/images/2016-03-27-odake-camp/main.jpg
       type: image/jpeg
       width: 992
       height: 525

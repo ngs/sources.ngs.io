@@ -8,7 +8,7 @@ alternate: false
 ogp:
   og:
     image:
-      '': http://ja.ngs.io/images/2015-08-01-hello-oneteam/oneteam.jpg
+      '': https://ja.ngs.io/images/2015-08-01-hello-oneteam/oneteam.jpg
       type: image/jpeg
       width: 992
       height: 525
@@ -65,7 +65,7 @@ Kaizen Platform, Inc. について
 [Oneteam Inc.]: https://one-team.com/
 [Kaizen Platform]: https://kaizenplatform.com/
 [Kaizen Platform, Inc.]: https://kaizenplatform.com/
-[2013年]: http://ja.ngs.io/2013/12/30/shokan2013/
+[2013年]: https://ja.ngs.io/2013/12/30/shokan2013/
 [Developer Productivity]: /t/developer-productivity/
 [CI ビルドの閲覧アプリ]: /t/ci2go/
 [エンジニア採用 - Kaizen Platform, Inc.]: https://kaizenplatform.com/hiring/engineer.html

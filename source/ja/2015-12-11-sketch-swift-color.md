@@ -8,7 +8,7 @@ alternate: true
 ogp:
   og:
     image:
-      '': http://ja.ngs.io/images/2015-12-11-sketch-swift-color/screen.png
+      '': https://ja.ngs.io/images/2015-12-11-sketch-swift-color/screen.png
       type: image/png
       width: 2098
       height: 1110

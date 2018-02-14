@@ -8,7 +8,7 @@ alternate: false
 ogp:
   og:
     image:
-      '': http://ja.ngs.io/images/2014-06-09-hubot-irkit/picture.jpg
+      '': https://ja.ngs.io/images/2014-06-09-hubot-irkit/picture.jpg
       type: image/jpeg
       width: 992
       height: 525
@@ -140,6 +140,6 @@ hubot irkit register device XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX office-amp
 [アフェリエイトリンク]: http://www.amazon.co.jp/gp/product/B00H91KK26/ref=as_li_ss_tl?ie=UTF8&camp=247&creative=7399&creativeASIN=B00H91KK26&linkCode=as2&tag=atsushnagased-22
 [オフィシャルドキュメント]: http://getirkit.com/#IRKit-Device-API
 [Hubot]: https://hubot.github.com/
-[Atsushi Nagase]: http://ngs.io/
+[Atsushi Nagase]: https://ngs.io/
 [MIT License]: LICENSE
 [brain]: https://github.com/github/hubot/blob/master/docs/scripting.md#persistence

@@ -7,7 +7,7 @@ tags: swift, hackathon, mindstorms, lego
 ogp:
   og:
     image:
-      '': http://ja.ngs.io/images/2017-03-04-nxt-swift-playgrounds/main.jpg
+      '': https://ja.ngs.io/images/2017-03-04-nxt-swift-playgrounds/main.jpg
       type: image/jpeg
       width: 992
       height: 525

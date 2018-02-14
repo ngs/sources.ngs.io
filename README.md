@@ -57,8 +57,8 @@ Everything else in [the repository][repo] is MIT licensed.
 
 See [LICENSE.md] for details.
 
-[日本語]: http://ja.ngs.io/
-[English]: http://ngs.io/
+[日本語]: https://ja.ngs.io/
+[English]: https://ngs.io/
 [repo]: https://github.com/ngs/source.ngs.io/
 [OAuth Token]: https://github.com/settings/tokens/new
 [LICENSE.md]: https://github.com/ngs/source.ngs.io/blob/master/LICENSE.md

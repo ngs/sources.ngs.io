@@ -8,7 +8,7 @@ alternate: false
 ogp:
   og:
     image:
-      '': http://ja.ngs.io/images/2014-12-14-hubot-qiita/screen.png
+      '': https://ja.ngs.io/images/2014-12-14-hubot-qiita/screen.png
       type: image/png
       width: 1760
       height: 2130
@@ -146,5 +146,5 @@ me > hubot alias 日報=qiita new item with template 43
 [Kindle Voyage]: http://www.amazon.co.jp/gp/product/B00M0EVYCC/ref=as_li_ss_tl?ie=UTF8&camp=247&creative=7399&creativeASIN=B00M0EVYCC&linkCode=as2&tag=atsushnagased-22
 [Hubot]: https://hubot.github.com
 [QiitaButton]: http://qiita.com/fmy/items/57088e1d1bd412557123
-[CI2Go]: http://ja.ngs.io/2014/11/26/ci2go/
+[CI2Go]: https://ja.ngs.io/2014/11/26/ci2go/
 [ngs/sources.ngs.io]: https://github.com/ngs/sources.ngs.io#readme

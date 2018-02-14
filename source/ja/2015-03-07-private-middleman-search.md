@@ -8,7 +8,7 @@ alternate: false
 ogp:
   og:
     image:
-      '': http://ja.ngs.io/images/2015-03-07-private-middleman-search/screen1.png
+      '': https://ja.ngs.io/images/2015-03-07-private-middleman-search/screen1.png
       type: image/png
       width: 1262
       height: 422

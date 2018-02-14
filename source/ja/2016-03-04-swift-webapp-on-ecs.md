@@ -8,7 +8,7 @@ alternate: true
 ogp:
   og:
     image:
-      '': http://ja.ngs.io/images/2016-03-04-swift-webapp-on-ecs/serverspec.png
+      '': https://ja.ngs.io/images/2016-03-04-swift-webapp-on-ecs/serverspec.png
       type: image/png
       width: 732
       height: 481
@@ -176,7 +176,7 @@ REPOSITORY  TAG     IMAGE ID      CREATED         VIRTUAL SIZE
 
 以下の記事に、CircleCI で Docker コンテナをテストする、いくつかのコツと、モンキーパッチを紹介しています。
 
-http://ja.ngs.io/2015/09/26/circleci-docker-serverspec/
+https://ja.ngs.io/2015/09/26/circleci-docker-serverspec/
 
 こんな感じで、ToDo アプリのテストを書きました:
 

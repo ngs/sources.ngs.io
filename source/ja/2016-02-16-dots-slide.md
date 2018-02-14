@@ -26,7 +26,7 @@ READMORE
 
 ## スライド内からの参照 URL
 
-- [Raspberry PI と Hubot で観葉植物の水やりを自動化する](http://ja.ngs.io/2014/08/02/watering-pi/)
+- [Raspberry PI と Hubot で観葉植物の水やりを自動化する](https://ja.ngs.io/2014/08/02/watering-pi/)
 - [Oneteam アプリのビルド + 配信自動化 #meguroes](/2016/02/11/how-oneteam-deliver/)
 - [CircleCI で Docker Container を Serverspec でテストする](/2015/09/26/circleci-docker-serverspec/)
 - [oneteam-hubot on GitHub](https://github.com/oneteam-dev/oneteam-hubot)

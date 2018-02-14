@@ -8,7 +8,7 @@ tags: mindstorms, raspberry pi, robot, setup, brick pi, make
 
 ![](2013-12-15-brick-pi-setup/brick-pi-tribot.jpg)
 
-[BrickPi が届いて](http://ja.ngs.io/2013/12/12/brick-pi/) 年明けまで未開封で放置しておこうと思ったのですが、梱包材を捨てたくてとりあえずケースだけ組み立ててみたら、動かしたくなって、たまらず土曜の夜を使ってセットアップしました。
+[BrickPi が届いて](https://ja.ngs.io/2013/12/12/brick-pi/) 年明けまで未開封で放置しておこうと思ったのですが、梱包材を捨てたくてとりあえずケースだけ組み立ててみたら、動かしたくなって、たまらず土曜の夜を使ってセットアップしました。
 
 READMORE
 

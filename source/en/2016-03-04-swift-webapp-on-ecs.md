@@ -8,7 +8,7 @@ alternate: true
 ogp:
   og:
     image:
-      '': http://ngs.io/images/2016-03-04-swift-webapp-on-ecs/serverspec.png
+      '': https://ngs.io/images/2016-03-04-swift-webapp-on-ecs/serverspec.png
       type: image/png
       width: 732
       height: 481
@@ -168,7 +168,7 @@ I use [Serverspec] to built Docker Images to keep it reliable.
 
 There's some tips (and monkey patches) to run Serverspec for Docker Containers on CircleCI in Japanese, and will be translate to English later.
 
-http://ja.ngs.io/2015/09/26/circleci-docker-serverspec/
+https://ja.ngs.io/2015/09/26/circleci-docker-serverspec/
 
 I wrote spec for the Todo app like this:
 

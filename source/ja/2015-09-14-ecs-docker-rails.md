@@ -8,7 +8,7 @@ alternate: false
 ogp:
   og:
     image:
-      '': http://ja.ngs.io/images/2015-09-14-ecs-docker-rails/build-docker-image.png
+      '': https://ja.ngs.io/images/2015-09-14-ecs-docker-rails/build-docker-image.png
       type: image/png
       width: 992
       height: 525

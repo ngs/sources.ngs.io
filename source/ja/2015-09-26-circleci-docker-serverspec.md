@@ -8,7 +8,7 @@ alternate: false
 ogp:
   og:
     image:
-      '': http://ja.ngs.io/images/2015-09-26-circleci-docker-serverspec/main.jpg
+      '': https://ja.ngs.io/images/2015-09-26-circleci-docker-serverspec/main.jpg
       type: image/jpeg
       width: 992
       height: 525
@@ -24,7 +24,7 @@ ogp:
 
 READMORE
 
-[前回の記事](http://ja.ngs.io/2015/09/14/ecs-docker-rails/)で紹介した事例は Rails を採用していたので、コンテナ側にも Ruby がインストールされており、コンテナ側にマウントするだけで [Serverspec] を実行できました。
+[前回の記事](https://ja.ngs.io/2015/09/14/ecs-docker-rails/)で紹介した事例は Rails を採用していたので、コンテナ側にも Ruby がインストールされており、コンテナ側にマウントするだけで [Serverspec] を実行できました。
 
 ```sh
 docker run \

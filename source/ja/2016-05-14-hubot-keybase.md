@@ -8,7 +8,7 @@ alternate: true
 ogp:
   og:
     image:
-      '': http://ja.ngs.io/images/2016-05-14-hubot-keybase/screen.png
+      '': https://ja.ngs.io/images/2016-05-14-hubot-keybase/screen.png
       type: image/png
       width: 1358
       height: 737

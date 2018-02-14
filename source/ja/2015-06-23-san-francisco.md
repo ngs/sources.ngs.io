@@ -8,7 +8,7 @@ alternate: false
 ogp:
   og:
     image:
-      '': http://ja.ngs.io/images/2015-06-23-san-francisco/01-s.jpg
+      '': https://ja.ngs.io/images/2015-06-23-san-francisco/01-s.jpg
       type: image/jpeg
       width: 992
       height: 525

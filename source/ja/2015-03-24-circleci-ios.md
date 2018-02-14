@@ -8,7 +8,7 @@ alternate: false
 ogp:
   og:
     image:
-      '': http://ja.ngs.io/images/2015-03-24-circleci-ios/main.jpg
+      '': https://ja.ngs.io/images/2015-03-24-circleci-ios/main.jpg
       type: image/jpeg
       width: 992
       height: 525
