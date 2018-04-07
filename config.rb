@@ -23,7 +23,7 @@ activate :i18n, langs: [lang]
 set :markdown_engine, :custom
 set :markdown_engine_prefix, ::Middleman::Renderers
 set :markdown, :fenced_code_blocks => true, :smartypants => true, :autolink => true, :tables => true, :with_toc_data => true
-set :build_dir,    "build-#{lang}"
+set :build_dir,    ENV.fetch('BUILD_DIR', "build-#{lang}")
 set :partials_dir, 'partials'
 set :site_url, "https://#{cname}"
 
@@ -31,6 +31,7 @@ activate :blog do |blog|
   blog.permalink = "{year}/{month}/{day}/{title}/index.html"
   blog.sources = "#{lang}/{year}-{month}-{day}-{title}.html"
   blog.taglink = "t/{tag}/index.html"
+  blog.tag_template = 'templates/tag.html'
   blog.layout = "article"
   blog.summary_separator = /(READMORE)/
   blog.summary_length = 500
@@ -45,12 +46,18 @@ activate :blog do |blog|
   blog.page_link = "p{num}"
 end
 
-# if lang == :en
-activate :similar, :algorithm => :'word_frequency/tree_tagger'
-# else
-#   activate :similar, :algorithm => :'word_frequency/mecab'
-# end
-
+if ENV['NO_SIMILAR']
+  module Middleman::Blog::BlogArticle
+    def similar_articles
+      blog_controller.data.articles
+    end
+  end
+else
+  activate :similar, tagger: {
+    mecab: 1,
+    tags: 3
+  }
+end
 
 page "/feed.xml",    layout: false
 page "/rss.xml",     layout: false
@@ -64,10 +71,6 @@ require 'coffee-script'
 set :css_dir, 'stylesheets'
 set :js_dir, 'javascripts'
 set :images_dir, 'images'
-
-compass_config do |config|
-  config.output_style = :compact
-end
 
 ready do
   ::Middleman::Renderers::MiddlemanRedcarpetHTML.middleman_app = self
@@ -160,13 +163,6 @@ end
 
 activate :disqus do |d|
   d.shortname = lang == :en ? "ngsio" : "jangsio"
-end
-
-activate :deploy do |deploy|
-  IO.write "source/CNAME", cname
-  deploy.method = :git
-  deploy.branch = 'gh-pages'
-  deploy.remote = "https://#{ENV['GH_TOKEN']}@github.com/ngs/#{cname}.git"
 end
 
 helpers do
