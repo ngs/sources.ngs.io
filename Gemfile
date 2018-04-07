@@ -11,6 +11,7 @@ gem 'middleman-google-analytics', '3.0.0'
 gem 'middleman-livereload', '3.4.6'
 gem 'middleman-ogp', '1.3.0'
 gem 'middleman-syntax', '3.0.0'
+gem 'middleman-sprockets'
 
 gem 'redcarpet'
 gem 'nokogiri'

@@ -31,7 +31,6 @@ activate :blog do |blog|
   blog.permalink = "{year}/{month}/{day}/{title}/index.html"
   blog.sources = "#{lang}/{year}-{month}-{day}-{title}.html"
   blog.taglink = "t/{tag}/index.html"
-  blog.tag_template = 'templates/tag.html'
   blog.layout = "article"
   blog.summary_separator = /(READMORE)/
   blog.summary_length = 500
@@ -73,9 +72,7 @@ set :js_dir, 'javascripts'
 set :images_dir, 'images'
 
 ready do
-  ::Middleman::Renderers::MiddlemanRedcarpetHTML.middleman_app = self
-  sprockets.append_path '/lib/javascripts/'
-  sprockets.append_path '/lib/stylesheets/'
+  ::Middleman::Renderers::MiddlemanRedcarpetHTML.scope = self
 
   def redirect_to path, res
     proxy path, 'redirect.html', locals: { url: res.url }, layout: false
@@ -101,6 +98,8 @@ configure :development do
   end
   set :asset_host, 'http://127.0.0.1:4567'
 end
+
+activate :sprockets
 
 activate :ogp do |ogp|
   ogp.namespaces = {
