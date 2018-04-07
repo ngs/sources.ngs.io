@@ -22,7 +22,6 @@ references:
           root: ~/src
           paths:
             - build
-            - .circleci
 
   deploy_config: &deploy_config
     working_directory: ~/src
@@ -30,9 +29,9 @@ references:
       - image: atsnngs/middleman-blog:latest
     steps:
       - attach_workspace:
-          at: /tmp/workspace
-      - run: /tmp/workspace/.circleci/deploy.sh
-      - run: /tmp/workspace/.circleci/purge-cloudflare-cache.sh
+          at: ~/src
+      - run: .circleci/deploy.sh
+      - run: .circleci/purge-cloudflare-cache.sh
 
 jobs:
   build-ja:
@@ -69,3 +68,15 @@ workflows:
     jobs:
       - build-ja
       - build-en
+      - deploy-ja:
+          filters:
+            branches:
+              only: [master, circleci2]
+          requires:
+            - build-ja
+      - deploy-en:
+          filters:
+            branches:
+              only: master
+          requires:
+            - build-en
