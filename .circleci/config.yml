@@ -41,6 +41,7 @@ references:
     steps:
       - attach_workspace:
           at: ~/src
+      - run: git config --global user.email "a+circleci@ngs.io" && git config --global user.name "Circle CI"
       - run: .circleci/deploy.sh
       - run: .circleci/purge-cloudflare-cache.sh
 

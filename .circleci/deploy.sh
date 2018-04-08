@@ -4,7 +4,6 @@ set -eu
 
 PROJ_DIR=$(cd $(dirname $0)/.. && pwd)
 cd $PROJ_DIR
-COMMIT=$(git rev-parse HEAD)
 
 if [ ! -e deploy ]; then
   git clone --depth 1 -b gh-pages git@github.com:ngs/$CNAME.git deploy
@@ -16,5 +15,5 @@ rm -rf *
 mv ../$BUILD_DIR/* .
 echo $CNAME > CNAME
 git add -A
-git commit --messsage "Build artifacts of $COMMIT"
+git commit --messsage "Build artifacts of $CIRCLE_SHA1\n\n$CIRCLE_BUILD_URL"
 
