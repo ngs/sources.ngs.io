@@ -19,7 +19,7 @@ references:
             - vendor/bundle
 
       - run: bundle exec middleman build --verbose --no-parallel
-      - run: tar cvfz build build.tar.gz
+      - run: tar cvfz build.tar.gz build
 
       - store_artifacts:
           path: build.tar.gz
