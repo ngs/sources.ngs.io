@@ -7,21 +7,32 @@ references:
       - image: atsnngs/middleman-blog:latest
     steps:
       - checkout
+
       - restore_cache:
           key: campfire-{{ checksum "Gemfile.lock" }}
+
       - run: bundle install --path vendor/bundle
+
       - save_cache:
           key: campfire-{{ checksum "Gemfile.lock" }}
           paths:
             - vendor/bundle
-      - run: bundle exec middleman build --verbose
+
+      - run: bundle exec middleman build --verbose --no-parallel
       - run: tar cvfz build build.tar.gz
+
       - store_artifacts:
           path: build.tar.gz
+
+      - store_artifacts:
+          path: .similar.db
+          destination: similar.db
+
       - persist_to_workspace:
           root: ~/src
           paths:
             - build
+            - .circleci
 
   deploy_config: &deploy_config
     working_directory: ~/src
