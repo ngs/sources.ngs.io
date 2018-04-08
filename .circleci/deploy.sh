@@ -15,5 +15,7 @@ rm -rf *
 mv ../$BUILD_DIR/* .
 echo $CNAME > CNAME
 git add -A
-git commit --messsage "Build artifacts of $CIRCLE_SHA1\n\n$CIRCLE_BUILD_URL"
+git commit --message "Build artifacts of $CIRCLE_SHA1
 
+$CIRCLE_BUILD_URL"
+git push origin gh-pages
