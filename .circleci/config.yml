@@ -83,12 +83,12 @@ workflows:
       - deploy-ja:
           filters:
             branches:
-              only: [master, circleci2]
+              only: master
           requires:
             - build-ja
       - deploy-en:
           filters:
             branches:
-              only: master
+              only: [master, circleci2]
           requires:
             - build-en
