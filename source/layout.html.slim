@@ -217,7 +217,7 @@ html lang=I18n.locale.to_s itemscope="itemscope" itemtype="http://schema.org/Web
           p Copyright &copy; #{ Time.now.year } #{ link_to 'Atsushi Nagase', 'https://ngs.io/', rel: 'copyright' } all rights reserved with all articles and pictures. Everything else in #{ link_to 'the repository', 'https://github.com/ngs/source.ngs.io/' } is #{ link_to 'MIT licensed', 'https://github.com/ngs/sources.ngs.io/blob/master/LICENSE.md' }.
 
 
-    = google_analytics_universal_tag
+    = google_analytics_tag
 
 - content_for :title do
   = t 'blog.title'

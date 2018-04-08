@@ -13,7 +13,7 @@ ruby:
 h1
   = t 'calendar_title.html', title: calendar_title
 
-= partial "entries", locals: locals
+= partial "partials/entries", locals: locals
 
 - content_for :title do
   = t 'calendar_title.text', title: calendar_title

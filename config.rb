@@ -81,7 +81,6 @@ ready do
     if res.is_a? Middleman::Blog::BlogArticle
       redirect_to "blog#{res.url.sub(%r{/$}, '.html')}", res
       redirect_to "blog#{res.url}index.html", res
-      proxy "#{res.url}amp.html", 'amp.html', locals: { current_article: res }, layout: false, directory_index: false
     elsif res.url.match %r{^/p\d+/$}
       redirect_to "blog#{res.url.sub(%r{p(\d)}, 'page/\1')}index.html", res
     elsif res.url.match %r{^/t/(.+)/$}

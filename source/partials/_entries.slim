@@ -4,7 +4,7 @@
       = link_to emojify(article.title), article, itemprop: "url mainEntityOfPage"
       time itemprop="datePublished" datetime=article.date.to_time.strftime('%Y-%m-%dT%H:%M:%S') is="relative-time"
         = article.date.strftime('%Y-%m-%d %H:%M')
-    = partial 'article-metadata', locals: { current_article: article }
+    = partial 'partials/article-metadata', locals: { current_article: article }
     meta itemprop='author' content='/about/' itemtype="http://schema.org/Person"
     .article-body itemprop="articleBody"
       = preserve do
