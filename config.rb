@@ -92,6 +92,18 @@ ready do
   end
 end
 
+after_configuration do
+  # https://git.io/vxQ8e
+  module TagPagesExtension
+    def link( tag )
+      safe_tag = safe_parameterize(tag)
+      safe_tag = URI.encode(tag) if safe_tag == ''
+      apply_uri_template @tag_link_template, tag: safe_tag
+    end
+  end
+  Middleman::Blog::TagPages.prepend(TagPagesExtension)
+end
+
 configure :development do
   activate :google_analytics do |ga|
     ga.tracking_id = 'UA-XXXXXX-YY'
