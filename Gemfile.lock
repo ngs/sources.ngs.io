@@ -184,6 +184,7 @@ DEPENDENCIES
   builder (~> 3.0)
   coffee-script
   dotenv
+  fastimage
   gemoji (~> 2.1)
   jbuilder
   middleman (= 4.2.1)

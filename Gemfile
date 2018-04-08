@@ -1,6 +1,7 @@
 source 'http://rubygems.org'
 
 gem 'dotenv'
+gem 'fastimage'
 
 gem 'middleman-blog-similar', '2.0.1'
 gem "middleman-favicon-maker", '~> 4.1'
