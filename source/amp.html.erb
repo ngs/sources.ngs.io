@@ -2,8 +2,8 @@
 <html ⚡ itemscope itemtype="http://schema.org/Article">
   <head>
     <meta charset="utf-8">
-    <title><%= current_article.title %></title>
-    <link itemprop="mainEntityOfPage" rel="canonical" href="<%= URI.join(t('blog.url'), URI.escape(current_article.url)) %>">
+    <title><%= article.title %></title>
+    <link itemprop="mainEntityOfPage" rel="canonical" href="<%= URI.join(t('blog.url'), URI.escape(article.url)) %>">
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
     <style amp-custom>
       body {
@@ -32,18 +32,18 @@
   </head>
   <body>
     <article class="container">
-      <h1 itemprop="headline"><%= current_article.title %></h1>
+      <h1 itemprop="headline"><%= article.title %></h1>
       <h2 itemprop="author" itemscope itemtype="https://schema.org/Person">
         <span itemprop="name"><%= t('author.name') %></span>
       </h2>
-      <time itemprop="datePublished" datetime="<%= current_article.date.to_time.strftime('%Y-%m-%dT%H:%M:%S') %>"><%= current_article.date.strftime('%Y-%m-%d %H:%M') %></time>
-      <meta itemprop="description" content="<%= current_article.data.description %>"></meta>
-      <%= partial 'article-metadata', locals: { current_article: current_article } %>
-      <%= current_article.body
+      <time itemprop="datePublished" datetime="<%= article.date.to_time.strftime('%Y-%m-%dT%H:%M:%S') %>"><%= article.date.strftime('%Y-%m-%d %H:%M') %></time>
+      <meta itemprop="description" content="<%= article.data.description %>"></meta>
+      <%= partial 'partials/article-metadata', locals: { current_article: article } %>
+      <%= article.body
         .gsub(/\s*style="[^"]+"/, '')
         .gsub(%r{<img([^>]+)>}) {|m|
           src = m.match(%r{src="([^"]+)"})[1]
-          if size = FastImage.size( src.start_with?('/') ? File.join(source_dir, src) : src)
+          if size = FastImage.size( src.start_with?('/') ? File.join(app.source_dir, src) : src)
             l = size[0] < 300 ? 'fixed' : 'responsive'
             %Q{<amp-img src="#{src}" layout="#{l}" width="#{size[0]}" height="#{size[1]}"></amp-img>}
           end

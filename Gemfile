@@ -1,22 +1,18 @@
-# If you have OpenSSL installed, we recommend updating
-# the following line to use 'https'
 source 'http://rubygems.org'
 
 gem 'dotenv'
-
-gem 'middleman-blog-similar', '~> 1.1'
-gem 'levenshtein-ffi', :require => 'levenshtein'
 gem 'fastimage'
 
-gem "middleman-favicon-maker", "~> 3.5"
-gem 'middleman', '~> 3.2.2'
-gem 'middleman-blog', '~> 3.5.0'
-gem 'middleman-deploy'
-gem 'middleman-disqus', '~> 0.0.3'
-gem 'middleman-google-analytics', :github => 'ngs/middleman-google-analytics'
-gem 'middleman-livereload', '~> 3.3.2'
-gem 'middleman-ogp', :git => 'git://github.com/ngs/middleman-ogp.git', :branch => 'blog-support'
-gem 'middleman-syntax', :git => 'git://github.com/middleman/middleman-syntax.git'
+gem 'middleman-blog-similar', '2.0.1'
+gem "middleman-favicon-maker", '~> 4.1'
+gem 'middleman', '4.2.1'
+gem 'middleman-blog', '4.0.2'
+gem 'middleman-disqus', '1.2.0'
+gem 'middleman-google-analytics', '3.0.0'
+gem 'middleman-livereload', '3.4.6'
+gem 'middleman-ogp', '1.3.0'
+gem 'middleman-syntax', '3.0.0'
+gem 'middleman-sprockets'
 
 gem 'redcarpet'
 gem 'nokogiri'
@@ -30,4 +26,6 @@ gem 'sanitize'
 gem 'slim'
 gem 'sass'
 gem 'coffee-script'
-
+gem 'opal', '~> 0.10.5'
+gem 'natto'
+gem 'tzinfo-data'

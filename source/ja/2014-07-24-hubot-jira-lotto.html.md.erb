@@ -1,0 +1,60 @@
+---
+title: Hubot JIRA おみくじで担当者の選定をランダムに行う
+description: JIRA で起票された課題の担当者の選定を Hubot でランダムに行うスクリプトを公開しました。
+date: 2014-07-24 10:30
+public: true
+tags: hubot, script, jira
+alternate: true
+ogp:
+  og:
+    image:
+      '': https://ja.ngs.io/images/2014-07-24-hubot-jira-lotto/chat.png
+      type: image/png
+      width: 1000
+      height: 300
+---
+
+![](2014-07-24-hubot-jira-lotto/chat.png)
+
+[JIRA] で起票された課題の担当者の選定を [Hubot] でランダムに行うスクリプトを公開しました。
+
+**[ngs/hubot-jira-lotto]**
+
+```sh
+npm install --save hubot-jira-lotto
+```
+
+READMORE
+
+コマンド
+--------
+
+```
+hubot pick (an) assignee (for) <ISSUE-NUMBER> from <ASSIGNEE-GROUP>
+```
+
+`<ASSIGNEE-GROUP>` で指定されたグループから担当者をランダムに選定します。
+
+既にアサインされた該当のプロジェクトの課題の数で傾斜がかかります。
+
+設定
+----
+
+<%= partial 'partials/2014-07-24-hubot-jira-lotto/configuration.sh.html.md' %>
+
+この Hubot スクリプトは、ログインアカウントに **管理者権限が必要です**。
+
+ログインアカウントを *administrators* グループに追加してください。
+
+JIRA のユーザー名をチャットのユーザー名に変換する
+-------------------------------------------
+
+もし、お使いのチャットアダプター (Campfire, HipChat, Slack ...) と JIRA で別のユーザー名を使用している場合は、`robot` インスタンスに変換メソッドを定義することができます。
+
+例: `ngs` を `atsushi_nagase` に変換する
+
+<%= partial 'partials/2014-07-24-hubot-jira-lotto/convert-handle.coffee.html.md' %>
+
+[ngs/hubot-jira-lotto]: https://github.com/ngs/hubot-jira-lotto
+[Hubot]: https://hubot.github.com/
+[JIRA]: https://www.atlassian.com/ja/software/jira

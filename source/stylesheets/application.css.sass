@@ -1,0 +1,201 @@
+@import 'font-awesome'
+
+.home-link
+  padding: 10px 0 0 0
+  margin: 0
+
+.read-more
+  padding: 2em 0 0 0
+  a
+    margin: 0 auto
+    display: block
+    width: 20%
+    letter-spacing: 0.2em
+    @media screen and (max-width: 720px)
+      padding: 1em 0
+      width: 100%
+
+aside
+  h2
+    font-size: 1.2em
+    text-indent: 0.7em
+  .nav li a time
+    display: block
+    font-size: 0.8em
+    color: #999
+
+article
+  h2, h3, h4
+    margin: 1.5em 0 0.5em 0
+  .disqus
+    padding: 5em 0
+
+footer .credit
+  text-align: center
+  font-size: 0.8em
+  padding: 5em 0 1em 0
+  color: #ccc
+  line-height: 2em
+  letter-spacing: 0.1em
+  p
+    margin: 0
+  a
+    color: #aaa
+
+h2 time, .meta
+  font-size: 12pt
+  display: block
+  color: #999
+  padding: 0.3em
+  font-weight: normal
+
+footer.meta
+  border-top: 1px solid #eee
+  margin-top: 5em
+  .tags
+    max-width: 80%
+    margin: 0 0 40px -20px
+
+section
+  padding: 1em 0 2em 0
+  border-bottom: 1px solid #eee
+  margin-bottom: 3em
+
+section.entry, article.entry
+  img
+    max-width: 100%
+    &[alt='iphone capture']
+      width: 396px
+
+#error-notfound
+  margin-top: 1em
+
+.social-buttons
+  width: 100%
+  clear: both
+  > div, > iframe
+    float: left
+    margin-right: 5px
+    display: inline-block
+
+body
+  pre
+    background-color: #49483e
+
+  .gist-data .highlight
+    background-color: transparent
+
+#tag-filter-form
+  width: 90%
+  margin: 1em auto
+
+.form-control-feedback
+  color: #ccc
+
+iframe.vimeo
+  width: 100%
+  height: 486px
+  @media screen and (max-width: 720px)
+    height: 281px
+  @media screen and (max-width: 1200px) and (min-width: 721px)
+    height: 402px
+
+#archives
+  margin: 0
+  padding: 0
+  list-style: none
+
+ol.entries
+  list-style: none
+  padding: 0 0 0 1em
+  li
+    padding: 0 0 0.5em 0
+  h2
+    font-size: 1em
+    a
+      color: #333
+  time
+    color: #999
+    font-weight: bold
+    margin-right: 1em
+
+.article-body
+  line-height: 1.7em
+
+@media (max-width:991px)
+  .container
+    margin-top: 50px
+  #sidebar-navigation
+    z-index: 10000
+    width: 100%
+    padding: 0
+    position: fixed
+    left: 0
+    border: 0
+    top: 0
+    font-size: 0.9em
+    -moz-transition: all 150ms cubic-bezier(0.165, 0.84, 0.44, 1)
+    -o-transition: all 150ms cubic-bezier(0.165, 0.84, 0.44, 1)
+    -webkit-transition: all 150ms cubic-bezier(0.165, 0.84, 0.44, 1)
+    transition: all 150ms cubic-bezier(0.165, 0.84, 0.44, 1)
+    &.nav-hidden
+      top: -3.5em
+    h2
+      display: none
+    .nav
+      li
+        float: left
+
+@media (max-width:720px)
+  #sidebar-navigation
+    font-size: 0.8em
+
+#goog-fixurl
+  padding-top: 5em
+  h3
+    font-size: 1.2em
+    float: left
+    margin: 0 1em 0 0
+    height: 2em
+  ul
+    flaot: left
+    list-style: none
+    padding: 0
+    margin: 0
+    form
+      padding-top: 0.5em
+    input
+      margin-right: 1em
+
+#search-results h1
+  margin-bottom: 1em
+
+@font-face
+  font-family: 'Glyphicons Halflings Local'
+  src: url('../fonts/glyphicons-halflings-regular.eot')
+  src: url('../fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('../fonts/glyphicons-halflings-regular.woff') format('woff'), url('../fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('../fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg')
+
+html .glyphicon
+  font-family: 'Glyphicons Halflings Local'
+
+.book
+  border: 1px solid #f6f6f6
+  min-height: 215px
+  padding: 0 20px
+  overflow: hidden
+  *zoom: 1
+  .book-left
+    padding: 20px 0
+    width: 133px
+    float: left
+  .book-right
+    padding: 20px 0
+    float: left
+    h3
+      font-weight: bold
+    h3, p
+      font-size: 1em
+      margin: 0 0 .5em 0
+  @media screen and (max-width: 520px)
+    .book-left, .book-right
+      float: none

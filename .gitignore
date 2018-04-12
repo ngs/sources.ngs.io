@@ -9,6 +9,8 @@
 
 # Ignore the build directory
 /build-*
+/build
+/deploy
 
 # Ignore Sass' cache
 /.sass-cache
@@ -23,3 +25,4 @@
 /node_modules
 
 .envrc
+.similar.db*

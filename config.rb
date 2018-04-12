@@ -23,7 +23,7 @@ activate :i18n, langs: [lang]
 set :markdown_engine, :custom
 set :markdown_engine_prefix, ::Middleman::Renderers
 set :markdown, :fenced_code_blocks => true, :smartypants => true, :autolink => true, :tables => true, :with_toc_data => true
-set :build_dir,    "build-#{lang}"
+set :build_dir,    ENV.fetch('BUILD_DIR', "build-#{lang}")
 set :partials_dir, 'partials'
 set :site_url, "https://#{cname}"
 
@@ -45,12 +45,18 @@ activate :blog do |blog|
   blog.page_link = "p{num}"
 end
 
-# if lang == :en
-activate :similar, :algorithm => :'word_frequency/tree_tagger'
-# else
-#   activate :similar, :algorithm => :'word_frequency/mecab'
-# end
-
+if ENV['NO_SIMILAR']
+  module Middleman::Blog::BlogArticle
+    def similar_articles
+      blog_controller.data.articles
+    end
+  end
+else
+  activate :similar, tagger: {
+    mecab: 1,
+    tags: 3
+  }
+end
 
 page "/feed.xml",    layout: false
 page "/rss.xml",     layout: false
@@ -65,14 +71,8 @@ set :css_dir, 'stylesheets'
 set :js_dir, 'javascripts'
 set :images_dir, 'images'
 
-compass_config do |config|
-  config.output_style = :compact
-end
-
 ready do
-  ::Middleman::Renderers::MiddlemanRedcarpetHTML.middleman_app = self
-  sprockets.append_path '/lib/javascripts/'
-  sprockets.append_path '/lib/stylesheets/'
+  ::Middleman::Renderers::MiddlemanRedcarpetHTML.scope = self
 
   def redirect_to path, res
     proxy path, 'redirect.html', locals: { url: res.url }, layout: false
@@ -81,7 +81,7 @@ ready do
     if res.is_a? Middleman::Blog::BlogArticle
       redirect_to "blog#{res.url.sub(%r{/$}, '.html')}", res
       redirect_to "blog#{res.url}index.html", res
-      proxy "#{res.url}amp.html", 'amp.html', locals: { current_article: res }, layout: false, directory_index: false
+      proxy "#{res.url}amp.html", 'amp.html', locals: { article: res }, layout: false, directory_index: false
     elsif res.url.match %r{^/p\d+/$}
       redirect_to "blog#{res.url.sub(%r{p(\d)}, 'page/\1')}index.html", res
     elsif res.url.match %r{^/t/(.+)/$}
@@ -92,12 +92,27 @@ ready do
   end
 end
 
+after_configuration do
+  # https://git.io/vxQ8e
+  module TagPagesExtension
+    def link( tag )
+      safe_tag = safe_parameterize(tag)
+      safe_tag = URI.encode(tag) if safe_tag == ''
+      apply_uri_template @tag_link_template, tag: safe_tag
+    end
+  end
+  Middleman::Blog::TagPages.prepend(TagPagesExtension)
+end
+
 configure :development do
   activate :google_analytics do |ga|
     ga.tracking_id = 'UA-XXXXXX-YY'
   end
   set :asset_host, 'http://127.0.0.1:4567'
 end
+
+activate :sprockets
+
 
 activate :ogp do |ogp|
   ogp.namespaces = {
@@ -112,7 +127,7 @@ end
 configure :build do
   activate :minify_css
   activate :minify_javascript
-  activate :asset_hash, ignore: 'images', exts: %w(.woff2 .eot .svg .ttf .woff .otf .css .js .jpg .png .gif)
+  activate :asset_hash, ignore: 'images/**/*', exts: %w(.woff2 .eot .svg .ttf .woff .otf .css .js .jpg .png .gif)
   ignore '.DS_Store'
   ignore '.*.swp'
   ignore '_drafts'
@@ -160,13 +175,6 @@ end
 
 activate :disqus do |d|
   d.shortname = lang == :en ? "ngsio" : "jangsio"
-end
-
-activate :deploy do |deploy|
-  IO.write "source/CNAME", cname
-  deploy.method = :git
-  deploy.branch = 'gh-pages'
-  deploy.remote = "https://#{ENV['GH_TOKEN']}@github.com/ngs/#{cname}.git"
 end
 
 helpers do

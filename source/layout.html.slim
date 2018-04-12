@@ -1,0 +1,223 @@
+doctype 5
+html lang=I18n.locale.to_s itemscope="itemscope" itemtype="http://schema.org/WebSite"
+  head
+    meta charset="utf-8"
+    meta http_equiv='X-UA-Compatible' content='IE=edge;chrome=1'
+    meta content='width=device-width, initial-scale=1, maximum-scale=1' name='viewport'
+    meta content="Middleman #{Middleman::VERSION}" name='generator'
+    meta itemprop="url" content=config.site_url
+    link rel='author' href='https://plus.google.com/+AtsushiNAGASE'
+    title
+      - if current_article
+        = "#{emojify current_article.title, :raw} - "
+      - elsif current_page && current_page.data.title
+        = "#{emojify current_page.data.title} - "
+      - elsif content_for?(:title)
+        = "#{emojify yield_content(:title)} - "
+      = t 'blog.title'
+    - ogp_tags do|name, value|
+      meta property=name content=emojify(value, :raw)
+      - if name.match /^og:(image|description|title|url)$/
+        meta property=name.sub('og:', 'twitter:') content=emojify(value, :raw)
+    noscript
+      = stylesheet_link_tag 'bootstrap'
+    = stylesheet_link_tag 'application', media: 'screen'
+    = stylesheet_link_tag 'syntax', media: 'screen'
+    = stylesheet_link_tag 'print', media: 'print'
+    = javascript_include_tag 'application'
+    - if current_page.data.description
+      meta content=emojify(current_page.data.description, :raw) name="description"
+    - elsif content_for?(:description)
+      meta content=emojify(yield_content(:description), :raw) name="description"
+    - else
+      meta content=emojify(t('blog.description'), :raw) name="description"
+    - if current_page.data.keywords
+      meta content=emojify(current_page.data.page.keywords, :raw) name="keywords"
+    - elsif current_article && current_article.tags
+      meta content=emojify(current_article.tags.join(','), :raw) name="keywords"
+    - if current_resource.data.alternate
+      meta content=alt_lang property="og:locale:alternate"
+      link rel="alternate" hreflang=alt_lang herf="https://#{alt_host}#{ current_resource.url }"
+    - if current_resource.data.app_id
+      meta name='apple-itunes-app' content="app-id=#{current_resource.data.app_id}, affiliate-data='at=10l87J'"
+    meta content=t('author.name') name="author"
+    = feed_tag :atom, "#{blog.options.prefix.to_s}/feed.xml", title: "Atom Feed"
+    = feed_tag :rss, "#{blog.options.prefix.to_s}/rss.xml", title: "RSS 2.0 Feed"
+    - %w{152 144 120 114 76 72 60 67}.each do |size|
+      - size = "#{size}x#{size}"
+      link rel="apple-touch-icon" size=size href="/apple-touch-icon-#{size}-precomposed.png"
+    link rel="apple-touch-icon" href="/apple-touch-icon-precomposed.png"
+    link rel="shortcut icon" href="/favicon.png"
+    link rel="icon" type="image/ico" href="/favicon.ico"
+    - if current_article
+      link rel="amphtml" href="#{current_article.url}amp.html"
+      - if current_article.article_previous
+        link rel="prev" href=current_article.article_previous.url
+      - if current_article.article_next
+        link rel="next" href=current_article.article_next.url
+    - elsif paginate
+      - if prev_page
+        link rel="prev" href=prev_page.url
+      - if next_page
+        link rel="next" href=next_page.url
+  body
+    .container
+      .row
+        - if content_for? :main
+          == yield_content :main
+        - else
+          main.col-md-9 role='main'
+            == yield
+        aside.col-md-3
+          section#sidebar-navigation
+            h2= t :navigation
+            ol.nav itemscope="itemscope" itemtype="http://www.schema.org/SiteNavigationElement"
+              li
+                = link_to '/', itemprop: 'url' do
+                  span.glyphicon.glyphicon-home
+                  | &nbsp;&nbsp;
+                  span itemprop='name'
+                    = t :home
+              li
+                = link_to '/about', rel: 'author', itemprop: 'url' do
+                  span.glyphicon.glyphicon-user
+                  | &nbsp;&nbsp;
+                  span itemprop='name'
+                    = t :aboutme
+              li
+                - if I18n.locale.to_s == 'ja'
+                  = link_to 'https://ngs.io/', rel: 'alternate', itemprop: 'url', hreflang: 'en' do
+                    span.glyphicon.glyphicon-pencil
+                    | &nbsp;&nbsp;
+                    span itemprop='name' Blog (English)
+                - else
+                  = link_to 'https://ja.ngs.io/', rel: 'alternate', itemprop: 'url', hreflang: 'ja' do
+                    span.glyphicon.glyphicon-pencil
+                    | &nbsp;&nbsp;
+                    span itemprop='name' ブログ (日本語)
+
+          section#sidebar-search
+            form#site-search-form.form-inline {
+              role="form"
+              method="get"
+              action="/search/"
+              itemprop="potentialAction"
+              itemscope="itemscope"
+              itemtype="http://schema.org/SearchAction"
+            }
+              div.form-group.has-feedback
+                input.form-control#site-search-input {
+                  type="search" placeholder=t(:search_site)
+                  name="q" accesskey="s" required="required"
+                  itemprop="query-input"
+                }
+                span.glyphicon.glyphicon-search.form-control-feedback
+                meta itemprop="target" content="#{config.site_url}/search/?q={q}"
+
+          section#sidebar-bootswatch style="display:none"
+            h2 Theme
+            .btn-group
+              button.btn.btn-default.dropdown-toggle type="button" data-toggle="dropdown"
+                span.bootswatch-theme-name
+                | &nbsp;
+                span.caret
+              ul.dropdown-menu.bootswatch-theme-list role="menu"
+                li style="padding: 1em 0; text-align: center"
+                  i.fa.fa-refresh.fa-spin
+
+          section#sidebar-links
+            header
+              h2= t :links
+            ol.nav
+              li
+                = link_to 'https://twitter.com/ngs' do
+                  i.fa.fa-twitter
+                  | &nbsp;&nbsp;Twitter
+              li
+                = link_to 'https://github.com/ngs' do
+                  i.fa.fa-github
+                  | &nbsp;&nbsp;GitHub
+              li
+                = link_to 'https://dribbble.com/ngs' do
+                  i.fa.fa-dribbble
+                  | &nbsp;&nbsp;Dribbble
+              li
+                = link_to 'https://keybase.io/ngs' do
+                  i.fa.fa-key
+                  | &nbsp;&nbsp;Keybase
+              li
+                = link_to 'https://plus.google.com/+AtsushiNAGASE?rel=author', rel: 'publisher' do
+                  i.fa.fa-google-plus
+                  | &nbsp;&nbsp;Google
+              li
+                = link_to 'https://b.ngs.io' do
+                  i.fa.fa-bookmark
+                  | &nbsp;&nbsp;Bookmarks
+              li
+                = link_to 'http://astore.amazon.co.jp/ngsio-22' do
+                  i.fa.fa-amazon
+                  | &nbsp;&nbsp;Amazon JP
+
+          section#sidebar-recent
+            header
+              h2= t :recent_entries
+            ol.nav
+              - blog.articles.select {|a| a.data[:public] }.sort { |x,y| y.date <=> x.date }[0...10].each do |article|
+                li
+                  = link_to article do
+                    span.title= emojify article.title
+                    time= article.date.strftime('%Y/%m/%d')
+              li.show-all.text-right
+                = link_to '/archives' do
+                  = t(:show_all)
+                  | &nbsp;&nbsp;
+                  span.glyphicon.glyphicon-hand-right
+          section#sidebar-monthly
+            header
+              h2= t :monthly
+            ol.nav
+              - blog.articles.select {|a| a.data[:public] }.group_by {|a| a.date.year }.each do |year, year_articles|
+                - year_articles.group_by {|a| a.date.month }.each do |month, month_articles|
+                  li
+                    = link_to blog_month_path(year, month) do
+                      = Date.new(year, month, 1).strftime(t 'calendar_title.format.month')
+                      span.badge.pull-right= month_articles.size
+          section#sidebar-tags
+            header
+              h2= t :tags
+              form#tag-filter-form.form-inline role="form"
+                div.form-group.has-feedback
+                  input.form-control#tag-filter-input type="search" placeholder=t(:filter_tags)
+                  span.glyphicon.glyphicon-search.form-control-feedback
+            ol.nav.collapse.in#sidebar-tags-list
+              - blog.tags.sort.each do |tag, articles|
+                li.hidden
+                  = link_to tag_path(tag) do
+                    span.glyphicon.glyphicon-tag
+                    | &nbsp;
+                    = tag
+                    span.badge.pull-right= articles.size
+              li.show-all
+                = link_to '#tag-filter-form', class: 'show-all-tags-link' do
+                  span.glyphicon.glyphicon-plus
+                  | &nbsp;
+                  = t(:show_all)
+          section
+            header
+              h2 Memos
+            ol.nav
+              li = link_to 'Subscrptions', '/subscriptions/'
+
+      footer.row
+        .col-md-12.credit
+          p
+            | Proudly hosted on #{ link_to 'GitHub Pages', 'http://pages.github.com', rel: 'nofollow' }.&nbsp;
+            | Theme by #{ link_to 'United', 'http://bootswatch.com/united/', rel: 'nofollow', class: 'bootswatch-link' } from #{ link_to 'Bootswatch', 'http://bootswatch.com/', rel: 'nofollow' }.&nbsp;
+            | Built on CircleCI #{ link_to "build##{ENV['CIRCLE_BUILD_NUM']}", "https://circleci.com/gh/ngs/sources.ngs.io/#{ENV['CIRCLE_BUILD_NUM']}", rel: 'nofollow' } with commit #{ link_to (ENV['CIRCLE_SHA1']||'123456789abcdef')[0, 7], ENV['CIRCLE_COMPARE_URL'], rel: 'nofollow' }.
+          p Copyright &copy; #{ Time.now.year } #{ link_to 'Atsushi Nagase', 'https://ngs.io/', rel: 'copyright' } all rights reserved with all articles and pictures. Everything else in #{ link_to 'the repository', 'https://github.com/ngs/source.ngs.io/' } is #{ link_to 'MIT licensed', 'https://github.com/ngs/sources.ngs.io/blob/master/LICENSE.md' }.
+
+
+    = google_analytics_tag
+
+- content_for :title do
+  = t 'blog.title'

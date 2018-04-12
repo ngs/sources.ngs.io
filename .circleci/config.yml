@@ -1,0 +1,94 @@
+version: 2
+
+references:
+  build_config: &build_config
+    working_directory: ~/src
+    docker:
+      - image: atsnngs/middleman-blog:latest
+    steps:
+      - checkout
+
+      - restore_cache:
+          key: campfire-{{ checksum "Gemfile.lock" }}
+
+      - run: bundle install --path vendor/bundle
+
+      - save_cache:
+          key: campfire-{{ checksum "Gemfile.lock" }}
+          paths:
+            - vendor/bundle
+
+      - run: bundle exec middleman build --verbose --no-parallel
+      - run: tar cvfz build.tar.gz build
+
+      - store_artifacts:
+          path: build.tar.gz
+
+      - store_artifacts:
+          path: .similar.db
+          destination: similar.db
+
+      - persist_to_workspace:
+          root: ~/src
+          paths:
+            - build
+            - .circleci
+
+  deploy_config: &deploy_config
+    working_directory: ~/src
+    docker:
+      - image: atsnngs/middleman-blog:latest
+    steps:
+      - attach_workspace:
+          at: ~/src
+      - run: .circleci/set-git-user.sh
+      - run: .circleci/deploy.sh
+      - run: .circleci/purge-cloudflare-cache.sh
+
+jobs:
+  build-ja:
+    <<: *build_config
+    environment:
+      MM_LANG: ja
+      BUILD_DIR: build
+      CNAME: ja.ngs.io
+
+  build-en:
+    <<: *build_config
+    environment:
+      MM_LANG: en
+      BUILD_DIR: build
+      CNAME: ngs.io
+
+  deploy-ja:
+    <<: *deploy_config
+    environment:
+      MM_LANG: ja
+      BUILD_DIR: build
+      CNAME: ja.ngs.io
+
+  deploy-en:
+    <<: *deploy_config
+    environment:
+      MM_LANG: en
+      BUILD_DIR: build
+      CNAME: ngs.io
+
+workflows:
+  version: 2
+  build-and-deploy:
+    jobs:
+      - build-ja
+      - build-en
+      - deploy-ja:
+          filters:
+            branches:
+              only: master
+          requires:
+            - build-ja
+      - deploy-en:
+          filters:
+            branches:
+              only: master
+          requires:
+            - build-en
