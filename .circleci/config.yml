@@ -89,6 +89,6 @@ workflows:
       - deploy-en:
           filters:
             branches:
-              only: [master, circleci2]
+              only: master
           requires:
             - build-en
