@@ -122,6 +122,7 @@ activate :ogp do |ogp|
   }
   ogp.blog = true
   ogp.base_url = "https://#{cname}/"
+  ogp.image_base_url = "https://#{cname}/images/"
 end
 
 configure :build do

@@ -7,7 +7,7 @@ tags: campfire, career
 ogp:
   og:
     image:
-      '': https://ja.ngs.io/images/2017-09-01-campfire-inc/main.jpg
+      '': 2017-09-01-campfire-inc/main.jpg
       type: image/jpeg
       width: 992
       height: 525

@@ -8,7 +8,7 @@ alternate: false
 ogp:
   og:
     image:
-      '': https://ja.ngs.io/images/2015-09-26-circleci-docker-serverspec/main.jpg
+      '': 2015-09-26-circleci-docker-serverspec/main.jpg
       type: image/jpeg
       width: 992
       height: 525

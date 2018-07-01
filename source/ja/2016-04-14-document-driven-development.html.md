@@ -8,7 +8,7 @@ alternate: false
 ogp:
   og:
     image:
-      '': https://ja.ngs.io/images/2016-04-14-document-driven-development/1.jpg
+      '': 2016-04-14-document-driven-development/1.jpg
       type: image/jpeg
       width: 992
       height: 525

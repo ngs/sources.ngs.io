@@ -8,7 +8,7 @@ alternate: true
 ogp:
   og:
     image:
-      '': https://ngs.io/images/2016-09-08-nightwatch-mail-test/og.png
+      '': 2016-09-08-nightwatch-mail-test/og.png
       type: image/png
       width: 992
       height: 525

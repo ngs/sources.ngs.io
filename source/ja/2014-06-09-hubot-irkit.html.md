@@ -8,7 +8,7 @@ alternate: false
 ogp:
   og:
     image:
-      '': https://ja.ngs.io/images/2014-06-09-hubot-irkit/picture.jpg
+      '': 2014-06-09-hubot-irkit/picture.jpg
       type: image/jpeg
       width: 992
       height: 525

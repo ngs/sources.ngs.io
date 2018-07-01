@@ -8,7 +8,7 @@ alternate: true
 ogp:
   og:
     image:
-      '': https://ngs.io/images/2016-03-04-swift-webapp-on-ecs/serverspec.png
+      '': 2016-03-04-swift-webapp-on-ecs/serverspec.png
       type: image/png
       width: 732
       height: 481

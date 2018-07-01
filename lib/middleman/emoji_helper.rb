@@ -1,6 +1,6 @@
 module EmojiHelper
   def emojify(content, mode = nil)
-    content.to_str.gsub(/:([\w+-]+):/) do |match|
+    content.to_s.gsub(/:([\w+-]+):/) do |match|
       if emoji = Emoji.find_by_alias($1)
         if mode == :raw
           emoji.raw

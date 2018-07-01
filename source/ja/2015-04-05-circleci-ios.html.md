@@ -8,7 +8,7 @@ alternate: false
 ogp:
   og:
     image:
-      '': https://ja.ngs.io/images/2015-04-05-circleci-ios/dlpage.png
+      '': 2015-04-05-circleci-ios/dlpage.png
       type: image/png
       width: 750
       height: 670

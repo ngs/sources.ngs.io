@@ -8,7 +8,7 @@ alternate: false
 ogp:
   og:
     image:
-      '': https://ja.ngs.io/images/2016-02-11-how-oneteam-deliver/oneteam.jpg
+      '': 2016-02-11-how-oneteam-deliver/oneteam.jpg
       type: image/jpeg
       width: 1200
       height: 630

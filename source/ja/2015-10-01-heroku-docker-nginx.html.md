@@ -8,7 +8,7 @@ alternate: false
 ogp:
   og:
     image:
-      '': https://ja.ngs.io/images/2015-10-01-heroku-docker-nginx/main.png
+      '': 2015-10-01-heroku-docker-nginx/main.png
       type: image/png
       width: 992
       height: 525

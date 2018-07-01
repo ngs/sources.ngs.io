@@ -8,7 +8,7 @@ alternate: false
 ogp:
   og:
     image:
-      '': https://ja.ngs.io/images/2014-07-14-romo-hackathon/romos.jpg
+      '': 2014-07-14-romo-hackathon/romos.jpg
       type: image/jpg
       width: 992
       height: 525

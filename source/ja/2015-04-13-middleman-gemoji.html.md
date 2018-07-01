@@ -8,7 +8,7 @@ alternate: false
 ogp:
   og:
     image:
-      '': https://ja.ngs.io/images/2015-04-13-middleman-gemoji/emojis.png
+      '': 2015-04-13-middleman-gemoji/emojis.png
       type: image/png
       width: 1400
       height: 1020

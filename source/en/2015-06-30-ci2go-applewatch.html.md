@@ -9,7 +9,7 @@ app_id: 940028427
 ogp:
   og:
     image:
-      '': https://ngs.io/images/2015-06-30-ci2go-applewatch/01.jpg
+      '': 2015-06-30-ci2go-applewatch/01.jpg
       type: image/jpeg
       width: 992
       height: 525

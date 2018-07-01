@@ -8,7 +8,7 @@ alternate: false
 ogp:
   og:
     image:
-      '': https://ja.ngs.io/images/2015-08-01-hello-oneteam/oneteam.jpg
+      '': 2015-08-01-hello-oneteam/oneteam.jpg
       type: image/jpeg
       width: 992
       height: 525

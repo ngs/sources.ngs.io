@@ -8,7 +8,7 @@ alternate: false
 ogp:
   og:
     image:
-      '': https://ja.ngs.io/images/2015-01-02-middleman-blog-search/screen1.png
+      '': 2015-01-02-middleman-blog-search/screen1.png
       type: image/png
       width: 992
       height: 525

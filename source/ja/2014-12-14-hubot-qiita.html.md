@@ -8,7 +8,7 @@ alternate: false
 ogp:
   og:
     image:
-      '': https://ja.ngs.io/images/2014-12-14-hubot-qiita/screen.png
+      '': 2014-12-14-hubot-qiita/screen.png
       type: image/png
       width: 1760
       height: 2130

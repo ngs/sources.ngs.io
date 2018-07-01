@@ -8,7 +8,7 @@ alternate: false
 ogp:
   og:
     image:
-      '': https://ja.ngs.io/images/2016-06-22-slack-book/main.jpg
+      '': 2016-06-22-slack-book/main.jpg
       type: image/jpeg
       width: 992
       height: 525

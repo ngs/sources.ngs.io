@@ -8,7 +8,7 @@ alternate: false
 ogp:
   og:
     image:
-      '': https://ngs.io/images/2016-07-17-hyperterm-tomorrow-themes/screen.png
+      '': 2016-07-17-hyperterm-tomorrow-themes/screen.png
       type: image/png
       width: 992
       height: 525
