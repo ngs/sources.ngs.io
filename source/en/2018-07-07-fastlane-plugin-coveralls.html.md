@@ -16,7 +16,7 @@ ogp:
 
 ![](images/2018-07-07-fastlane-plugin-coveralls/main.png)
 
-I've just published a [fastlane]&nbsp;[plugin] that sends Xcode testing coverage information to [Coveralls] and its depending library [xccoveralls] that also works as standalone command line tool.
+I've just published a [fastlane]&nbsp;[plugin] that sends Xcode code coverage to [Coveralls] and its depending library [xccoveralls] that also works as standalone command line tool.
 
 - [ngs/fastlane-plugin-coveralls][plugin]
 - [ngs/xccoveralls][xccoveralls]
