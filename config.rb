@@ -13,7 +13,7 @@ cname = ({
   ja: 'ja.ngs.io'
 })[lang]
 
-Time.zone = "Tokyo"
+Time.zone = "Asia/Tokyo"
 
 activate :directory_indexes
 activate :syntax

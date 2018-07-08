@@ -82,17 +82,17 @@ workflows:
   version: 2
   build-and-deploy:
     jobs:
-      - build-ja
-      - build-en
-      - deploy-ja:
+      - build-ja:
           filters:
             branches:
               only: master
+      - build-en:
+          filters:
+            branches:
+              only: master
+      - deploy-ja:
           requires:
             - build-ja
       - deploy-en:
-          filters:
-            branches:
-              only: master
           requires:
             - build-en
