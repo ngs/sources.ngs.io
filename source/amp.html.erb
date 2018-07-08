@@ -36,7 +36,7 @@
       <h2 itemprop="author" itemscope itemtype="https://schema.org/Person">
         <span itemprop="name"><%= t('author.name') %></span>
       </h2>
-      <time itemprop="datePublished" datetime="<%= article.date.to_time.strftime('%Y-%m-%dT%H:%M:%S') %>"><%= article.date.strftime('%Y-%m-%d %H:%M') %></time>
+      <time itemprop="datePublished" datetime="<%= article.date.to_time.utc.strftime('%Y-%m-%dT%H:%M:%S+00:00') %>"><%= article.date.utc.strftime('%Y-%m-%d %H:%M') %></time>
       <meta itemprop="description" content="<%= article.data.description %>"></meta>
       <%= partial 'partials/article-metadata', locals: { current_article: article } %>
       <%= article.body

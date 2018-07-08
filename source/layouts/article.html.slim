@@ -5,8 +5,8 @@
         = emojify current_article.title
       = partial 'partials/article-metadata'
       p.meta
-        time itemprop="datePublished" datetime=current_article.date.to_time.strftime('%Y-%m-%dT%H:%M:%S') is="relative-time"
-          = current_article.date.strftime('%Y-%m-%d %H:%M')
+        time itemprop="datePublished" datetime=current_article.date.to_time.utc.strftime('%Y-%m-%dT%H:%M:%S+00:00') is="relative-time"
+          = current_article.date.utc.strftime('%Y-%m-%d %H:%M')
     .article-body itemprop="articleBody"
       - if current_resource.data.alternate
         p= alt_link
