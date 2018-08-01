@@ -17,7 +17,7 @@
         - current_article.tags.each do|tag|
           li
             = link_to tag_path(tag) do
-              span.glyphicon.glyphicon-tag
+              span.far.fa-tag
               |&nbsp;
               = tag
       ul.nav.nav-pills.pull-right
@@ -26,10 +26,10 @@
             span itemprop='name' = t('author.name')
         li
           = link_to( current_article.source_file.gsub(/^.+\/([^\/]+)$/, "https://github.com/ngs/sources.ngs.io/blob/master/source/#{ I18n.locale.to_s }/\\1"), title: 'View on GitHub', rel: 'nofollow', 'data-toggle' => 'tooltip', 'data-container' => 'footer.meta', 'data-placement' => 'left' ) do
-            span.fa.fa-github-alt &nbsp;
+            span.fab.fa-github-alt &nbsp;
         li
           = link_to( current_article.url, title: 'Permalink', 'data-toggle' => 'tooltip', 'data-container' => 'footer.meta', 'data-placement' => 'left', 'itemprop' => 'mainEntityOfPage' ) do
-            span.fa.fa-link &nbsp;
+            span.far.fa-link &nbsp;
 
       .social-buttons.clearfix
         - url = URI.join(t('blog.url'), URI.escape(current_article.url))
@@ -50,11 +50,11 @@
         - if current_article.article_previous
           li.previous
             = link_to current_article.article_previous.url, 'data-toggle' => 'tooltip', title: "#{ t :previous_article }: #{ current_article.article_previous.title }", rel: 'prev' do
-              span.glyphicon.glyphicon-chevron-left
+              span.far.fa-chevron-left
         - if current_article.article_next
           li.next
             = link_to current_article.article_next.url, 'data-toggle' => 'tooltip', title: "#{ t :next_article }: #{ current_article.article_next.title }", rel: 'next' do
-              span.glyphicon.glyphicon-chevron-right
+              span.far.fa-chevron-right
 
 
     .disqus= disqus

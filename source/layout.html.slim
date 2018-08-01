@@ -24,6 +24,7 @@ html lang=I18n.locale.to_s itemscope="itemscope" itemtype="http://schema.org/Web
     = stylesheet_link_tag 'application', media: 'screen'
     = stylesheet_link_tag 'syntax', media: 'screen'
     = stylesheet_link_tag 'print', media: 'print'
+    link rel='stylesheet' href='https://pro.fontawesome.com/releases/v5.2.0/css/all.css' integrity='sha384-TXfwrfuHVznxCssTxWoPZjhcss/hp38gEOH8UPZG/JcXonvBQ6SlsIF49wUzsGno' crossorigin='anonymous'
     = javascript_include_tag 'application'
     - if current_page.data.description
       meta content=emojify(current_page.data.description, :raw) name="description"
@@ -74,25 +75,25 @@ html lang=I18n.locale.to_s itemscope="itemscope" itemtype="http://schema.org/Web
             ol.nav itemscope="itemscope" itemtype="http://www.schema.org/SiteNavigationElement"
               li
                 = link_to '/', itemprop: 'url' do
-                  span.glyphicon.glyphicon-home
+                  span.far.fa-home
                   | &nbsp;&nbsp;
                   span itemprop='name'
                     = t :home
               li
                 = link_to '/about', rel: 'author', itemprop: 'url' do
-                  span.glyphicon.glyphicon-user
+                  span.far.fa-id-card
                   | &nbsp;&nbsp;
                   span itemprop='name'
                     = t :aboutme
               li
                 - if I18n.locale.to_s == 'ja'
                   = link_to 'https://ngs.io/', rel: 'alternate', itemprop: 'url', hreflang: 'en' do
-                    span.glyphicon.glyphicon-pencil
+                    span.far.fa-pencil
                     | &nbsp;&nbsp;
                     span itemprop='name' Blog (English)
                 - else
                   = link_to 'https://ja.ngs.io/', rel: 'alternate', itemprop: 'url', hreflang: 'ja' do
-                    span.glyphicon.glyphicon-pencil
+                    span.far.fa-pencil
                     | &nbsp;&nbsp;
                     span itemprop='name' ブログ (日本語)
 
@@ -111,7 +112,7 @@ html lang=I18n.locale.to_s itemscope="itemscope" itemtype="http://schema.org/Web
                   name="q" accesskey="s" required="required"
                   itemprop="query-input"
                 }
-                span.glyphicon.glyphicon-search.form-control-feedback
+                span.far.fa-search.form-control-feedback
                 meta itemprop="target" content="#{config.site_url}/search/?q={q}"
 
           section#sidebar-bootswatch style="display:none"
@@ -123,7 +124,7 @@ html lang=I18n.locale.to_s itemscope="itemscope" itemtype="http://schema.org/Web
                 span.caret
               ul.dropdown-menu.bootswatch-theme-list role="menu"
                 li style="padding: 1em 0; text-align: center"
-                  i.fa.fa-refresh.fa-spin
+                  i.fas.fa-sync.fa-spin
 
           section#sidebar-links
             header
@@ -131,31 +132,31 @@ html lang=I18n.locale.to_s itemscope="itemscope" itemtype="http://schema.org/Web
             ol.nav
               li
                 = link_to 'https://twitter.com/ngs' do
-                  i.fa.fa-twitter
+                  i.fab.fa-twitter
                   | &nbsp;&nbsp;Twitter
               li
                 = link_to 'https://github.com/ngs' do
-                  i.fa.fa-github
+                  i.fab.fa-github
                   | &nbsp;&nbsp;GitHub
               li
                 = link_to 'https://dribbble.com/ngs' do
-                  i.fa.fa-dribbble
+                  i.fab.fa-dribbble
                   | &nbsp;&nbsp;Dribbble
               li
                 = link_to 'https://keybase.io/ngs' do
-                  i.fa.fa-key
+                  i.fab.fa-keybase
                   | &nbsp;&nbsp;Keybase
               li
                 = link_to 'https://plus.google.com/+AtsushiNAGASE?rel=author', rel: 'publisher' do
-                  i.fa.fa-google-plus
+                  i.fab.fa-google-plus
                   | &nbsp;&nbsp;Google
               li
                 = link_to 'https://b.ngs.io' do
-                  i.fa.fa-bookmark
+                  i.far.fa-bookmark
                   | &nbsp;&nbsp;Bookmarks
               li
                 = link_to 'http://astore.amazon.co.jp/ngsio-22' do
-                  i.fa.fa-amazon
+                  i.fab.fa-amazon
                   | &nbsp;&nbsp;Amazon JP
 
           section#sidebar-recent
@@ -171,7 +172,7 @@ html lang=I18n.locale.to_s itemscope="itemscope" itemtype="http://schema.org/Web
                 = link_to '/archives' do
                   = t(:show_all)
                   | &nbsp;&nbsp;
-                  span.glyphicon.glyphicon-hand-right
+                  span.far.fa-arrow-circle-right
           section#sidebar-monthly
             header
               h2= t :monthly
@@ -188,18 +189,18 @@ html lang=I18n.locale.to_s itemscope="itemscope" itemtype="http://schema.org/Web
               form#tag-filter-form.form-inline role="form"
                 div.form-group.has-feedback
                   input.form-control#tag-filter-input type="search" placeholder=t(:filter_tags)
-                  span.glyphicon.glyphicon-search.form-control-feedback
+                  span.far.fa-search.form-control-feedback
             ol.nav.collapse.in#sidebar-tags-list
               - blog.tags.sort.each do |tag, articles|
                 li.hidden
                   = link_to tag_path(tag) do
-                    span.glyphicon.glyphicon-tag
+                    span.far.fa-tag
                     | &nbsp;
                     = tag
                     span.badge.pull-right= articles.size
               li.show-all
                 = link_to '#tag-filter-form', class: 'show-all-tags-link' do
-                  span.glyphicon.glyphicon-plus
+                  span.far.fa-plus-square
                   | &nbsp;
                   = t(:show_all)
           section
