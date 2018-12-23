@@ -89,7 +89,7 @@ workflows:
       - build-en:
           filters:
             branches:
-              only: master
+              only: [master, ci]
       - deploy-ja:
           requires:
             - build-ja
