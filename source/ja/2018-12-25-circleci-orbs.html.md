@@ -68,9 +68,10 @@ Workflows を採用することで、ビルドプロセスの見通しがよく�
 
 ## 利用方法
 
-`ngs` の名前空間で公開しているこれらの Orb は認証を得ていない、サードパーティですので、CircleCI 画面左側ナビゲーション<br>
-`Settings` > `Security` (`https://circleci.com/gh/organizations/{orgname}/settings#security`)<br>
+`ngs` の名前空間で公開しているこれらの Orb は認証を得ていない、サードパーティですので、CircleCI 画面左側ナビゲーション > _Settings_ > _Security_ (`https://circleci.com/gh/organizations/{orgname}/settings#security`)<br>
 より、一つ目のラジオボタン `Yes, allow all members of my organization to publish dev orbs...` を選択してください。
+
+また、プロジェクト設定 > _Build Settings_ > _Advanced Settings_ の _Enable build processing (preview)_ `https://circleci.com/gh/{orgname}/{repo}/edit#advanced-settings` がオフになっている場合は、そちらも On にしてください。
 
 ### Carthage
 
