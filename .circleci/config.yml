@@ -1,24 +1,40 @@
-version: 2
+version: 2.1
 
-references:
-  build_config: &build_config
+orbs:
+  ruby: sue445/ruby-orbs@1.3.10
+
+executors:
+  main:
     working_directory: ~/src
     docker:
       - image: atsnngs/middleman-blog:latest
+    parameters:
+      lang:
+        type: enum
+        enum: [en, ja]
+      cname:
+        type: enum
+        enum: [ngs.io, ja.ngs.io]
+    environment:
+      MM_LANG: << parameters.lang >>
+      BUILD_DIR: build
+      CNAME: << parameters.cname >>
+      TZ: Asia/Tokyo
+
+jobs:
+  build:
+    executor: << parameters.executor >>
+    parameters:
+      executor:
+        type: executor
     steps:
       - checkout
+      - ruby/bundle-install
 
-      - restore_cache:
-          key: campfire-{{ checksum "Gemfile.lock" }}
+      - run:
+          name: Build middleman blog
+          command: bundle exec middleman build --verbose --no-parallel
 
-      - run: bundle install --path vendor/bundle
-
-      - save_cache:
-          key: campfire-{{ checksum "Gemfile.lock" }}
-          paths:
-            - vendor/bundle
-
-      - run: bundle exec middleman build --verbose --no-parallel
       - run: tar cvfz build.tar.gz build
 
       - store_artifacts:
@@ -34,10 +50,11 @@ references:
             - build
             - .circleci
 
-  deploy_config: &deploy_config
-    working_directory: ~/src
-    docker:
-      - image: atsnngs/middleman-blog:latest
+  deploy:
+    executor: << parameters.executor >>
+    parameters:
+      executor:
+        type: executor
     steps:
       - attach_workspace:
           at: ~/src
@@ -45,54 +62,41 @@ references:
       - run: .circleci/deploy.sh
       - run: .circleci/purge-cloudflare-cache.sh
 
-jobs:
-  build-ja:
-    <<: *build_config
-    environment:
-      MM_LANG: ja
-      BUILD_DIR: build
-      CNAME: ja.ngs.io
-      TZ: Asia/Tokyo
-
-  build-en:
-    <<: *build_config
-    environment:
-      MM_LANG: en
-      BUILD_DIR: build
-      CNAME: ngs.io
-      TZ: Asia/Tokyo
-
-  deploy-ja:
-    <<: *deploy_config
-    environment:
-      MM_LANG: ja
-      BUILD_DIR: build
-      CNAME: ja.ngs.io
-      TZ: Asia/Tokyo
-
-  deploy-en:
-    <<: *deploy_config
-    environment:
-      MM_LANG: en
-      BUILD_DIR: build
-      CNAME: ngs.io
-      TZ: Asia/Tokyo
-
 workflows:
   version: 2
   build-and-deploy:
     jobs:
-      - build-ja:
+      - build:
+          name: build-ja
+          executor:
+            lang: ja
+            cname: ja.ngs.io
+            name: main
           filters:
             branches:
               only: master
-      - build-en:
+      - build:
+          name: build-en
+          executor:
+            lang: en
+            cname: ngs.io
+            name: main
           filters:
             branches:
               only: [master, ci]
-      - deploy-ja:
+      - deploy:
+          name: deploy-ja
+          executor:
+            lang: ja
+            cname: ja.ngs.io
+            name: main
           requires:
             - build-ja
-      - deploy-en:
+      - deploy:
+          name: deploy-en
+          executor:
+            lang: en
+            cname: ngs.io
+            name: main
           requires:
             - build-en
