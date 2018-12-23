@@ -55,23 +55,25 @@ jobs:
       - run: .circleci/purge-cloudflare-cache.sh
 
 workflows:
-  en:
+  mm:
     jobs:
       - build:
+          name: build-en
           lang: en
           filters:
             branches:
               only: [master]
       - deploy:
+          name: deploy-en
           cname: ngs.io
-          requires: [build]
-  ja:
-    jobs:
+          requires: [build-en]
       - build:
+          name: build-ja
           lang: ja
           filters:
             branches:
               only: [master]
       - deploy:
+          name: deploy-ja
           cname: ja.ngs.io
-          requires: [build]
+          requires: [build-ja]
