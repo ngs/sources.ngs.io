@@ -2,7 +2,7 @@ Hello, I am a <span itemprop="title">software engineer</span> based in <span ite
 
 I'm focusing on developing softwares for Desktop, Mobile and Web.
 
-Co-Founder, CEO, Software Developer in [instance0, inc.] Currently working for some software companies as an advisor and CTO. Originally started my career as graphic designer, founded a small software house [LittleApps Inc.], experienced some startup companies from founding phase.
+Co-Founder, CEO, Software Developer in [instance0, inc.] Currently working for several software companies as an advisor and CTO. Originally started my career as graphic designer, founded a small software house [LittleApps Inc.], experienced several startup companies from founding phase.
 
 I love Gadgets, Road cycling, Running, Fishing, Driving, Music, 3 kids and 1 wife.
 
@@ -10,7 +10,7 @@ I love Gadgets, Road cycling, Running, Fishing, Driving, Music, 3 kids and 1 wif
 
 * 3rd, October 1983 Born in [Shimamoto, Osaka].
 * In March, 2002, Moved to Tokyo (actually, lived in Kohoku, Yokohama). Started to learn graphic design in design school in Tokyo.
-* From June, 2003, Started working for a graphic design studio: [Lotus Image Laboratory Inc.], located in Ebisu as a graphic designer. At same time I worked for some clients as a sole proprietor RIA developer using Flash and JavaScript.
+* From June, 2003, Started working for a graphic design studio: [Lotus Image Laboratory Inc.], located in Ebisu as a graphic designer. At same time I worked for several clients as a sole proprietor RIA developer using Flash and JavaScript.
 * In September, 2006, I quitted the studio and started to focus on works as a sole proprietor. I worked for client projects for mobile: iOS, Android, Windows phone, S! widget etc., desktop: Mac OS X, Windows and  server side application.
 * 12th, March, 2009, founded [LittleApps Inc.] to continue working for those client works.
 * In December, 2009, TenkiMeter awarded  [Softbank Mobile Prise in "天気予報API活用アプリコンテスト" (App Awards for Forecast API)].
