@@ -11,7 +11,7 @@ gem 'middleman-disqus', '1.2.0'
 gem 'middleman-google-analytics', '3.0.0'
 gem 'middleman-livereload', '3.4.6'
 gem 'middleman-ogp', '1.3.0'
-gem 'middleman-syntax', '3.0.0'
+gem 'middleman-syntax', git: 'https://github.com/middleman/middleman-syntax.git', branch: 'master'
 gem 'middleman-sprockets'
 
 gem 'redcarpet'

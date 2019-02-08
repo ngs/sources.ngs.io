@@ -27,7 +27,6 @@ module Middleman
         res + '</table>'
       end
       def block_code(code, language)
-        code.gsub!(%r{[\n\r\s]*$}, '')
         Middleman::Syntax::Highlighter.highlight(code, language)
       end
       def list_item(content, list_type)
