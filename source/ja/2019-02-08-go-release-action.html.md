@@ -24,6 +24,12 @@ GitHub Marketplace に Go Release Binary Action を公開しました。
 
 READMORE
 
+## GitHub Actions
+
+GitHub Actions は 2019/02/08 時点では限定公開ベータとして提供されており、以下のページより Beta にサインアップすることで利用できます。
+
+https://github.com/features/actions
+
 ## 利用例
 
 ![](2019-02-08-go-release-action/release.png)

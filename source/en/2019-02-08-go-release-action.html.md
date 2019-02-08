@@ -24,6 +24,12 @@ This GitHub Action builds and uploads Go build artifacts as Release Artifacts au
 
 READMORE
 
+## GitHub Actions
+
+GitHub Actions is provided as Limited Public Beta now (8th, Feb, 2019). You can start using this feature by signing up from the below page.
+
+https://github.com/features/actions
+
 ## How to Use
 
 ![](2019-02-08-go-release-action/release.png)
