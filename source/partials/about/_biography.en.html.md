@@ -2,7 +2,7 @@ Hello, I am a <span itemprop="title">software engineer</span> based in <span ite
 
 I'm focusing on developing softwares for Desktop, Mobile and Web.
 
-Current positions are Co-Founder, CEO, Software Developer at [instance0, inc.], CTO at [Modelmap Co]. Originally started my career as graphic designer, founded a small software house [LittleApps Inc.], experienced several startup companies from founding phase.
+Current positions are Co-Founder, CEO, Software Developer at [instance0, inc.], CTO at [Modelmap Co., Ltd.]. Originally started my career as graphic designer, founded a small software house [LittleApps Inc.], experienced several startup companies from founding phase.
 
 I love Gadgets, Road cycling, Running, Fishing, Driving, Music, 3 kids and 1 wife.
 
@@ -23,7 +23,7 @@ I love Gadgets, Road cycling, Running, Fishing, Driving, Music, 3 kids and 1 wif
 * In August, 2015, joined <span itemprop="affiliation">[Oneteam Inc.]</span>.
 * In September, 2017, joined CAMPFIRE, Inc., inducted as Chief Technology Officer, retired in June 2018.
 * In December, 2018, [Founded](https://ja.ngs.io/2019/02/01/instance0/) <span itemprop="affiliation">[instance0, inc.]</span>
-* In February, 2019, [Joined](https://ja.ngs.io/2019/02/12/modelmap/) [Modelmap.co] as CTO.
+* In February, 2019, [Joined](https://ja.ngs.io/2019/02/12/modelmap/) [Modelmap Co., Ltd.] as CTO.
 
 [Oneteam Inc.]: https://one-team.com/ja/
 [LittleApps Inc.]: https://littleapps.jp/
@@ -38,4 +38,4 @@ I love Gadgets, Road cycling, Running, Fishing, Driving, Music, 3 kids and 1 wif
 [Kaizen Platform, Inc.]: https://kaizenplatform.com/
 [CAMPFIRE, Inc.]: https://campfire.co.jp
 [instance0, inc.]: https://ins0.jp
-[Modelmap Co]: https://modelmap.co/
+[Modelmap Co., Ltd.]: https://modelmap.co/

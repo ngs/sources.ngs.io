@@ -23,7 +23,7 @@
 * 2015年8月 <span itemprop="affiliation">[Oneteam Inc.]</span> に参画。
 * 2017年9月 [CAMPFIRE, Inc.] 参画、CTO 就任 (2018年6月退任)。[Oneteam Inc.] アドバイザー就任。
 * 2018年12月 <span itemprop="affiliation">[instance0, inc.]</span> [創業](/2019/02/01/instance0/)
-* 2019年2月 [Modelmap Co](https://modelmap.jp/) [取締役 CTO 就任](/2019/02/12/modelmap/)
+* 2019年2月 [Modelmap 株式会社]&nbsp;[取締役 CTO 就任](/2019/02/12/modelmap/)
 
 [Oneteam Inc.]: https://one-team.com/ja/
 [LittleApps Inc.]: https://littleapps.jp/
