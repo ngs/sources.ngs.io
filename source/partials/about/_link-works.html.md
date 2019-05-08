@@ -6,3 +6,4 @@
 * [Dribbble](https://dribbble.com/ngs)
 * [Speaker Deck](https://speakerdeck.com/ngs)
 * [Docker Hub](https://hub.docker.com/u/atsnngs/)
+* [Terraform Module Registry](https://registry.terraform.io/modules/ngs)
