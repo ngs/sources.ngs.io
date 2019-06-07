@@ -1,4 +1,4 @@
-<span itemprop="address" itemscope itemtype="http://data-vocabulary.org/Address"><span itemprop="locality">東京</span>を拠点</span>に活動している、<span itemprop="title">ソフトウェアエンジニア</span>です。
+<span itemprop="address" itemscope itemtype="http://data-vocabulary.org/Address"><span itemprop="locality">東京</span>を拠点</span>に活動している、<span itemprop="title">ソフトウェア開発者</span>です。
 
 都内のデザイン事務所で紙媒体のデザイナーとして働く傍ら、副業にしていたプログラミングが本業になり独立。個人でソフトウェア開発会社 [LittleApps Inc.] を立ち上げた後、幾つかのスタートアップの立上げに携わりました。
 
@@ -10,7 +10,7 @@
 
 * 1983年10月3日 [大阪府島本町] 生まれ。
 * 2002年3月 上京 (家は横浜市港北区)。都内専門学校でグラフィックデザインを学び始めました。
-* 2003年6月から、恵比寿の [Lotus Image Laboratory Inc.] というグラッフィックデザイン事務所で主に紙媒体のデザインの仕事をしていました。並行して、Flash や JavaScript を用いた RIA 開発をフリーランスで請けていました。
+* 2003年6月から、恵比寿の [Lotus Image Laboratory Inc.] というグラフィックデザイン事務所で主に紙媒体のデザインの仕事をしていました。並行して、Flash や JavaScript を用いた RIA 開発をフリーランスで請けていました。
 * 2006年9月 フリーランス業務に一本化し、モバイル (iOS, Android, Windows phone, S!ウィジェット etc.) やデスクトップ (Mac OS X, Windows)、サーバーサイドアプリケーションなどの受託業務を行っていました。
 * 2009年3月 [LittleApps Inc.] を設立し、フリーランス時代同様の業務を続けていました。
 * 2009年12月 「[天気予報API活用アプリコンテスト]」で TenkiMeter がソフトバンクモバイル賞 受賞。
