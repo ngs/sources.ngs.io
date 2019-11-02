@@ -19,7 +19,7 @@ ogp:
 
 READMORE
 
-後ほどスライドをアップします。
+後ほど写真をアップします。
 
 [ハッカーズチャンプルーアンカンファレンス 2019]: https://hackers-champloo.doorkeeper.jp/events/96707
 [Modelmap Analyzer]: https://modelmap.co/ja/
