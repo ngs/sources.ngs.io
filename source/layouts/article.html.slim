@@ -34,15 +34,11 @@
       .social-buttons.clearfix
         - url = URI.join(t('blog.url'), URI.escape(current_article.url))
         = link_to t(:tweet), 'https://twitter.com/share', class: 'twitter-share-button', 'data-url' => url, 'data-via' => 'ngs', 'data-counturl' => url, 'rel' => 'nofollow', 'data-text' => current_article.title
-        .g-plusone data-size='medium'
         - if I18n.locale.to_s == 'ja'
           .hateb
             a.hatena-bookmark-button href="http://b.hatena.ne.jp/entry/s/#{url.to_s.sub %r(^https?:\/\/), ''}" data-hatena-bookmark-title="#{ current_article.title }" data-hatena-bookmark-layout="simple-balloon" title="このエントリーをはてなブックマークに追加"
               img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;"
           .fb-like data-send='true' data-width='300' data-show-faces='false' data-href=url
-        - else
-          a href="https://news.ycombinator.com/submit" class="hn-button" data-count="horizontal" data-title=current_article.title data-url=url
-            | Vote on Hacker News
         script src="//platform.linkedin.com/in.js" type="text/javascript"
           | lang: #{I18n.locale.to_s == 'ja' ? 'ja_JP' : 'en_US' }
         script type="IN/Share" data-url=url data-counter="right"
@@ -79,16 +75,6 @@
         fjs.parentNode.insertBefore(js, fjs);
       }(document, 'script', 'facebook-jssdk'));
     script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"
-  javascript:
-    (function() {
-      var HN=[];HN.factory=function(e){return function(){HN.push([e].concat(Array.prototype.slice.call(arguments,0)))};},HN.on=HN.factory("on"),HN.once=HN.factory("once"),HN.off=HN.factory("off"),HN.emit=HN.factory("emit"),HN.load=function(){var e="hn-button.js";if(document.getElementById(e))return;var t=document.createElement("script");t.id=e,t.src="//hn-button.herokuapp.com/hn-button.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(t,n)},HN.load();
-    })();
-  javascript:
-    (function() {
-      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
-      script.src = 'https://apis.google.com/js/plusone.js';
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
-    })();
   javascript:
     (function(){
       var twitterWidgets = document.createElement('script');
