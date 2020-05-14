@@ -22,19 +22,27 @@ Both iOS and macOS versions are available on App Store in same URL.
 
 [![](images/appstore.svg)][AppStore]
 
+Product website: [ci2go.app]
+
 READMORE
 
-## Dark Theme
+New version for both iOS and macOS includes the following new features.
+
+## Dark Mode
 
 ![](2020-05-15-ci2go-maccatalyst/dark-and-light.jpg)
 
-With this release, I've also updated the iOS app to support [Dark Mode] and dropped Color Scheme feature.
+Changed color theme to support [Dark Mode].
+
+Color Scheme feature is no longer available.
 
 ## iPad Keyboard Shortcuts
 
 ![](2020-05-15-ci2go-maccatalyst/shortcuts.png)
 
 iPad Keyboard shortcuts are supported from this update.
+
+You can use <kbd>&#x2318; \[</kbd> to back navigation, <kbd>&#x2318; R</kbd> to reload and <kbd>&#8997; &#8679;　&#x2318; L</kbd> to logout.
 
 ## WIP: Workflows
 
@@ -44,20 +52,23 @@ CircleCI [Workflows] are not yet completely supported but already in future mile
 
 ![](2020-05-15-ci2go-maccatalyst/workflow.png)
 
-Of course, I've setup Mac Catalyst app Continuously Delivery as well as iOS version and anyone can refer this on its [GitHub repository].
+Of course, I've setup Mac Catalyst app Continuous Delivery as well as iOS version.
 
 Also, I've migrated package management from [Carthage] to [Swift Package Manager].
 
+These are managed in public [GitHub repository] so anyone can refer.
+
 Hope this could help other developers to try building the Mac Catalyst app on CircleCI like me.
 
-This has some workarounds like the follows.
+I did some workarounds like the follows.
 
 - Swift Package build fails on macOS platform if containing Build Dependencies
     - Like: `multiple configured targets of 'KeychainAccess' are being created for macOS`
     - Duplicated build target and removed them.
     - ref: [Swift PM app in Xcode 11 (beta 5) gets four “My Mac” platform options]
 - [fastlane match] can not create Provisioning Profile for Mac Catalyst.
-    - Added `.provisioningprofile` files to version control and set `skip_provisioning_profiles` to `true`.
+    - Creates for Mac when providing `platform: 'macos'`
+    - Set `skip_provisioning_profiles` to `true`, added `.provisioningprofile` files to version control and copy them to ` ~/Library/MobileDevice/Provisioning Profiles/` on CI build step.
 
         ```rb
         match(
@@ -68,10 +79,10 @@ This has some workarounds like the follows.
         )
         ```
 
-- [fastlane deliver] rejects iOS app binary with `reject_if_possible` even if `platform` is set to `osx`.
-    - Set this to `false` in Mac platform settings for now.
+- [fastlane deliver] rejects iOS app binary with `reject_if_possible: true` even if `platform` is set to `osx`.
+    - Set `reject_if_possible` to `false` in Mac platform settings and reject manually if I need to select new build for now.
 - [fastlane deliver] fails submitting Mac app for review.
-    - [Spaceship] fails handling App Store connect API.
+    - [Spaceship] fails handling App Store Connect API response.
     - ref: [tunes_client.rb]
     - `rescue` d the exception.
 
@@ -82,6 +93,10 @@ This has some workarounds like the follows.
           puts "... Caught error, but omitting"
         end
         ```
+
+## Become a sponsor
+
+I've publish my sponsors page on [GitHub Sponsors]. Please support me polishing CI2Go if you'd like 🙇‍♂️
 
 [CI2Go]: https://ci2go.app
 [Mac Catalyst]: https://developer.apple.com/mac-catalyst/
@@ -96,3 +111,5 @@ This has some workarounds like the follows.
 [Swift PM app in Xcode 11 (beta 5) gets four “My Mac” platform options]: https://forums.swift.org/t/swift-pm-app-in-xcode-11-beta-5-gets-four-my-mac-platform-options/27521
 [tunes_client.rb]: https://github.com/fastlane/fastlane/blob/feb8cc09c9976f7f460203cf9486fd28d31f6955/spaceship/lib/spaceship/tunes/tunes_client.rb#L1138
 [Spaceship]: https://github.com/fastlane/fastlane/tree/master/spaceship
+[ci2go.app]: https://ci2go.app
+[GitHub Sponsors]: https://github.com/sponsors/ngs
