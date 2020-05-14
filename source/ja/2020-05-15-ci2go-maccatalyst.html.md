@@ -96,7 +96,7 @@ CircleCI [Workflows] の対応は、まだ完全に行われていませんが�
 
 ## 応援する
 
-[GitHub Sponsors] のページを公開しました。もしよかったら CI2Go の開発応援してください 🙇‍♂️
+[GitHub Sponsors] のページを公開しました。もしよかったら CI2Go の開発を応援してください 🙇‍♂️
 
 [CI2Go]: https://ci2go.app
 [Mac Catalyst]: https://developer.apple.com/mac-catalyst/
