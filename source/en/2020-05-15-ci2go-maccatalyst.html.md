@@ -98,7 +98,7 @@ I did some workarounds like the follows.
 
 ## Become a sponsor
 
-I've publish my sponsors page on [GitHub Sponsors]. Please support me polishing CI2Go if you'd like 🙇‍♂️
+I've published my sponsors page on [GitHub Sponsors]. Please support me polishing CI2Go if you'd like 🙇‍♂️
 
 [ci2go]: https://ci2go.app
 [mac catalyst]: https://developer.apple.com/mac-catalyst/
