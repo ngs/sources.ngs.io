@@ -8,7 +8,7 @@ alternate: false
 ogp:
   og:
     image:
-      '': 2015-04-05-circleci-ios/dlpage.png
+      "": 2015-04-05-circleci-ios/dlpage.png
       type: image/png
       width: 750
       height: 670
@@ -77,14 +77,14 @@ bundle exec rake adhoc:upload
 
 ### 環境変数
 
-| Name                                      | Description              |
-| ----------------------------------------- | ------------------------ |
-| `SLACK_CHANNEL`                           | 通知先の Slack チャンネル    |
-| `SLACK_WEBHOOK_URL`                       | Slack の Webhook URL      |
-| `S3_BUCKET`                               | 配布先の S3 バケット         |
-| `AWS_ACCESS_KEY_ID`                       | AWS のアクセスキー ID        |
-| `AWS_SECRET_ACCESS_KEY`                   | AWS のシークレットアクセスキー |
-| `AWS_REGION`                              | S3 のリージョン             |
+| Name                    | Description                    |
+| ----------------------- | ------------------------------ |
+| `SLACK_CHANNEL`         | 通知先の Slack チャンネル      |
+| `SLACK_WEBHOOK_URL`     | Slack の Webhook URL           |
+| `S3_BUCKET`             | 配布先の S3 バケット           |
+| `AWS_ACCESS_KEY_ID`     | AWS のアクセスキー ID          |
+| `AWS_SECRET_ACCESS_KEY` | AWS のシークレットアクセスキー |
+| `AWS_REGION`            | S3 のリージョン                |
 
 ### Rakefile
 
@@ -161,7 +161,7 @@ namespace :adhoc do
     AdHocPage.new('app.plist').upload
     page = AdHocPage.new('index.html')
     page_url = page.upload
-    %x{./Scripts/slack-notify.sh "<#{page_url}|*Build #{page.bundle_version}*> is available :iphone:"}
+    %x{./Scripts/slack-notify.sh "<#{page_url}|*Build #{page.bundle_version}*> is available 📱"}
   end
 end
 ```
@@ -221,32 +221,51 @@ curl -X POST --silent --data-urlencode "payload=${PAYLOAD}" $SLACK_WEBHOOK_URL
 ```html
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta name="viewport" content="width=device-width"/>
-  <meta charset="utf-8">
-  <title><%= title %> <%= bundle_version  %> AdHoc Install</title>
-  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.4/flatly/bootstrap.min.css">
-</head>
-<body>
-  <div class="container">
-    <div class="text-center">
-      <h1><%= title %> <small><%= bundle_version %></small></h1>
-      <p><img src="<%= icon_url %>" width="170" height="170" class="img-rounded"></p>
-      <p><a href="itms-services://?action=download-manifest&amp;url=<%= plist_url %>" class="btn btn-primary btn-lg"><i class="glyphicon glyphicon-cloud-download"></i>&nbsp;Download</a></p>
-      <p>
-        <small><%= sprintf '%.02f', (filesize.to_f / 1024 / 1024) %> MB</small>
-        /
-        <a href="https://github.com/ngs/ci2go/issues/new">Feedbacks</a>
-        /
-        <a href="<%= build_url %>">Build#<%= build_num %></a>
-      </p>
+  <head>
+    <meta name="viewport" content="width=device-width" />
+    <meta charset="utf-8" />
+    <title><%= title %> <%= bundle_version %> AdHoc Install</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.4/flatly/bootstrap.min.css"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="text-center">
+        <h1><%= title %> <small><%= bundle_version %></small></h1>
+        <p>
+          <img
+            src="<%= icon_url %>"
+            width="170"
+            height="170"
+            class="img-rounded"
+          />
+        </p>
+        <p>
+          <a
+            href="itms-services://?action=download-manifest&amp;url=<%= plist_url %>"
+            class="btn btn-primary btn-lg"
+            ><i class="glyphicon glyphicon-cloud-download"></i>&nbsp;Download</a
+          >
+        </p>
+        <p>
+          <small
+            ><%= sprintf '%.02f', (filesize.to_f / 1024 / 1024) %> MB</small
+          >
+          /
+          <a href="https://github.com/ngs/ci2go/issues/new">Feedbacks</a>
+          /
+          <a href="<%= build_url %>">Build#<%= build_num %></a>
+        </p>
+      </div>
     </div>
-  </div>
-</body>
+  </body>
 </html>
 ```
 
-[Amazon S3]: http://aws.amazon.com/jp/s3/
+[amazon s3]: http://aws.amazon.com/jp/s3/
 [prev]: /2015/03/24/circleci-ios/
 [shenzhen]: https://github.com/nomad/shenzhen
-[Slack]: https://slack.com/
+[slack]: https://slack.com/

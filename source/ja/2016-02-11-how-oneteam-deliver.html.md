@@ -8,7 +8,7 @@ alternate: false
 ogp:
   og:
     image:
-      '': 2016-02-11-how-oneteam-deliver/oneteam.jpg
+      "": 2016-02-11-how-oneteam-deliver/oneteam.jpg
       type: image/jpeg
       width: 1200
       height: 630
@@ -31,14 +31,14 @@ READMORE
 [Oneteam] は、以下の様な技術スタックで開発しています。
 
 - Frontend
-    - フレームワーク: [React.js], [Flux]
-    - WebSocket SaaS: [Pusher]
-    - ビルドツール: [Webpack]
-    - Web 版
-        - メイン HTML: [nginx] + [Amazon EC2 Container Service]
-        - その他資材: Amazon S3 + CloudFront
-    - Desktop 版 (Windows/Mac)
-        - [Electron]
+  - フレームワーク: [React.js], [Flux]
+  - WebSocket SaaS: [Pusher]
+  - ビルドツール: [Webpack]
+  - Web 版
+    - メイン HTML: [nginx] + [Amazon EC2 Container Service]
+    - その他資材: Amazon S3 + CloudFront
+  - Desktop 版 (Windows/Mac)
+    - [Electron]
 - Backend
   - Scala ([Spray] + [Akka])
   - [Amazon EC2 Container Service]
@@ -107,44 +107,49 @@ docker push "${DOCKER_REPO}:${TAG_WEB}-production-b${CIRCLE_BUILD_NUM}"
 
 ```js
 /*eslint no-process-env: 0 no-console: 0*/
-import s3 from 's3';
-import path from 'path';
-import ProgressBar from 'progress';
+import s3 from "s3";
+import path from "path";
+import ProgressBar from "progress";
 
 let client = s3.createClient();
 let uploader = client.uploadDir({
-  localDir: path.resolve(__dirname, '../build/assets'),
+  localDir: path.resolve(__dirname, "../build/assets"),
   deleteRemoved: false,
   s3Params: {
     Bucket: process.env.S3_BUCKET,
-    ACL: 'public-read',
-    Prefix: 'assets/'
-  }
+    ACL: "public-read",
+    Prefix: "assets/",
+  },
 });
 
 let barCache = {};
 let bar = (name, current, total) => {
-  let b = barCache[name] = barCache[name] || new ProgressBar(`${name} [:bar] :percent (:current/:total)`, { total: 1, width: 20 });
+  let b = (barCache[name] =
+    barCache[name] ||
+    new ProgressBar(`${name} [:bar] :percent (:current/:total)`, {
+      total: 1,
+      width: 20,
+    }));
   b.total = total;
   b.curr = current;
   b.render();
   return b;
 };
 
-uploader.on('error', (err) => {
+uploader.on("error", (err) => {
   throw err;
 });
 
-uploader.on('progress', () => {
-  if(!uploader.doneMd5) {
-    bar('md5', uploader.progressMd5Amount, uploader.progressMd5Total);
-  } else if(uploader.progressTotal > 0) {
-    bar('uploading', uploader.progressAmount, uploader.progressTotal);
+uploader.on("progress", () => {
+  if (!uploader.doneMd5) {
+    bar("md5", uploader.progressMd5Amount, uploader.progressMd5Total);
+  } else if (uploader.progressTotal > 0) {
+    bar("uploading", uploader.progressAmount, uploader.progressTotal);
   }
 });
 
-uploader.on('end', () => {
-  console.log('\ndone uploading');
+uploader.on("end", () => {
+  console.log("\ndone uploading");
 });
 ```
 
@@ -256,7 +261,7 @@ brew install Caskroom/cask/xquartz nodenv wine makensis
 nodenv install v4.1.0 && nodenv global v4.1.0
 ```
 
-ただし、これをまじめに行うと、30分以上 Dependencies のところで時間を使ってしまいます。
+ただし、これをまじめに行うと、30 分以上 Dependencies のところで時間を使ってしまいます。
 
 ![](2016-02-11-how-oneteam-deliver/ci-screen1.png)
 
@@ -271,7 +276,7 @@ aws s3 cp $CIRCLE_ARTIFACTS/HomebrewCellar.tgz "s3://$S3_BUCKET/HomebrewCellar.t
 aws s3 cp $CIRCLE_ARTIFACTS/nodenv.tgz "s3://$S3_BUCKET/nodenv.tgz" --acl public-read
 ```
 
-以降、それをダウンロードして使うことで、1分以内で依存解決できる様になりました。
+以降、それをダウンロードして使うことで、1 分以内で依存解決できる様になりました。
 
 ```sh
 cd /usr/local && \
@@ -333,7 +338,7 @@ packager.json
 
 ```json
 {
-  "osx" : {
+  "osx": {
     "title": "Oneteam",
     "background": "assets/osx/installer.png",
     "icon": "assets/osx/mount.icns",
@@ -343,9 +348,9 @@ packager.json
       { "x": 212, "y": 264, "type": "file" }
     ]
   },
-  "win" : {
-    "title" : "Oneteam",
-    "icon" : "assets/win/app.ico"
+  "win": {
+    "title": "Oneteam",
+    "icon": "assets/win/app.ico"
   }
 }
 ```
@@ -412,33 +417,33 @@ heroku config:set \
 
 ## We&apos;re HIRING!
 
-最後に、宣伝で申し訳ないですが、こんな風に、開発フローやソフトウェアの UX にこだわりを持って一緒に開発していただける、エンジニアを絶賛採用中なので、もし興味がある方がいらっしゃいましたら、以下の採用ページをご覧いただき、連絡いただけるととてもうれしいです :pray:
+最後に、宣伝で申し訳ないですが、こんな風に、開発フローやソフトウェアの UX にこだわりを持って一緒に開発していただける、エンジニアを絶賛採用中なので、もし興味がある方がいらっしゃいましたら、以下の採用ページをご覧いただき、連絡いただけるととてもうれしいです 🙏
 
 https://one-team.com/ja/recruit/
 
-[Meguro.es]: http://meguroes.connpass.com/event/25018/
-[Oneteam]: https://one-team.com/ja/products/
-[React.js]: https://facebook.github.io/react/
-[Flux]: https://facebook.github.io/flux/
-[Pusher]: https://pusher.com/
+[meguro.es]: http://meguroes.connpass.com/event/25018/
+[oneteam]: https://one-team.com/ja/products/
+[react.js]: https://facebook.github.io/react/
+[flux]: https://facebook.github.io/flux/
+[pusher]: https://pusher.com/
 [nginx]: http://nginx.org/
-[Amazon EC2 Container Service]: https://aws.amazon.com/jp/ecs/
-[Amazon RDS for Aurora]: https://aws.amazon.com/jp/rds/aurora/
-[Spray]: http://spray.io/
-[Akka]: http://akka.io/
-[Electron]: http://electron.atom.io/
-[Webpack]: https://webpack.github.io/
-[CircleCI]: https://circleci.com/
+[amazon ec2 container service]: https://aws.amazon.com/jp/ecs/
+[amazon rds for aurora]: https://aws.amazon.com/jp/rds/aurora/
+[spray]: http://spray.io/
+[akka]: http://akka.io/
+[electron]: http://electron.atom.io/
+[webpack]: https://webpack.github.io/
+[circleci]: https://circleci.com/
 [jest]: https://facebook.github.io/jest/
-[Serverspec]: http://serverspec.org/
-[Darwin コンテナ]: https://circleci.com/docs/ios
-[iOS のビルドで行っていた]: https://ja.ngs.io/2015/03/24/circleci-ios/#鍵と証明書の読み込み
-[XQuartz]: http://www.xquartz.org/
-[Node.js]: https://nodejs.org/
-[Wine]: https://www.winehq.org/
-[MakeNSIS]: http://nsis.sourceforge.net/Docs/Chapter3.html
+[serverspec]: http://serverspec.org/
+[darwin コンテナ]: https://circleci.com/docs/ios
+[ios のビルドで行っていた]: https://ja.ngs.io/2015/03/24/circleci-ios/#鍵と証明書の読み込み
+[xquartz]: http://www.xquartz.org/
+[node.js]: https://nodejs.org/
+[wine]: https://www.winehq.org/
+[makensis]: http://nsis.sourceforge.net/Docs/Chapter3.html
 [electron-packager]: https://github.com/maxogden/electron-packager
 [electron-builder]: https://github.com/loopline-systems/electron-builder
-[SignTool]: https://msdn.microsoft.com/en-us/library/windows/desktop/aa387764(v=vs.85).aspx
-[Auto Updater]: http://electron.atom.io/docs/latest/api/auto-updater/
-[Nuts]: https://github.com/GitbookIO/nuts
+[signtool]: https://msdn.microsoft.com/en-us/library/windows/desktop/aa387764(v=vs.85).aspx
+[auto updater]: http://electron.atom.io/docs/latest/api/auto-updater/
+[nuts]: https://github.com/GitbookIO/nuts

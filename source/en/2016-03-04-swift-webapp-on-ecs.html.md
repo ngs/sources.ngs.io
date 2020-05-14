@@ -8,7 +8,7 @@ alternate: true
 ogp:
   og:
     image:
-      '': 2016-03-04-swift-webapp-on-ecs/serverspec.png
+      "": 2016-03-04-swift-webapp-on-ecs/serverspec.png
       type: image/png
       width: 732
       height: 481
@@ -16,7 +16,7 @@ ogp:
 
 ## TL;DR
 
-Developing Web applications with Swift is pretty fun :metal:
+Developing Web applications with Swift is pretty fun 🤘
 
 We can run them on [Amazon EC2 Container Services] and I tried to build light-weight [Docker] image to deploy more faster.
 
@@ -233,14 +233,14 @@ Have fun! Give me feedbacks if you found any.
 
 https://github.com/ngs/Swifton-TodoApp
 
-[Swifton]: https://github.com/necolt/Swifton
+[swifton]: https://github.com/necolt/Swifton
 [open source]: https://github.com/apple/swift
 [original]: https://github.com/necolt/Swifton-TodoApp/blob/master/Dockerfile
-[necolt/Swifton-TodoApp]: https://github.com/necolt/Swifton-TodoApp
-[Amazon EC2 Container Services]: https://aws.amazon.com/ecs/
-[Docker]: https://www.docker.com/
-[Serverspec]: http://serverspec.org/
+[necolt/swifton-todoapp]: https://github.com/necolt/Swifton-TodoApp
+[amazon ec2 container services]: https://aws.amazon.com/ecs/
+[docker]: https://www.docker.com/
+[serverspec]: http://serverspec.org/
 [deploy script]: https://github.com/ngs/Swifton-TodoApp/blob/master/script/ecs-deploy-services.sh
-[ERB template]: https://github.com/ngs/Swifton-TodoApp/blob/master/script/ecs-deploy-services.sh
-[AWS ECS Documentation]: http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ECS_GetStarted.html
-[AWS Command Line Interface]: https://aws.amazon.com/cli/
+[erb template]: https://github.com/ngs/Swifton-TodoApp/blob/master/script/ecs-deploy-services.sh
+[aws ecs documentation]: http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ECS_GetStarted.html
+[aws command line interface]: https://aws.amazon.com/cli/

@@ -1,6 +1,6 @@
 ---
 title: "middleman-blog で手っ取り早く絵文字対応をする:full_moon_with_face:"
-description: "middleman-blog で絵文字を使おうとすると、既存のプラグインが上手く組み込めなかったので、手っ取り早く、自分で拡張しました:hammer:"
+description: "middleman-blog で絵文字を使おうとすると、既存のプラグインが上手く組み込めなかったので、手っ取り早く、自分で拡張しました🔨"
 date: 2015-04-13 20:30
 public: true
 tags: middleman, blog, emoji, github
@@ -8,7 +8,7 @@ alternate: false
 ogp:
   og:
     image:
-      '': 2015-04-13-middleman-gemoji/emojis.png
+      "": 2015-04-13-middleman-gemoji/emojis.png
       type: image/png
       width: 1400
       height: 1020
@@ -101,7 +101,7 @@ end
 
 ## `<meta>`, `<title>` 要素の置換
 
-`<meta>`, `<title>` 要素 は `<img>` タグを含めることができないので、`emojify` ヘルパーメソッドの2番目の引数を `:raw` にして、Unicode の絵文字をそのまま置換します。
+`<meta>`, `<title>` 要素 は `<img>` タグを含めることができないので、`emojify` ヘルパーメソッドの 2 番目の引数を `:raw` にして、Unicode の絵文字をそのまま置換します。
 
 ```slim
 title = emojify current_article.title, :raw
@@ -111,14 +111,14 @@ title = emojify current_article.title, :raw
 
 [Unicode 標準絵文字] でない場合には、空白に置換します。
 
-## 無事置換できました :ok_hand:
+## 無事置換できました 👌
 
 ![](2015-04-13-middleman-gemoji/emojis.png)
 
 [middleman-blog]: https://github.com/middleman/middleman-blogA
 [middleman-emoji]: https://github.com/stny/middleman-emoji
 [middleman-gemoji]: https://github.com/yterajima/middleman-gemoji
-[Unicode 標準絵文字]: http://ja.wikipedia.org/wiki/Unicode6.0%E3%81%AE%E6%90%BA%E5%B8%AF%E9%9B%BB%E8%A9%B1%E3%81%AE%E7%B5%B5%E6%96%87%E5%AD%97%E3%81%AE%E4%B8%80%E8%A6%A7
+[unicode 標準絵文字]: http://ja.wikipedia.org/wiki/Unicode6.0%E3%81%AE%E6%90%BA%E5%B8%AF%E9%9B%BB%E8%A9%B1%E3%81%AE%E7%B5%B5%E6%96%87%E5%AD%97%E3%81%AE%E4%B8%80%E8%A6%A7
 [gemoji]: https://github.com/github/gemoji
-[gemoji の README]: https://github.com/github/gemoji#example-rails-helper
-[Redcarpet レンダラー]: https://github.com/middleman/middleman/blob/v3-stable/middleman-core/lib/middleman-core/renderers/redcarpet.rb
+[gemoji の readme]: https://github.com/github/gemoji#example-rails-helper
+[redcarpet レンダラー]: https://github.com/middleman/middleman/blob/v3-stable/middleman-core/lib/middleman-core/renderers/redcarpet.rb

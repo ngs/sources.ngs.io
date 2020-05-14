@@ -8,7 +8,7 @@ alternate: true
 ogp:
   og:
     image:
-      '': 2018-07-07-fastlane-plugin-coveralls/main.png
+      "": 2018-07-07-fastlane-plugin-coveralls/main.png
       type: image/png
       width: 992
       height: 525
@@ -73,13 +73,13 @@ $ xcrun xccov view --file /Users/ngs/src/CI2Go/AppDelegate.swift \
 
 もし何か問題がありましたら [イシュー] を起票いだたけると嬉しいです。
 
-では XCTesting を楽しんでください :computer:
+では XCTesting を楽しんでください 👨‍💻
 
-[Coveralls]: https://coveralls.io/
+[coveralls]: https://coveralls.io/
 [fastlane]: https://fastlane.tools/
 [プラグイン]: https://github.com/ngs/fastlane-plugin-coveralls
 [xccoveralls]: https://github.com/ngs/xccoveralls
-[CI2Go]: https://github.com/ngs/ci2go
-[Xcov]: https://github.com/nakiostudio/xcov
+[ci2go]: https://github.com/ngs/ci2go
+[xcov]: https://github.com/nakiostudio/xcov
 [イシュー]: https://github.com/ngs/fastlane-plugin-coveralls/issues
 [xcov action]: https://docs.fastlane.tools/actions/xcov/

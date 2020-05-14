@@ -8,7 +8,7 @@ alternate: false
 ogp:
   og:
     image:
-      '': 2016-04-14-document-driven-development/1.jpg
+      "": 2016-04-14-document-driven-development/1.jpg
       type: image/jpeg
       width: 992
       height: 525
@@ -20,7 +20,7 @@ ogp:
 
 その会で発表した、_ドキュメントを起点としたコミュニケーションで進める Oneteam の開発_ について詳しく、改めてエントリーにします。
 
-発表資料は、このエントリーの[末尾]に埋め込んでいます。　
+発表資料は、このエントリーの[末尾]に埋め込んでいます。
 
 READMORE
 
@@ -30,11 +30,11 @@ READMORE
 
 自分が働いている [Oneteam Inc.] の開発チームでは、**Daily Standup** と呼ばれるミーティングを毎朝全員で行い、お互いの状況と優先順位の差配、相談事などを行っています。
 
-自分が[参画]してから暫くの間、主な参加者はプロダクトマネージャー1名とエンジニア3名の小さなチームでした。
+自分が[参画]してから暫くの間、主な参加者はプロダクトマネージャー 1 名とエンジニア 3 名の小さなチームでした。
 
-その全員が現在進行中の案件の状況を共有し、将来とりかかるべき、未着手タスクについて議論しても、カレンダーにスケジュールされている1時間以内、大体40分以内でミーティングを終わらせることができました。
+その全員が現在進行中の案件の状況を共有し、将来とりかかるべき、未着手タスクについて議論しても、カレンダーにスケジュールされている 1 時間以内、大体 40 分以内でミーティングを終わらせることができました。
 
-嬉しいことに、今年に入って、1名のデザイナーと1名のエンジニアを仲間に向かい入れることができ、開発スピードがアップし、同時に取り掛かれる案件が増えてきました。おおよそ人数+αぐらいだったものが、現在では約2倍になったイメージです。
+嬉しいことに、今年に入って、1 名のデザイナーと 1 名のエンジニアを仲間に向かい入れることができ、開発スピードがアップし、同時に取り掛かれる案件が増えてきました。おおよそ人数+α ぐらいだったものが、現在では約 2 倍になったイメージです。
 
 そのため、共有すべきタスクが増えて、一つ一つ丁寧に確認していては、スケジュールどおりに会議を終わらせることができず、業務時間も圧迫されます。
 
@@ -123,7 +123,7 @@ xxxx テーブルに yyyy カラムを追加
 
 これからも、よりよい運用方法を生み出すべく、日々試行錯誤を繰り返していきます。
 
-もし、この様に、現場主導でワークフローを改善し、切磋琢磨したいエンジニアの方がいらっしゃいましたら、以下の弊社採用ページを覗いてみてください :pray:
+もし、この様に、現場主導でワークフローを改善し、切磋琢磨したいエンジニアの方がいらっしゃいましたら、以下の弊社採用ページを覗いてみてください 🙏
 
 https://one-team.com/ja/recruit/
 
@@ -131,10 +131,9 @@ https://one-team.com/ja/recruit/
 
 <script async class="speakerdeck-embed" data-id="8ae7ad4abde340358cbbd36162155a8d" data-ratio="1.33333333333333" src="//speakerdeck.com/assets/embed.js"></script>
 
-
-[Loco Partners 社]: http://loco-partners.com/
-[Collaboration Hack Meetup]: http://connpass.com/event/28624/
-[Oneteam Inc.]: https://one-team.com/ja/
-[Oneteam]: https://one-team.com/ja/
+[loco partners 社]: http://loco-partners.com/
+[collaboration hack meetup]: http://connpass.com/event/28624/
+[oneteam inc.]: https://one-team.com/ja/
+[oneteam]: https://one-team.com/ja/
 [参画]: /2015/08/01/hello-oneteam/
 [末尾]: /2016/04/14/document-driven-development/#発表資料
