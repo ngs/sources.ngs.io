@@ -1,5 +1,5 @@
 ---
-title: Released CI2Go for macOS
+title: CI2Go for macOS
 description: I've published CI2Go the CircleCI client for macOS by porting existing iOS app using Mac Catalyst.
 date: 2020-05-15 00:00
 public: true
