@@ -1,5 +1,5 @@
 ---
-title: "Announcing @circleci client for Apple Watch :watch:"
+title: "Announcing @circleci client for Apple Watch ⌚️"
 description: "Version 1.1.0 of CI2Go, the CircleCI client for iOS is now available on the AppStore."
 date: 2015-06-30 13:40
 public: true
@@ -9,7 +9,7 @@ app_id: 940028427
 ogp:
   og:
     image:
-      '': 2015-06-30-ci2go-applewatch/01.jpg
+      "": 2015-06-30-ci2go-applewatch/01.jpg
       type: image/jpeg
       width: 992
       height: 525
@@ -19,9 +19,9 @@ ogp:
 
 Version 1.1.0 of [CI2Go], the [CircleCI] client for iOS is now available on the [AppStore].
 
-[![](images/appstore.svg)][AppStore]
+[![](images/appstore.svg)][appstore]
 
-**[CI2Go on the App Store][AppStore]**
+**[CI2Go on the App Store][appstore]**
 
 This update includes WatchKit Extension.
 
@@ -36,7 +36,7 @@ You can check latest build from the Glance screen and recent 20 builds in the Ap
 Navigates to build details by selecting build from the App screen, and retries the build by selecting Retry button of the menu.
 
 [sf]: /2015/06/23/san-francisco/
-[Apple Watch Hackathon]: http://www.hackathon.watch/
-[CircleCI]: https://circleci.com/
-[CI2Go]: /2014/11/26/ci2go/
-[AppStore]: https://itunes.apple.com/app/id940028427?mt=8
+[apple watch hackathon]: http://www.hackathon.watch/
+[circleci]: https://circleci.com/
+[ci2go]: /2014/11/26/ci2go/
+[appstore]: https://itunes.apple.com/app/id940028427?mt=8

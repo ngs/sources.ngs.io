@@ -8,7 +8,7 @@ alternate: true
 ogp:
   og:
     image:
-      '': 2016-03-04-swift-webapp-on-ecs/serverspec.png
+      "": 2016-03-04-swift-webapp-on-ecs/serverspec.png
       type: image/png
       width: 732
       height: 481
@@ -16,7 +16,7 @@ ogp:
 
 ## TL;DR
 
-Swift で Web アプリケーションを開発するのは、とても楽しいです :metal:
+Swift で Web アプリケーションを開発するのは、とても楽しいです 🤘
 
 [Amazon EC2 Container Services] にもデプロイして稼働させることができるので、軽量な [Docker] イメージを自動的にビルドし、高速にデプロイする方法を調査しました。
 
@@ -241,15 +241,15 @@ $ docker push "${DOCKER_REPO}:b${CIRCLE_BUILD_NUM}"
 
 https://github.com/ngs/Swifton-TodoApp
 
-[Swifton]: https://github.com/necolt/Swifton
+[swifton]: https://github.com/necolt/Swifton
 [オープンソース]: https://github.com/apple/swift
 [オリジナル]: https://github.com/necolt/Swifton-TodoApp/blob/master/Dockerfile
-[necolt/Swifton-TodoApp]: https://github.com/necolt/Swifton-TodoApp
-[Amazon EC2 Container Services]: https://aws.amazon.com/ecs/
-[Docker]: https://www.docker.com/
-[Serverspec]: http://serverspec.org/
+[necolt/swifton-todoapp]: https://github.com/necolt/Swifton-TodoApp
+[amazon ec2 container services]: https://aws.amazon.com/ecs/
+[docker]: https://www.docker.com/
+[serverspec]: http://serverspec.org/
 [デプロイスクリプト]: https://github.com/ngs/Swifton-TodoApp/blob/master/script/ecs-deploy-services.sh
-[ERB テンプレート]: https://github.com/ngs/Swifton-TodoApp/blob/master/script/ecs-deploy-services.sh
-[AWS ECS ドキュメンテーション]: http://docs.aws.amazon.com/ja_jp/AmazonECS/latest/developerguide/ECS_GetStarted.html
-[AWS コマンドライン インターフェイス]: https://aws.amazon.com/cli/
-[Tokyo Server-Side Swift Meetup]: http://connpass.com/event/27667/
+[erb テンプレート]: https://github.com/ngs/Swifton-TodoApp/blob/master/script/ecs-deploy-services.sh
+[aws ecs ドキュメンテーション]: http://docs.aws.amazon.com/ja_jp/AmazonECS/latest/developerguide/ECS_GetStarted.html
+[aws コマンドライン インターフェイス]: https://aws.amazon.com/cli/
+[tokyo server-side swift meetup]: http://connpass.com/event/27667/

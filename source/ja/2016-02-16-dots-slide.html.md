@@ -8,7 +8,7 @@ alternate: false
 ogp:
   og:
     image:
-      '': https://speakerd.s3.amazonaws.com/presentations/59905fc187c3408aa171e117c4eec47e/slide_8.jpg
+      "": https://speakerd.s3.amazonaws.com/presentations/59905fc187c3408aa171e117c4eec47e/slide_8.jpg
       type: image/jpeg
       width: 1024
       height: 768
@@ -20,7 +20,7 @@ ogp:
 
 **[【満員御礼につき更に増席！】明日から真似したい！スタートアップベンチャーを支えるテクノロジー　〜サービスづくりや自動化について〜](http://eventdots.jp/event/579263)**
 
-沢山の方に参加いただき、フィードバックや意見交換ができたので、とても有意義な会でした :bow:
+沢山の方に参加いただき、フィードバックや意見交換ができたので、とても有意義な会でした 🙇‍♂️
 
 READMORE
 

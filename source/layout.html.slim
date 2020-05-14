@@ -9,16 +9,16 @@ html lang=I18n.locale.to_s itemscope="itemscope" itemtype="http://schema.org/Web
     link rel='author' href='https://plus.google.com/+AtsushiNAGASE'
     title
       - if current_article
-        = "#{emojify current_article.title, :raw} - "
+        = "#{current_article.title} - "
       - elsif current_page && current_page.data.title
-        = "#{emojify current_page.data.title} - "
+        = "#{current_page.data.title} - "
       - elsif content_for?(:title)
-        = "#{emojify yield_content(:title)} - "
+        = "#{yield_content(:title)} - "
       = t 'blog.title'
     - ogp_tags do|name, value|
-      meta property=name content=emojify(value, :raw)
+      meta property=name content=value
       - if name.match /^og:(image|description|title|url)$/
-        meta property=name.sub('og:', 'twitter:') content=emojify(value, :raw)
+        meta property=name.sub('og:', 'twitter:') content=value
     noscript
       = stylesheet_link_tag 'bootstrap'
     = stylesheet_link_tag 'application', media: 'screen'
@@ -28,15 +28,15 @@ html lang=I18n.locale.to_s itemscope="itemscope" itemtype="http://schema.org/Web
     script src='https://kit.fontawesome.com/2e4b3f49e4.js' crossorigin='anonymous'
     = javascript_include_tag 'application'
     - if current_page.data.description
-      meta content=emojify(current_page.data.description, :raw) name="description"
+      meta content=current_page.data.description name="description"
     - elsif content_for?(:description)
-      meta content=emojify(yield_content(:description), :raw) name="description"
+      meta content=yield_content(:description) name="description"
     - else
-      meta content=emojify(t('blog.description'), :raw) name="description"
+      meta content=t('blog.description') name="description"
     - if current_page.data.keywords
-      meta content=emojify(current_page.data.page.keywords, :raw) name="keywords"
+      meta content=current_page.data.page.keywords name="keywords"
     - elsif current_article && current_article.tags
-      meta content=emojify(current_article.tags.join(','), :raw) name="keywords"
+      meta content=current_article.tags.join(',') name="keywords"
     - if current_resource.data.alternate
       meta content=alt_lang property="og:locale:alternate"
       link rel="alternate" hreflang=alt_lang herf="https://#{alt_host}#{ current_resource.url }"
@@ -171,7 +171,7 @@ html lang=I18n.locale.to_s itemscope="itemscope" itemtype="http://schema.org/Web
               - blog.articles.select {|a| a.data[:public] }.sort { |x,y| y.date <=> x.date }[0...10].each do |article|
                 li
                   = link_to article do
-                    span.title= emojify article.title
+                    span.title= article.title
                     time= article.date.strftime('%Y/%m/%d')
               li.show-all.text-right
                 = link_to '/archives' do

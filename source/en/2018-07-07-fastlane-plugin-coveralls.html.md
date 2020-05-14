@@ -8,7 +8,7 @@ alternate: true
 ogp:
   og:
     image:
-      '': 2018-07-07-fastlane-plugin-coveralls/main.png
+      "": 2018-07-07-fastlane-plugin-coveralls/main.png
       type: image/png
       width: 992
       height: 525
@@ -71,13 +71,13 @@ ref: [xccov: Xcode Code Coverage Report for Humans](https://medium.com/xcblog/xc
 
 Please send me [issues] if you have any.
 
-Enjoy XCTesting :computer:
+Enjoy XCTesting 👨‍💻
 
-[Coveralls]: https://coveralls.io/
+[coveralls]: https://coveralls.io/
 [fastlane]: https://fastlane.tools/
 [plugin]: https://github.com/ngs/fastlane-plugin-coveralls
 [xccoveralls]: https://github.com/ngs/xccoveralls
-[CI2Go]: https://github.com/ngs/ci2go
-[Xcov]: https://github.com/nakiostudio/xcov
+[ci2go]: https://github.com/ngs/ci2go
+[xcov]: https://github.com/nakiostudio/xcov
 [issues]: https://github.com/ngs/fastlane-plugin-coveralls/issues
 [xcov action]: https://docs.fastlane.tools/actions/xcov/

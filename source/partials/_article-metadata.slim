@@ -1,6 +1,6 @@
 - og_image = current_article.data.try(:ogp).try(:og).try(:image) || data[I18n.locale.to_s].ogp.og.image
 div class='hidden article-metadata'
-  meta itemprop='headline' content=emojify(current_article.data.description, :raw)
+  meta itemprop='headline' content=current_article.data.description
   div itemprop='image' itemscope=true itemtype='http://schema.org/ImageObject'
     meta itemprop='url' content=og_image['']
     meta itemprop='width' content=og_image['width']

@@ -20,7 +20,6 @@ gem 'nokogiri'
 gem 'builder', '~> 3.0'
 gem 'jbuilder'
 gem 'tilt-jbuilder'
-gem 'gemoji', '~> 2.1'
 gem 'sanitize'
 
 gem 'slim'
