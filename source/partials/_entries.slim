@@ -1,7 +1,7 @@
 - page_articles.select {|a| a.data[:public] }.sort { |x,y| y.date <=> x.date }.each_with_index do |article, i|
   section.entry itemscope=true itemtype="http://schema.org/BlogPosting"
     h2 itemprop="name"
-      = link_to emojify(article.title), article, itemprop: "url mainEntityOfPage"
+      = link_to article.title, article, itemprop: "url mainEntityOfPage"
       time itemprop="datePublished" datetime=article.date.to_time.utc.strftime('%Y-%m-%dT%H:%M:%S+00:00') is="relative-time"
         = article.date.utc.strftime('%Y-%m-%d %H:%M')
     = partial 'partials/article-metadata', locals: { current_article: article }

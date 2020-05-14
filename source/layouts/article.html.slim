@@ -2,7 +2,7 @@
   article.entry itemscope=true itemtype="http://schema.org/BlogPosting"
     header
       h1 itemprop="name"
-        = emojify current_article.title
+        = current_article.title
       = partial 'partials/article-metadata'
       p.meta
         time itemprop="datePublished" datetime=current_article.date.to_time.utc.strftime('%Y-%m-%dT%H:%M:%S+00:00') is="relative-time"

@@ -2,7 +2,6 @@ require 'middleman-core/renderers/redcarpet'
 require 'middleman-syntax/extension'
 require 'redcarpet'
 require 'slim'
-require 'gemoji'
 
 class String
   def identify
@@ -19,7 +18,6 @@ module Middleman
     end
     module CustomRenderer
       include ::Redcarpet::Render::SmartyPants
-      include ::EmojiHelper
       def table(header, body)
         res = '<table class="table table-bordered">'
         res += "<thead>#{header}</thead>" if header.present?
@@ -34,9 +32,6 @@ module Middleman
         content.sub!(/^\s*\[\s+\]/, '<input type="checkbox" disabled>')
         content.sub!(/^\s*\[\s*x\s*\]/, '<input type="checkbox" checked disabled>')
         "<#{node_name}>#{content}</#{node_name}>"
-      end
-      def preprocess(full_document)
-        emojify full_document
       end
     end
   end
