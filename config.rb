@@ -77,16 +77,17 @@ ready do
     proxy path, 'redirect.html', locals: { url: res.url }, layout: false
   end
   sitemap.resources.each do|res|
+    url = res.url
     if res.is_a? Middleman::Blog::BlogArticle
-      redirect_to "blog#{res.url.sub(%r{/$}, '.html')}", res
-      redirect_to "blog#{res.url}index.html", res
-      proxy "#{res.url}amp.html", 'amp.html', locals: { article: res }, layout: false, directory_index: false
-    elsif res.url.match %r{^/p\d+/$}
-      redirect_to "blog#{res.url.sub(%r{p(\d)}, 'page/\1')}index.html", res
-    elsif res.url.match %r{^/t/(.+)/$}
-      redirect_to "blog#{res.url.sub(%r{t/(.+)}, 'categories/\1')}index.html", res
-    elsif res.url.match %r{^/20(\d{2}[\d/]+)/$}
-      redirect_to "blog#{res.url}index.html", res
+      redirect_to "blog#{url.sub(%r{/$}, '.html')}", res
+      redirect_to "blog#{url}index.html", res
+      proxy "#{url}amp.html", 'amp.html', locals: { article: res }, layout: false, directory_index: false
+    elsif url.match %r{^/p\d+/$}
+      redirect_to "blog#{url.sub(%r{p(\d)}, 'page/\1')}index.html", res
+    elsif url.match %r{^/t/(.+)/$}
+      redirect_to "blog#{url.sub(%r{t/(.+)}, 'categories/\1')}index.html", res
+    elsif url.match %r{^/20(\d{2}[\d/]+)/$}
+      redirect_to "blog#{url}index.html", res
     end
   end
 end
@@ -119,9 +120,8 @@ activate :ogp do |ogp|
     og: data.send(lang).ogp.og,
     twitter: data.send(lang).ogp.twitter
   }
+  ogp.base_url = "https://#{cname}"
   ogp.blog = true
-  ogp.base_url = "https://#{cname}/"
-  ogp.image_base_url = "https://#{cname}/images/"
 end
 
 configure :build do
