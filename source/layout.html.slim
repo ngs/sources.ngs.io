@@ -62,7 +62,7 @@ html lang=I18n.locale.to_s itemscope="itemscope" itemtype="http://schema.org/Web
         link rel="prev" href=prev_page.url
       - if next_page
         link rel="next" href=next_page.url
-  body
+  body data-scrapmd-ok="ok"
     .container
       .row
         - if content_for? :main
