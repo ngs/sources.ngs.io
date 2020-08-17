@@ -1,4 +1,4 @@
-Hello, I am a <span itemprop="title">software engineer</span> based in <span itemprop="address" itemscope itemtype="http://data-vocabulary.org/Address"><span itemprop="region">Tokyo</span>, <span itemprop="locality">Japan</span></span>.
+Hello, I am a <span itemprop="title">software developer</span> based in <span itemprop="address" itemscope itemtype="http://data-vocabulary.org/Address"><span itemprop="region">Tokyo</span>, <span itemprop="locality">Japan</span></span>.
 
 I'm focusing on developing softwares for Desktop, Mobile and Web.
 
