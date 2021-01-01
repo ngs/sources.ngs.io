@@ -1,7 +1,7 @@
 version: 2.1
 
 orbs:
-  ruby: sue445/ruby-orbs@1.6.0
+  ruby: circleci/ruby@1.1.2
 
 executors:
   main:
@@ -23,7 +23,7 @@ jobs:
       MM_LANG: << parameters.lang >>
     steps:
       - checkout
-      - ruby/bundle-install
+      - ruby/install-deps
       - run:
           name: Build middleman blog
           command: bundle exec middleman build --verbose --no-parallel
