@@ -4,7 +4,7 @@ I'm focusing on developing softwares for Desktop, Mobile and Web.
 
 Current positions are Co-Founder, CEO, Software Developer at [instance0, inc.], CTO at [Modelmap Co., Ltd.]. Originally started my career as graphic designer, founded a small software house [LittleApps Inc.], experienced several startup companies from founding phase.
 
-I love Gadgets, Road cycling, Running, Fishing, Driving, Music, 3 kids and 1 wife.
+I love Gadgets, Road cycling, Running, Fishing, Driving, Music, Scale Modeling, 3 kids and 1 wife.
 
 ## Biography
 
