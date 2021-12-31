@@ -7,7 +7,7 @@ executors:
   main:
     working_directory: ~/src
     docker:
-      - image: atsnngs/middleman-blog:latest
+      - image: atsnngs/middleman-blog:bundled
     environment:
       BUILD_DIR: build
       TZ: Asia/Tokyo
@@ -23,7 +23,6 @@ jobs:
       MM_LANG: << parameters.lang >>
     steps:
       - checkout
-      - ruby/install-deps
       - run:
           name: Build middleman blog
           command: bundle exec middleman build --verbose --no-parallel
