@@ -8,7 +8,7 @@ alternate: true
 ogp:
   og:
     image:
-      '': 2016-09-08-nightwatch-mail-test/og.png
+      "": 2016-09-08-nightwatch-mail-test/og.png
       type: image/png
       width: 992
       height: 525
@@ -27,28 +27,33 @@ READMORE
 テストコードは以下の様な書き方です:
 
 ```js
-page.navigate()
-//
-// Mandrill のメールルートを作成する
-.createEmailRoute(email)
-//
-// フォーム入力
-.waitForElementVisible('@form')
-.clearValue('@email')
-.setValue('@email', email)
-.click('@submit')
-//
-// 完了画面に遷移
-.waitForElementNotPresent('@form')
-.assert.urlEquals(page.url + 'almostfinished.html')
-//
-// 指定した件名のメールの受信を確認
-.assert.receivedEmailSubjectEquals(email,
-  'Hacker Newsletter: Please Confirm Subscription')
-//
-// 指定した文字列が HTML 本文に含まれるメールの受信を確認
-.assert.receivedEmailHTMLBodyContains(email,
-  '<a class="button" href="https://hackernewsletter.us1.list-manage.com/subscribe/confirm?u=')
+page
+  .navigate()
+  //
+  // Mandrill のメールルートを作成する
+  .createEmailRoute(email)
+  //
+  // フォーム入力
+  .waitForElementVisible("@form")
+  .clearValue("@email")
+  .setValue("@email", email)
+  .click("@submit")
+  //
+  // 完了画面に遷移
+  .waitForElementNotPresent("@form")
+  .assert.urlEquals(page.url + "almostfinished.html")
+  //
+  // 指定した件名のメールの受信を確認
+  .assert.receivedEmailSubjectEquals(
+    email,
+    "Hacker Newsletter: Please Confirm Subscription"
+  )
+  //
+  // 指定した文字列が HTML 本文に含まれるメールの受信を確認
+  .assert.receivedEmailHTMLBodyContains(
+    email,
+    '<a class="button" href="https://hackernewsletter.us1.list-manage.com/subscribe/confirm?u='
+  );
 ```
 
 [全てのコードを見る](https://github.com/ngs/nightwatch-mail-example/blob/master/tests/hackernewsletter.js).
@@ -143,7 +148,6 @@ lib
     └── hackernewsletter.js # example specific file
 ```
 
-
 [設定ファイル] (デフォルトで `nightwatch.json`) からそれらを指定します。
 
 ```js
@@ -163,50 +167,55 @@ lib
 もし `from_email` や `attachments` などの他のフィールドをテストしたい場合には、既存の実装をフォークして、アサージョンを追加することができます。 ([一覧を見る])
 
 ```js
-const util = require('nightwatch/lib/util/utils');
+const util = require("nightwatch/lib/util/utils");
 
-exports.assertion = function receivedEmailSubjectEquals(address, expected, msg) {
+exports.assertion = function receivedEmailSubjectEquals(
+  address,
+  expected,
+  msg
+) {
   const DEFAULT_MSG = 'Testing if <%s> received with subject equals to "%s".';
   this.message = msg || util.format(DEFAULT_MSG, address, expected);
 
-  this.expected = function() {
+  this.expected = function () {
     return expected;
   };
 
-  this.pass = function(value) {
+  this.pass = function (value) {
     const expected = this.expected();
-    return value.filter(function(email) {
-      return email.subject === expected;
-      // use indexOf(expected) !== -1 for *contains* implementation.
-    }).length > 0;
+    return (
+      value.filter(function (email) {
+        return email.subject === expected;
+        // use indexOf(expected) !== -1 for *contains* implementation.
+      }).length > 0
+    );
   };
 
-  this.value = function(result) {
+  this.value = function (result) {
     return result || [];
   };
 
-  this.command = function(callback) {
+  this.command = function (callback) {
     return this.api.checkEmails(address, callback);
   };
-
-}
+};
 ```
 
 もし、便利なアサージョンを実装したら、是非 [リポジトリをフォーク] してプルリクエストを送って頂けると幸いです！
 
 Happy testing!
 
-[Nightwatch.js]: http://nightwatchjs.org/
-[ngs/nightwatch-mail-example on GitHub]: https://github.com/ngs/nightwatch-mail-example
-[Hacker News Letter]: http://www.hackernewsletter.com/
-[Mandrill]: https://mandrillapp.com/
-[RequestBin]: http://requestb.in/
-[Mandrill のドキュメント]: https://mandrill.zendesk.com/hc/en-us/articles/205583197-Inbound-Email-Processing-Overview#set-up-an-inbound-domain
-[Inbound Domains]: https://mandrillapp.com/inbound
+[nightwatch.js]: http://nightwatchjs.org/
+[ngs/nightwatch-mail-example on github]: https://github.com/ngs/nightwatch-mail-example
+[hacker news letter]: http://www.hackernewsletter.com/
+[mandrill]: https://mandrillapp.com/
+[requestbin]: https://requestbin.com/
+[mandrill のドキュメント]: https://mandrill.zendesk.com/hc/en-us/articles/205583197-Inbound-Email-Processing-Overview#set-up-an-inbound-domain
+[inbound domains]: https://mandrillapp.com/inbound
 [設定画面]: https://mandrillapp.com/settings/index
-[Heroku]: https://www.heroku.com/
-[IBM Bluexix]: http://www.ibm.com/cloud-computing/bluemix/
-[オープンソースの RequestBin]: https://github.com/Runscope/requestbin
+[heroku]: https://www.heroku.com/
+[ibm bluexix]: http://www.ibm.com/cloud-computing/bluemix/
+[オープンソースの requestbin]: https://github.com/Runscope/requestbin
 [direnv]: http://direnv.net/
 [設定ファイル]: http://nightwatchjs.org/guide#settings-file
 [一覧を見る]: https://mandrill.zendesk.com/hc/en-us/articles/205583197-Inbound-Email-Processing-Overview#inbound-events-format

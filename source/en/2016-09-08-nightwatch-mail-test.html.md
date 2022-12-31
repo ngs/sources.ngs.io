@@ -8,7 +8,7 @@ alternate: true
 ogp:
   og:
     image:
-      '': 2016-09-08-nightwatch-mail-test/og.png
+      "": 2016-09-08-nightwatch-mail-test/og.png
       type: image/png
       width: 992
       height: 525
@@ -27,28 +27,33 @@ READMORE
 The test code is like this:
 
 ```js
-page.navigate()
-//
-// Create Mandrill Email Route
-.createEmailRoute(email)
-//
-// Fill in form
-.waitForElementVisible('@form')
-.clearValue('@email')
-.setValue('@email', email)
-.click('@submit')
-//
-// Navigate to completion screen
-.waitForElementNotPresent('@form')
-.assert.urlEquals(page.url + 'almostfinished.html')
-//
-// Check Email with specified subject
-.assert.receivedEmailSubjectEquals(email,
-  'Hacker Newsletter: Please Confirm Subscription')
-//
-// Check Email contains specified string in HTML body
-.assert.receivedEmailHTMLBodyContains(email,
-  '<a class="button" href="https://hackernewsletter.us1.list-manage.com/subscribe/confirm?u=')
+page
+  .navigate()
+  //
+  // Create Mandrill Email Route
+  .createEmailRoute(email)
+  //
+  // Fill in form
+  .waitForElementVisible("@form")
+  .clearValue("@email")
+  .setValue("@email", email)
+  .click("@submit")
+  //
+  // Navigate to completion screen
+  .waitForElementNotPresent("@form")
+  .assert.urlEquals(page.url + "almostfinished.html")
+  //
+  // Check Email with specified subject
+  .assert.receivedEmailSubjectEquals(
+    email,
+    "Hacker Newsletter: Please Confirm Subscription"
+  )
+  //
+  // Check Email contains specified string in HTML body
+  .assert.receivedEmailHTMLBodyContains(
+    email,
+    '<a class="button" href="https://hackernewsletter.us1.list-manage.com/subscribe/confirm?u='
+  );
 ```
 
 [See full code](https://github.com/ngs/nightwatch-mail-example/blob/master/tests/hackernewsletter.js).
@@ -69,7 +74,7 @@ ref: [Extending Nightwatch - Nightwatch Developer Guide](http://nightwatchjs.org
 
 ### 1. Set up Mandrill Inbound Domain
 
-First you need to set up *Inbound Email Domain* by following [Mandrill Documentation].
+First you need to set up _Inbound Email Domain_ by following [Mandrill Documentation].
 
 Just type your domain and hit the blue _+ Add_ button on [Inbound Domains] screen.
 
@@ -166,50 +171,55 @@ I added `receivedEmailHTMLBodyContains`, `receivedEmailSubjectContains`, `receiv
 If you want to add assertions for other field like `from_email` or `attachments`, you can implement by forking existing implementations. (See [full list])
 
 ```js
-const util = require('nightwatch/lib/util/utils');
+const util = require("nightwatch/lib/util/utils");
 
-exports.assertion = function receivedEmailSubjectEquals(address, expected, msg) {
+exports.assertion = function receivedEmailSubjectEquals(
+  address,
+  expected,
+  msg
+) {
   const DEFAULT_MSG = 'Testing if <%s> received with subject equals to "%s".';
   this.message = msg || util.format(DEFAULT_MSG, address, expected);
 
-  this.expected = function() {
+  this.expected = function () {
     return expected;
   };
 
-  this.pass = function(value) {
+  this.pass = function (value) {
     const expected = this.expected();
-    return value.filter(function(email) {
-      return email.subject === expected;
-      // use indexOf(expected) !== -1 for *contains* implementation.
-    }).length > 0;
+    return (
+      value.filter(function (email) {
+        return email.subject === expected;
+        // use indexOf(expected) !== -1 for *contains* implementation.
+      }).length > 0
+    );
   };
 
-  this.value = function(result) {
+  this.value = function (result) {
     return result || [];
   };
 
-  this.command = function(callback) {
+  this.command = function (callback) {
     return this.api.checkEmails(address, callback);
   };
-
-}
+};
 ```
 
 If you write some cool assertions in your project, please [fork the repository] and send me a Pull Request!
 
 Happy testing!
 
-[Nightwatch.js]: http://nightwatchjs.org/
-[ngs/nightwatch-mail-example on GitHub]: https://github.com/ngs/nightwatch-mail-example
-[Hacker News Letter]: http://www.hackernewsletter.com/
-[Mandrill]: https://mandrillapp.com/
-[RequestBin]: http://requestb.in/
-[Mandrill Documentation]: https://mandrill.zendesk.com/hc/en-us/articles/205583197-Inbound-Email-Processing-Overview#set-up-an-inbound-domain
-[Inbound Domains]: https://mandrillapp.com/inbound
+[nightwatch.js]: http://nightwatchjs.org/
+[ngs/nightwatch-mail-example on github]: https://github.com/ngs/nightwatch-mail-example
+[hacker news letter]: http://www.hackernewsletter.com/
+[mandrill]: https://mandrillapp.com/
+[requestbin]: https://requestbin.com/
+[mandrill documentation]: https://mandrill.zendesk.com/hc/en-us/articles/205583197-Inbound-Email-Processing-Overview#set-up-an-inbound-domain
+[inbound domains]: https://mandrillapp.com/inbound
 [settings screen]: https://mandrillapp.com/settings/index
-[Heroku]: https://www.heroku.com/
-[IBM Bluexix]: http://www.ibm.com/cloud-computing/bluemix/
-[Open Sourced RequestBin]: https://github.com/Runscope/requestbin
+[heroku]: https://www.heroku.com/
+[ibm bluexix]: http://www.ibm.com/cloud-computing/bluemix/
+[open sourced requestbin]: https://github.com/Runscope/requestbin
 [direnv]: http://direnv.net/
 [config file]: http://nightwatchjs.org/guide#settings-file
 [full list]: https://mandrill.zendesk.com/hc/en-us/articles/205583197-Inbound-Email-Processing-Overview#inbound-events-format
