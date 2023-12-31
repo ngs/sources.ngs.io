@@ -138,9 +138,13 @@ GEM
     middleman-sprockets (4.1.1)
       middleman-core (~> 4.0)
       sprockets (>= 3.0)
+    mini_portile2 (2.8.5)
     minitest (5.16.3)
     natto (1.2.0)
       ffi (>= 1.9.0)
+    nokogiri (1.13.10)
+      mini_portile2 (~> 2.8.0)
+      racc (~> 1.4)
     nokogiri (1.13.10-x86_64-darwin)
       racc (~> 1.4)
     opal (0.10.6)
@@ -205,6 +209,7 @@ GEM
       execjs (>= 0.3.0, < 3)
 
 PLATFORMS
+  ruby
   x86_64-darwin-22
 
 DEPENDENCIES
