@@ -1,0 +1,54 @@
+<!-- Open Graph meta tags -->
+<meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}">
+<meta property="og:title" content="{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }}{{ end }}">
+<meta property="og:url" content="{{ .Permalink }}">
+<meta property="og:site_name" content="{{ .Site.Title }}">
+
+{{ if .Description }}
+    <meta property="og:description" content="{{ .Description }}">
+    <meta property="twitter:description" content="{{ .Description }}">
+{{ else if .Summary }}
+    <meta property="og:description" content="{{ .Summary | plainify | truncate 155 }}">
+    <meta property="twitter:description" content="{{ .Summary | plainify | truncate 155 }}">
+{{ else }}
+    <meta property="og:description" content="{{ .Site.Params.description }}">
+    <meta property="twitter:description" content="{{ .Site.Params.description }}">
+{{ end }}
+
+<!-- Twitter Card meta tags -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:site" content="@{{ .Site.Params.twitter }}">
+<meta property="twitter:creator" content="@{{ .Site.Params.twitter }}">
+<meta property="twitter:title" content="{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }}{{ end }}">
+<meta property="twitter:url" content="{{ .Permalink }}">
+
+<!-- Image meta tags -->
+{{ if .Params.ogp.og.image }}
+    {{ $image := printf "/images/%s" .Params.ogp.og.image }}
+    <meta property="og:image" content="{{ $image | absURL }}">
+    <meta property="twitter:image" content="{{ $image | absURL }}">
+    {{ if .Params.ogp.og.image.width }}
+        <meta property="og:image:width" content="{{ .Params.ogp.og.image.width }}">
+    {{ end }}
+    {{ if .Params.ogp.og.image.height }}
+        <meta property="og:image:height" content="{{ .Params.ogp.og.image.height }}">
+    {{ end }}
+    {{ if .Params.ogp.og.image.type }}
+        <meta property="og:image:type" content="{{ .Params.ogp.og.image.type }}">
+    {{ end }}
+{{ else }}
+    <meta property="og:image" content="{{ "/images/amp-logo.png" | absURL }}">
+    <meta property="twitter:image" content="{{ "/images/amp-logo.png" | absURL }}">
+{{ end }}
+
+<!-- Article specific meta tags -->
+{{ if .IsPage }}
+    <meta property="article:author" content="{{ .Site.Params.author }}">
+    <meta property="article:published_time" content="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">
+    {{ if .Lastmod }}
+        <meta property="article:modified_time" content="{{ .Lastmod.Format "2006-01-02T15:04:05Z07:00" }}">
+    {{ end }}
+    {{ range .Params.tags }}
+        <meta property="article:tag" content="{{ . }}">
+    {{ end }}
+{{ end }}

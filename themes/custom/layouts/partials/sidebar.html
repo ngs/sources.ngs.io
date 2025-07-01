@@ -1,0 +1,141 @@
+<section id="sidebar-navigation">
+    <h2>{{ if eq .Site.Language.Lang "ja" }}ナビゲーション{{ else }}Navigation{{ end }}</h2>
+    <ol class="nav" itemscope="itemscope" itemtype="http://www.schema.org/SiteNavigationElement">
+        <li>
+            <a href="/" itemprop="url">
+                <span class="far fa-home"></span>&nbsp;&nbsp;
+                <span itemprop="name">{{ if eq .Site.Language.Lang "ja" }}ホーム{{ else }}Home{{ end }}</span>
+            </a>
+        </li>
+        <li>
+            <a href="/about/" rel="author" itemprop="url">
+                <span class="far fa-id-card"></span>&nbsp;&nbsp;
+                <span itemprop="name">{{ if eq .Site.Language.Lang "ja" }}自己紹介{{ else }}About{{ end }}</span>
+            </a>
+        </li>
+        <li>
+            {{ if eq .Site.Language.Lang "ja" }}
+                <a href="https://ngs.io/" rel="alternate" itemprop="url" hreflang="en">
+                    <span class="far fa-pencil"></span>&nbsp;&nbsp;
+                    <span itemprop="name">Blog (English)</span>
+                </a>
+            {{ else }}
+                <a href="https://ja.ngs.io/" rel="alternate" itemprop="url" hreflang="ja">
+                    <span class="far fa-pencil"></span>&nbsp;&nbsp;
+                    <span itemprop="name">ブログ (日本語)</span>
+                </a>
+            {{ end }}
+        </li>
+    </ol>
+</section>
+
+<section id="sidebar-search">
+    <form id="site-search-form" class="form-inline" role="form" method="get" action="/search/" 
+          itemprop="potentialAction" itemscope="itemscope" itemtype="http://schema.org/SearchAction">
+        <div class="form-group has-feedback">
+            <input class="form-control" id="site-search-input" type="search" 
+                   placeholder="{{ if eq .Site.Language.Lang "ja" }}サイト内検索{{ else }}Search site{{ end }}" 
+                   name="q" accesskey="s" required="required" itemprop="query-input">
+            <span class="far fa-search form-control-feedback"></span>
+            <meta itemprop="target" content="{{ .Site.BaseURL }}/search/?q={q}">
+        </div>
+    </form>
+</section>
+
+<section id="sidebar-links">
+    <header>
+        <h2>{{ if eq .Site.Language.Lang "ja" }}リンク{{ else }}Links{{ end }}</h2>
+    </header>
+    <ol class="nav">
+        {{ range $name, $url := .Site.Params.social }}
+        <li>
+            <a href="{{ $url }}">
+                {{ if eq $name "twitter" }}<i class="fab fa-twitter"></i>{{ end }}
+                {{ if eq $name "github" }}<i class="fab fa-github"></i>{{ end }}
+                {{ if eq $name "dribbble" }}<i class="fab fa-dribbble"></i>{{ end }}
+                {{ if eq $name "keybase" }}<i class="fab fa-keybase"></i>{{ end }}
+                {{ if eq $name "pinterest" }}<i class="fab fa-pinterest"></i>{{ end }}
+                {{ if eq $name "raindrop" }}<i class="far fa-bookmark"></i>{{ end }}
+                {{ if eq $name "paypal" }}<i class="fab fa-paypal"></i>{{ end }}
+                &nbsp;&nbsp;{{ title $name }}
+            </a>
+        </li>
+        {{ end }}
+    </ol>
+</section>
+
+<section id="sidebar-recent">
+    <header>
+        <h2>{{ if eq .Site.Language.Lang "ja" }}最近のエントリー{{ else }}Recent Entries{{ end }}</h2>
+    </header>
+    <ol class="nav">
+        {{ range first 10 (where .Site.RegularPages "Params.public" "!=" false) }}
+        <li>
+            <a href="{{ .Permalink }}">
+                <span class="title">{{ .Title }}</span>
+                <time>{{ .Date.Format "2006/01/02" }}</time>
+            </a>
+        </li>
+        {{ end }}
+        <li class="show-all text-right">
+            <a href="/archives/">
+                {{ if eq .Site.Language.Lang "ja" }}すべて表示{{ else }}Show All{{ end }}&nbsp;&nbsp;
+                <span class="far fa-arrow-circle-right"></span>
+            </a>
+        </li>
+    </ol>
+</section>
+
+<section id="sidebar-monthly">
+    <header>
+        <h2>{{ if eq .Site.Language.Lang "ja" }}月別{{ else }}Monthly{{ end }}</h2>
+    </header>
+    <ol class="nav">
+        {{ range (.Site.RegularPages.GroupByDate "2006-01") }}
+        <li>
+            <a href="{{ .Key | relURL }}/">
+                {{ .Key }}
+                <span class="badge pull-right">{{ len .Pages }}</span>
+            </a>
+        </li>
+        {{ end }}
+    </ol>
+</section>
+
+<section id="sidebar-tags">
+    <header>
+        <h2>{{ if eq .Site.Language.Lang "ja" }}タグ{{ else }}Tags{{ end }}</h2>
+        <form id="tag-filter-form" class="form-inline" role="form">
+            <div class="form-group has-feedback">
+                <input class="form-control" id="tag-filter-input" type="search" 
+                       placeholder="{{ if eq .Site.Language.Lang "ja" }}タグをフィルター{{ else }}Filter tags{{ end }}">
+                <span class="far fa-search form-control-feedback"></span>
+            </div>
+        </form>
+    </header>
+    <ol class="nav collapse in" id="sidebar-tags-list">
+        {{ range .Site.Taxonomies.tags.ByCount }}
+        <li class="hidden">
+            <a href="{{ .Page.Permalink }}">
+                <span class="far fa-tag"></span>&nbsp;{{ .Page.Title }}
+                <span class="badge pull-right">{{ .Count }}</span>
+            </a>
+        </li>
+        {{ end }}
+        <li class="show-all">
+            <a href="#tag-filter-form" class="show-all-tags-link">
+                <span class="far fa-plus-square"></span>&nbsp;
+                {{ if eq .Site.Language.Lang "ja" }}すべて表示{{ else }}Show All{{ end }}
+            </a>
+        </li>
+    </ol>
+</section>
+
+<section>
+    <header>
+        <h2>Memos</h2>
+    </header>
+    <ol class="nav">
+        <li><a href="/subscriptions/">Subscriptions</a></li>
+    </ol>
+</section>

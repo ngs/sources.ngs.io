@@ -1,0 +1,42 @@
+<article class="entry-summary" itemscope="true" itemtype="http://schema.org/BlogPosting">
+    <header>
+        <h2 itemprop="name">
+            <a href="{{ .Permalink }}" itemprop="url">{{ .Title }}</a>
+        </h2>
+        <p class="meta">
+            <time itemprop="datePublished" datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}" is="relative-time">
+                {{ .Date.Format "2006-01-02 15:04" }}
+            </time>
+        </p>
+    </header>
+    
+    <div class="summary" itemprop="description">
+        {{ if .Summary }}
+            {{ .Summary }}
+            {{ if .Truncated }}
+                <a href="{{ .Permalink }}" class="read-more">
+                    {{ if eq .Site.Language.Lang "ja" }}続きを読む{{ else }}Read more{{ end }} →
+                </a>
+            {{ end }}
+        {{ else }}
+            {{ .Content | truncate 300 }}
+            <a href="{{ .Permalink }}" class="read-more">
+                {{ if eq .Site.Language.Lang "ja" }}続きを読む{{ else }}Read more{{ end }} →
+            </a>
+        {{ end }}
+    </div>
+    
+    {{ if .Params.tags }}
+    <footer class="meta">
+        <ul class="nav nav-pills tags" itemprop="keywords">
+            {{ range .Params.tags }}
+            <li>
+                <a href="{{ "/tags/" | relURL }}{{ . | urlize }}/">
+                    <span class="far fa-tag"></span>&nbsp;{{ . }}
+                </a>
+            </li>
+            {{ end }}
+        </ul>
+    </footer>
+    {{ end }}
+</article>

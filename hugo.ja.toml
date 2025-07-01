@@ -1,0 +1,103 @@
+baseURL = "https://ja.ngs.io"
+languageCode = "ja"
+title = "Atsushi Nagase"
+defaultContentLanguage = "ja"
+
+# Build configuration
+publishDir = "build-ja"
+
+# Pagination
+paginate = 10
+paginatePath = "p"
+
+# Permalinks
+[permalinks]
+  posts = "/:year/:month/:day/:title/"
+
+# Markup configuration
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+    [markup.goldmark.parser]
+      autoHeadingID = true
+      autoHeadingIDType = "github"
+  [markup.highlight]
+    style = "github"
+    codeFences = true
+    guessSyntax = true
+    lineNos = false
+    lineNumbersInTable = false
+    noClasses = false
+
+# Taxonomies
+[taxonomies]
+  tag = "tags"
+  category = "categories"
+
+# Site parameters
+[params]
+  author = "Atsushi Nagase"
+  description = "Atsushi Nagase のブログ"
+  timezone = "Asia/Tokyo"
+  locale = "ja"
+  disqus = "jangsio"
+  googleAnalytics = "UA-200187-34"
+  
+  # Social links
+  [params.social]
+    twitter = "https://twitter.com/ngs"
+    github = "https://github.com/ngs"
+    dribbble = "https://dribbble.com/ngs"
+    keybase = "https://keybase.io/ngs"
+    pinterest = "https://pinterest.com/ngs/"
+    raindrop = "https://raindrop.io/ngs"
+    paypal = "https://www.paypal.me/atsnngs"
+
+# Menu configuration
+[[menu.main]]
+  name = "ホーム"
+  url = "/"
+  weight = 1
+
+[[menu.main]]
+  name = "自己紹介"
+  url = "/about/"
+  weight = 2
+
+[[menu.main]]
+  name = "Blog (English)"
+  url = "https://ngs.io/"
+  weight = 3
+
+# Output formats
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+  page = ["HTML"]
+  section = ["HTML", "RSS"]
+  taxonomy = ["HTML", "RSS"]
+  term = ["HTML", "RSS"]
+
+# Output formats
+[outputFormats]
+  [outputFormats.RSS]
+    mediaType = "application/rss+xml"
+    baseName = "rss"
+    isPlainText = false
+    
+  [outputFormats.JSON]
+    mediaType = "application/json"
+    baseName = "sitemap"
+    isPlainText = true
+
+# Build configuration
+[build]
+  writeStats = true
+  
+[minify]
+  disableCSS = false
+  disableHTML = false
+  disableJS = false
+  disableJSON = false
+  disableSVG = false
+  disableXML = false

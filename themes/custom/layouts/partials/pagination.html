@@ -1,0 +1,27 @@
+{{ if .Paginator }}
+<nav aria-label="Page navigation">
+    <ul class="pager">
+        {{ if .Paginator.HasPrev }}
+        <li class="previous">
+            <a href="{{ .Paginator.Prev.URL }}" rel="prev">
+                <span class="far fa-chevron-left"></span>
+                {{ if eq .Site.Language.Lang "ja" }}前のページ{{ else }}Previous{{ end }}
+            </a>
+        </li>
+        {{ end }}
+        
+        <li class="page-info">
+            {{ .Paginator.PageNumber }} / {{ .Paginator.TotalPages }}
+        </li>
+        
+        {{ if .Paginator.HasNext }}
+        <li class="next">
+            <a href="{{ .Paginator.Next.URL }}" rel="next">
+                {{ if eq .Site.Language.Lang "ja" }}次のページ{{ else }}Next{{ end }}
+                <span class="far fa-chevron-right"></span>
+            </a>
+        </li>
+        {{ end }}
+    </ul>
+</nav>
+{{ end }}

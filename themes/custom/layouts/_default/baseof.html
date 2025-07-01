@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.Language.Lang }}" itemscope="itemscope" itemtype="http://schema.org/WebSite">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv='X-UA-Compatible' content='IE=edge;chrome=1'>
+    <meta content='width=device-width, initial-scale=1, maximum-scale=1' name='viewport'>
+    <meta content="Hugo {{ hugo.Version }}" name='generator'>
+    <meta itemprop="url" content="{{ .Site.BaseURL }}">
+    <link rel='author' href='/about/'>
+    
+    <title>
+        {{- if .IsHome -}}
+            {{ .Site.Title }}
+        {{- else if .Title -}}
+            {{ .Title }} - {{ .Site.Title }}
+        {{- else -}}
+            {{ .Site.Title }}
+        {{- end -}}
+    </title>
+    
+    <!-- Open Graph and Twitter meta tags -->
+    {{ partial "head/meta.html" . }}
+    
+    <!-- Stylesheets -->
+    <noscript>
+        {{ $bootstrap := resources.Get "css/bootstrap.css" }}
+        <link rel="stylesheet" href="{{ $bootstrap.RelPermalink }}">
+    </noscript>
+    
+    {{ $application := resources.Get "css/application.sass" | resources.ToCSS | resources.Minify }}
+    <link rel="stylesheet" href="{{ $application.RelPermalink }}" media="screen">
+    
+    {{ $syntax := resources.Get "css/syntax.css" }}
+    <link rel="stylesheet" href="{{ $syntax.RelPermalink }}" media="screen">
+    
+    {{ $print := resources.Get "css/print.sass" | resources.ToCSS | resources.Minify }}
+    <link rel="stylesheet" href="{{ $print.RelPermalink }}" media="print">
+    
+    <!-- FontAwesome -->
+    <script src='https://kit.fontawesome.com/2e4b3f49e4.js' crossorigin='anonymous'></script>
+    
+    <!-- JavaScript -->
+    {{ $js := resources.Get "js/application.js" | resources.Minify }}
+    <script src="{{ $js.RelPermalink }}"></script>
+    
+    <!-- Description -->
+    {{ if .Description }}
+        <meta content="{{ .Description }}" name="description">
+    {{ else if .Summary }}
+        <meta content="{{ .Summary | plainify | truncate 155 }}" name="description">
+    {{ else }}
+        <meta content="{{ .Site.Params.description }}" name="description">
+    {{ end }}
+    
+    <!-- Keywords -->
+    {{ if .Params.tags }}
+        <meta content="{{ delimit .Params.tags "," }}" name="keywords">
+    {{ end }}
+    
+    <!-- Alternate language -->
+    {{ if .Params.alternate }}
+        {{ $altLang := cond (eq .Site.Language.Lang "en") "ja_JP" "en_US" }}
+        {{ $altHost := cond (eq .Site.Language.Lang "en") "ja.ngs.io" "ngs.io" }}
+        <meta content="{{ $altLang }}" property="og:locale:alternate">
+        <link rel="alternate" hreflang="{{ $altLang }}" href="https://{{ $altHost }}{{ .RelPermalink }}">
+    {{ end }}
+    
+    <!-- App ID -->
+    {{ if .Params.app_id }}
+        <meta name='apple-itunes-app' content="app-id={{ .Params.app_id }}, affiliate-data='at=10l87J'">
+    {{ end }}
+    
+    <meta content="{{ .Site.Params.author }}" name="author">
+    
+    <!-- RSS Feeds -->
+    {{ range .AlternativeOutputFormats -}}
+        {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
+    {{ end -}}
+    
+    <!-- Apple Touch Icons -->
+    {{ range slice "152" "144" "120" "114" "76" "72" "60" "57" }}
+        <link rel="apple-touch-icon" sizes="{{ . }}x{{ . }}" href="/apple-touch-icon-{{ . }}x{{ . }}-precomposed.png">
+    {{ end }}
+    <link rel="apple-touch-icon" href="/apple-touch-icon-precomposed.png">
+    <link rel="shortcut icon" href="/favicon.png">
+    <link rel="icon" type="image/ico" href="/favicon.ico">
+    
+    <!-- Article navigation -->
+    {{ if .IsPage }}
+        {{ if .NextInSection }}
+            <link rel="next" href="{{ .NextInSection.Permalink }}">
+        {{ end }}
+        {{ if .PrevInSection }}
+            <link rel="prev" href="{{ .PrevInSection.Permalink }}">
+        {{ end }}
+    {{ else if .Paginator }}
+        {{ if .Paginator.HasNext }}
+            <link rel="next" href="{{ .Paginator.Next.URL }}">
+        {{ end }}
+        {{ if .Paginator.HasPrev }}
+            <link rel="prev" href="{{ .Paginator.Prev.URL }}">
+        {{ end }}
+    {{ end }}
+</head>
+
+<body>
+    <div class="container" data-scrapmd-ok="ok">
+        <div class="row">
+            {{ block "main" . }}{{ end }}
+            
+            <!-- Sidebar -->
+            <aside class="col-md-3">
+                {{ partial "sidebar.html" . }}
+            </aside>
+        </div>
+        
+        <!-- Footer -->
+        <footer class="row">
+            {{ partial "footer.html" . }}
+        </footer>
+    </div>
+    
+    <!-- Analytics -->
+    {{ if .Site.Params.googleAnalytics }}
+        {{ template "_internal/google_analytics.html" . }}
+    {{ end }}
+</body>
+</html>

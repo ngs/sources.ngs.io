@@ -1,0 +1,103 @@
+baseURL = "https://ngs.io"
+languageCode = "en-us"
+title = "ngs.io"
+defaultContentLanguage = "en"
+
+# Build configuration
+publishDir = "build-en"
+
+# Pagination
+paginate = 10
+paginatePath = "p"
+
+# Permalinks
+[permalinks]
+  posts = "/:year/:month/:day/:title/"
+
+# Markup configuration
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+    [markup.goldmark.parser]
+      autoHeadingID = true
+      autoHeadingIDType = "github"
+  [markup.highlight]
+    style = "github"
+    codeFences = true
+    guessSyntax = true
+    lineNos = false
+    lineNumbersInTable = false
+    noClasses = false
+
+# Taxonomies
+[taxonomies]
+  tag = "tags"
+  category = "categories"
+
+# Site parameters
+[params]
+  author = "Atsushi Nagase"
+  description = "Atsushi Nagase's Blog"
+  timezone = "Asia/Tokyo"
+  locale = "en"
+  disqus = "ngsio"
+  googleAnalytics = "UA-200187-32"
+  
+  # Social links
+  [params.social]
+    twitter = "https://twitter.com/ngs"
+    github = "https://github.com/ngs"
+    dribbble = "https://dribbble.com/ngs"
+    keybase = "https://keybase.io/ngs"
+    pinterest = "https://pinterest.com/ngs/"
+    raindrop = "https://raindrop.io/ngs"
+    paypal = "https://www.paypal.me/atsnngs"
+
+# Menu configuration
+[[menu.main]]
+  name = "Home"
+  url = "/"
+  weight = 1
+
+[[menu.main]]
+  name = "About"
+  url = "/about/"
+  weight = 2
+
+[[menu.main]]
+  name = "ブログ (日本語)"
+  url = "https://ja.ngs.io/"
+  weight = 3
+
+# Output formats
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+  page = ["HTML"]
+  section = ["HTML", "RSS"]
+  taxonomy = ["HTML", "RSS"]
+  term = ["HTML", "RSS"]
+
+# Output formats
+[outputFormats]
+  [outputFormats.RSS]
+    mediaType = "application/rss+xml"
+    baseName = "rss"
+    isPlainText = false
+    
+  [outputFormats.JSON]
+    mediaType = "application/json"
+    baseName = "sitemap"
+    isPlainText = true
+
+# Build configuration
+[build]
+  writeStats = true
+  
+[minify]
+  disableCSS = false
+  disableHTML = false
+  disableJS = false
+  disableJSON = false
+  disableSVG = false
+  disableXML = false

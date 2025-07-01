@@ -1,0 +1,137 @@
+{{ define "main" }}
+<main class="col-md-9" role='main'>
+    <article class="entry" itemscope="true" itemtype="http://schema.org/BlogPosting" data-scrapmd-ok="ok">
+        <header>
+            <h1 itemprop="name">{{ .Title }}</h1>
+            {{ partial "article-metadata.html" . }}
+            <p class="meta">
+                <time itemprop="datePublished" datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}" is="relative-time">
+                    {{ .Date.Format "2006-01-02 15:04" }}
+                </time>
+            </p>
+        </header>
+        
+        <div class="article-body" itemprop="articleBody">
+            {{ if .Params.alternate }}
+                {{ $altLang := cond (eq .Site.Language.Lang "en") "日本語" "English" }}
+                {{ $altHost := cond (eq .Site.Language.Lang "en") "ja.ngs.io" "ngs.io" }}
+                <p>
+                    <a href="https://{{ $altHost }}{{ .RelPermalink }}" hreflang="{{ cond (eq .Site.Language.Lang "en") "ja_JP" "en_US" }}" rel="alternate">
+                        <span class="fal fa-globe"></span>&nbsp;{{ $altLang }}
+                    </a>
+                </p>
+            {{ end }}
+            {{ .Content }}
+        </div>
+        
+        <footer class="meta">
+            {{ if .Params.tags }}
+            <ul class="pull-left nav nav-pills tags" itemprop="keywords">
+                {{ range .Params.tags }}
+                <li>
+                    <a href="{{ "/tags/" | relURL }}{{ . | urlize }}/">
+                        <span class="far fa-tag"></span>&nbsp;{{ . }}
+                    </a>
+                </li>
+                {{ end }}
+            </ul>
+            {{ end }}
+            
+            <ul class="nav nav-pills pull-right">
+                <li class="author pull-right">
+                    <a href="/about/" itemprop="author" itemtype="http://schema.org/Person" itemscope="true">
+                        <span itemprop="name">{{ .Site.Params.author }}</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://github.com/ngs/sources.ngs.io/blob/master/content/{{ .Site.Language.Lang }}/{{ .File.Path }}" 
+                       title="View on GitHub" rel="nofollow" data-toggle="tooltip" data-container="footer.meta" data-placement="left">
+                        <span class="fab fa-github-alt">&nbsp;</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ .Permalink }}" title="Permalink" data-toggle="tooltip" 
+                       data-container="footer.meta" data-placement="left" itemprop="mainEntityOfPage">
+                        <span class="far fa-link">&nbsp;</span>
+                    </a>
+                </li>
+            </ul>
+            
+            <div class="social-buttons clearfix">
+                {{ $url := .Permalink }}
+                <a href="https://twitter.com/share" class="twitter-share-button" 
+                   data-url="{{ $url }}" data-via="ngs" data-counturl="{{ $url }}" 
+                   rel="nofollow" data-text="{{ .Title }}">{{ if eq .Site.Language.Lang "ja" }}ツイート{{ else }}Tweet{{ end }}</a>
+                
+                {{ if eq .Site.Language.Lang "ja" }}
+                <div class="hateb">
+                    <a class="hatena-bookmark-button" href="http://b.hatena.ne.jp/entry/s/{{ strings.TrimPrefix "https://" $url }}" 
+                       data-hatena-bookmark-title="{{ .Title }}" data-hatena-bookmark-layout="simple-balloon" 
+                       title="このエントリーをはてなブックマークに追加">
+                        <img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" 
+                             alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;">
+                    </a>
+                </div>
+                <div class="fb-like" data-send="true" data-width="300" data-show-faces="false" data-href="{{ $url }}"></div>
+                {{ end }}
+                
+                <script src="//platform.linkedin.com/in.js" type="text/javascript">
+                    lang: {{ if eq .Site.Language.Lang "ja" }}ja_JP{{ else }}en_US{{ end }}
+                </script>
+                <script type="IN/Share" data-url="{{ $url }}" data-counter="right"></script>
+            </div>
+            
+            <ul class="pager">
+                {{ if .PrevInSection }}
+                <li class="previous">
+                    <a href="{{ .PrevInSection.Permalink }}" data-toggle="tooltip" 
+                       title="{{ if eq .Site.Language.Lang "ja" }}前の記事{{ else }}Previous article{{ end }}: {{ .PrevInSection.Title }}" rel="prev">
+                        <span class="far fa-chevron-left"></span>
+                    </a>
+                </li>
+                {{ end }}
+                {{ if .NextInSection }}
+                <li class="next">
+                    <a href="{{ .NextInSection.Permalink }}" data-toggle="tooltip" 
+                       title="{{ if eq .Site.Language.Lang "ja" }}次の記事{{ else }}Next article{{ end }}: {{ .NextInSection.Title }}" rel="next">
+                        <span class="far fa-chevron-right"></span>
+                    </a>
+                </li>
+                {{ end }}
+            </ul>
+        </footer>
+        
+        <!-- Disqus Comments -->
+        {{ if .Site.Params.disqus }}
+        <div class="disqus">
+            {{ template "_internal/disqus.html" . }}
+        </div>
+        {{ end }}
+    </article>
+    
+    <!-- Social scripts -->
+    {{ if eq .Site.Language.Lang "ja" }}
+    <div id="fb-root"></div>
+    <script>
+        (function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) {return;}
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/ja_JP/all.js#appId=YOUR_APP_ID&xfbml=1";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
+    <script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+    {{ end }}
+    
+    <script>
+        (function(){
+            var twitterWidgets = document.createElement('script');
+            twitterWidgets.type = 'text/javascript';
+            twitterWidgets.async = true;
+            twitterWidgets.src = 'https://platform.twitter.com/widgets.js';
+            document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+        })();
+    </script>
+</main>
+{{ end }}

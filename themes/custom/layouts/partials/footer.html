@@ -1,0 +1,20 @@
+<div class="col-md-12 credit">
+    <p>
+        Proudly hosted on <a href="http://pages.github.com" rel="nofollow">GitHub Pages</a>.&nbsp;
+        Theme by <a href="http://bootswatch.com/united/" rel="nofollow" class="bootswatch-link">United</a> 
+        from <a href="http://bootswatch.com/" rel="nofollow">Bootswatch</a>.&nbsp;
+        {{ with getenv "CIRCLE_BUILD_NUM" }}
+            Built on CircleCI <a href="https://circleci.com/gh/ngs/sources.ngs.io/{{ . }}" rel="nofollow">build#{{ . }}</a> 
+        {{ end }}
+        {{ with getenv "CIRCLE_SHA1" }}
+            with commit <a href="{{ getenv "CIRCLE_COMPARE_URL" }}" rel="nofollow">{{ substr . 0 7 }}</a>.
+        {{ end }}
+    </p>
+    <p>
+        Copyright &copy; {{ now.Format "2006" }} 
+        <a href="https://ngs.io/" rel="copyright">Atsushi Nagase</a> 
+        all rights reserved with all articles and pictures. 
+        Everything else in <a href="https://github.com/ngs/sources.ngs.io/">the repository</a> is 
+        <a href="https://github.com/ngs/sources.ngs.io/blob/master/LICENSE.md">MIT licensed</a>.
+    </p>
+</div>
