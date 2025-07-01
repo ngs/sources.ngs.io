@@ -1,0 +1,8 @@
+{{/* 
+Usage: {{< partial "path/to/partial" >}}
+Includes content from content/partials/ directory
+*/}}
+
+{{ $path := .Get 0 }}
+{{ $content := readFile (printf "content/partials/%s" $path) }}
+{{ $content | markdownify }}

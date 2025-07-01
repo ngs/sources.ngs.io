@@ -1,0 +1,71 @@
+---
+title: "Fetch distributions and invalidate with hubot-cloudfront"
+description: "I published a Hubot script to fetch Amazon CloudFront distribution list and invalidate objects."
+date: 2014-06-28T21:00:00+09:00
+public: true
+tags: ["aws", "amazon", "cloudfront", "middleman", "hubot", "script", "hipchat", "kaizenplatform"]
+alternate: true
+ogp:
+  og:
+    image:
+      '': 2014-06-28-hubot-cloudfront/hipchat.png
+      type: image/png
+      width: 1716
+      height: 1048
+---
+
+![](2014-06-28-hubot-cloudfront/hipchat.png)
+
+I published a [Hubot] script to fetch [Amazon CloudFront] distribution list and invalidate objects.
+
+**[ngs/hubot-cloudfront]**
+
+```sh
+npm install --save hubot-cloudfront
+```
+
+<!--more-->
+
+List Distributions
+------------------
+
+Lists distributions with ID", "domain name", "status", "comment and number of invalidation batches (if exists).
+
+{{< partial "2014-06-28-hubot-cloudfront/hubot-list-distributions.html.md" >}}
+
+Shortcut:
+
+{{< partial "2014-06-28-hubot-cloudfront/hubot-list-distributions-short.html.md" >}}
+
+Create invalidations
+--------------------
+
+{{< partial "2014-06-28-hubot-cloudfront/hubot-invalidate.html.md" >}}
+
+You can use either ID and 0-based index number (on the left of distribution ID) to specify distribution.
+
+{{< partial "2014-06-28-hubot-cloudfront/hubot-invalidate-with-index.html.md" >}}
+
+Shortcut:
+
+{{< partial "2014-06-28-hubot-cloudfront/hubot-invalidate-short.html.md" >}}
+
+After creating invalidations", "[Hubot] checks every 1 minute and notifies if completed.
+
+{{< partial "2014-06-28-hubot-cloudfront/hubot-invalidate-complete.html.md" >}}
+
+List invalidations
+------------------
+
+List distribution with ID or 0-based index number.
+
+{{< partial "2014-06-28-hubot-cloudfront/hubot-list-invalidations.html.md" >}}
+
+Shortcut:
+
+{{< partial "2014-06-28-hubot-cloudfront/hubot-list-invalidations-short.html.md" >}}
+
+[Amazon S3]: http://aws.amazon.com/s3/
+[Amazon CloudFront]: http://aws.amazon.com/cloudfront/
+[ngs/hubot-cloudfront]: https://github.com/ngs/hubot-cloudfront
+[Hubot]: https://hubot.github.com/

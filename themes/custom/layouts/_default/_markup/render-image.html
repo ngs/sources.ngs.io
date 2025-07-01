@@ -1,0 +1,14 @@
+{{/* Custom image rendering */}}
+{{ $src := .Destination }}
+{{ $alt := .Text }}
+{{ $title := .Title }}
+
+{{/* Handle relative image paths */}}
+{{ if not (strings.HasPrefix $src "http") }}
+  {{ $src = printf "/images/%s" $src }}
+{{ end }}
+
+<figure>
+  <img src="{{ $src }}" alt="{{ $alt }}"{{ if $title }} title="{{ $title }}"{{ end }}>
+  {{ if $alt }}<figcaption>{{ $alt }}</figcaption>{{ end }}
+</figure>

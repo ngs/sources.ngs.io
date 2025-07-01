@@ -1,0 +1,19 @@
+---
+title: ""Generating Objective-C Literals from JSON""
+date: 2012-07-26T12:00:00+09:00
+public: true
+tags: ["test", "objective-c", "node.js", "javascript"]
+alternate: true
+---
+
+[The modern syntaxes](http://clang.llvm.org/docs/ObjectiveCLiterals.html) for NSDictionary", "NSArray", "NSNumber are supported from Xcode 4.4. To use this easily for testing", "I customized JSON#stringify method ported from JSON2.js.
+
+With node.js", "the script can convert JSON from STDIN.
+
+{{< partial "2012-07-26-generating-objc-literals-from-json/01.shell.sh.html.md" >}}
+
+Also in browser", "this works with stripping lines under `if(process)` scope.
+
+{{< partial "2012-07-26-generating-objc-literals-from-json/02.stringify.js.html.md" >}}
+
+{{< partial "2012-07-26-generating-objc-literals-from-json/03.Dictionary.js.html.md" >}}

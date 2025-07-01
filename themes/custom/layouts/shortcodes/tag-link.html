@@ -1,0 +1,3 @@
+{{/* Usage: {{< tag-link "tag-name" >}} */}}
+{{ $tag := .Get 0 }}
+<a href="{{ "/tags/" | relURL }}{{ $tag | urlize }}/">{{ $tag }}</a>

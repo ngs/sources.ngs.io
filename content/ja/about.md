@@ -1,6 +1,5 @@
 ---
-title: "自己紹介"
-layout: "single"
+title: 自己紹介
 ---
 
-<!-- About content in Japanese - converted from Slim template -->
+<!-- TODO: Convert Slim template content -->

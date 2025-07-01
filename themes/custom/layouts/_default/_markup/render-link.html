@@ -1,0 +1,13 @@
+{{/* Custom link rendering */}}
+{{ $url := .Destination }}
+{{ $title := .Title }}
+{{ $text := .Text }}
+
+{{/* Check if it's a tag link */}}
+{{ if strings.HasPrefix $url "/t/" }}
+  {{ $tag := strings.TrimPrefix $url "/t/" }}
+  {{ $tag = strings.TrimSuffix $tag "/" }}
+  <a href="{{ "/tags/" | relURL }}{{ $tag | urlize }}/"{{ if $title }} title="{{ $title }}"{{ end }}>{{ $text }}</a>
+{{ else }}
+  <a href="{{ $url }}"{{ if $title }} title="{{ $title }}"{{ end }}{{ if strings.HasPrefix $url "http" }} target="_blank" rel="noopener"{{ end }}>{{ $text }}</a>
+{{ end }}

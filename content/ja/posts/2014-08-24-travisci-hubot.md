@@ -1,0 +1,37 @@
+---
+title: "Hubot で Travis CI の Webhook を受ける"
+description: "個人で利用している Slack アカウントのサービス連携数を節約するために、Travis CI の Webhook を自分で書きました。"
+date: 2014-08-24T11:40:00+09:00
+public: true
+tags: ["travis-ci", "hubot", "webhook", "slack"]
+alternate: false
+ogp:
+  og:
+    image:
+      '': 2014-08-24-travisci-hubot/screen1.png
+      type: image/png
+      width: 992
+      height: 525
+---
+
+![](2014-08-24-travisci-hubot/screen1.png)
+
+個人で利用している [Slack] アカウントはフリープランで利用しており、サービス連携数に上限があるので、連携数を節約するために、[Travis CI] の Webhook を [Hubot] Script を使って自分で実装しました。
+
+<!--more-->
+
+Hubot script
+------------
+
+{{< partial "2014-08-24-travisci-hubot/travisci.coffee.html.md" >}}
+
+.travis.yml
+-----------
+
+{{< partial "2014-08-24-travisci-hubot/travis.yml.html.md" >}}
+
+参照: http://docs.travis-ci.com/user/notifications/#Webhook-notification
+
+[Travis CI]: https://travis-ci.org
+[Slack]: https://slack.com/
+[Hubot]: https://hubot.github.com/

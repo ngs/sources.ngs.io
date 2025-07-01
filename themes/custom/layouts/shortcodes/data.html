@@ -1,0 +1,8 @@
+{{/* Usage: {{< data "path.to.value" >}} */}}
+{{ $path := .Get 0 }}
+{{ $parts := split $path "." }}
+{{ $data := .Site.Data }}
+{{ range $parts }}
+  {{ $data = index $data . }}
+{{ end }}
+{{ $data }}

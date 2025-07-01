@@ -1,0 +1,65 @@
+---
+title: "Arduino Micro で室温計を作った"
+description: "以前購入した、Arduino Micro を持て余していたので、ブレッドボード上で簡単な室温計を作りました。"
+date: 2014-08-23T22:20:00+09:00
+public: true
+tags: ["diy", "arduino", "thermometer", "make"]
+alternate: false
+ogp:
+  og:
+    image:
+      '': 2014-08-23-arduino-thermometer/1.jpg
+      type: image/jpeg
+      width: 992
+      height: 525
+---
+
+![](2014-08-23-arduino-thermometer/1.jpg)
+
+以前購入した、[Arduino Micro] を持て余していたので、ブレッドボード上で簡単な室温計を作りました。
+
+<!--more-->
+
+使った部品
+---------
+
+- [Arduino Micro]
+- 青色 7セグメント LED: Linkman GEM5361A (カソード・3桁)
+- IC 温度センサ: [LM35DZ]
+- ブレッドボード
+- ジャンバワイヤ
+
+7セグメント LED
+--------------
+
+2013.02 に購入して、こちらも肥やしになっていた、GEM5361A を使用しましたが、現在、購入元の [マルツパーツ館 WebShop] でも取り扱っておらず、検索しても、情報がなく、自分で調べました。
+
+こんな感じになってます。
+
+![GEM5361A](2014-08-23-arduino-thermometer/7seg.png)
+
+7セグメントライブラリ
+------------------
+
+7セグメント実装には Arduino 本家サイトからリンクされていた [Seven Segment Display Library] を使いました。
+
+元々のコードは、4桁向けに実装されており、桁数を変えるにはヘッダを修正するという謎仕様のため、以下の様に変更しました。
+
+<!-- similar:ignore:begin -->
+{{< partial "2014-08-23-arduino-thermometer/SevSeg.h.patch.html.md" >}}
+<!-- similar:ignore:end -->
+
+実装コード
+---------
+
+<!-- similar:ignore:begin -->
+{{< partial "2014-08-23-arduino-thermometer/thermometer.ino.html.md" >}}
+<!-- similar:ignore:end -->
+
+ライブラリ含めこちらのリポジトリで管理しています。 **[ngs/arduino-thermometer]**
+
+[Arduino Micro]: http://arduino.cc/en/Main/arduinoBoardMicro
+[LM35DZ]: http://akizukidenshi.com/catalog/g/gI-00116/
+[Seven Segment Display Library]: http://playground.arduino.cc/Main/SevenSegmentLibrary
+[ngs/arduino-thermometer]: https://github.com/ngs/arduino-thermometer
+[マルツパーツ館 WebShop]: http://www.marutsu.co.jp/

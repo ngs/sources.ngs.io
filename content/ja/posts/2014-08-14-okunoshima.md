@@ -1,0 +1,85 @@
+---
+title: "大久野島 2014.08.10-12"
+description: "2014.08.10-12 広島県にある大久野島へ家族で行ってきました。"
+date: 2014-08-14T08:40:00+09:00
+public: true
+tags: ["travel", "広島", "大久野島", "ruins"]
+alternate: false
+ogp:
+  og:
+    image:
+      '': 2014-08-14-okunoshima/1.jpg
+      type: image/jpeg
+      width: 992
+      height: 525
+---
+
+![](2014-08-14-okunoshima/1.jpg)
+
+2014.08.10-12 広島県にある[大久野島]へ家族で行ってきました。
+
+<!--more-->
+
+![](2014-08-14-okunoshima/2.jpg)
+
+[呉線 忠海駅]の目の前にある、忠海港より、客船に乗って島へ向かいます。
+
+![](2014-08-14-okunoshima/3.jpg)
+
+島の至るところにウサギがいます。ウサギ好きの聖地だそうです。
+
+![長浦毒ガス貯蔵庫跡](2014-08-14-okunoshima/4.jpg)
+
+**地図から消された毒ガス製造の島** としても有名で、戦時中、化学兵器だったころの廃墟があります。
+
+参考: [毒ガス島歴史研究所]
+
+写真は[長浦毒ガス貯蔵庫跡]。
+
+![](2014-08-14-okunoshima/5.jpg)
+
+[休暇村]に宿泊しましたが、そのすぐ裏に毒ガス貯蔵庫跡があります。
+
+![](2014-08-14-okunoshima/6.jpg)
+
+火薬庫跡。黄色いペンキで `MAG 1` と塗られているのは、`MAGAZINE 1` の略で、朝鮮戦争時代、米軍によって、第一弾薬庫として使われていたときのもの。
+
+![](2014-08-14-okunoshima/7.jpg)
+
+火薬庫跡を除いてみました。(立入禁止) 草が伸び放題になっています。
+
+![](2014-08-14-okunoshima/8.jpg)
+
+これは何の敷地なのかわかりませんでした。ウサギの遊び場になってました。
+
+![](2014-08-14-okunoshima/9.jpg)
+
+[発電所跡]。
+
+![](2014-08-14-okunoshima/10.jpg)
+
+`MAG 2` と塗られています。第二弾薬庫として使われていました。
+
+![](2014-08-14-okunoshima/11.jpg)
+
+正面。立ち入り禁止なはずなのに、建物内部に落書きがありました。
+
+![](2014-08-14-okunoshima/12.jpg)
+
+発電所跡前で仲良く餌を食べるウサギ。
+
+![](2014-08-14-okunoshima/13.jpg)
+
+トンネルを出るとすぐ海です。トンネルを出て右に進むと桟橋があります。
+
+![](2014-08-14-okunoshima/14.jpg)
+
+医務室跡前の木。シンボル的に扱われてきて、いつ倒れるか心配されていたそうですが、今年の[台風第11号]によって根ごと倒れて、とどめを刺された様です。
+
+[大久野島]: http://ja.wikipedia.org/wiki/%E5%A4%A7%E4%B9%85%E9%87%8E%E5%B3%B6
+[呉線 忠海駅]: http://ja.wikipedia.org/wiki/%E5%BF%A0%E6%B5%B7%E9%A7%85
+[毒ガス島歴史研究所]: http://homepage3.nifty.com/dokugasu/index.html
+[長浦毒ガス貯蔵庫跡]: http://homepage3.nifty.com/dokugasu/dengon/dengon089.html
+[休暇村]: http://www.qkamura.or.jp/ohkuno/
+[発電所跡]: http://homepage3.nifty.com/dokugasu/dengon/dengon030.html
+[台風第11号]: http://ja.wikipedia.org/wiki/%E5%B9%B3%E6%88%9026%E5%B9%B4%E5%8F%B0%E9%A2%A8%E7%AC%AC11%E5%8F%B7

@@ -1,0 +1,2 @@
+{{/* Usage: {{< link "https://example.com" "Link Text" >}} */}}
+<a href="{{ .Get 0 }}" {{ if strings.HasPrefix (.Get 0) "http" }}target="_blank" rel="noopener"{{ end }}>{{ .Get 1 }}</a>

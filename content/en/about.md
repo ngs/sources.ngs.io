@@ -1,6 +1,5 @@
 ---
-title: "About"
-layout: "single"
+title: About
 ---
 
-<!-- About content in English - converted from Slim template -->
+<!-- TODO: Convert Slim template content -->

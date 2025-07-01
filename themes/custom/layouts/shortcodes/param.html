@@ -1,0 +1,3 @@
+{{/* Usage: {{< param "variable_name" >}} */}}
+{{ $key := .Get 0 }}
+{{ index .Page.Params $key }}

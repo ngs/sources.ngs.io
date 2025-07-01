@@ -1,0 +1,103 @@
+---
+title: "Hubot を使って CloudFront の Distribution 一覧・Invalidation 作成を行う hubot-cloudfront"
+description: "Hubot を使って Amazon CloudFront の Distribution 一覧取得と、Invalidation 作成を行うスクリプトを公開しました。"
+date: 2014-06-28T21:00:00+09:00
+public: true
+tags: ["aws", "amazon", "cloudfront", "middleman", "hubot", "script", "hipchat", "kaizenplatform"]
+alternate: true
+ogp:
+  og:
+    image:
+      '': 2014-06-28-hubot-cloudfront/hipchat.png
+      type: image/png
+      width: 1716
+      height: 1048
+---
+
+![](2014-06-28-hubot-cloudfront/hipchat.png)
+
+[Hubot] を使って [Amazon CloudFront] の Distribution (配信) 一覧取得 と、Invalidation (無効化) 作成 を行うスクリプトを公開しました。
+
+**[ngs/hubot-cloudfront]**
+
+```sh
+npm install --save hubot-cloudfront
+```
+
+<!--more-->
+
+Distribution (配信) 一覧取得
+--------------------------
+
+Distribution の ID、ドメイン、ステータス、コメント、進行中の Invalidation バッチの件数 (あれば) が取得できます。
+
+{{ partial 'partials/2014-06-28-hubot-cloudfront/hubot-list-distributions.html.md'  }}
+
+ショートカットにも対応しています
+
+{{ partial 'partials/2014-06-28-hubot-cloudfront/hubot-list-distributions-short.html.md'  }}
+
+Invalidation (無効化) 作成
+------------------------
+
+{{ partial 'partials/2014-06-28-hubot-cloudfront/hubot-invalidate.html.md'  }}
+
+Distribution の指定は ID のほか、Distribution 一覧の連番インデックス (ID の前の 0 起点の整数) でも指定できます。
+
+{{ partial 'partials/2014-06-28-hubot-cloudfront/hubot-invalidate-with-index.html.md'  }}
+
+ショートカット
+
+{{ partial 'partials/2014-06-28-hubot-cloudfront/hubot-invalidate-short.html.md'  }}
+
+Invalidation の進捗を1分ごとに確認して、完了していたら教えてくれます。
+
+{{ partial 'partials/2014-06-28-hubot-cloudfront/hubot-invalidate-complete.html.md'  }}
+
+Invalidation (無効化) 一覧
+------------------------
+
+Distribution ID またはインデックスを指定して Invalidation の一覧を取得します。
+
+{{ partial 'partials/2014-06-28-hubot-cloudfront/hubot-list-invalidations.html.md'  }}
+
+ショートカット
+
+{{ partial 'partials/2014-06-28-hubot-cloudfront/hubot-list-invalidations-short.html.md'  }}
+
+なぜ作ろうと思ったのか
+------------------
+
+我ながら、普通に便利なスクリプトなのですが、もともとは CI プロセスの中から行おうとして、ライブラリが期待通りに動かなかったので、このスクリプトを作成しました。
+
+[KAIZEN platform] で開発している GUI エディターは、[以前発表したとおり][tmm2]、[Middleman] で開発しています。
+
+資材は [Amazon S3] にホスティングされており、一部のファイルは [Amazon CloudFront] で CDN 配信されています。
+
+Origin となる [Amazon S3] バケットへのアップロードは [middleman-sync] を使用しており、その次に [middleman-cloudfront] を使って Invalidation を作成しようとしました。
+
+{{ partial 'partials/2014-06-28-hubot-cloudfront/config.rb.html.md'  }}
+
+この設定で、普通に `filter` にマッチする `/javascripts/editor-inner.js` の Invalidation を作成してほしいのですが、なぜか `/editor-inner.js` の Invalidation を作成します。
+
+また、Invalidation の進捗は、AWS のダッシュボードに入って、都度確認 & 配信ファイルの中に含まれる Git のコミットハッシュをリロードして確認しており、とても面倒でした。
+
+そこで [HipChat にメッセージを飛ばす、簡単なシェルスクリプト][hipchat-notifier.sh] を作成し、以下の様に `circle.yml` に設定しました。
+
+{{ partial 'partials/2014-06-28-hubot-cloudfront/circle.yml.html.md'  }}
+
+この設定で、[シェルスクリプト][hipchat-notifier.sh]により発言された命令をハンドリングし、[Hubot] が Invalidation を作成する様になりました。
+
+デプロイの進捗も [HipChat] から [Hubot] と会話しながら確認できるので、とても便利です。
+
+[KAIZEN platform]: http://kaizenplatform.in/
+[Amazon S3]: http://aws.amazon.com/jp/s3/
+[Amazon CloudFront]: http://aws.amazon.com/jp/cloudfront/
+[ngs/hubot-cloudfront]: https://github.com/ngs/hubot-cloudfront
+[middleman-sync]: https://github.com/karlfreeman/middleman-sync
+[middleman-cloudfront]: https://github.com/andrusha/middleman-cloudfront
+[tmm2]: https://ja.ngs.io/2014/05/16/middleman-meetup-tokyo-2/
+[Middleman]: http://middlemanapp.com/
+[hipchat-notifier.sh]: https://gist.github.com/ngs/d251721adde1f0a525a2
+[HipChat]: https://www.hipchat.com/
+[Hubot]: https://hubot.github.com/

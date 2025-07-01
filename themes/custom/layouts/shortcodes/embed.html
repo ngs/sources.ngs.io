@@ -1,0 +1,22 @@
+{{/* 
+Usage: 
+{{< embed type="youtube" id="VIDEO_ID" >}}
+{{< embed type="github" repo="user/repo" file="path/to/file" >}}
+*/}}
+
+{{ $type := .Get "type" }}
+{{ $id := .Get "id" }}
+{{ $repo := .Get "repo" }}
+{{ $file := .Get "file" }}
+
+{{ if eq $type "youtube" }}
+  <div class="embed-youtube">
+    <iframe src="https://www.youtube.com/embed/{{ $id }}" frameborder="0" allowfullscreen></iframe>
+  </div>
+{{ else if eq $type "github" }}
+  <div class="embed-github">
+    <a href="https://github.com/{{ $repo }}/blob/master/{{ $file }}" target="_blank">
+      {{ $repo }}/{{ $file }}
+    </a>
+  </div>
+{{ end }}

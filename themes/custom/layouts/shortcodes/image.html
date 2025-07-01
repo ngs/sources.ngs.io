@@ -1,0 +1,9 @@
+{{/* Usage: {{< image "path/to/image.jpg" "Alt text" >}} */}}
+{{ $src := .Get 0 }}
+{{ $alt := .Get 1 | default "" }}
+{{ $class := .Get "class" | default "" }}
+
+<figure{{ if $class }} class="{{ $class }}"{{ end }}>
+  <img src="/images/{{ $src }}" alt="{{ $alt }}"{{ if $class }} class="{{ $class }}"{{ end }}>
+  {{ if $alt }}<figcaption>{{ $alt }}</figcaption>{{ end }}
+</figure>

@@ -1,0 +1,23 @@
+{{/* 
+Usage: 
+{{< code lang="erb" >}}
+code content here
+{{< /code >}}
+
+Or with file inclusion:
+{{< code lang="erb" file="path/to/file" >}}
+*/}}
+
+{{ $lang := .Get "lang" | default "text" }}
+{{ $file := .Get "file" }}
+{{ $content := "" }}
+
+{{ if $file }}
+  {{ $content = readFile (printf "content/code-snippets/%s" $file) | safeHTML }}
+{{ else }}
+  {{ $content = .Inner | safeHTML }}
+{{ end }}
+
+```{{ $lang }}
+{{ $content }}
+```
