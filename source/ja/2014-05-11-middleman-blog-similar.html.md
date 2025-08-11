@@ -1,0 +1,61 @@
+---
+title: middleman-blog で類似記事を表示する
+description: middleman-blog で類似記事を取得する機能拡張を作りました。
+date: 2014-05-11 12:00
+public: true
+tags: middleman, blog, similarity, levenshtein, tf-idf
+alternate: true
+---
+
+[middleman-blog] で類似記事を取得する機能拡張を作りました :boom:
+
+View **[middleman-blog-similar on GitHub][middleman-blog-similar]**.
+
+```rb
+gem 'middleman-blog-similar'
+gem 'levenshtein-ffi', :require => 'levenshtein'
+```
+
+
+```rb
+h2 Similar Entries
+ul
+  - similar_articles.first(5).each do|article|
+    li= link_to article.title, article.url
+```
+
+
+`similar_articles` ヘルパーメソッドか `Middleman::Blog::BlogArticle#similar_articles` インスタンスメソッドで、類似エントリー一覧を取得できます。
+
+READMORE
+
+現在、類似検索エンジンとして、[levenshtein-ffi] と [levenshtein], [damerau-levenshtein] をサポートしています。
+
+ただ、あまり精度が良くないみたいなので、[tf-idf-similarity] ライブラリを使ったエンジンを追加しようとしています。
+
+Pull request: **[[wip] tf*idf support #2][pr]**
+
+`config.rb` に以下の様に記述して、類似検索エンジンを指定でるようになる予定です。
+
+```ruby
+# Levenshtein distance function:
+activate :similar # , :algorithm => :levenshtein by default.
+
+# Damerau–Levenshtein distance function:
+activate :similar, :algorithm => :damerau_levenshtein
+
+# Term Frequency-Inverse Document Frequency function:
+activate :similar, :algorithm => :tf_idf
+
+# Okapi BM25 ranking function:
+activate :similar, :algorithm => :bm25
+```
+
+
+[middleman-blog]: https://github.com/middleman/middleman-blog
+[middleman-blog-similar]: https://github.com/ngs/middleman-blog-similar
+[levenshtein-ffi]: https://github.com/dbalatero/levenshtein-ffi
+[levenshtein]: https://github.com/schuyler/levenshtein
+[damerau-levenshtein]: https://github.com/GlobalNamesArchitecture/damerau-levenshtein
+[tf-idf-similarity]: https://github.com/opennorth/tf-idf-similarity
+[pr]: https://github.com/ngs/middleman-blog-similar/pull/2
