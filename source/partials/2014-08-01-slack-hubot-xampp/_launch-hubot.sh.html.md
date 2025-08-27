@@ -1,3 +1,0 @@
-```bash
-hubot -a xmpp
-```

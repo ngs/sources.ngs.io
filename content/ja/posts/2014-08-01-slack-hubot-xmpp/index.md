@@ -1,0 +1,110 @@
+---
+title: Slack を XMPP プロトコルで Hubot と連携する
+description: Rapsberry PI の中で Hubot を起動するために、Slack アダプターを使わず XMPP プロトコルで設定しました。
+date: 2014-08-01 06:30
+public: true
+tags: hubot, slack, xmpp
+alternate: false
+ogp:
+  og:
+    image:
+      '': https://avatars0.githubusercontent.com/u/480938?s=460
+      type: image/png
+      width: 460
+      height: 460
+---
+
+個人でも[リモコンとして活用している][hubot-irkit] [Hubot] ですが、いつもの [Heroku] ではなく、[Raspberry PI] の中で起動しようとして、アダプター設定で苦労したので、メモします。
+
+READMORE
+
+## 要件
+
+- ポートフォワーディングを設定していない (したくない)。
+- 複数の bot が、同じ Room に常駐し、bot 同士で支持の出し合いを行う必要がある。
+
+## 不採用
+
+### [hubot-gtalk]
+
+今まで [hubot-irkit] は [Google Talk] を Mac OS X の Messages.app に登録して使っていました。
+
+ただ、Google Talk のチャットに複数の bot を常駐させるには、その分アカウント作成が必要になり、スケーラビリティが低いため、不採用にしました。
+
+### [hubot-slack]
+
+仕事でも愛用している [Slack] がオフィシャルで提供している [hubot-slack] アダプタの場合、Webhook を使いメッセージの送受信をしているため、ポートフォワーディングが必要なので、不採用でした。
+
+## 採用
+
+### [Slack] + [hubot-xmpp]
+
+[Slack] は、[XMPP] で会話をするゲートウェイを用意しており、それと [hubot-xmpp] アダプタを連携して、[Hubot] を動かすことにしました。
+
+## 設定方法
+
+前提として、Owner 権限が必要です。
+
+![](1.png)
+
+[Admin Settings] の Gateways セクションを展開し、上記の様に、XMPP を有効にします。
+
+![](2.png)
+
+次に、個人の [Gateway 情報画面] を開き、`Host`, `User`, `Pass` 情報を取得し、Raspberry PI 側で、以下の様に環境変数を書き出します。
+
+
+
+`HUBOT_XMPP_HOST`: [Gateway 情報画面] にある、`Host` の先頭に、`conference.` を付与したもの。
+
+`HUBOT_XMPP_ROOMS`: `#{ルーム名}@$HUBOT_XMPP_HOST` の形式で、カンマ区切りの文字列。
+
+`HUBOT_XMPP_USERNAME`: ユーザー名。`#{User}@$HUBOT_XMPP_HOST` の形式。
+
+`HUBOT_XMPP_PASSWORD`: [Gateway 情報画面] にある、`Pass`。
+
+## Hubot の起動
+
+あとは、通常と同じく、[hubot-xmpp] を採用した bot を起動するだけです。
+
+もし、新規から始める場合は Hubot プロジェクトを作成し、
+
+
+
+起動します。
+
+
+
+しばらくすると ping に応答する様になります。
+
+![](3.png)
+
+## god の設定
+
+死活管理と自動起動に [god] を使います。
+
+
+
+### /etc/god/hubot.god
+
+
+
+### /etc/init.d/god
+
+
+
+引用元: https://gist.github.com/cwsaylor/17522
+
+[hubot-irkit]: https://ja.ngs.io/2014/06/09/hubot-irkit/
+[Hubot]: https://hubot.github.com/
+[Heroku]: https://www.heroku.com/
+[Raspberry PI]: http://www.raspberrypi.org/
+[hubot-slack]: https://github.com/tinyspeck/hubot-slack
+[hubot-gtalk]: https://github.com/atmos/hubot-gtalk/
+[hubot-xmpp]: https://github.com/markstory/hubot-xmpp
+[Google Talk]: http://www.google.com/hangouts/
+[Slack]: https://slack.com/
+[XMPP]: http://ja.wikipedia.org/wiki/Extensible_Messaging_and_Presence_Protocol
+[Admin Settings]: https://my.slack.com/admin/settings#change_gateways
+[Gateway 情報画面]: https://my.slack.com/account/gateways
+[god]: http://godrb.com/

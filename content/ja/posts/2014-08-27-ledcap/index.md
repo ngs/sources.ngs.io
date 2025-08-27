@@ -1,0 +1,80 @@
+---
+title: LilyPad Arduino で光る帽子を作った
+description: LilyPad Arduino で暗くなると LED が光る帽子を作りました。
+date: 2014-08-27 08:40
+public: true
+tags: lilypad, テクノ手芸, arduino, make
+alternate: false
+ogp:
+  og:
+    image:
+      '': 2014-08-27-ledcap/1.jpg
+      type: image/jpeg
+      width: 992
+      height: 525
+    video:
+      '': http://vimeo.com/moogaloop.swf?clip_id=104175750
+      secure_url: https://vimeo.com/moogaloop.swf?clip_id=104175750
+      type: application/x-shockwave-flash
+      width: 640
+      height: 360
+---
+
+<iframe src="//player.vimeo.com/video/104175750?title=0&amp;byline=0&amp;badge=0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen class="vimeo"></iframe>
+
+妻とのコラボで、[LilyPad Arduino] で暗くなると LED が光る帽子を作りました。
+
+実装はとても簡単なものでしたが、導電糸の縫い付けがとても難儀でした。
+
+READMORE
+
+![](1.jpg)
+
+帽子本体は妻作。
+
+![](2.jpg)
+
+暗くなると光ります。
+
+![](3.jpg)
+
+普通の糸でまず仮止めして、
+
+![](4.jpg)
+
+導電糸で縫い付けます。
+
+![](5.jpg)
+
+ただ縫い付けただけだと、帽子の裏でショートしてしまうので、絶縁に工夫が必要です。
+
+この写真では仮にセロハンテープで固定しています。
+
+また、LED 素子が焼けてしまって交換に苦労したので、メンテナンス性を考慮していなかったことが反省点です。
+
+素材
+----
+
+- [LilyPad Arduino SimpleSnap]
+- [導電糸 (太)]
+- [LilyPad LED Micro]
+- [LilyPad 明るさセンサ]
+- [FTDI USB シリアル変換アダプター] \(プログラムの書き込みに必要)
+
+
+実装
+----
+
+![](Sketch.png)
+
+
+
+ソースコードは GitHub で管理しています。 **[ngs/ledcap]**
+
+[LilyPad Arduino]: http://lilypadarduino.org/?p=289
+[ngs/LEDCap]: https://github.com/ngs/LEDCap
+[LilyPad Arduino SimpleSnap]: http://www.amazon.co.jp/gp/product/B00FPHR7I6/ref=as_li_ss_tl?ie=UTF8&camp=247&creative=7399&creativeASIN=B00FPHR7I6&linkCode=as2&tag=atsushnagased-22
+[導電糸 (太)]: http://www.amazon.co.jp/gp/product/B00C1WU6WM/ref=as_li_ss_tl?ie=UTF8&camp=247&creative=7399&creativeASIN=B00C1WU6WM&linkCode=as2&tag=atsushnagased-22
+[LilyPad LED Micro]: http://www.amazon.co.jp/gp/product/B00DDKM3LS/ref=as_li_ss_tl?ie=UTF8&camp=247&creative=7399&creativeASIN=B00DDKM3LS&linkCode=as2&tag=atsushnagased-22
+[FTDI USB シリアル変換アダプター]: http://www.amazon.co.jp/gp/product/B009AME9R4/ref=as_li_ss_tl?ie=UTF8&camp=247&creative=7399&creativeASIN=B009AME9R4&linkCode=as2&tag=atsushnagased-22
+[LilyPad 明るさセンサ]: http://www.amazon.co.jp/gp/product/B00DDID68Y/ref=as_li_ss_tl?ie=UTF8&camp=247&creative=7399&creativeASIN=B00DDID68Y&linkCode=as2&tag=atsushnagased-22

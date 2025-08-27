@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(ruby:*)",
+      "Bash(for:*)",
+      "Bash(do mv \"$file\" \"$file%.html.md.md\")",
+      "Bash(done)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

@@ -1,0 +1,95 @@
+---
+title: Z Shell (zsh) デビュー + dotfiles 整理
+description: 連休を使って Bash から Z Shell (zsh) に乗り換えて、dotfiles も整理していました。
+date: 2014-05-07 01:40
+public: true
+tags: zsh, dotfiles, ohmyzsh
+alternate: false
+ogp:
+  og:
+    image:
+      '': 2014-05-07-zsh-debut/zsh.jpg
+      type: image/jpeg
+      width: 992
+      height: 942
+---
+
+![](zsh.jpg)
+
+いつも使っている Shell ですが、[@naoya] さんにお勧めしていただいてから、Z Shell (zsh) を使いたいな、と思っていて (補完とかテーマとかかっこいいし)、連休だったので、ここぞ、と重い腰を上げました。
+
+READMORE
+
+結論、Bash 使いでも違和感なく使えて、とても満足してます。迷いなく `chsh` しました。
+
+```sh
+chsh -s /bin/zsh
+```
+
+それを同時に、ずっとグダグダなのが気になっていた、[dotfiles] も整理しました。
+
+何人かの同僚の環境構築を (最近評判の悪い) [Boxen] で行っており、そこから [Homebrew] + [Homebrew Cask] のみでの環境構築に移行できないかの技術検証も兼ねていました。
+
+[Boxen] vs [Homebrew] の話は Pros. / Cons. を含めて、別途アーティクルに <s>する予定です。</s> [しました。](/2014/05/08/homebrew-boxen/)
+
+## Oh My ZSH!!
+
+ZSH 環境は [Oh My ZSH] から構築を始め、Plugin を幾つか試しました。
+
+tmux プラグインは tmux コマンドを上書きしてくれるので、自分で `alias tmux=tmux -2` と [256 Colors 引数付きで起動する様に設定していた](https://github.com/ngs/dotfiles/blob/master/env.d/aliases.sh#L26)のが使えなくなるので、外しました。
+
+(そもそも .tmux.conf でも `set-option -g default-terminal screen-256color` を設定しているのに、これは別用途なのでしょうか、良くわかってないです。)
+
+他のプラグインは便利そうだったのですが、全部盛りにせずに、必要な物だけ使おうと、`git, rbenv, osx` に絞りました。
+
+
+
+あと、rbenv プラグインはディレクトリの有無で、インストールの有無を判断しているので、Boxen が使っている、`/opt/boxen/rbenv` には対応していませんでした。
+
+
+
+Symlink を貼って対応しました。
+
+
+
+## Theme
+
+Oh My ZSH のテーマは、どれも格好よさげなのですが、細かいニーズを満たしていなかったので、自分で作成しました。
+
+`PROMPT` は標準的な `[ユーザー名]@[ホスト名] [現在地] $`。`RPS1` はこんな感じです。
+
+![](rps1.png)
+
+[ngs/dotfiles rc.d/zsh/custom/ngs.zsh-theme][ngs.zsh-theme]
+
+\# あと [Powerline] も魅力的だったんですが、iOS の [Prompt] でログインして作業することもあるので、不採用にしました。
+
+[![](readme.png)][README]
+
+はじめは、本家を fork して Pull Request を送ろうと思っていたのですが、上記の様に [README] に書かれていたので、自分の dotfiles にパスを通して管理することにしました。
+
+ソースからは以下の様にして、ロードを行っています。
+
+
+
+以下の様に追記しました。
+
+
+
+[Prompt] でも綺麗に表示できています。
+
+![](prompt.png)
+
+
+
+
+[@naoya]: http://d.hatena.ne.jp/naoya/
+[dotfiles]: https://github.com/ngs/dotfiles
+[Boxen]: http://boxen.github.com/
+[Homebrew]: http://brew.sh/
+[Homebrew Cask]: http://caskroom.io/
+[Oh My ZSH]: http://ohmyz.sh/
+[ngs.zsh-theme]: https://github.com/ngs/dotfiles/blob/master/rc.d/zsh/custom/ngs.zsh-theme
+[Powerline]: https://powerline.readthedocs.org/en/latest/
+[Prompt]: https://itunes.apple.com/jp/app/prompt/id421507115?mt=8&uo=4&at=10l87J
+[README]: https://github.com/robbyrussell/oh-my-zsh#dont-send-us-your-theme-for-now

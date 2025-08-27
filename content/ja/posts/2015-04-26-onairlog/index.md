@@ -1,0 +1,35 @@
+---
+title: "OnAirLog813/802 #AppleWatch 対応しました ⌚️"
+description: "J-WAVE と FM 802 で流れている曲のチェックができる iOS アプリ OnAirLog シリーズの Apple Watch 対応を行いました。"
+date: 2015-04-26 00:00
+public: true
+tags: apple, ios, onairlog, apple watch
+alternate: false
+app_id: 416761694
+ogp:
+  og:
+    image:
+      "": 2015-04-26-onairlog/watches.png
+      type: image/png
+      width: 1080
+      height: 1000
+---
+
+![](watches.png)
+
+自分は配送が遅れている、ステンレススチール リンクブレスレットの [Apple Watch] を予約したため、まだ実機が手元にないのですが、販売が開始したら告知しようと思っていたので掲載します。
+
+J-WAVE と FM 802 で流れている曲のチェックができる iOS アプリ [OnAirLog シリーズ](/t/onairlog/)の [Apple Watch] 対応を行いました。
+
+- [OnAirLog813 on App Store]
+- [OnAirLog802 on App Store]
+
+最新の放送された楽曲の情報を [Apple Watch] から確認でき、お気に入りに追加・本体アプリを起動して、視聴することができます。
+
+Apple Watch ラボ を予約してたのに、用事で参加できなかったため、まだ、実機で確認していません。もし使って頂けたら、フィードバックを頂けると嬉しいです 🙇‍♂️
+
+([失敗例として挙げられている](http://realm.io/jp/news/watchkit-mistakes/#neil) _テキスト要素に多くの余白を含める_ をやってしまっているので、早々に直したいです。)
+
+[apple watch]: http://www.apple.com/jp/watch/
+[onairlog802 on app store]: https://itunes.apple.com/jp/app/onairlog802/id423580398?l=en&mt=8
+[onairlog813 on app store]: https://itunes.apple.com/jp/app/onairlog813/id416761694?l=en&mt=8

@@ -1,0 +1,85 @@
+---
+title: "リアルタイムログ閲覧をサポートする CI2Go をリリースしました"
+description: "@circleci iOS クライアント CI2Go のリアルタイムログ閲覧をサポートする新しいバージョンをリリースしました。"
+date: 2016-01-29 22:15
+public: true
+tags: circleci, ios, app, ci, pusher, websocket, realm, ci2go
+alternate: true
+app_id: 940028427
+ogp:
+  og:
+    image:
+      '': 2016-01-29-ci2go/screen.png
+      type: image/png
+      width: 2208
+      height: 1242
+---
+
+[![](screen.gif)][AppStore]
+
+[@circleci] iOS クライアント CI2Go のリアルタイムログ閲覧をサポートする新しいバージョンをリリースしました。
+
+**[CI2Go on the App Store][AppStore]**
+
+このバージョンで、リアルタイムログをサポートしたため、API 更新インターバル機能は削除しました。
+
+READMORE
+
+## リアルタイムログの舞台裏
+
+[v1.0.0 の記事]で言及したとおり、このソフトウェアは、CircleCI が、公開 API を用意していないため、実行中のビルドログは閲覧できませんでした。
+
+そこで、GitHub に公開されている、CircleCI のコードを読み、彼らの WebSocket 通知の接続方法がわかりました。
+
+- [pusher.cjs](https://github.com/circleci/frontend/blob/master/src-cljs/frontend/pusher.cljs)
+- [frontend](https://github.com/circleci/frontend)
+
+ドキュメントにはありませんが、彼らの [Pusher 認証エンドポイント] は、ログインセッションだけでなく、API トークンもサポートしていました。
+
+```sh
+curl -i "https://circleci.com/auth/pusher?circle-token=${CIRCLE_TOKEN}" \
+  --data 'socket_id=123456.87654321&channel_name=private-ngs'
+```
+
+```
+{"auth":"1cf6e0e755e419d2ac9a:..."}
+```
+
+これを実装している中で、[pusher-websocket-swift] のバグも見つけたので、修正対応しました。
+
+[pusher-community/pusher-websocket-swift/pull/22]
+
+## Realm でオフラインキャッシュ
+
+このバージョンから、ローカルデータベースを CoreData から [Realm] に変更しました.
+
+## Watch OS 2.0
+
+また、Apple Watch アプリも、Watch OS 2.0 を元に、再実装しました。
+
+が、まだ、パフォーマンスの問題があります。
+
+このバージョンは 50 MB の Watch OS アプリケーションの上限を超えないために (ほとんど Realm.framework でした) [WatchConnectivity Framework] を使って、iPhone からデータを転送しています。
+
+```
+ITMS-90389 Size Limit 50 MB Exceeded
+```
+
+しかし、`WCSession` のデータ転送速度が遅いために、描画にかなりの時間がかかります。
+
+現在、この問題に対応するために、Watch OS アプリから、直接 API にアクセスする様に修正対応中で、次バージョンでリリース予定です。
+
+もし、Apple Watch のヘビーユーザーで、リアルタイム更新がさほど重要でない場合には、このバージョンアップは見送っていただければ幸いです。
+
+もし、ほかに何か問題がありましたが、[New Issue] を GitHub に投稿して下さい。
+
+[AppStore]: https://itunes.apple.com/app/id940028427?mt=8
+[API]: https://circleci.com/docs/api
+[New Issue]: https://github.com/ngs/ci2go/issues/new
+[@circleci]: https://circleci.com
+[v1.0.0 の記事]: /2014/11/26/ci2go/
+[Pusher 認証エンドポイント]: https://pusher.com/docs/authenticating_users#authEndpoint/lang=ios
+[pusher-websocket-swift]: https://github.com/pusher-community/pusher-websocket-swift
+[pusher-community/pusher-websocket-swift/pull/22]: https://github.com/pusher-community/pusher-websocket-swift/pull/22
+[Realm]: https://realm.io
+[WatchConnectivity Framework]: https://developer.apple.com/library/watchos/documentation/WatchConnectivity/Reference/WatchConnectivity_framework/

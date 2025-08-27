@@ -1,0 +1,90 @@
+---
+title: "Google Calendar の当番表を自動で埋める"
+description: "今まで手作業で行っていた当番表の更新を Google App Script で半自動化しました。"
+date: 2014-12-23 06:20
+public: true
+tags: developer productivity, automation, kaizenplatform, google app script, javascript, spreadsheets
+alternate: false
+ogp:
+  og:
+    image:
+      '': 2014-12-23-touban-calendar/screen1.png
+      type: image/png
+      width: 992
+      height: 525
+---
+
+![](screen1.png)
+
+以前、以下の記事で紹介した様に、自分が働く [Kaizen Platform] のエンジニアチームは、Google Calendar を使って、2つの当番表を管理しています。
+
+&raquo; [Google Calendar に登録している当番表を使って Slack Room のトピックを更新する]
+
+このカレンダーの管理は、言い出しっ屁の手前、今まで、自分が手作業で行っていました。
+
+この作業は、ひたすら、一覧からカレンダーにコピペするという、耐えがたい単純作業なので、[弊社の採用ページ]でも公言している、
+***3度同じ事を繰り返す時は自動化する*** というモットーに基づき、[Google App Script] を用いて半自動化しました。
+
+READMORE
+
+## 使い方
+
+**マスター管理シート** で、冒頭のスクリーンショットに表示されている、ドロップダウンから、`Fill in next interval` という項目を選択するだけで、
+スプレッドシート上の `B` カラムに新しいインターバルの日付が入力され、カレンダー上の該当の日付に担当者の名前が登録されます。
+
+![](screen2.png)
+
+当たり前ですが、土日休日は休めます。
+
+デプロイは週二回で、1日目: 検品環境、2日目: 本番環境にデプロイします。
+
+![](screen3.png)
+
+## 設定
+
+![](screen4.png)
+
+設定用のシート `_Settings` で上の様な設定表を作り、シート名: `LiveOps`, `Deployment` に対応するカレンダー ID を管理します。
+
+カラム: `Step` は、当番一回につき、担当する日数です。弊社の場合は、LiveOps: 1日、デプロイ: 2日 (検品+本番) です。
+
+シート名: `Holidays` として管理しているカレンダーは、休暇カレンダーです。現時点では、一つの休暇カレンダーに対応しています。
+
+この例では、日本の休日: `en.japanese#holiday@group.v.calendar.google.com` を設定しています。
+
+カレンダー ID は Google Calendar のカレンダー設定画面に表示されています。
+
+![](screen5.png)
+
+## スクリプト
+
+![](screen6.png)
+
+スプレッドシート画面の `Tools > Script editor` の項目を選択し、スクリプトエディタを起動します。
+
+テンプレートを選択するダイアログが出てきますが、Close ボタンで閉じてください。
+
+以下のコードを貼り付けます。
+
+
+
+初回実行時、認証ダイアログがでてくるので、権限を許可して下さい。
+
+![](screen7.png)
+
+## 所感
+
+[Google App Script] を初めて触りましたが、ログがリアルタイムに確認できなかったり、API がサービス全ての機能をカバーしているわけではなく、
+使い辛い点もありましたが、Web 画面でサクっと書いたロジックでツールを実装できるのは魅力的だな、と思いました。
+
+## TODOs
+
+- 全自動化をする。 (Hubot から実行？)
+- 重複管理に対応する。
+- 当番交代に対応する。
+- 複数の休暇カレンダーに対応する。(現時点で年末年始がハードコーディングになっている。)
+
+[Google App Script]: https://developers.google.com/apps-script/
+[Kaizen Platform]: https://kaizenplatform.com/
+[Google Calendar に登録している当番表を使って Slack Room のトピックを更新する]: /2014/09/01/hubot-touban-topic/
+[弊社の採用ページ]: https://kaizenplatform.com/hiring/engineer.html

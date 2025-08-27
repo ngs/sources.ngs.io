@@ -1,0 +1,44 @@
+---
+title: Hop-on! みなとみらいで電動キックボード試乗
+description: 2019/02/02, 横浜みなとみらいで行われている電動キックボードの試乗会に参加しました。
+date: 2019-02-02 21:00
+public: true
+tags: hopon
+alternate: true
+ogp:
+  og:
+    image:
+      '': 2019-02-02-hopon/main.jpg
+      type: image/jpeg
+      width: 992
+      height: 525
+---
+
+![](main.jpg)
+
+2019/02/02, 横浜みなとみらいで行われている電動キックボードの試乗会に参加しました。
+
+READMORE
+
+この試乗会は CircleCI の [Kim Hirokuni 氏] が主催する [Hop-on!] によって毎週土曜日、みなとみらいで開催されており、以下のフォームから参加登録ができます。
+
+[電動キックボードアクティビティー体験会@みなとみらい](https://form.run/@hop-on)
+
+![](ride.jpg)
+
+<small style="opacity:.5; font-size: .8em">(Photo by Kazuhito Oyobe)</small>
+
+現在は事業設計段階で、この試乗会から集まったフィードバックを元に事業化するそうです。
+
+現段階では、観光客向けの事業をベンチマークされているとのことで、もしかしたら、将来、観光旅行先で Hop-on! を使って現地を散策できるようになるかもしれません。
+
+## 関連リンク
+
+- 公式サイト: [Hop-on!]
+- 公式 Twitter: [Hop-on! @hop__on on Twitter](https://twitter.com/hop__on)
+- 当日のレポート: [2019/02/02 みなとみらい電動キックボード体験会](https://note.mu/chocopie116/n/n884ba2e4f9d4)
+- 他の参加者の方のレポート: [モビリティ革命！ 電動キックボードで公道を走ってきた話](https://link.medium.com/QK9j1VqhYT)
+- [国内初、「電動キックボード」のシェアリングサービス目指す--福岡市が公道走行を提案 - CNET Japan](https://japan.cnet.com/article/35132306/)
+
+[Hop-on!]: https://www.hop-on.jp/
+[Kim Hirokuni 氏]: http://kimh.github.io/

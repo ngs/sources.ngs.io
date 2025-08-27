@@ -1,0 +1,185 @@
+---
+title: Xcode 6 (Swift + Travis CI + iOS 8)
+description: しばらく iOS アプリを開発していなかったので、リハビリをかねて、LittleApps Inc. 名義で配布しているアプリのリニューアルをしました。
+date: 2014-10-13 21:40
+public: true
+tags: xcode, swift, objective-c, ios, travis-ci, onairlog
+alternate: false
+ogp:
+  og:
+    image:
+      '': 2014-10-13-xcode6/xcode6.jpg
+      type: image/jpeg
+      width: 992
+      height: 525
+---
+
+![](xcode6.jpg)
+
+しばらく iOS アプリを開発していなかったので、リハビリをかねて、[LittleApps Inc.] 名義で配布しているアプリのリニューアルをしました。
+
+今回試みたこと
+------------
+
+- 2アプリを一つの Xcode Workspace で開発する
+- Swift
+- Today Widget
+- [Travis CI] で CI
+  - TestFlight, Amazon S3, iTunes Connect へ配信
+  - XCTest 実行
+  - [Katsumi Kishikawa](http://kishikawakatsumi.com/) さんの[ブログ](http://d.hatena.ne.jp/KishikawaKatsumi/) と Gist ([.travis.yml](https://gist.github.com/kishikawakatsumi/8918365), [Rakefile](https://gist.github.com/kishikawakatsumi/8918124)) をとても参考にさせていただきました。
+- [Travis CI] を無料で使いたいので、公開リポジトリで管理する: [ngs/onairlog-ios]
+
+READMORE
+
+その中で、いくつか試行錯誤をしたので、そのメモです。
+
+解決できた問題
+------------
+
+### [MagicalRecord] の Beta 版を使うと NSFetchedResultsControllerDelegate メソッドが実行されない
+
+Today Widget と Core Data の Sqlite ファイルを共有するため、App Group のコンテナに保存しました。
+
+参照: [Accessing Core Data SQL Database in iOS 8 Extension (Sharing Data Between App and Widget Extension)]
+
+[MagicalRecord] の安定版にある `setupCoreDataStackWithStoreNamed:` の場合、アプリケーションのコンテナに保存しかできないため、開発版 [v2.3.0-beta.4] から実装されている `setupCoreDataStackWithStoreAtURL:` を使い、`NSURL` でデータベースの場所を指定する必要がありました。
+
+```swift
+let dbURL = NSFileManager.defaultManager()
+  .containerURLForSecurityApplicationGroupIdentifier(kOnAirLogDocumentContainerDomain)?
+  .URLByAppendingPathComponent("OnAirLog.sqlite")
+MagicalRecord.setupCoreDataStackWithStoreAtURL(dbURL)
+```
+
+![](screen1.png)
+
+このバージョンで非推奨になってビルドが通らなくなった `MagicalRecord` のクラスメソッド `saveUsingCurrentThreadContextWithBlock:completion:` の代わりに `saveBlock:completion:` を使うと、メインスレッドで初期化された `NSFetchedRequest` の Delegate メソッドが期待どおり実行されなくなっていました。
+
+[ngs/onairlog-ios#26e7bdc]
+
+この問題は [magicalpanda/MagicalRecord#700ae7ec0b] の修正で解決されているので、Podfile の参照先を develop ブランチになるよう、修正しました。
+
+```rb
+pod "MagicalRecord/Shorthand",
+  git: 'https://github.com/magicalpanda/MagicalRecord.git',
+  branch: 'develop'
+```
+
+解決できなかった問題
+----------------
+
+### テストターゲットにフレームワークをリンクできない
+
+着手当初、[Quick] / [Nimble] を使って BDD なテストを書いていたのですが、コマンドラインでテストを実行すると、以下のエラーがでて、iPhone シミュレーターとの接続が確立できず、テストが実行できませんでした。
+
+
+```
+Failed to query the list of test cases in the test bundle:
+
+2014-10-11 05:43:06.413 sim[87584:303]
+  /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/sim:
+    No simulator devices appear to be running.
+    Setting data directories to /var/empty.
+
+2014-10-11 05:43:06.414 sim[87584:303] DYLD_INSERT_LIBRARIES contains possible bad values.
+  Caller beware: /opt/boxen/homebrew/Cellar/xctool/0.2.1/libexec/lib/otest-query-lib-ios.dylib
+    dlopen(/Users/ngs/Library/Developer/Xcode/DerivedData/.../OnAirLogTests.xctest/OnAirLogTests, 1):
+    Library not loaded: @rpath/Nimble.framework/Nimble
+  Referenced from: /Users/ngs/Library/Developer/Xcode/DerivedData/.../OnAirLogTests.xctest/OnAirLogTests
+  Reason: image not found
+```
+
+[xctool] の不具合の様で、[xctool#391] で議論されている通り、master ブランチでは対応済の様です。
+
+[Travis CI] 内で `brew upgrade xctool` を実行してインストールできるバージョンには含まれていないので、今回は諦めて標準の `XCTestCase` のサブクラスで実装しました。
+
+### コマンドラインから iTunes Connect にアップロードできない
+
+タグ契機の CI では、Distribution 用のビルドを、それ以外は AdHoc 用のビルドを行う様に設定しました。
+
+いずれも、デバッグシンボルの ZIP アーカイブと .ipa ファイルを Amazon S3 アップロードし、続けて、Distribution 用は iTunes Connect へ、AdHoc 用は TestFlight にアップロードする様に設定しました。
+
+各サービスへのアップロードは [nomad] シリーズの [shenzhen] \(深圳) を使うように設定しました。
+
+[Rakefile](https://github.com/ngs/onairlog-ios/blob/dee20d15b6e643a1000830a72b357a817558c6ba/Rakefile#L316)
+
+この設定で rake タスクを実行すると、[shenzhen issue#147] で話題になっている `error: Unknown application extension '.' - expected '.app' or '.ipa'` というエラーが出てきました。
+
+これは標準の [xcrun] でも再現しました。
+
+```bash
+$ xcrun --sdk iphoneos Validation --online --verbose OnAirLog813.ipa
+
+error: Unknown application extension '.' - expected '.app' or '.ipa'
+```
+
+これはツール側の不具合の可能性があると思い、今回は諦めて、S3 Bucket にアップロードした .ipa ファイルを [Application Loader] を使い iTunes Connect にアップロードしました。
+
+TODOs
+-----
+
+### 共通 Core Data モデルの Swift 実装
+
+2つのアプリ: [OnAirlog813] / [OnAirlog802] のソースコードは、アイコン画像、Info.plist と[一部の定数]を除いて、共通化しています。
+
+Core Data モデル (`NSManagedObject` サブクラス) も共通化しているのですが、Swift で実装したクラスは `PRODUCT_NAME` から作った名前空間の下に存在するため、共通化できませんでした。
+
+![](screen2.png)
+
+そのため、今回は Core Data モデルのみ、Objective-C で実装しました。
+
+解決策として、Cocoa Touch Framework の中で実装したクラスは Framework 名の名前空間にクラスができる様なので、なんとか解決できないかと、試しています。
+
+参照: [gfx/Swift-JsonSerializer]
+
+### Travis CI のログ削除
+
+[shenzhen] で .ipa ファイルのビルドを行う際、`--verbose` フラグを付けていると、環境変数を全て表示してしまうのに気づかず、CI を動かしていました。
+
+![](screen3.png)
+
+Travis CI の環境変数には上の様な漏洩するとかなりマズい情報を設定しているため、急いで諸々変更したのと同時に、Travis CI サポートに連絡して、ログの削除をお願いしました。
+
+今回はサポートの方に削除の対応をしていただいたのですが、曰く、コマンドラインツールでもログができる様になったそうです。
+
+まだ必要ないので試していませんが、おそらくこんな感じで削除できます。いざという時のために、予行演習しておこうと思います。
+
+```bash
+$ travis logs $BUILD_NUMBER \
+    --repo ngs/onairlog-ios \
+    --org \
+    --token $TRAVIS_ACCESS_TOKEN \
+    --delete 'Mistakenly exposed credentials'
+```
+
+所感
+---
+
+上記の様に、色々試行錯誤しましたが、[Travis CI] が [OS X の CI 環境]を用意してくれたり、iTunes Connect、Xcode のバージョンアップによって、以前に比べてかなり開発の効率が上がったと思いました。
+
+現在、本業では扱っていない iOS, Mac App ですが、Apple ファンとして、引き続きウォッチしていきたいと思います。
+
+[Quick]: https://github.com/Quick/Quick
+[Nimble]: https://github.com/Quick/Nimble
+[xctook]: https://github.com/facebook/xctool
+[shenzhen issue#147]: https://github.com/nomad/shenzhen/issues/147
+[LittleApps Inc.]: http://littleapps.jp/
+[Travis CI]: https://travis-ci.org/
+[MagicalRecord]: https://github.com/magicalpanda/MagicalRecord
+[ngs/onairlog-ios]: https://github.com/ngs/onairlog-ios
+[xctool#391]: https://github.com/facebook/xctool/issues/391
+[xctool]: https://github.com/facebook/xctool
+[ngs/onairlog-ios#26e7bdc]: https://github.com/ngs/onairlog-ios/commit/26e7bdc921a6f629b12bcc79539a9b107f48c56e#diff-997323582e24ae0b7db1ae1043ae16d7L31
+[v2.3.0-beta.4]: https://github.com/magicalpanda/MagicalRecord/releases/tag/v2.3.0-beta.4
+[magicalpanda/MagicalRecord#700ae7ec0b]: https://github.com/magicalpanda/MagicalRecord/commit/700ae7ec0bb440ecba3eb8aa972277273096b0d2
+[nomad]: http://nomad-cli.com/
+[shenzhen]: https://github.com/nomad/shenzhen
+[xcrun]: https://developer.apple.com/library/mac/documentation/Darwin/Reference/Manpages/man1/xcrun.1.html
+[Application Loader]: https://itunesconnect.apple.com/docs/UsingApplicationLoader.pdf
+[OnAirlog813]: http://littleapps.jp/onairlog813/
+[OnAirlog802]: http://littleapps.jp/onairlog802/
+[一部の定数]: https://github.com/ngs/onairlog-ios/blob/master/OnAirLogApp/802/AppConfig.swift
+[gfx/Swift-JsonSerializer]: https://github.com/gfx/Swift-JsonSerializer
+[OS X の CI 環境]: http://docs.travis-ci.com/user/osx-ci-environment/
+[Accessing Core Data SQL Database in iOS 8 Extension (Sharing Data Between App and Widget Extension)]: http://stackoverflow.com/a/24641769/457058

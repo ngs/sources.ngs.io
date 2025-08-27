@@ -1,3 +1,0 @@
-```coffee
-robot.server.close()
-```

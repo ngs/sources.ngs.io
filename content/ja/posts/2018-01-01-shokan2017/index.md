@@ -1,0 +1,80 @@
+---
+title: 2017年所感
+description: 2017年まとめ日記。技術、仕事、音楽、健康、旅行、家族について。
+date: 2018-01-01 23:30
+public: true
+tags: 所感
+ogp:
+  og:
+    image:
+      '': 2018-01-01-shokan2017/main.jpg
+      type: image/jpeg
+      width: 992
+      height: 525
+---
+
+![](main.jpg)
+
+今年は大阪の実家で正月を過ごしています。
+
+年越しには間に合いませんでしたが、[例年](/t/所感/) にならい、2017年の所感と2018年に注力することなどを書いていこうと思います。
+
+READMORE
+
+## 仕事・技術
+
+9月に転職するまでは、前職 (現・顧問先) の [Oneteam] で研究開発を担当していました。Chatbot や CRM、認証基盤について調査と実装を行い、一部プロダクトに取り込みました。
+
+2017年初旬から5月頃にかけて、[株式会社 mov] で [訪日ラボ]・[訪日コム] の構築をしていました。現在は主に自分以外の技術者がメンテナンスしています。
+
+[9月]に CAMPFIRE に入ってからは、技術基盤の再構築、新規サービスのローンチ、情報システム、採用、組織の諸々を行っていました。
+
+入社してからそれらを並行して行ってきたため、それぞれがやりきれていない感じがあるのですが、仲間も増え、自分の役割も明確になってきたので、今年は腰を据えて技術者としての役割を全うしていきます。
+
+仕事以外の開発: OSS や体外的な発表については、仕事で使っているライブラリをメンテナンスする以外、表立って言及できるようなものはありませんでした。
+
+今年も仕事に注力していく所存ですので、OSS の発表はないと思います。
+
+## 旅行
+
+キャンプにはぼちぼち行けたと思います。その分、釣行できていなかったなと反省しております。あと、国外に一歩も足を運んでいないので、今年こそは。
+
+- 03/25, 26 [塩原グリーンビレッジ](http://www.shiobara-gv.net/)
+- 05/03-05 [浅間園キャンプ場](http://www.asamaen.tsumagoi.gunma.jp/camp.html)
+- 05/19-21 [いろりの宿 七里川温泉](http://shichirigawa-onsen.com/), [宮原オートキャンプ場](http://www.camp-miyahara.com/)
+- 10/07-09 [丸沼高原](https://www.marunuma.jp/green/attraction/camp/)
+- 11/03-05 [朝霧高原 ふもっとぱらキャンプ場](https://fumotoppara.net/)
+
+## 音楽
+
+Foursquare の履歴を見ながら思い返していると、思っていたよりはちゃんと遊んでいたと思うので、今年もサボらず遊んでいきたいと思います。
+
+- 01/21 [Osunlade Asia Tour 2017 at Contact Tokyo](https://www.residentadvisor.net/events/917923)
+- 02/27 [くるり at Zepp Diver City TOKYO](http://www.quruli.net/news/chimi/)
+- 04/19 [夜のミューズメント at 渋谷 CLUB QUATTRO](http://www.musement.red/posts/1965306)
+- 04/28 [DJ Sneak Japan Tour 2017](http://www.contacttokyo.com/schedule/dj-sneak-japan-tour-2017/)
+- 05/27, 28 [Taicoclub 2017](http://taicoclub.com/17/)
+- 06/04 [Body and SOUL Live Tokyo 2017](http://www.bodyandsoul-japan.com/)
+- 07/16 [Kenny Dope at Contact Tokyo](http://ahbproduction.com/2017/06/20/2017-07-16-sun-kenny-dope-contact-tokyo/)
+- 07/28-30 [Fuji Rock Festival 2017](http://www.fujirockfestival.com/17/)
+- 08/25 [Music Of Many Colours / Zepherin Saint "The Dub I Lost" Release Tour](http://www.contacttokyo.com/schedule/music-of-many-colours-2/)
+- 09/23, 24 [CAMP Off-Tone 2017](http://www.offtone.in/camp/)
+- 09/30 [Deep Space at Contact Tokyo](http://diskunion.net/clubt/ct/news/article/4/69263)
+- 11/18 [MASTERS AT WORK in JAPAN at Studio Coast](http://mawinjapan.com/)
+- 12/17 [Dachambo at 月見ル君想フ](http://www.a-kimama.com/culture/2017/12/76303/)
+
+## 健康
+
+2017/02/12 に行われた名古屋マラソンでフルを完走してからは、しばらく通勤ランもサボっており、食生活・飲酒量などなど生活習慣が悪化したため、結果1年前に比べて不健康をこじらせている次第です。
+
+今年は、規則正しい生活と、節度ある飲食習慣を心がけようと思います。
+
+## 家族
+
+長女が小4、長男も小学校に上がり、次女もはっきり意思表示ができるようになってきて、今年から幼稚園に通い始めるなど、さらに親離れが進み寂しい次第ですが、引き続き、家族旅行などは定期的に実施して、存在を忘れられないように思い出を作ってまいろうという所存です。
+
+[9月]: /2017/09/01/campfire-inc/
+[Oneteam]: /t/oneteam/
+[株式会社 mov]: https://mov.am/
+[訪日ラボ]: https://honichi.com/
+[訪日コム]: https://service.honichi.com/
